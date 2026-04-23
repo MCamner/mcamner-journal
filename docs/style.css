@@ -432,3 +432,39 @@ body {
   color: var(--muted);
   margin-top: -18px;
 }
+
+/* v2.4 — fixed top title line + green second figure */
+
+.boot-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: calc(100% - 120px);
+  left: 60px;
+  top: -31px;
+  background: linear-gradient(180deg, var(--blue), var(--blue-dark));
+  white-space: nowrap;
+}
+
+.boot-title::before {
+  content: "";
+  flex: 0 0 90px;
+  border-top: 3px solid var(--orange);
+}
+
+.boot-title::after {
+  content: "";
+  flex: 1;
+  border-top: 3px solid var(--orange);
+}
+
+/* make the second robot green */
+.bot span:nth-child(2) {
+  background: var(--green);
+  box-shadow: -10px 0 var(--green), 10px 0 var(--green);
+}
+
+.bot span:nth-child(2)::after {
+  background: var(--green);
+  box-shadow: 18px 0 var(--green), 36px 0 var(--green);
+}
