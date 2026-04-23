@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal | McAmner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="terminal">
+
+    <fieldset class="boot-box">
+      <legend class="boot-title">McAmner Journal <span>journal</span></legend>
+
+      <div class="boot-grid">
+        <div class="welcome">
+          <h1>Journal</h1>
+          <p>Entries, notes, and observations</p>
+          <p>~/mcamner-journal/journal</p>
+        </div>
+
+        <aside class="tips">
+          <h2>Recent activity</h2>
+          <p>> opened /journal</p>
+          <p>> viewing latest entries</p>
+          <p>> system ready</p>
+        </aside>
+      </div>
+    </fieldset>
+
+    <form class="prompt" id="commandBar">
+      <span>&gt;</span>
+      <input id="commandInput" type="text" placeholder="/about" autocomplete="off">
+    </form>
+
+    <section class="journal-box">
+      <h2>&gt;&gt; journal</h2>
+
+      <ul>
+        <li><a href="#">/the-secret-agent</a><span>-- loyalty, paranoia, secrecy</span></li>
+        <li><a href="#">/built-to-last</a><span>-- timeless menswear</span></li>
+        <li><a href="#">/two-lane-blacktop</a><span>-- pure road cinema</span></li>
+      </ul>
+    </section>
+
+    <footer class="status">
+      <span>? for shortcuts</span>
+      <span>journal loaded</span>
+    </footer>
+
+  </main>
+
+  <script>
+    const routes = {
+      "/journal": "journal.html",
+      "/about": "about.html",
+      "/home": "index.html"
+    };
+
+    document.getElementById("commandBar").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const cmd = document.getElementById("commandInput").value.trim().toLowerCase();
+      if (routes[cmd]) window.location.href = routes[cmd];
+    });
+  </script>
+</body>
+</html>
