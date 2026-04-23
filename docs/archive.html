@@ -6,8 +6,9 @@
   <title>Archive | McAmner</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="terminal">
+  <main class="terminal archive-terminal">
 
     <fieldset class="boot-box">
       <legend class="boot-title">McAmner Journal <span>archive</span></legend>
@@ -15,35 +16,62 @@
       <div class="about-grid">
         <section>
           <h1>Archive</h1>
-          <p>A curated archive of images and visual notes.</p>
-          <p>Things noticed, kept, and returned to.</p>
+          <p>A curated archive of images, fragments, and visual references.</p>
+          <p>Visual notes — things noticed, kept, and returned to.</p>
         </section>
 
         <aside class="tips">
           <h2>Recent activity</h2>
           <p>> opened /archive</p>
           <p>> visual index loaded</p>
-          <p>> system ready</p>
+          <p>> try /open 001</p>
         </aside>
       </div>
     </fieldset>
 
     <form class="prompt" id="commandBar">
       <span>&gt;</span>
-      <input id="commandInput" type="text" placeholder="/home">
+      <input id="commandInput" type="text" placeholder="/open 001" autocomplete="off" aria-label="Command input">
     </form>
 
+    <section class="archive-grid">
+      <article id="item-001">
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1000&q=80" alt="">
+        <span>001</span>
+        <h2>Structure / Surface</h2>
+        <p>Geometry, tension, and remembered form.</p>
+      </article>
+
+      <article id="item-002">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80" alt="">
+        <span>002</span>
+        <h2>Domestic Geometry</h2>
+        <p>Quiet architecture and interior restraint.</p>
+      </article>
+
+      <article id="item-003">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="">
+        <span>003</span>
+        <h2>Quiet Place</h2>
+        <p>A visual note on distance and stillness.</p>
+      </article>
+    </section>
+
     <section class="journal-box">
-      <h2>&gt;&gt; archive</h2>
+      <h2>&gt;&gt; archive commands</h2>
       <ul>
         <li><a href="index.html">/home</a><span>-- return to dashboard</span></li>
-        <li><a href="journal.html">/journal</a><span>-- entries</span></li>
-        <li><a href="about.html">/about</a><span>-- context</span></li>
+        <li><a href="journal.html">/journal</a><span>-- entries and notes</span></li>
+        <li><a href="about.html">/about</a><span>-- biography and context</span></li>
+        <li><a href="#item-001">/open 001</a><span>-- structure / surface</span></li>
+        <li><a href="#item-002">/open 002</a><span>-- domestic geometry</span></li>
+        <li><a href="#item-003">/open 003</a><span>-- quiet place</span></li>
       </ul>
     </section>
 
     <footer class="status">
-      <span>archive loaded</span>
+      <span>? for shortcuts</span>
+      <span>archive loaded · <strong>visual mode</strong></span>
     </footer>
 
   </main>
@@ -53,23 +81,30 @@
       "/home": "index.html",
       "/journal": "journal.html",
       "/about": "about.html",
-      "/archive": "archive.html"
+      "/archive": "archive.html",
+      "/open 001": "#item-001",
+      "/open 002": "#item-002",
+      "/open 003": "#item-003"
     };
 
-    document.getElementById("commandBar").addEventListener("submit", function(e){
-      e.preventDefault();
-      const cmd = document.getElementById("commandInput").value.trim().toLowerCase();
+    document.getElementById("commandBar").addEventListener("submit", function (event) {
+      event.preventDefault();
 
-      if (cmd === "/back") {
+      const input = document.getElementById("commandInput");
+      const command = input.value.trim().toLowerCase();
+
+      if (command === "/back") {
         window.history.back();
         return;
       }
 
-      if (routes[cmd]) {
-        window.location.href = routes[cmd];
+      if (routes[command]) {
+        window.location.href = routes[command];
+      } else {
+        input.value = "";
+        input.placeholder = "Unknown command. Try /open 001";
       }
     });
   </script>
-
 </body>
 </html>
