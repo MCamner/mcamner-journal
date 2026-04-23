@@ -504,3 +504,42 @@ body {
 .boot-box {
   border-top-width: 3px !important;
 }
+
+/* About page */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 58px;
+}
+
+.about-grid h1 {
+  margin: 0 0 28px;
+  color: var(--white);
+  font-size: clamp(32px, 3vw, 52px);
+  letter-spacing: -0.06em;
+}
+
+.about-grid p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: clamp(20px, 2vw, 34px);
+  line-height: 1.25;
+}
+
+.about-grid > section {
+  border-right: 3px solid var(--line);
+  padding-right: 58px;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid > section {
+    border-right: 0;
+    border-bottom: 3px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 34px;
+  }
+}

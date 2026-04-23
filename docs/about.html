@@ -1,33 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | McAmner</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | McAmner Journal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="brand">McAmner</div>
-    <nav>
-      <a href="index.html">Journal</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
 
-  <main class="page">
-    <h1>About</h1>
-    <p>
-      McAmner is a curated journal of films, objects, places, and ways of seeing.
-    </p>
-    <p>
-      Not commentary. Not opinion. A slower record of things worth returning to.
-    </p>
+<body>
+  <main class="terminal about-terminal">
+
+    <fieldset class="boot-box">
+      <legend class="boot-title">McAmner Journal <span>about</span></legend>
+
+      <div class="about-grid">
+        <section>
+          <h1>About McAmner</h1>
+          <p>
+            McAmner Journal is a curated space for films, objects, places, and ways of seeing.
+          </p>
+          <p>
+            Not commentary. Not opinion. A slower record of things worth returning to.
+          </p>
+        </section>
+
+        <aside class="tips">
+          <h2>Current mode</h2>
+          <p>Observation over noise</p>
+          <hr>
+          <h2>Path</h2>
+          <p>~/mcamner-journal/about</p>
+        </aside>
+      </div>
+    </fieldset>
+
+    <form class="prompt" id="commandBar">
+      <span>&gt;</span>
+      <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+    </form>
+
+    <section class="journal-box">
+      <h2>&gt;&gt; about</h2>
+
+      <ul>
+        <li><a href="index.html">/journal</a><span>-- return to the main journal</span></li>
+        <li><a href="#">/films</a><span>-- cinema, atmosphere, restraint</span></li>
+        <li><a href="#">/objects</a><span>-- things chosen with intent</span></li>
+        <li><a href="mailto:mattias.camner@gmail.com">/contact</a><span>-- mattias.camner@gmail.com</span></li>
+      </ul>
+    </section>
+
+    <footer class="status">
+      <span>? for shortcuts</span>
+      <span>System ready · <strong>about loaded</strong></span>
+    </footer>
+
   </main>
 
-  <footer>
-    <strong>McAmner</strong>
-    <p>© McAmner</p>
-  </footer>
+  <script>
+    const routes = {
+      "/journal": "index.html",
+      "/about": "about.html",
+      "/objects": "#objects",
+      "/films": "#films",
+      "/contact": "mailto:mattias.camner@gmail.com"
+    };
+
+    document.getElementById("commandBar").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const input = document.getElementById("commandInput");
+      const command = input.value.trim().toLowerCase();
+
+      if (routes[command]) {
+        window.location.href = routes[command];
+      } else {
+        input.value = "";
+        input.placeholder = "Unknown command. Try /journal";
+      }
+    });
+  </script>
 </body>
 </html>
