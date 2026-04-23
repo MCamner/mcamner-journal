@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structure | McAmner Journal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <main class="terminal post-terminal">
+
+    <fieldset class="boot-box">
+      <legend class="boot-title">McAmner Journal <span>post</span></legend>
+
+      <div class="about-grid">
+        <section>
+          <h1>Structure</h1>
+          <p>A note on how systems hold tension.</p>
+          <p>Not by complexity, but by restraint.</p>
+        </section>
+
+        <aside class="tips">
+          <h2>Recent activity</h2>
+          <p>> opened /structure</p>
+          <p>> post loaded</p>
+          <p>> reading mode</p>
+        </aside>
+      </div>
+    </fieldset>
+
+    <form class="prompt" id="commandBar">
+      <span>&gt;</span>
+      <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+    </form>
+
+    <article class="post-box">
+      <h2>&gt;&gt; structure</h2>
+
+      <p>
+        Structure is often mistaken for complexity.
+      </p>
+
+      <p>
+        But the strongest structures are usually quiet.
+        They do not announce themselves.
+        They hold things in place.
+      </p>
+
+      <p>
+        In infrastructure, structure is what makes systems understandable.
+        In exhibitions, it is what lets the work breathe.
+        In text, it is what gives thought a shape.
+      </p>
+
+      <p>
+        The point is not to add more.
+        The point is to remove until the remaining parts carry weight.
+      </p>
+    </article>
+
+    <section class="journal-box">
+      <h2>&gt;&gt; post commands</h2>
+      <ul>
+        <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+        <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+        <li><a href="../about.html">/about</a><span>-- biography and context</span></li>
+        <li><a href="../archive.html">/archive</a><span>-- visual references</span></li>
+      </ul>
+    </section>
+
+    <footer class="status">
+      <span>? for shortcuts</span>
+      <span>post loaded · <strong>reading mode</strong></span>
+    </footer>
+
+  </main>
+
+  <script>
+    const routes = {
+      "/home": "../index.html",
+      "/journal": "../journal.html",
+      "/about": "../about.html",
+      "/archive": "../archive.html"
+    };
+
+    document.getElementById("commandBar").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const input = document.getElementById("commandInput");
+      const command = input.value.trim().toLowerCase();
+
+      if (command === "/back") {
+        window.history.back();
+        return;
+      }
+
+      if (routes[command]) {
+        window.location.href = routes[command];
+      } else {
+        input.value = "";
+        input.placeholder = "Unknown command. Try /journal";
+      }
+    });
+  </script>
+</body>
+</html>

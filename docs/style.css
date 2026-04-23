@@ -697,3 +697,31 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* Post page */
+.post-box {
+  border: 2px solid rgba(229,123,79,0.78);
+  border-radius: 10px;
+  margin: 32px 0;
+  padding: 34px 44px;
+  background: rgba(0,0,0,0.14);
+}
+
+.post-box h2 {
+  margin: 0 0 28px;
+  color: var(--orange);
+  font-size: clamp(26px, 2.5vw, 42px);
+  letter-spacing: -0.05em;
+}
+
+.post-box p {
+  max-width: 920px;
+  color: var(--white);
+  font-size: clamp(19px, 1.65vw, 28px);
+  line-height: 1.35;
+  margin: 0 0 22px;
+}
+
+.post-box p:first-of-type {
+  color: var(--muted);
+}
