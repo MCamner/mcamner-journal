@@ -586,3 +586,37 @@ body {
 .blackiris a:hover {
   text-decoration: underline;
 }
+
+/* v2.7 — link hover scramble-style effect */
+a {
+  transition: color 140ms ease, text-shadow 140ms ease, letter-spacing 140ms ease;
+}
+
+a:hover {
+  color: #59a14f !important;
+  letter-spacing: 0.04em;
+  text-shadow:
+    1px 0 var(--orange),
+    -1px 0 var(--green);
+}
+
+/* CLI command links */
+.journal-box a:hover,
+.blackiris a:hover {
+  color: var(--green) !important;
+  text-decoration: none;
+}
+
+/* small flicker/scramble feeling */
+.journal-box a:hover::after,
+.blackiris a:hover::after {
+  content: " ▓";
+  color: var(--orange);
+  animation: scrambleBlink 0.45s steps(2) infinite;
+}
+
+@keyframes scrambleBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
