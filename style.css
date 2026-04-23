@@ -266,3 +266,22 @@ h1::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* Claude CLI box around "A few good places to begin" */
+.begin {
+  border: 1px solid var(--line);
+  background: rgba(31,31,31,0.72);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 72px;
+  box-shadow: 0 0 0 1px rgba(217,119,87,0.04);
+}
+
+.begin .section-title::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+.begin-list {
+  margin-bottom: 0;
+}
