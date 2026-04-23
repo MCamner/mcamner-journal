@@ -24,12 +24,16 @@
           <p>Run /journal to enter the archive</p>
           <hr>
           <h2>Recent activity</h2>
-          <p>No recent activity</p>
+          <p>Last opened: /journal</p>
+          <p>System ready · Static GitHub Pages build</p>
         </aside>
       </div>
     </section>
 
-    <section class="prompt"><span>&gt;</span><i></i></section>
+    <form class="prompt" id="commandBar">
+      <span>&gt;</span>
+      <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+    </form>
 
     <section class="journal-box">
       <h2>&gt; ---mcamner journal---</h2>
@@ -46,5 +50,27 @@
       <span>Update available! Run: <strong>brew upgrade mcamner-journal</strong></span>
     </footer>
   </main>
+<script>
+  const routes = {
+    "/journal": "index.html",
+    "/about": "about.html",
+    "/objects": "#objects",
+    "/films": "#films"
+  };
+
+  document.getElementById("commandBar").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const input = document.getElementById("commandInput");
+    const command = input.value.trim().toLowerCase();
+
+    if (routes[command]) {
+      window.location.href = routes[command];
+    } else {
+      input.value = "";
+      input.placeholder = "Unknown command. Try /journal";
+    }
+  });
+</script>
 </body>
 </html>

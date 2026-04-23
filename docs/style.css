@@ -372,3 +372,63 @@ body {
 .status {
   font-size: clamp(16px, 1.45vw, 24px);
 }
+
+/* v2.3 — command input, recent activity, joined lines, one green figure */
+
+:root {
+  --green: #59a14f;
+}
+
+.boot-box,
+.journal-box {
+  overflow: visible;
+}
+
+.boot-title {
+  background: linear-gradient(180deg, var(--blue), var(--blue-dark));
+}
+
+.boot-title::before,
+.boot-title::after {
+  color: var(--orange);
+}
+
+.prompt {
+  padding: 14px 18px;
+  border: 2px solid var(--soft-line);
+  margin: 28px 0 24px;
+}
+
+.prompt input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--white);
+  font: inherit;
+  font-size: clamp(20px, 2vw, 32px);
+  caret-color: var(--white);
+}
+
+.prompt input::placeholder {
+  color: rgba(247, 243, 237, 0.55);
+}
+
+.bot span:last-child {
+  background: var(--green);
+}
+
+.bot span:last-child::after {
+  background: var(--green);
+  box-shadow: 18px 0 var(--green), 36px 0 var(--green);
+}
+
+.bot span:last-child {
+  box-shadow: -10px 0 var(--green), 10px 0 var(--green);
+}
+
+.tips p + p {
+  color: var(--muted);
+  margin-top: -18px;
+}
