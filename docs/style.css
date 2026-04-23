@@ -267,3 +267,108 @@ body {
   line-height: 1.2;
 }
 
+
+/* v2.2 — smaller UI + two figures */
+body {
+  font-size: 16px;
+}
+
+.terminal {
+  width: min(94vw, 1500px);
+  margin: 28px auto 22px;
+}
+
+.boot-box,
+.journal-box {
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 44px 48px 30px;
+}
+
+.boot-title {
+  top: -26px;
+  left: 54px;
+  font-size: clamp(22px, 2.2vw, 34px);
+}
+
+.welcome h1 {
+  font-size: clamp(24px, 2.5vw, 38px);
+  margin-bottom: 30px;
+}
+
+.welcome p,
+.tips p {
+  font-size: clamp(16px, 1.6vw, 26px);
+}
+
+.tips h2,
+.journal-box h2 {
+  font-size: clamp(22px, 2.1vw, 34px);
+}
+
+.journal-box li {
+  font-size: clamp(18px, 1.8vw, 30px);
+}
+
+.prompt span {
+  font-size: 34px;
+}
+
+.prompt i {
+  width: 20px;
+  height: 40px;
+}
+
+/* Replace single robot with two smaller figures */
+.bot {
+  width: 250px;
+  height: 92px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.bot::before,
+.bot::after {
+  content: none;
+}
+
+.bot span {
+  position: relative;
+  top: auto;
+  left: auto !important;
+  right: auto !important;
+  width: 78px;
+  height: 62px;
+  background: var(--orange);
+  display: block;
+}
+
+.bot span::before,
+.bot span::after {
+  content: "";
+  position: absolute;
+}
+
+.bot span::before {
+  width: 7px;
+  height: 13px;
+  background: #050505;
+  top: 22px;
+  left: 22px;
+  box-shadow: 26px 0 #050505;
+}
+
+.bot span::after {
+  left: 16px;
+  bottom: -20px;
+  width: 8px;
+  height: 20px;
+  background: var(--orange);
+  box-shadow: 18px 0 var(--orange), 36px 0 var(--orange);
+}
+
+.status {
+  font-size: clamp(16px, 1.45vw, 24px);
+}
