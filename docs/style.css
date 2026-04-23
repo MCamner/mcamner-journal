@@ -487,3 +487,20 @@ body {
 .boot-title::after {
   content: none !important;
 }
+
+/* v2.6 — final title alignment */
+.boot-title {
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  color: var(--orange) !important;
+}
+
+.boot-title span {
+  display: inline !important;
+  margin-left: 10px;
+  color: var(--muted) !important;
+}
+
+.boot-box {
+  border-top-width: 3px !important;
+}
