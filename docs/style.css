@@ -1,0 +1,146 @@
+:root {
+  --bg: #f4f1ea;
+  --paper: #fffdf8;
+  --ink: #1f2526;
+  --muted: #6f7472;
+  --line: #d8d0c4;
+  --accent: #7b2f22;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-header {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 28px;
+  letter-spacing: 0.04em;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero {
+  max-width: 720px;
+  padding: 64px 0 48px;
+}
+
+.eyebrow,
+.date {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.05;
+  margin: 16px 0 28px;
+}
+
+.quiet {
+  font-style: italic;
+}
+
+.starts {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 32px 0;
+  margin-bottom: 48px;
+}
+
+.starts a {
+  display: block;
+  margin: 12px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+
+.card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #ddd4c8;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  margin: 8px 0;
+  font-size: 26px;
+}
+
+footer {
+  max-width: 1120px;
+  margin: 80px auto 0;
+  padding: 32px 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.page {
+  max-width: 720px;
+  min-height: 60vh;
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    display: block;
+  }
+
+  nav {
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
