@@ -468,3 +468,22 @@ body {
   background: var(--green);
   box-shadow: 18px 0 var(--green), 36px 0 var(--green);
 }
+
+/* v2.5 — stable fieldset/legend title line */
+.boot-box {
+  padding-top: 48px;
+}
+
+.boot-title {
+  position: static !important;
+  display: inline-block !important;
+  width: auto !important;
+  padding: 0 22px !important;
+  margin-left: 44px;
+  background: transparent !important;
+}
+
+.boot-title::before,
+.boot-title::after {
+  content: none !important;
+}
