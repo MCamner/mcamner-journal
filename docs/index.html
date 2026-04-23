@@ -66,6 +66,11 @@
     const input = document.getElementById("commandInput");
     const command = input.value.trim().toLowerCase();
 
+    if (command === "/back") {
+      window.history.back();
+      return;
+    }
+
     if (routes[command]) {
       window.location.href = routes[command];
     } else {

@@ -56,12 +56,17 @@
     const routes = {
       "/journal": "journal.html",
       "/about": "about.html",
-      "/home": "index.html"
+      "/home": "index.html",
+      "/back": "__BACK__"
     };
 
     document.getElementById("commandBar").addEventListener("submit", function (e) {
       e.preventDefault();
       const cmd = document.getElementById("commandInput").value.trim().toLowerCase();
+      if (cmd === "/back") {
+        window.history.back();
+        return;
+      }
       if (routes[cmd]) window.location.href = routes[cmd];
     });
   </script>
