@@ -815,3 +815,26 @@ a:hover {
 .global-nav a:hover {
   color: var(--green) !important;
 }
+
+/* Global CLI navigation */
+.global-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin: 26px 0 18px;
+  padding: 14px 18px;
+  border: 2px solid rgba(229,123,79,0.55);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.10);
+}
+
+.global-nav a,
+.global-nav span {
+  color: var(--orange);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.global-nav a:hover {
+  color: var(--green) !important;
+}
