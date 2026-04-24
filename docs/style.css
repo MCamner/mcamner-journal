@@ -725,3 +725,47 @@ a:hover {
 .post-box p:first-of-type {
   color: var(--muted);
 }
+
+/* Films v2 */
+.films-list {
+  margin: 32px 0;
+  border: 2px solid rgba(229,123,79,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.films-list article {
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(229,123,79,0.4);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+  transition: background 120ms ease;
+}
+
+.films-list article:last-child {
+  border-bottom: 0;
+}
+
+.films-list article:hover {
+  background: rgba(229,123,79,0.08);
+}
+
+.films-list span {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.films-list h2 {
+  margin: 0;
+  color: var(--orange);
+  font-size: 24px;
+}
+
+.films-list p {
+  grid-column: 2;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}

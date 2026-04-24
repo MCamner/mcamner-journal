@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<main class="terminal">
+<main class="terminal films-terminal">
 
 <fieldset class="boot-box">
 <legend class="boot-title">McAmner Journal <span>films</span></legend>
@@ -17,30 +17,81 @@
 <section>
 <h1>Films</h1>
 <p>Atmosphere, restraint, and memory.</p>
+<p>A curated selection.</p>
 </section>
 
 <aside class="tips">
 <h2>Recent activity</h2>
 <p>> opened /films</p>
-<p>> viewing references</p>
+<p>> try /open 001</p>
 <p>> system ready</p>
 </aside>
 </div>
 </fieldset>
 
-<form class="prompt">
+<form class="prompt" id="commandBar">
 <span>&gt;</span>
-<input type="text" placeholder="/home">
+<input id="commandInput" type="text" placeholder="/open 001">
 </form>
 
+<section class="films-list">
+
+<article id="film-001">
+<span>001</span>
+<h2>The Secret Agent</h2>
+<p>loyalty, paranoia, secrecy</p>
+</article>
+
+<article id="film-002">
+<span>002</span>
+<h2>Two-Lane Blacktop</h2>
+<p>pure road cinema</p>
+</article>
+
+</section>
+
 <section class="journal-box">
-<h2>&gt;&gt; films</h2>
+<h2>&gt;&gt; film commands</h2>
 <ul>
-<li><a href="posts/the-secret-agent.html">/the-secret-agent</a><span>-- loyalty, paranoia, secrecy</span></li>
-<li><a href="posts/two-lane-blacktop.html">/two-lane-blacktop</a><span>-- pure road cinema</span></li>
+<li><a href="index.html">/home</a></li>
+<li><a href="journal.html">/journal</a></li>
+<li><a href="archive.html">/archive</a></li>
+<li><a href="posts/the-secret-agent.html">/open 001</a></li>
+<li><a href="posts/two-lane-blacktop.html">/open 002</a></li>
 </ul>
 </section>
 
+<footer class="status">
+<span>? for shortcuts</span>
+<span>films loaded · <strong>curation mode</strong></span>
+</footer>
+
 </main>
+
+<script>
+const routes = {
+  "/home": "index.html",
+  "/journal": "journal.html",
+  "/archive": "archive.html",
+  "/open 001": "posts/the-secret-agent.html",
+  "/open 002": "posts/two-lane-blacktop.html"
+};
+
+document.getElementById("commandBar").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const cmd = document.getElementById("commandInput").value.trim().toLowerCase();
+
+  if (cmd === "/back") {
+    window.history.back();
+    return;
+  }
+
+  if (routes[cmd]) {
+    window.location.href = routes[cmd];
+  }
+});
+</script>
+
 </body>
 </html>
