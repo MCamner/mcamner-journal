@@ -5,86 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Objects | McAmner</title>
 <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
+
 <body>
-<main class="terminal">
+<main class="terminal objects-terminal">
+
 <fieldset class="boot-box">
 <legend class="boot-title">McAmner Journal <span>objects</span></legend>
+
 <div class="about-grid">
 <section>
 <h1>Objects</h1>
 <p>Things chosen with intent.</p>
-<p>Notes on material, form, function, and durability.</p>
+<p>A curated index of objects.</p>
 </section>
+
 <aside class="tips">
 <h2>Recent activity</h2>
 <p>> opened /objects</p>
-<p>> object index updated</p>
-<p>> system ready</p>
+<p>> index rebuilt</p>
+<p>> try /object 001</p>
 </aside>
 </div>
 </fieldset>
 
 <form class="prompt" id="commandBar">
 <span>&gt;</span>
-<input id="commandInput" type="text" placeholder="/home" autocomplete="off" aria-label="Command input">
+<input id="commandInput" type="text" placeholder="/object 001">
 </form>
 
-<section class="objects-list">
-  <article>
-    <span>001</span>
-    <div>
-      <h2>Field Notes notebook</h2>
-      <p>Memo Book. 48 pages. Fits a back pocket. Has for years.</p>
-    </div>
-  </article>
-  <article>
-    <span>002</span>
-    <div>
-      <h2>Lamy 2000</h2>
-      <p>Fountain pen. Makrolon and steel. No decoration needed.</p>
-    </div>
-  </article>
-  <article>
-    <span>003</span>
-    <div>
-      <h2>Victorinox Farmer</h2>
-      <p>Swiss Army knife. The one with the saw. Carried since 2011.</p>
-    </div>
-  </article>
-  <article>
-    <span>004</span>
-    <div>
-      <h2>Filson Tin Cloth briefcase</h2>
-      <p>Heavy waxed canvas. Gets better with damage.</p>
-    </div>
-  </article>
-  <article>
-    <span>005</span>
-    <div>
-      <h2>Seiko SKX007</h2>
-      <p>Automatic dive watch. Unpretentious. Still running.</p>
-    </div>
-  </article>
+<section class="object-list">
+
+<article id="object-001">
+<span>001</span>
+<div>
+<h2>MacBook Air M3</h2>
+<p>Quiet power.<br>Thin enough to disappear, capable enough to stay.</p>
+</div>
+</article>
+
+<article id="object-002">
+<span>002</span>
+<div>
+<h2>Lamy 2000</h2>
+<p>Makrolon and steel.<br>No decoration needed.</p>
+</div>
+</article>
+
+<article id="object-003">
+<span>003</span>
+<div>
+<h2>Victorinox Farmer</h2>
+<p>A small tool with a long memory.<br>Useful without announcement.</p>
+</div>
+</article>
+
+<article id="object-004">
+<span>004</span>
+<div>
+<h2>Custom Fender Stratocaster</h2>
+<p>Built around feel.<br>A working instrument, not an ornament.</p>
+</div>
+</article>
+
+<article id="object-005">
+<span>005</span>
+<div>
+<h2>Jaeger-LeCoultre Reverso</h2>
+<p>A rectangle with discipline.<br>Elegance held inside constraint.</p>
+</div>
+</article>
+
 </section>
 
 <section class="journal-box">
-  <h2>&gt;&gt; objects</h2>
-  <ul>
-    <li><a href="index.html">/home</a><span>-- return to dashboard</span></li>
-    <li><a href="journal.html">/journal</a><span>-- notes and entries</span></li>
-    <li><a href="films.html">/films</a><span>-- cinematic references</span></li>
-    <li><a href="archive.html">/archive</a><span>-- visual references</span></li>
-    <li><a href="about.html">/about</a><span>-- biography and context</span></li>
-  </ul>
+<h2>&gt;&gt; object commands</h2>
+<ul>
+<li><a href="index.html">/home</a></li>
+<li><a href="journal.html">/journal</a></li>
+<li><a href="films.html">/films</a></li>
+<li><a href="archive.html">/archive</a></li>
+<li><a href="about.html">/about</a></li>
+</ul>
 </section>
 
 <footer class="status">
-  <span>? for shortcuts</span>
-  <span>objects loaded · <strong>005 items</strong></span>
+<span>? for shortcuts</span>
+<span>objects loaded · <strong>index mode</strong></span>
 </footer>
+
 </main>
+
 <script src="site.js"></script>
 </body>
 </html>

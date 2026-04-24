@@ -801,3 +801,38 @@ a:hover {
   letter-spacing: 0.08em;
   white-space: nowrap;
 }
+
+/* Objects system v2 */
+.object-list {
+  margin: 32px 0;
+  border: 2px solid rgba(229,123,79,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.object-list article {
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(229,123,79,0.4);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.object-list article:last-child {
+  border-bottom: 0;
+}
+
+.object-list span {
+  color: var(--muted);
+}
+
+.object-list h2 {
+  margin: 0;
+  color: var(--orange);
+}
+
+.object-list p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
