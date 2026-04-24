@@ -901,3 +901,251 @@ a:hover {
   content: "> ";
   color: var(--green);
 }
+
+/* ── Global scale-down: fonts and boxes two notches tighter ── */
+.boot-box,
+.journal-box {
+  padding: 34px 40px 24px;
+}
+
+.boot-box {
+  padding-top: 40px;
+}
+
+.boot-title {
+  font-size: clamp(17px, 2vw, 27px);
+}
+
+.welcome h1 {
+  font-size: clamp(19px, 2.2vw, 31px);
+  margin-bottom: 22px;
+}
+
+.welcome p,
+.tips p {
+  font-size: clamp(13px, 1.4vw, 21px);
+}
+
+.tips h2,
+.journal-box h2 {
+  font-size: clamp(17px, 1.9vw, 27px);
+}
+
+.journal-box li {
+  font-size: clamp(14px, 1.6vw, 23px);
+}
+
+.journal-box a {
+  min-width: 220px;
+}
+
+.prompt {
+  padding: 11px 16px;
+  margin: 22px 0 18px;
+}
+
+.prompt span {
+  font-size: 26px;
+}
+
+.prompt i {
+  width: 17px;
+  height: 32px;
+}
+
+.prompt input {
+  font-size: clamp(15px, 1.7vw, 25px);
+}
+
+.status {
+  font-size: clamp(12px, 1.3vw, 19px);
+}
+
+/* ── 900px ── */
+@media (max-width: 900px) {
+  .terminal {
+    margin: 16px auto;
+  }
+
+  .boot-box,
+  .journal-box {
+    padding: 30px 22px 18px;
+  }
+
+  .boot-box {
+    padding-top: 36px;
+  }
+
+  .boot-title {
+    font-size: clamp(15px, 4vw, 22px);
+    margin-left: 20px;
+  }
+
+  .boot-grid {
+    gap: 30px;
+  }
+
+  .welcome h1 {
+    font-size: clamp(17px, 4.5vw, 26px);
+    margin-bottom: 16px;
+  }
+
+  .welcome p,
+  .tips p {
+    font-size: clamp(13px, 3.2vw, 17px);
+  }
+
+  .tips h2,
+  .journal-box h2 {
+    font-size: clamp(15px, 4vw, 20px);
+  }
+
+  .journal-box li {
+    font-size: clamp(13px, 3.6vw, 18px);
+    margin: 10px 0;
+  }
+
+  .journal-box ul {
+    padding-left: 20px;
+  }
+
+  .prompt {
+    padding: 9px 13px;
+    margin: 16px 0 12px;
+    gap: 14px;
+  }
+
+  .prompt span {
+    font-size: 20px;
+  }
+
+  .prompt i {
+    width: 13px;
+    height: 26px;
+  }
+
+  .prompt input {
+    font-size: clamp(14px, 3.8vw, 19px);
+  }
+
+  .status {
+    font-size: clamp(11px, 2.8vw, 15px);
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── 480px ── */
+@media (max-width: 480px) {
+  .terminal {
+    margin: 10px auto;
+  }
+
+  .boot-box,
+  .journal-box {
+    padding: 24px 14px 14px;
+    border-radius: 8px;
+  }
+
+  .boot-box {
+    padding-top: 30px;
+  }
+
+  .boot-title {
+    font-size: 14px;
+    margin-left: 12px;
+    padding: 0 9px !important;
+  }
+
+  .boot-grid {
+    gap: 18px;
+  }
+
+  .welcome h1 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .welcome {
+    padding-bottom: 16px;
+  }
+
+  .welcome p,
+  .tips p {
+    font-size: 13px;
+  }
+
+  .tips h2 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .journal-box h2 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .journal-box li {
+    font-size: 13px;
+    margin: 7px 0;
+  }
+
+  .journal-box ul {
+    padding-left: 12px;
+  }
+
+  .prompt {
+    padding: 7px 10px;
+    margin: 10px 0 8px;
+    gap: 9px;
+  }
+
+  .prompt span {
+    font-size: 16px;
+  }
+
+  .prompt i {
+    width: 11px;
+    height: 22px;
+  }
+
+  .prompt input {
+    font-size: 13px;
+  }
+
+  .status {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .post-box {
+    padding: 18px 14px;
+  }
+
+  .post-box p {
+    font-size: 14px;
+  }
+
+  .films-list article {
+    padding: 11px 13px;
+    gap: 9px;
+    grid-template-columns: 44px 1fr;
+  }
+
+  .films-list h2 {
+    font-size: 16px;
+  }
+
+  .films-list p,
+  .film-tags {
+    font-size: 12px;
+  }
+}
