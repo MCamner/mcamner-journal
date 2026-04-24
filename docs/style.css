@@ -780,3 +780,15 @@ a:hover {
   margin: 0 auto;
   border-radius: 8px;
 }
+
+/* Match ASCII image background with site blue */
+.about-ascii-image {
+  background: linear-gradient(180deg, var(--blue), var(--blue-dark));
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.about-ascii-image img {
+  mix-blend-mode: screen;
+  opacity: 0.92;
+}
