@@ -71,6 +71,22 @@ if (commandBar && commandInput) {
       return;
     }
 
+
+    if (command.startsWith("/select ")) {
+      const id = command.replace("/select ", "").trim();
+
+      document.querySelectorAll("[id^='note-'], [id^='film-']").forEach(function (item) {
+        item.classList.toggle(
+          "is-active",
+          item.id === "note-" + id || item.id === "film-" + id
+        );
+      });
+
+      commandInput.value = "";
+      commandInput.placeholder = "Selected " + id + " · try /note " + id + " or /film " + id;
+      return;
+    }
+
     if (routes[command]) {
       window.location.href = routes[command];
       return;

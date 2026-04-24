@@ -738,3 +738,22 @@ a:hover {
   margin: 4px 0 0;
   color: var(--muted);
 }
+
+/* Journal v3 — select highlight */
+.journal-list article {
+  transition: background 140ms ease, border-left 140ms ease;
+}
+
+.journal-list article:hover {
+  background: rgba(229,123,79,0.08);
+}
+
+.journal-list article.is-active {
+  background: rgba(89,161,79,0.16);
+  border-left: 5px solid var(--green);
+}
+
+.journal-list article.is-active h2::before {
+  content: "> ";
+  color: var(--green);
+}
