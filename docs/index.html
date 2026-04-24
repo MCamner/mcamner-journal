@@ -44,7 +44,7 @@
       <h2>&gt;&gt; mcamner journal</h2>
       <ul>
         <li><a href="journal.html">/journal</a><span>-- latest thoughts and long-form notes</span></li>
-        <li><a href="#">/objects</a><span>-- things chosen with intent</span></li>
+        <li><a href="objects.html">/objects</a><span>-- things chosen with intent</span></li>
         <li><a href="films.html">/films</a><span>-- atmosphere, restraint, memory</span></li>
         <li><a href="about.html">/about</a><span>-- a bit about me and this space</span></li>
       </ul>
@@ -55,32 +55,6 @@
       <span>Update available! Run: <strong>brew upgrade mcamner-journal</strong></span>
     </footer>
   </main>
-<script>
-  const routes = {
-    "/journal": "journal.html",
-    "/about": "about.html",
-    "/objects": "#objects",
-    "/films": "#films"
-  };
-
-  document.getElementById("commandBar").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const input = document.getElementById("commandInput");
-    const command = input.value.trim().toLowerCase();
-
-    if (command === "/back") {
-      window.history.back();
-      return;
-    }
-
-    if (routes[command]) {
-      window.location.href = routes[command];
-    } else {
-      input.value = "";
-      input.placeholder = "Unknown command. Try /journal";
-    }
-  });
-</script>
+<script src="site.js"></script>
 </body>
 </html>

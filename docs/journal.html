@@ -43,9 +43,9 @@
 
       <ul>
         <li><a href="index.html">/home</a><span>-- return to dashboard</span></li>
-        <li><a href="#">/the-secret-agent</a><span>-- loyalty, paranoia, secrecy</span></li>
+        <li><a href="posts/the-secret-agent.html">/the-secret-agent</a><span>-- loyalty, paranoia, secrecy</span></li>
         <li><a href="posts/structure.html">/structure</a><span>-- systems, restraint, and form</span></li>
-        <li><a href="#">/two-lane-blacktop</a><span>-- pure road cinema</span></li>
+        <li><a href="posts/two-lane-blacktop.html">/two-lane-blacktop</a><span>-- pure road cinema</span></li>
       </ul>
     </section>
 
@@ -55,24 +55,6 @@
     </footer>
 
   </main>
-
-  <script>
-    const routes = {
-      "/journal": "journal.html",
-      "/about": "about.html",
-      "/home": "index.html",
-      "/back": "__BACK__"
-    };
-
-    document.getElementById("commandBar").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const cmd = document.getElementById("commandInput").value.trim().toLowerCase();
-      if (cmd === "/back") {
-        window.history.back();
-        return;
-      }
-      if (routes[cmd]) window.location.href = routes[cmd];
-    });
-  </script>
+<script src="site.js"></script>
 </body>
 </html>

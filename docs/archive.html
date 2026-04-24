@@ -78,36 +78,6 @@
     </footer>
 
   </main>
-
-  <script>
-    const routes = {
-      "/home": "index.html",
-      "/journal": "journal.html",
-      "/about": "about.html",
-      "/archive": "archive.html",
-      "/open 001": "#item-001",
-      "/open 002": "#item-002",
-      "/open 003": "#item-003"
-    };
-
-    document.getElementById("commandBar").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const input = document.getElementById("commandInput");
-      const command = input.value.trim().toLowerCase();
-
-      if (command === "/back") {
-        window.history.back();
-        return;
-      }
-
-      if (routes[command]) {
-        window.location.href = routes[command];
-      } else {
-        input.value = "";
-        input.placeholder = "Unknown command. Try /open 001";
-      }
-    });
-  </script>
+<script src="site.js"></script>
 </body>
 </html>
