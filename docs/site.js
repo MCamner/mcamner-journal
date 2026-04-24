@@ -25,7 +25,9 @@ const routes = {
   "/the-secret-agent": "posts/the-secret-agent.html",
   "/two-lane-blacktop": "posts/two-lane-blacktop.html",
   "/the-vanishing": "posts/the-vanishing.html",
-  "/slow-horses": "posts/slow-horses.html"
+  "/slow-horses": "posts/slow-horses.html",
+  "/music 001": "posts/kill-em-all.html",
+  "/kill-em-all": "posts/kill-em-all.html"
 };
 
 
