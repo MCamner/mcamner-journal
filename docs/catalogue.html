@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue | McAmner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+<main class="terminal catalogue-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>catalogue</span></legend>
+
+<div class="about-grid">
+<section>
+  <h1>Catalogue</h1>
+  <p>Films, books, and music — things returned to.</p>
+  <p>Filter by type or tag via the command bar.</p>
+</section>
+
+<aside class="tips">
+  <h2>Commands</h2>
+  <p>> /filter film</p>
+  <p>> /filter book</p>
+  <p>> /filter music</p>
+  <p>> /clear</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/filter film" autocomplete="off" aria-label="Command input">
+</form>
+
+<section class="films-list">
+
+  <article id="film-001" data-tags="film slow paranoia secrecy">
+    <span>F001</span>
+    <div>
+      <h2><a href="posts/the-secret-agent.html">The Secret Agent</a></h2>
+      <p>Christopher Hampton · 1996</p>
+      <div class="film-tags"><span>film</span><span>slow</span><span>paranoia</span><span>secrecy</span></div>
+    </div>
+  </article>
+
+  <article id="film-002" data-tags="film road distance freedom">
+    <span>F002</span>
+    <div>
+      <h2><a href="posts/two-lane-blacktop.html">Two-Lane Blacktop</a></h2>
+      <p>Monte Hellman · 1971</p>
+      <div class="film-tags"><span>film</span><span>road</span><span>distance</span><span>freedom</span></div>
+    </div>
+  </article>
+
+  <article id="book-001" data-tags="book vision culture observation">
+    <span>B001</span>
+    <div>
+      <h2>Ways of Seeing</h2>
+      <p>John Berger · 1972</p>
+      <div class="film-tags"><span>book</span><span>vision</span><span>culture</span><span>observation</span></div>
+    </div>
+  </article>
+
+  <article id="book-002" data-tags="book systems architecture pattern">
+    <span>B002</span>
+    <div>
+      <h2>A Pattern Language</h2>
+      <p>Christopher Alexander · 1977</p>
+      <div class="film-tags"><span>book</span><span>systems</span><span>architecture</span><span>pattern</span></div>
+    </div>
+  </article>
+
+  <article id="book-003" data-tags="book restraint memory loyalty">
+    <span>B003</span>
+    <div>
+      <h2>The Remains of the Day</h2>
+      <p>Kazuo Ishiguro · 1989</p>
+      <div class="film-tags"><span>book</span><span>restraint</span><span>memory</span><span>loyalty</span></div>
+    </div>
+  </article>
+
+  <article id="music-001" data-tags="music atmosphere texture ambient">
+    <span>M001</span>
+    <div>
+      <h2>—</h2>
+      <p>add album</p>
+      <div class="film-tags"><span>music</span></div>
+    </div>
+  </article>
+
+  <article id="music-002" data-tags="music atmosphere texture ambient">
+    <span>M002</span>
+    <div>
+      <h2>—</h2>
+      <p>add album</p>
+      <div class="film-tags"><span>music</span></div>
+    </div>
+  </article>
+
+</section>
+
+<section class="journal-box">
+  <h2>&gt;&gt; catalogue commands</h2>
+  <ul>
+    <li><a href="#" onclick="return false;">/filter film</a><span>-- show only films</span></li>
+    <li><a href="#" onclick="return false;">/filter book</a><span>-- show only books</span></li>
+    <li><a href="#" onclick="return false;">/filter music</a><span>-- show only music</span></li>
+    <li><a href="#" onclick="return false;">/clear</a><span>-- show everything</span></li>
+    <li><a href="index.html">/home</a><span>-- return to dashboard</span></li>
+    <li><a href="journal.html">/journal</a><span>-- notes and entries</span></li>
+    <li><a href="archive.html">/archive</a><span>-- visual references</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>catalogue loaded · <strong>007 items</strong></span>
+</footer>
+
+</main>
+<script src="site.js"></script>
+</body>
+</html>

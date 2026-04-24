@@ -2,6 +2,7 @@ const routes = {
   "/home": "index.html",
   "/journal": "journal.html",
   "/films": "films.html",
+  "/catalogue": "catalogue.html",
   "/archive": "archive.html",
   "/objects": "objects.html",
   "/about": "about.html",
