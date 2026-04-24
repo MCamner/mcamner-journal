@@ -14,6 +14,8 @@ const routes = {
   "/contact": "mailto:mattias.camner@gmail.com",
   "/instagram": "https://www.instagram.com/blackiris_sthlm/",
   "/linkedin": "https://www.linkedin.com/in/mattias-camner-75958022",
+  "/open linkedin": "https://www.linkedin.com/in/mattias-camner-75958022",
+  "/open instagram": "https://www.instagram.com/blackiris_sthlm/",
 
   "/structure": "posts/structure.html",
   "/note 001": "posts/mqlaunch.html",
