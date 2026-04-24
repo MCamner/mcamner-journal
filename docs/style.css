@@ -501,6 +501,12 @@ a:hover {
 .film-closing { margin-top: 24px; font-style: italic; color: var(--white); }
 .film-rating { margin-top: 18px; color: var(--orange); font-weight: 800; }
 
+.post-figure {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+  opacity: 0.6;
+}
+
 /* ── Films list ── */
 .films-list {
   margin: 28px 0;
