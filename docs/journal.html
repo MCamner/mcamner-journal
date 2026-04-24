@@ -1,58 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Journal | McAmner</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal | McAmner</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <main class="terminal">
+<main class="terminal journal-terminal">
 
-    <fieldset class="boot-box">
-      <legend class="boot-title">McAmner Journal <span>journal</span></legend>
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>journal</span></legend>
 
-      <div class="boot-grid">
-        <div class="welcome">
-          <h1>Journal</h1>
-          <p>Entries, notes, and observations</p>
-          <p>~/mcamner-journal/journal</p>
-        </div>
+<div class="about-grid">
+<section>
+<h1>Journal</h1>
+<p>Entries, notes, and observations.</p>
+<p>A structured index of thought.</p>
+</section>
 
-        <aside class="tips">
-          <h2>Recent activity</h2>
-          <p>> opened /journal</p>
-          <p>> viewing latest entries</p>
-          <p>> system ready</p>
-        </aside>
-      </div>
-    </fieldset>
+<aside class="tips">
+<h2>Recent activity</h2>
+<p>> opened /journal</p>
+<p>> index loaded</p>
+<p>> try /note 001</p>
+</aside>
+</div>
+</fieldset>
 
-    
+<form class="prompt" id="commandBar">
+<span>&gt;</span>
+<input id="commandInput" type="text" placeholder="/note 001">
+</form>
 
+<section class="journal-list">
 
-    <form class="prompt" id="commandBar">
-      <span>&gt;</span>
-      <input id="commandInput" type="text" placeholder="/about" autocomplete="off">
-    </form>
+<article id="note-001">
+<span>001</span>
+<div>
+<h2>mqlaunch</h2>
+<p>command surface · workflows · execution</p>
+</div>
+</article>
 
-    <section class="journal-box">
-      <h2>&gt;&gt; journal</h2>
-      <ul>
-        <li><a href="index.html">/home</a><span>-- return to dashboard</span></li>
-        <li><a href="films.html">/films</a><span>-- cinematic references</span></li>
-        <li><a href="posts/structure.html">/structure</a><span>-- systems, restraint, and form</span></li>
-      </ul>
-    </section>
+<article id="note-002">
+<span>002</span>
+<div>
+<h2>design-prototype</h2>
+<p>constraints · structure · clarity</p>
+</div>
+</article>
 
-    <footer class="status">
-      <span>? for shortcuts</span>
-      <span>journal loaded</span>
-    </footer>
+<article id="note-003">
+<span>003</span>
+<div>
+<h2>structure</h2>
+<p>systems · restraint · form</p>
+</div>
+</article>
 
-  </main>
+</section>
+
+<section class="journal-box">
+<h2>&gt;&gt; journal commands</h2>
+<ul>
+<li><a href="index.html">/home</a></li>
+<li><a href="films.html">/films</a></li>
+<li><a href="archive.html">/archive</a></li>
+<li><a href="posts/mqlaunch.html">/note 001</a><span>-- mqlaunch</span></li>
+<li><a href="posts/design-prototype.html">/note 002</a><span>-- design-prototype</span></li>
+<li><a href="posts/structure.html">/note 003</a><span>-- structure</span></li>
+</ul>
+</section>
+
+<footer class="status">
+<span>? for shortcuts</span>
+<span>journal loaded · <strong>index mode</strong></span>
+</footer>
+
+</main>
+
 <script src="site.js"></script>
 </body>
 </html>

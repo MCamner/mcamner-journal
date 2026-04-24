@@ -8,6 +8,9 @@ const routes = {
   "/contact": "mailto:mattias.camner@gmail.com",
 
   "/structure": "posts/structure.html",
+  "/note 001": "posts/mqlaunch.html",
+  "/note 002": "posts/design-prototype.html",
+  "/note 003": "posts/structure.html",
   "/film 001": "posts/the-secret-agent.html",
   "/film 002": "posts/two-lane-blacktop.html",
   "/the-secret-agent": "posts/the-secret-agent.html",
