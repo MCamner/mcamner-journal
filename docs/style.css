@@ -757,3 +757,41 @@ a:hover {
   content: "> ";
   color: var(--green);
 }
+
+/* v3 — figure hover effect */
+.bot span {
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+  cursor: crosshair;
+}
+
+.bot:hover span:first-child {
+  transform: translateX(-8px) translateY(-4px) rotate(-2deg);
+  box-shadow:
+    0 0 0 2px var(--orange),
+    0 0 18px rgba(229,123,79,0.85);
+  filter: brightness(1.18);
+}
+
+.bot:hover span:nth-child(2) {
+  transform: translateX(8px) translateY(-4px) rotate(2deg);
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 18px rgba(89,161,79,0.85);
+  filter: brightness(1.18);
+}
+
+.bot:hover::before {
+  content: "SYSTEM AWAKE";
+  position: absolute;
+  left: 50%;
+  bottom: -26px;
+  transform: translateX(-50%);
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
