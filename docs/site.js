@@ -10,8 +10,6 @@ const routes = {
   "/structure": "posts/structure.html",
   "/film 001": "posts/the-secret-agent.html",
   "/film 002": "posts/two-lane-blacktop.html",
-  "/open 001": "posts/the-secret-agent.html",
-  "/open 002": "posts/two-lane-blacktop.html",
   "/the-secret-agent": "posts/the-secret-agent.html",
   "/two-lane-blacktop": "posts/two-lane-blacktop.html"
 };
