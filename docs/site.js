@@ -16,8 +16,16 @@ const routes = {
   "/atlas-one": "posts/atlas-one.html",
   "/film 001": "posts/the-secret-agent.html",
   "/film 002": "posts/two-lane-blacktop.html",
+  "/film 003": "posts/the-vanishing.html",
+  "/series 001": "posts/slow-horses.html",
+  "/book 001": "posts/pilgrim-and-locust.html",
+  "/book 002": "posts/city-on-fire.html",
+  "/book 003": "posts/crime-von-schirach.html",
+  "/note 005": "posts/black-iris-allseeing.html",
   "/the-secret-agent": "posts/the-secret-agent.html",
-  "/two-lane-blacktop": "posts/two-lane-blacktop.html"
+  "/two-lane-blacktop": "posts/two-lane-blacktop.html",
+  "/the-vanishing": "posts/the-vanishing.html",
+  "/slow-horses": "posts/slow-horses.html"
 };
 
 
