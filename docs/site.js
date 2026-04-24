@@ -50,6 +50,17 @@ if (commandBar && commandInput) {
       return;
     }
 
+
+    if (command.startsWith("/select ")) {
+      const id = command.replace("/select ", "").trim();
+      document.querySelectorAll("[id^='film-']").forEach(function (item) {
+        item.classList.toggle("is-active", item.id === "film-" + id);
+      });
+      commandInput.value = "";
+      commandInput.placeholder = "Selected film " + id + " · try /film " + id;
+      return;
+    }
+
     if (routes[command]) {
       window.location.href = routes[command];
       return;

@@ -890,3 +890,14 @@ a:hover {
 .film-tags span:last-child::after {
   content: "";
 }
+
+/* Select highlight fix */
+.films-list article.is-active {
+  background: rgba(89,161,79,0.16);
+  border-left: 5px solid var(--green);
+}
+
+.films-list article.is-active h2::before {
+  content: "> ";
+  color: var(--green);
+}
