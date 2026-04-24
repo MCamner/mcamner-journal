@@ -7,6 +7,7 @@ const routes = {
   "/objects": "objects.html",
   "/about": "about.html",
   "/contact": "mailto:mattias.camner@gmail.com",
+  "/instagram": "https://www.instagram.com/blackiris_sthlm/",
 
   "/structure": "posts/structure.html",
   "/note 001": "posts/mqlaunch.html",
