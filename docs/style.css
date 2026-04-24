@@ -679,8 +679,8 @@ a:hover {
 }
 
 .archive-grid article.is-portrait img {
-  filter: grayscale(0) contrast(1.02);
-  opacity: 1;
+  filter: grayscale(0) contrast(1.02) !important;
+  opacity: 1 !important;
 }
 
 .archive-grid span {
