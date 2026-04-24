@@ -1,10 +1,11 @@
 # MCamner Journal
 
-> A command-line inspired journal on systems, technology, art, and thinking.
+> A command-line inspired journal on systems, technology, and thinking.
 
 ---
 
-### Live
+## Live
+
 https://mcamner.github.io/mcamner-journal/
 
 ---
@@ -42,3 +43,31 @@ It reflects how ideas actually form — not how they are polished.
 ---
 
 ## Structure
+
+
+Served via GitHub Pages from `/docs`.
+
+---
+
+## Design
+
+- Typography-first
+- Soft paper palette
+- Static, fast, durable
+- No dependencies
+
+---
+
+## Context
+
+Part of a broader direction:
+
+- **mqlaunch** → command surface for workflows  
+- **journal** → command surface for thinking  
+
+---
+
+## Author
+
+Mattias Camner  
+Infrastructure / Platform Architect
