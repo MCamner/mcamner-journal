@@ -880,3 +880,13 @@ a:hover {
 .films-terminal .journal-box li:hover {
   background: rgba(89,161,79,0.08);
 }
+
+/* Fix film tags spacing */
+.film-tags span::after {
+  content: " · ";
+  color: var(--muted);
+}
+
+.film-tags span:last-child::after {
+  content: "";
+}
