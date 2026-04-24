@@ -51,7 +51,11 @@ const routes = {
   "/music 001": "posts/kill-em-all.html",
   "/kill-em-all": "posts/kill-em-all.html",
   "/music 002": "posts/unknown-pleasures.html",
-  "/unknown-pleasures": "posts/unknown-pleasures.html"
+  "/unknown-pleasures": "posts/unknown-pleasures.html",
+  "/note 006": "posts/zephyr-workbench.html",
+  "/zephyr-workbench": "posts/zephyr-workbench.html",
+  "/note 007": "posts/macos-scripts.html",
+  "/macos-scripts": "posts/macos-scripts.html"
 };
 
 
