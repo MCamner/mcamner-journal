@@ -18,6 +18,9 @@ const routes = {
   "/film 002": "posts/two-lane-blacktop.html",
   "/film 003": "posts/the-vanishing.html",
   "/series 001": "posts/slow-horses.html",
+  "/series 002": "posts/fallout.html",
+  "/series 003": "posts/white-lotus.html",
+  "/series 004": "posts/dope-thief.html",
   "/book 001": "posts/pilgrim-and-locust.html",
   "/book 002": "posts/city-on-fire.html",
   "/book 003": "posts/crime-von-schirach.html",
@@ -26,6 +29,9 @@ const routes = {
   "/two-lane-blacktop": "posts/two-lane-blacktop.html",
   "/the-vanishing": "posts/the-vanishing.html",
   "/slow-horses": "posts/slow-horses.html",
+  "/fallout": "posts/fallout.html",
+  "/white-lotus": "posts/white-lotus.html",
+  "/dope-thief": "posts/dope-thief.html",
   "/music 001": "posts/kill-em-all.html",
   "/kill-em-all": "posts/kill-em-all.html"
 };
