@@ -11,6 +11,8 @@ const routes = {
   "/note 001": "posts/mqlaunch.html",
   "/note 002": "posts/design-prototype.html",
   "/note 003": "posts/structure.html",
+  "/note 004": "posts/atlas-one.html",
+  "/atlas-one": "posts/atlas-one.html",
   "/film 001": "posts/the-secret-agent.html",
   "/film 002": "posts/two-lane-blacktop.html",
   "/the-secret-agent": "posts/the-secret-agent.html",
