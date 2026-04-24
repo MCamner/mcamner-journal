@@ -19,6 +19,16 @@ const routes = {
   "/two-lane-blacktop": "posts/two-lane-blacktop.html"
 };
 
+let errorCount = 0;
+
+const errorMessages = [
+  "Command not found. But it sounded confident.",
+  "Nothing there. Try thinking first.",
+  "Unknown route. System unimpressed.",
+  "That command does not exist. Yet.",
+  "You are improvising. System is not."
+];
+
 const commandBar = document.getElementById("commandBar");
 const commandInput = document.getElementById("commandInput");
 
@@ -92,7 +102,15 @@ if (commandBar && commandInput) {
       return;
     }
 
+    errorCount++;
+
+    if (errorCount > 1) {
+      const msg = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+      commandInput.placeholder = msg;
+    } else {
+      commandInput.placeholder = "Unknown command. Try /home";
+    }
+
     commandInput.value = "";
-    commandInput.placeholder = "Unknown command. Try /home";
   });
 }
