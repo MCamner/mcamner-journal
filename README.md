@@ -1,21 +1,41 @@
-GitHub Pages serves `/docs` as the site.
+# MCamner Journal
 
-## Design
+> A personal command-line inspired journal on systems, technology, art, and thinking.
 
-- Minimal typography (serif)
-- Soft paper-like palette
-- Grid-based layout
-- No frameworks
+---
 
-## Why
+## Live
 
-Most blogs optimize for publishing.
+https://mcamner.github.io/mcamner-journal/
 
-This optimizes for:
-- thinking
-- capturing ideas
-- clarity over noise
+---
 
-## Author
+## Concept
 
-Mattias Camner
+This is not a traditional blog.
+
+It’s a **structured journal** built around clarity and signal:
+
+- short entries
+- visual fragments
+- system notes
+- ideas in progress
+
+Less publishing. More thinking.
+
+---
+
+## Experience
+
+The site is designed like a **terminal surface**:
+
+- minimal UI
+- fast scanning
+- grid-based content
+- no distractions
+
+It reflects how ideas actually form — not how they are polished.
+
+---
+
+## Structure
