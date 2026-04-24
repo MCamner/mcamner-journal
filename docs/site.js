@@ -49,7 +49,9 @@ const routes = {
   "/white-lotus": "posts/white-lotus.html",
   "/dope-thief": "posts/dope-thief.html",
   "/music 001": "posts/kill-em-all.html",
-  "/kill-em-all": "posts/kill-em-all.html"
+  "/kill-em-all": "posts/kill-em-all.html",
+  "/music 002": "posts/unknown-pleasures.html",
+  "/unknown-pleasures": "posts/unknown-pleasures.html"
 };
 
 
