@@ -421,6 +421,8 @@ a:hover {
   padding: 12px;
   background: rgba(0,0,0,0.12);
   transition: transform 140ms ease, border-color 140ms ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .archive-grid article:hover {
@@ -435,13 +437,48 @@ a:hover {
   display: block;
   border-radius: 6px;
   filter: grayscale(1) contrast(1.08);
+  opacity: 0;
+  transition: filter 200ms ease, opacity 600ms ease;
+}
+
+.archive-grid article.loaded img {
   opacity: 0.82;
-  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.archive-grid article:not(.loaded)::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: rgba(229,123,79,0.15);
+  z-index: 2;
+}
+
+.archive-grid article:not(.loaded)::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  background-size: 40% 100%;
+  background-repeat: no-repeat;
+  background-position: -40% 0;
+  z-index: 3;
+  animation: archiveScan 1.6s ease-in-out infinite;
+}
+
+@keyframes archiveScan {
+  0%   { background-position: -40% 0; }
+  100% { background-position: 140% 0; }
 }
 
 .archive-grid article:hover img {
   filter: grayscale(0) contrast(1.04);
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .archive-grid article.is-portrait img {

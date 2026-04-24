@@ -78,6 +78,33 @@ const errorMessages = [
   "You are improvising. System is not."
 ];
 
+const archiveGrid = document.querySelector('.archive-grid');
+if (archiveGrid) {
+  const articles = Array.from(archiveGrid.querySelectorAll('article'));
+
+  for (let i = articles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [articles[i], articles[j]] = [articles[j], articles[i]];
+  }
+
+  articles.forEach(function(article, i) {
+    if (i >= 15) {
+      article.style.display = 'none';
+    } else {
+      archiveGrid.appendChild(article);
+      const img = article.querySelector('img');
+      if (img) {
+        if (img.complete && img.naturalWidth > 0) {
+          article.classList.add('loaded');
+        } else {
+          img.addEventListener('load', function() { article.classList.add('loaded'); });
+          img.addEventListener('error', function() { article.classList.add('loaded'); });
+        }
+      }
+    }
+  });
+}
+
 const commandBar = document.getElementById("commandBar");
 const commandInput = document.getElementById("commandInput");
 
