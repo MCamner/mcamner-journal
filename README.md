@@ -44,6 +44,11 @@ It reflects how ideas actually form — not how they are polished.
 
 ## Structure
 
+docs/
+index.html
+about.html
+style.css
+
 
 Served via GitHub Pages from `/docs`.
 
