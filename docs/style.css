@@ -678,6 +678,11 @@ a:hover {
   opacity: 1;
 }
 
+.archive-grid article.is-portrait img {
+  filter: grayscale(0) contrast(1.02);
+  opacity: 1;
+}
+
 .archive-grid span {
   display: block;
   margin-top: 14px;
