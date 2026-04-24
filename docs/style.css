@@ -838,3 +838,45 @@ a:hover {
 .global-nav a:hover {
   color: var(--green) !important;
 }
+
+/* Film template */
+.film-intro {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.film-closing {
+  margin-top: 24px;
+  font-style: italic;
+  color: var(--white);
+}
+
+.film-rating {
+  margin-top: 18px;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* Film system v2 */
+.films-list article {
+  grid-template-columns: 90px 1fr;
+}
+
+.films-list article > div {
+  min-width: 0;
+}
+
+.films-list article:hover span::before {
+  content: ">";
+  color: var(--green);
+  margin-right: 8px;
+}
+
+.films-list p {
+  color: var(--muted);
+  letter-spacing: -0.02em;
+}
+
+.films-terminal .journal-box li:hover {
+  background: rgba(89,161,79,0.08);
+}

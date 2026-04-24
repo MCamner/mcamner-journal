@@ -17,56 +17,55 @@
 <section>
 <h1>Films</h1>
 <p>Atmosphere, restraint, and memory.</p>
-<p>A curated selection.</p>
+<p>A curated index of films, notes, and recurring motifs.</p>
 </section>
 
 <aside class="tips">
 <h2>Recent activity</h2>
 <p>> opened /films</p>
-<p>> try /open 001</p>
-<p>> system ready</p>
+<p>> index loaded</p>
+<p>> try /film 001</p>
 </aside>
 </div>
 </fieldset>
 
-
-
-
-    <form class="prompt" id="commandBar">
+<form class="prompt" id="commandBar">
 <span>&gt;</span>
-<input id="commandInput" type="text" placeholder="/open 001">
+<input id="commandInput" type="text" placeholder="/film 001" autocomplete="off">
 </form>
 
 <section class="films-list">
-
 <article id="film-001">
 <span>001</span>
+<div>
 <h2>The Secret Agent</h2>
-<p>loyalty, paranoia, secrecy</p>
+<p>loyalty · paranoia · secrecy</p>
+</div>
 </article>
 
 <article id="film-002">
 <span>002</span>
+<div>
 <h2>Two-Lane Blacktop</h2>
-<p>pure road cinema</p>
+<p>road · distance · freedom</p>
+</div>
 </article>
-
 </section>
 
 <section class="journal-box">
 <h2>&gt;&gt; film commands</h2>
 <ul>
-<li><a href="index.html">/home</a></li>
-<li><a href="journal.html">/journal</a></li>
-<li><a href="archive.html">/archive</a></li>
-<li><a href="posts/the-secret-agent.html">/open 001</a></li>
-<li><a href="posts/two-lane-blacktop.html">/open 002</a></li>
+<li><a href="index.html">/home</a><span>-- return to dashboard</span></li>
+<li><a href="journal.html">/journal</a><span>-- notes and entries</span></li>
+<li><a href="archive.html">/archive</a><span>-- visual references</span></li>
+<li><a href="posts/the-secret-agent.html">/film 001</a><span>-- The Secret Agent</span></li>
+<li><a href="posts/two-lane-blacktop.html">/film 002</a><span>-- Two-Lane Blacktop</span></li>
 </ul>
 </section>
 
 <footer class="status">
 <span>? for shortcuts</span>
-<span>films loaded · <strong>curation mode</strong></span>
+<span>films loaded · <strong>index mode</strong></span>
 </footer>
 
 </main>
@@ -76,6 +75,10 @@ const routes = {
   "/home": "index.html",
   "/journal": "journal.html",
   "/archive": "archive.html",
+  "/about": "about.html",
+  "/films": "films.html",
+  "/film 001": "posts/the-secret-agent.html",
+  "/film 002": "posts/two-lane-blacktop.html",
   "/open 001": "posts/the-secret-agent.html",
   "/open 002": "posts/two-lane-blacktop.html"
 };
@@ -83,7 +86,8 @@ const routes = {
 document.getElementById("commandBar").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const cmd = document.getElementById("commandInput").value.trim().toLowerCase();
+  const input = document.getElementById("commandInput");
+  const cmd = input.value.trim().toLowerCase();
 
   if (cmd === "/back") {
     window.history.back();
@@ -92,6 +96,9 @@ document.getElementById("commandBar").addEventListener("submit", function (e) {
 
   if (routes[cmd]) {
     window.location.href = routes[cmd];
+  } else {
+    input.value = "";
+    input.placeholder = "Unknown command. Try /film 001";
   }
 });
 </script>
