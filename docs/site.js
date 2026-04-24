@@ -19,7 +19,27 @@ const routes = {
   "/two-lane-blacktop": "posts/two-lane-blacktop.html"
 };
 
+
 let errorCount = 0;
+
+const errorLevels = {
+  helpful: [
+    "Unknown command. Try /home",
+    "Not found. Available: /journal /films /archive",
+  ],
+  witty: [
+    "That sounded right. It wasn’t.",
+    "Close. But not a command.",
+    "System is waiting for something real.",
+  ],
+  edge: [
+    "You are guessing.",
+    "This is not how it works.",
+    "Stop improvising. Use the system.",
+    "Still no.",
+  ]
+};
+
 
 const errorMessages = [
   "Command not found. But it sounded confident.",
@@ -104,12 +124,18 @@ if (commandBar && commandInput) {
 
     errorCount++;
 
-    if (errorCount > 1) {
-      const msg = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-      commandInput.placeholder = msg;
+    let pool;
+
+    if (errorCount <= 2) {
+      pool = errorLevels.helpful;
+    } else if (errorCount <= 5) {
+      pool = errorLevels.witty;
     } else {
-      commandInput.placeholder = "Unknown command. Try /home";
+      pool = errorLevels.edge;
     }
+
+    const msg = pool[Math.floor(Math.random() * pool.length)];
+    commandInput.placeholder = msg;
 
     commandInput.value = "";
   });
