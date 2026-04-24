@@ -35,19 +35,21 @@
 </form>
 
 <section class="films-list">
-<article id="film-001">
+<article id="film-001" data-tags="slow paranoia secrecy">
 <span>001</span>
 <div>
 <h2>The Secret Agent</h2>
 <p>loyalty · paranoia · secrecy</p>
+<div class="film-tags"><span>slow</span><span>paranoia</span><span>secrecy</span></div>
 </div>
 </article>
 
-<article id="film-002">
+<article id="film-002" data-tags="road distance freedom">
 <span>002</span>
 <div>
 <h2>Two-Lane Blacktop</h2>
 <p>road · distance · freedom</p>
+<div class="film-tags"><span>road</span><span>distance</span><span>freedom</span></div>
 </div>
 </article>
 </section>
@@ -91,6 +93,38 @@ document.getElementById("commandBar").addEventListener("submit", function (e) {
 
   if (cmd === "/back") {
     window.history.back();
+    return;
+  }
+
+  if (cmd.startsWith("/filter ")) {
+    const tag = cmd.replace("/filter ", "").trim();
+    document.querySelectorAll(".films-list article").forEach(function (item) {
+      const tags = item.dataset.tags || "";
+      item.classList.toggle("is-hidden", !tags.includes(tag));
+      item.classList.remove("is-active");
+    });
+    input.value = "";
+    input.placeholder = "Filtered: " + tag + " · try /clear";
+    return;
+  }
+
+  if (cmd === "/clear") {
+    document.querySelectorAll(".films-list article").forEach(function (item) {
+      item.classList.remove("is-hidden");
+      item.classList.remove("is-active");
+    });
+    input.value = "";
+    input.placeholder = "/film 001";
+    return;
+  }
+
+  if (cmd.startsWith("/select ")) {
+    const id = cmd.replace("/select ", "").trim();
+    document.querySelectorAll(".films-list article").forEach(function (item) {
+      item.classList.toggle("is-active", item.id === "film-" + id);
+    });
+    input.value = "";
+    input.placeholder = "Selected film " + id + " · try /film " + id;
     return;
   }
 
