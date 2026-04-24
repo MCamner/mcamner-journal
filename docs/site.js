@@ -25,6 +25,13 @@ if (commandBar && commandInput) {
 
     const command = commandInput.value.trim().toLowerCase();
 
+
+    if (command === "?" || command === "/help") {
+      commandInput.value = "";
+      commandInput.placeholder = "Commands: /home /journal /films /archive /objects /about /back";
+      return;
+    }
+
     if (command === "/back") {
       window.history.back();
       return;
