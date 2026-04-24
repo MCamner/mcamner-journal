@@ -1,38 +1,41 @@
 # MCamner Journal
 
-> A personal command-line inspired journal on systems, technology, art, and thinking.
+> A command-line inspired journal on systems, technology, art, and thinking.
 
 ---
 
-## Live
-
+### Live
 https://mcamner.github.io/mcamner-journal/
 
 ---
 
-## Concept
+## Philosophy
 
 This is not a traditional blog.
 
-It’s a **structured journal** built around clarity and signal:
+It is a **journal designed for thinking**.
 
-- short entries
-- visual fragments
-- system notes
-- ideas in progress
+Most platforms optimize for publishing.  
+This optimizes for:
 
-Less publishing. More thinking.
+- clarity
+- signal
+- iteration
+- unfinished ideas
+
+> Less publishing. More thinking.
 
 ---
 
-## Experience
+## Interface
 
-The site is designed like a **terminal surface**:
+The journal is built like a **command surface**:
 
 - minimal UI
 - fast scanning
-- grid-based content
-- no distractions
+- grid-based layout
+- no frameworks
+- no noise
 
 It reflects how ideas actually form — not how they are polished.
 
