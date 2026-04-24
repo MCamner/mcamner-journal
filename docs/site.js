@@ -55,7 +55,9 @@ const routes = {
   "/note 006": "posts/zephyr-workbench.html",
   "/zephyr-workbench": "posts/zephyr-workbench.html",
   "/note 007": "posts/macos-scripts.html",
-  "/macos-scripts": "posts/macos-scripts.html"
+  "/macos-scripts": "posts/macos-scripts.html",
+  "/note 008": "posts/atlas-prompt-library.html",
+  "/atlas-prompt-library": "posts/atlas-prompt-library.html"
 };
 
 
