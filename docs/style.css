@@ -551,6 +551,31 @@ a:hover {
   color: var(--green);
 }
 
+/* ── Journal list ── */
+.journal-list {
+  margin: 28px 0;
+  border: 2px solid rgba(229,123,79,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.journal-list article {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(229,123,79,0.4);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 14px;
+  align-items: center;
+  transition: background 120ms ease;
+}
+
+.journal-list article:last-child { border-bottom: 0; }
+.journal-list article:hover { background: rgba(229,123,79,0.08); }
+.journal-list article > div { min-width: 0; }
+.journal-list span { color: var(--muted); font-size: 17px; }
+.journal-list h2 { margin: 0; color: var(--orange); font-size: 22px; }
+.journal-list p { grid-column: 2; margin: 3px 0 0; color: var(--muted); font-size: 15px; letter-spacing: -0.02em; }
+
 /* ── Objects list ── */
 .objects-list {
   margin: 28px 0;

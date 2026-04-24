@@ -1,15 +1,100 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>design-prototype</title>
-<link rel="stylesheet" href="../style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Prototype | McAmner Journal</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
+
 <body>
-<main class="terminal">
-<h2>&gt;&gt; design-prototype</h2>
-<p>A way to test structure before committing to it.</p>
-</main>
+  <main class="terminal post-terminal">
+
+    <fieldset class="boot-box">
+      <legend class="boot-title">McAmner Journal <span>note</span></legend>
+
+      <div class="about-grid">
+        <section>
+          <h1>Design Prototype</h1>
+          <p>A way to test structure before committing to it.</p>
+          <p>On the difference between planning and making.</p>
+        </section>
+
+        <aside class="tips">
+          <h2>Recent activity</h2>
+          <p>> opened /note 002</p>
+          <p>> post loaded</p>
+          <p>> reading mode</p>
+        </aside>
+      </div>
+    </fieldset>
+
+    <form class="prompt" id="commandBar">
+      <span>&gt;</span>
+      <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+    </form>
+
+    <article class="post-box">
+      <h2>&gt;&gt; design prototype</h2>
+
+      <p>
+        A plan is a prediction. A prototype is an argument.
+      </p>
+
+      <p>
+        The difference matters because predictions can be wrong
+        without anyone noticing. An argument you can push back on.
+        It has edges. It breaks in specific places.
+        Those places are exactly what you need to find.
+      </p>
+
+      <p>
+        In infrastructure work, prototypes are often skipped
+        in favor of specifications. The specification feels more rigorous —
+        it has diagrams, version numbers, sign-offs.
+        But a specification describes intent, not behavior.
+        Only the prototype behaves.
+      </p>
+
+      <p>
+        The same applies to exhibition design.
+        You can draw a room and think you understand it.
+        Then you walk into it and the scale is wrong,
+        the light does something unexpected, the work doesn't breathe.
+        No plan would have told you that.
+      </p>
+
+      <p>
+        The prototype does not need to be finished.
+        It needs to be real enough to fail.
+        Failure at prototype stage is information.
+        Failure at launch is cost.
+      </p>
+
+      <p>
+        Make something rough. Put it in front of conditions.
+        Note what it teaches you.
+        Then decide if the structure holds.
+      </p>
+    </article>
+
+    <section class="journal-box">
+      <h2>&gt;&gt; post commands</h2>
+      <ul>
+        <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+        <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+        <li><a href="../about.html">/about</a><span>-- biography and context</span></li>
+        <li><a href="../archive.html">/archive</a><span>-- visual references</span></li>
+      </ul>
+    </section>
+
+    <footer class="status">
+      <span>? for shortcuts</span>
+      <span>note loaded · <strong>reading mode</strong></span>
+    </footer>
+
+  </main>
 <script src="../site.js"></script>
 </body>
 </html>
