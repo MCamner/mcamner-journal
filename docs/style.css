@@ -769,3 +769,14 @@ a:hover {
   color: var(--muted);
   font-size: 16px;
 }
+
+.about-ascii-image {
+  margin-top: 26px;
+}
+
+.about-ascii-image img {
+  width: min(100%, 760px);
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
