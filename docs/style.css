@@ -836,3 +836,14 @@ a:hover {
   margin: 4px 0 0;
   color: var(--muted);
 }
+
+/* External polish */
+a[href^="http"]::after {
+  content: " ↗";
+  color: var(--green);
+  font-size: 0.82em;
+}
+
+a[href^="https://mcamner.github.io/mcamner-journal"]::after {
+  content: "";
+}
