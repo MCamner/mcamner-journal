@@ -208,3 +208,98 @@ if (commandBar && commandInput) {
     commandInput.value = "";
   });
 }
+
+/* Global focus panel */
+(function () {
+  const items = document.querySelectorAll(
+    ".journal-list article, .films-list article, .object-list article, .archive-grid article, .catalogue-list article"
+  );
+
+  if (!items.length) return;
+
+  let panel = document.querySelector(".focus-panel");
+
+  if (!panel) {
+    panel = document.createElement("aside");
+    panel.className = "focus-panel";
+    panel.innerHTML = `
+      <h2>SELECTED ITEM</h2>
+      <p><strong>id:</strong> <span data-focus-id>—</span></p>
+      <p><strong>type:</strong> <span data-focus-type>—</span></p>
+      <p><strong>title:</strong> <span data-focus-title>—</span></p>
+      <p><strong>detail:</strong> <span data-focus-detail>—</span></p>
+      <p><strong>command:</strong> <span data-focus-command>hover item</span></p>
+    `;
+
+    const target =
+      document.querySelector(".prompt") ||
+      document.querySelector(".boot-box") ||
+      document.querySelector("main");
+
+    target.insertAdjacentElement("afterend", panel);
+  }
+
+  function clean(text) {
+    return (text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function getType(item) {
+    if (item.id.startsWith("film-")) return "film";
+    if (item.id.startsWith("note-")) return "note";
+    if (item.id.startsWith("object-")) return "object";
+    if (item.id.startsWith("item-")) return "archive";
+    if (item.closest(".catalogue-list")) return "catalogue";
+    return "entry";
+  }
+
+  function getId(item) {
+    const firstSpan = item.querySelector(":scope > span");
+    if (firstSpan) return clean(firstSpan.textContent);
+    if (item.id) return item.id.replace(/^[a-z]+-/, "");
+    return "—";
+  }
+
+  function getTitle(item) {
+    const title = item.querySelector("h2, a");
+    return title ? clean(title.textContent) : "—";
+  }
+
+  function getDetail(item) {
+    const detail = item.querySelector("p");
+    return detail ? clean(detail.textContent) : "—";
+  }
+
+  function getCommand(type, id, title) {
+    if (type === "film") return "/film " + id;
+    if (type === "note") return "/note " + id;
+    if (type === "object") return "/object " + id;
+    if (type === "archive") return "/open " + id;
+    if (type === "catalogue") return "/open " + id;
+    return "/open " + title.toLowerCase().replace(/\s+/g, "-");
+  }
+
+  items.forEach(function (item) {
+    item.setAttribute("tabindex", "0");
+
+    function updatePanel() {
+      const id = getId(item);
+      const type = getType(item);
+      const title = getTitle(item);
+      const detail = getDetail(item);
+      const command = getCommand(type, id, title);
+
+      document.querySelector("[data-focus-id]").textContent = id;
+      document.querySelector("[data-focus-type]").textContent = type;
+      document.querySelector("[data-focus-title]").textContent = title;
+      document.querySelector("[data-focus-detail]").textContent = detail;
+      document.querySelector("[data-focus-command]").textContent = command;
+
+      items.forEach(i => i.classList.remove("is-focused"));
+      item.classList.add("is-focused");
+      panel.classList.add("is-visible");
+    }
+
+    item.addEventListener("mouseenter", updatePanel);
+    item.addEventListener("focus", updatePanel);
+  });
+})();

@@ -884,3 +884,82 @@ a[href^="http"]::after {
 a[href^="https://mcamner.github.io/mcamner-journal"]::after {
   content: "";
 }
+
+/* Global focus panel */
+.focus-panel {
+  border: 2px solid rgba(89,161,79,0.72);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.16);
+  padding: 18px 22px;
+  margin: 24px 0 30px;
+  opacity: 0.88;
+}
+
+.focus-panel h2 {
+  margin: 0 0 14px;
+  color: var(--green);
+  font-size: clamp(18px, 1.6vw, 26px);
+  letter-spacing: -0.04em;
+}
+
+.focus-panel p {
+  margin: 6px 0;
+  color: var(--muted);
+  font-size: clamp(14px, 1.2vw, 19px);
+}
+
+.focus-panel strong {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.focus-panel [data-focus-command] {
+  color: var(--green);
+  font-weight: 800;
+}
+
+.journal-list article,
+.films-list article,
+.object-list article,
+.archive-grid article,
+.catalogue-list article {
+  transition:
+    background 140ms ease,
+    border-color 140ms ease,
+    transform 140ms ease;
+}
+
+.journal-list article:hover,
+.films-list article:hover,
+.object-list article:hover,
+.archive-grid article:hover,
+.catalogue-list article:hover,
+.journal-list article.is-focused,
+.films-list article.is-focused,
+.object-list article.is-focused,
+.archive-grid article.is-focused,
+.catalogue-list article.is-focused {
+  background: rgba(89,161,79,0.12);
+  border-color: var(--green);
+  cursor: crosshair;
+}
+
+/* Tag readability */
+.film-tags,
+.catalogue-tags,
+.object-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.film-tags span,
+.catalogue-tags span,
+.object-tags span {
+  color: var(--green);
+  border: 1px solid rgba(89,161,79,0.55);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 13px;
+}
