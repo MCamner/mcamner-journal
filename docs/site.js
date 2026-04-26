@@ -11,6 +11,7 @@ const routes = {
   "/object 003": "/mcamner-journal/objects.html",
   "/object 004": "/mcamner-journal/objects.html",
   "/object 005": "/mcamner-journal/objects.html",
+  "/object 006": "/mcamner-journal/objects.html",
   "/contact": "mailto:mattias.camner@gmail.com",
   "/instagram": "https://www.instagram.com/blackiris_sthlm/",
   "/linkedin": "https://www.linkedin.com/in/mattias-camner-75958022",
