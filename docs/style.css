@@ -233,10 +233,6 @@ body {
   gap: 10px;
 }
 
-.journal-box h2::before {
-  content: "›";
-  color: var(--orange);
-}
 
 .journal-box ul {
   margin: 0;
