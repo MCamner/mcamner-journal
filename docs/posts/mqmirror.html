@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MQ Mirror | McAmner Journal</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+
+<body>
+<main class="terminal journal-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note 009</span></legend>
+
+<div class="about-grid">
+<section>
+<h1>MQ Mirror</h1>
+<p>GUI actions · CLI equivalents · operational understanding</p>
+<p>A small macOS prototype for translating what users do in the GUI into terminal commands.</p>
+</section>
+
+<aside class="tips">
+<h2>Context</h2>
+<p>&gt; opened /note 009</p>
+<p>&gt; source: Design-Prototype</p>
+<p>&gt; mode: operational translation</p>
+</aside>
+</div>
+</fieldset>
+
+<section class="journal-box">
+<h2>&gt;&gt; premise</h2>
+
+<p>Most users first learn systems through the GUI.</p>
+
+<p>But troubleshooting, automation, endpoint management, and repeatable operations often happen in the terminal.</p>
+
+<p><strong>MQ Mirror</strong> explores the translation layer between those two worlds.</p>
+
+<pre><code>GUI action → CLI equivalent → better operational understanding</code></pre>
+</section>
+
+<section class="journal-box">
+<h2>&gt;&gt; example</h2>
+
+<p>When looking at macOS network settings, the equivalent terminal layer might be:</p>
+
+<pre><code>networksetup -listallhardwareports
+ipconfig getifaddr en0
+route -n get default
+scutil --dns
+networksetup -getdnsservers Wi-Fi</code></pre>
+
+<p>The point is not to replace the GUI. The point is to make the hidden operational layer visible.</p>
+</section>
+
+<section class="journal-box">
+<h2>&gt;&gt; prototype</h2>
+
+<p>MQ Mirror currently supports a small command library, safe copy/run helpers, and context inspection.</p>
+
+<pre><code>tools/mqmirror/mqmirror network
+tools/mqmirror/mqmirror inspect
+tools/mqmirror/mqmirror watch --interval 1 --compact --ignore-terminal</code></pre>
+
+<p>The watch mode observes the frontmost app/window context and suggests relevant terminal equivalents.</p>
+</section>
+
+<section class="journal-box">
+<h2>&gt;&gt; why it matters</h2>
+
+<ul>
+<li>GUI workflows are easier to discover.</li>
+<li>CLI workflows are easier to repeat.</li>
+<li>Operations need both visibility and execution.</li>
+<li>Learning improves when the translation is visible.</li>
+</ul>
+
+<p>That is the useful edge: not GUI versus terminal — but GUI as discovery, CLI as repeatable execution.</p>
+</section>
+
+<section class="journal-box">
+<h2>&gt;&gt; direction</h2>
+
+<p>MQ Mirror is part of a broader pattern in my work: command surfaces, client readiness, and systems that make execution clearer.</p>
+
+<pre><code>observe → translate → execute → validate</code></pre>
+
+<p>Small prototype. Useful pattern.</p>
+</section>
+
+<section class="journal-box">
+<h2>&gt;&gt; links</h2>
+<ul>
+<li><a href="https://github.com/MCamner/Design-Prototype/tree/main/tools/mqmirror">MQ Mirror on GitHub</a></li>
+<li><a href="https://github.com/MCamner/Design-Prototype">Design-Prototype repo</a></li>
+<li><a href="../journal.html">/journal</a></li>
+<li><a href="../index.html">/home</a></li>
+</ul>
+</section>
+
+<footer class="status">
+<span>? for shortcuts</span>
+<span>note 009 · <strong>mq mirror loaded</strong></span>
+</footer>
+
+</main>
+
+<script src="../site.js"></script>
+</body>
+</html>
