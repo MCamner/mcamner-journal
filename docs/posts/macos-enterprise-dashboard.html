@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>macOS Enterprise Dashboard | McAmner Journal</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>macOS Enterprise Dashboard</h1>
+  <p>Fourteen checks. One browser tab.</p>
+  <p>On making compliance posture visible without asking permission.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 010</p>
+  <p>> post loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; macos enterprise dashboard</h2>
+
+  <p>
+    Compliance posture on a managed Mac is invisible by default.
+    You can't see it from a dashboard. You can't feel it.
+    The machine either meets the controls or it doesn't,
+    and finding out requires running fifteen separate terminal commands,
+    reading their output, and knowing what each result means.
+    Most people don't do this. So most machines drift.
+  </p>
+
+  <p>
+    The macOS Enterprise Dashboard is a two-part tool that makes that posture visible.
+    A lightweight Python agent — no dependencies beyond the standard library —
+    runs locally and collects the data. A single HTML file reads from it
+    and renders the result as a live compliance report in a browser tab.
+    No build step. No cloud. No account.
+  </p>
+
+  <p>
+    The agent runs on port 38764, strictly localhost.
+    It collects once on startup, then refreshes every five minutes in the background.
+    Without sudo it gives a useful partial picture.
+    With sudo it unlocks the full view: MDM enrollment, SSH status,
+    installed configuration profiles, user account details.
+    The split is deliberate — partial data is still better than none.
+  </p>
+
+  <p class="film-intro">The fourteen checks</p>
+
+  <p>
+    Eight security controls: FileVault, SIP, Gatekeeper, Application Firewall,
+    firewall stealth mode, automatic security updates, critical update auto-install,
+    and automatic update checks. Four identity and access controls:
+    SSH disabled, auto-login disabled, screen lock with password,
+    and screen lock delay under five minutes.
+    Two MDM controls: enrolled and supervised.
+  </p>
+
+  <p>
+    Each check carries a CIS Benchmark reference — Level 1, macOS.
+    Each failure surfaces an exact remediation command inline.
+    Not a link to documentation. The command itself.
+  </p>
+
+  <p>
+    The compliance score is straightforward:
+    passed checks divided by total checks excluding unknowns.
+    Above 80 is green. Above 55 is amber. Below that is red.
+    Unknown checks — SIP inside a VM, MDM without sudo —
+    are excluded from the denominator rather than counted as failures.
+    The score reflects what is actually verifiable.
+  </p>
+
+  <p class="film-intro">Graceful degradation</p>
+
+  <p>
+    If the agent is not running, the dashboard falls back silently
+    to embedded sample data representing a fully managed Mac.
+    A pulsing dot in the header tells you which mode you are in —
+    green for live, amber for sample. The dashboard always works.
+    There is no error screen.
+  </p>
+
+  <p>
+    The sample data is not a placeholder.
+    It is a realistic model of a managed MacBook Pro M3 Pro,
+    enrolled in MDM, connected to a corporate Wi-Fi network,
+    with six configuration profiles, three local users, and one pending update.
+    You can use it to understand the tool before running the agent.
+  </p>
+
+  <p class="film-intro">What it actually shows</p>
+
+  <p>
+    The right sidebar covers device management, network state, and system certificates.
+    MDM enrollment status and installed profiles. Each network interface with IP and SSID.
+    Every certificate in the system keychain with days remaining until expiry —
+    green above 60 days, amber below, red if already expired.
+  </p>
+
+  <p>
+    Certificates are the thing that fails silently until it is too late.
+    The dashboard shows you before that point.
+    That is the same logic behind all fourteen checks:
+    the machine is either in a known state or it isn't.
+    The cost of not knowing is always higher than the cost of looking.
+  </p>
+
+  <p>
+    One HTML file. One Python file. Fourteen checks.
+    The entire compliance picture of a managed Mac,
+    without MDM console access, without a vendor, without waiting.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 28" width="62">
+    <rect x="4" y="0" width="38" height="22" fill="#59a14f"/>
+    <rect x="6" y="2" width="34" height="18" fill="#0d438f"/>
+    <rect x="8" y="4" width="4" height="2" fill="#59a14f"/>
+    <rect x="8" y="8" width="4" height="2" fill="#59a14f"/>
+    <rect x="8" y="12" width="4" height="2" fill="#e57b4f"/>
+    <rect x="8" y="16" width="4" height="2" fill="#59a14f"/>
+    <rect x="14" y="4" width="22" height="2" fill="#59a14f"/>
+    <rect x="14" y="8" width="18" height="2" fill="#59a14f"/>
+    <rect x="14" y="12" width="20" height="2" fill="#e57b4f"/>
+    <rect x="14" y="16" width="16" height="2" fill="#59a14f"/>
+    <rect x="0" y="22" width="46" height="2" fill="#59a14f"/>
+    <rect x="15" y="24" width="16" height="2" fill="#59a14f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/Design-Prototype" target="_blank">/open design-prototype</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="design-prototype.html">/note 002</a><span>-- design prototype</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

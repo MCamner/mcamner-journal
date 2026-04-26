@@ -61,7 +61,9 @@ const routes = {
   "/note 008": "/mcamner-journal/posts/atlas-prompt-library.html",
   "/atlas-prompt-library": "/mcamner-journal/posts/atlas-prompt-library.html",
   "/note 009": "/mcamner-journal/posts/mqmirror.html",
-  "/mqmirror": "/mcamner-journal/posts/mqmirror.html"
+  "/mqmirror": "/mcamner-journal/posts/mqmirror.html",
+  "/note 010": "/mcamner-journal/posts/macos-enterprise-dashboard.html",
+  "/macos-enterprise-dashboard": "/mcamner-journal/posts/macos-enterprise-dashboard.html"
 };
 
 
