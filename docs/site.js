@@ -57,7 +57,9 @@ const routes = {
   "/note 007": "posts/macos-scripts.html",
   "/macos-scripts": "posts/macos-scripts.html",
   "/note 008": "posts/atlas-prompt-library.html",
-  "/atlas-prompt-library": "posts/atlas-prompt-library.html"
+  "/atlas-prompt-library": "posts/atlas-prompt-library.html",
+  "/note 009": "posts/mqmirror.html",
+  "/mqmirror": "posts/mqmirror.html"
 };
 
 

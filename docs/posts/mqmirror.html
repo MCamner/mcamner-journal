@@ -1,95 +1,138 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MQ Mirror | McAmner Journal</title>
-<link rel="stylesheet" href="../style.css">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MQ Mirror | McAmner Journal</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 </head>
-
 <body>
-<main class="terminal journal-terminal">
+<main class="terminal post-terminal">
 
 <fieldset class="boot-box">
 <legend class="boot-title">McAmner Journal <span>note</span></legend>
-
 <div class="about-grid">
 <section>
-<h1>MQ Mirror</h1>
-<p>A note on seeing the command behind the interface.</p>
-<p>Not GUI against terminal, but translation between them.</p>
+  <h1>MQ Mirror</h1>
+  <p>A note on seeing the command behind the interface.</p>
+  <p>Not GUI against terminal, but translation between them.</p>
 </section>
-
 <aside class="tips">
-<h2>Recent activity</h2>
-<p>&gt; opened /note 009</p>
-<p>&gt; post loaded</p>
-<p>&gt; reading mode</p>
+  <h2>Recent activity</h2>
+  <p>> opened /note 009</p>
+  <p>> post loaded</p>
+  <p>> reading mode</p>
 </aside>
 </div>
 </fieldset>
 
 <form class="prompt" id="commandBar">
-<span>&gt;</span>
-<input id="commandInput" type="text" placeholder="/journal">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
 </form>
 
-<section class="journal-box">
-<h2>&gt;&gt; mq mirror</h2>
+<article class="post-box">
+  <h2>&gt;&gt; mq mirror</h2>
 
-<p>Most people meet a system through its interface.</p>
+  <p>
+    Most people meet a system through its interface.
+    They click through settings, follow labels, open panels,
+    and learn by looking.
+    That is not wrong. The GUI is often the first map of the machine.
+  </p>
 
-<p>They click through settings, follow labels, open panels, and learn by looking. That is not wrong. The GUI is often the first map of the machine.</p>
+  <p>
+    But operations rarely end there.
+  </p>
 
-<p>But operations rarely end there.</p>
+  <p>
+    Troubleshooting, automation, validation, and repeatable work
+    usually move beneath the interface.
+    The same action that looks simple in a settings panel
+    may have another form in the terminal:
+    a command, a query, a state check,
+    a way to repeat the action without remembering the path through the screen.
+  </p>
 
-<p>Troubleshooting, automation, validation, and repeatable work usually move beneath the interface. The same action that looks simple in a settings panel may have another form in the terminal: a command, a query, a state check, a way to repeat the action without remembering the path through the screen.</p>
+  <p>
+    MQ Mirror is a small experiment around that translation.
+  </p>
 
-<p><strong>MQ Mirror</strong> is a small experiment around that translation.</p>
+  <pre><code>GUI action → CLI equivalent → operational understanding</code></pre>
 
-<pre><code>GUI action → CLI equivalent → better operational understanding</code></pre>
+  <p>
+    The point is not to replace the GUI.
+    The point is to make the hidden command layer visible.
+  </p>
 
-<p>The point is not to replace the GUI. The point is to make the hidden command layer visible.</p>
+  <p>
+    If a user opens Network settings,
+    the useful question is not only what they clicked.
+    It is what operational signals sit underneath that click.
+  </p>
 
-<p>If a user opens Network settings, the useful question is not only what they clicked. It is what operational signals sit underneath that click.</p>
-
-<pre><code>networksetup -listallhardwareports
+  <pre><code>networksetup -listallhardwareports
 ipconfig getifaddr en0
 route -n get default
 scutil --dns</code></pre>
 
-<p>That translation matters because a GUI can show state, but a command can be copied, repeated, documented, tested, and automated.</p>
+  <p>
+    That translation matters because a GUI can show state,
+    but a command can be copied, repeated, documented,
+    tested, and automated.
+    The interface is discovery.
+    The terminal is repeatability.
+    Between them is where a lot of operational understanding lives.
+  </p>
 
-<p>The interface is discovery. The terminal is repeatability.</p>
+  <p>
+    MQ Mirror is not a finished product.
+    It is a working note: a prototype for making that middle layer more visible.
+  </p>
 
-<p>Between them is where a lot of operational understanding lives.</p>
+  <pre><code>observe → translate → execute → validate</code></pre>
 
-<p>MQ Mirror is not a finished product. It is a working note: a prototype for making that middle layer more visible.</p>
+  <p>
+    Small tool. Useful pattern.
+  </p>
 
-<pre><code>observe → translate → execute → validate</code></pre>
+</article>
 
-<p>Small tool. Useful pattern.</p>
-
-</section>
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 24" width="60">
+    <rect x="2" y="4" width="12" height="3" fill="#e57b4f"/>
+    <rect x="2" y="9" width="12" height="3" fill="#e57b4f"/>
+    <rect x="2" y="14" width="8" height="3" fill="#e57b4f"/>
+    <rect x="20" y="0" width="2" height="24" fill="#0d438f"/>
+    <rect x="24" y="4" width="2" height="2" fill="#59a14f"/>
+    <rect x="28" y="4" width="14" height="2" fill="#59a14f"/>
+    <rect x="24" y="9" width="2" height="2" fill="#59a14f"/>
+    <rect x="28" y="9" width="10" height="2" fill="#59a14f"/>
+    <rect x="24" y="14" width="2" height="2" fill="#59a14f"/>
+    <rect x="28" y="14" width="12" height="2" fill="#59a14f"/>
+    <rect x="24" y="19" width="2" height="2" fill="#59a14f"/>
+    <rect x="28" y="19" width="6" height="2" fill="#59a14f"/>
+    <rect x="36" y="18" width="2" height="4" fill="#0d438f"/>
+  </svg>
+</div>
 
 <section class="journal-box">
-<h2>&gt;&gt; post commands</h2>
-<ul>
-<li><a href="https://github.com/MCamner/Design-Prototype/tree/main/tools/mqmirror">/open mq mirror</a><span>-- view tool</span></li>
-<li><a href="https://github.com/MCamner/Design-Prototype">/open design-prototype</a><span>-- view repository</span></li>
-<li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
-<li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
-</ul>
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/Design-Prototype/tree/main/tools/mqmirror" target="_blank">/open mq mirror</a><span>-- view tool</span></li>
+    <li><a href="https://github.com/MCamner/Design-Prototype" target="_blank">/open design-prototype</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
 </section>
 
 <footer class="status">
-<span>? for shortcuts</span>
-<span>note loaded · <strong>reading mode</strong></span>
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
 </footer>
 
 </main>
-
 <script src="../site.js"></script>
 </body>
 </html>
