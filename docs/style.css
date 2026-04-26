@@ -349,7 +349,6 @@ a:hover {
 /* ── Home system map ── */
 .system-map {
   position: relative;
-  min-height: 260px;
   margin: 0 0 18px;
   padding: 24px 28px;
   border: 2px solid rgba(89,161,79,0.62);
@@ -369,10 +368,12 @@ a:hover {
 }
 
 .system-map::before {
-  inset: 50% 70px auto;
+  left: 28px;
+  right: 28px;
+  top: 106px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--green), var(--orange), transparent);
-  opacity: 0.8;
+  opacity: 0.55;
   animation: signalSweep 3.8s linear infinite;
 }
 
@@ -388,13 +389,11 @@ a:hover {
 }
 
 .system-map__core {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 2;
-  width: 156px;
-  height: 92px;
-  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 3;
+  width: min(240px, 100%);
+  min-height: 74px;
+  margin: 0 auto 26px;
   border: 2px solid var(--orange);
   background: rgba(13,67,143,0.94);
   display: grid;
@@ -417,13 +416,14 @@ a:hover {
 .system-map__nodes {
   position: relative;
   z-index: 3;
-  min-height: 212px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .system-node {
-  position: absolute;
-  width: min(230px, 27vw);
-  min-height: 76px;
+  position: relative;
+  min-height: 92px;
   padding: 11px 14px;
   border: 1px solid rgba(89,161,79,0.78);
   background: rgba(13,67,143,0.82);
@@ -435,6 +435,8 @@ a:hover {
 .system-node::before {
   content: "";
   position: absolute;
+  right: 12px;
+  top: 12px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -480,24 +482,8 @@ a:hover {
 
 .system-node--about:hover,
 .system-node--about:focus-visible {
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateY(-2px);
 }
-
-.system-node--journal { left: 3%; top: 4%; }
-.system-node--catalogue { right: 3%; top: 4%; }
-.system-node--objects { left: 7%; bottom: 0; }
-.system-node--archive { right: 7%; bottom: 0; }
-.system-node--about {
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-}
-
-.system-node--journal::before,
-.system-node--objects::before { right: -6px; top: 50%; }
-.system-node--catalogue::before,
-.system-node--archive::before { left: -6px; top: 50%; }
-.system-node--about::before { left: 50%; top: -6px; transform: translateX(-50%); }
 
 @keyframes signalSweep {
   0% { transform: translateX(-45%); opacity: 0.3; }
