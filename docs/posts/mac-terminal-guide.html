@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mac Terminal Guide | McAmner Journal</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>Mac Terminal Guide</h1>
+  <p>220 commands. One file. No framework.</p>
+  <p>On building a reference that survives offline.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 011</p>
+  <p>> post loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; mac terminal guide</h2>
+
+  <p>
+    The terminal documentation problem is not a lack of documentation.
+    It is that the documentation is everywhere and searchable only
+    when you already know what you are looking for.
+    Man pages assume command knowledge. Stack Overflow assumes a specific error.
+    Neither helps when you know the category of thing you need
+    but not its name.
+  </p>
+
+  <p>
+    Mac Terminal Guide is a single HTML file.
+    220 commands across 27 categories — files, processes, networking,
+    git, homebrew, security, disk, permissions, and more.
+    Every command has a short description, a tag marking its risk level,
+    and expandable examples with copy buttons.
+    The whole thing runs offline. No server. No account. No internet required.
+  </p>
+
+  <p>
+    The search is real-time and matches against command name,
+    description, and examples simultaneously.
+    You type what you remember — part of a word, a concept, a flag —
+    and the grid collapses to what fits.
+    The sidebar stays fixed. The categories remain navigable.
+    Nothing moves unexpectedly.
+  </p>
+
+  <p class="film-intro">The tag system</p>
+
+  <p>
+    Each command carries at least one tag: Safe, Dangerous, Network, Root.
+    The tags are not decorative. A Dangerous tag means the command
+    can delete data, modify system state, or cause irreversible change.
+    A Root tag means elevated privileges.
+    Knowing the risk before running is the point.
+    The guide does not assume you already know which commands to be careful with.
+  </p>
+
+  <p class="film-intro">Two languages</p>
+
+  <p>
+    A toggle in the header switches the entire interface between English and Swedish.
+    The state persists in localStorage — reopen the tab, the language is where you left it.
+    This was not an afterthought. Swedish descriptions were written for all 220 commands.
+    The toggle changes every short description, every category label, every panel header.
+    The command names stay the same. They are not translatable.
+  </p>
+
+  <p class="film-intro">Three panels</p>
+
+  <p>
+    The default view shows the command grid.
+    A second panel covers getting started — Homebrew installation,
+    the package manager path, and the first ten commands anyone needs
+    to make a Mac useful from the terminal.
+    A third panel lists keyboard shortcuts for the guide itself.
+    Three modes. Same file.
+  </p>
+
+  <p>
+    The aesthetic is deliberate: dark background, JetBrains Mono,
+    CRT scanline overlay. The terminal is not being simulated for effect —
+    it is the right frame for content about the terminal.
+    The form matches what it describes.
+  </p>
+
+  <p>
+    A reference tool should be faster than the thing you are referencing.
+    If looking something up takes longer than guessing,
+    the tool has failed its purpose.
+    Mac Terminal Guide is designed to be faster than guessing.
+    Open it, type the fragment you remember, copy the command.
+    Done in under ten seconds, offline, without a browser history entry
+    that embarrasses you later.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 26" width="66">
+    <!-- sidebar -->
+    <rect x="0" y="0" width="10" height="26" fill="#0d438f"/>
+    <rect x="1" y="2" width="8" height="2" fill="#59a14f"/>
+    <rect x="1" y="6" width="6" height="2" fill="#59a14f"/>
+    <rect x="1" y="10" width="7" height="2" fill="#59a14f"/>
+    <rect x="1" y="14" width="5" height="2" fill="#59a14f"/>
+    <rect x="1" y="18" width="8" height="2" fill="#e57b4f"/>
+    <rect x="1" y="22" width="6" height="2" fill="#59a14f"/>
+    <!-- divider -->
+    <rect x="11" y="0" width="1" height="26" fill="#59a14f"/>
+    <!-- command cards -->
+    <rect x="13" y="1" width="17" height="6" fill="#0d438f"/>
+    <rect x="14" y="2" width="6" height="2" fill="#59a14f"/>
+    <rect x="14" y="4" width="10" height="1" fill="#59a14f"/>
+    <rect x="32" y="1" width="17" height="6" fill="#0d438f"/>
+    <rect x="33" y="2" width="8" height="2" fill="#e57b4f"/>
+    <rect x="33" y="4" width="10" height="1" fill="#59a14f"/>
+    <rect x="13" y="9" width="17" height="6" fill="#0d438f"/>
+    <rect x="14" y="10" width="10" height="2" fill="#59a14f"/>
+    <rect x="14" y="12" width="8" height="1" fill="#59a14f"/>
+    <rect x="32" y="9" width="17" height="6" fill="#0d438f"/>
+    <rect x="33" y="10" width="7" height="2" fill="#e57b4f"/>
+    <rect x="33" y="12" width="12" height="1" fill="#59a14f"/>
+    <rect x="13" y="17" width="17" height="6" fill="#0d438f"/>
+    <rect x="14" y="18" width="9" height="2" fill="#59a14f"/>
+    <rect x="14" y="20" width="6" height="1" fill="#59a14f"/>
+    <rect x="32" y="17" width="17" height="6" fill="#0d438f"/>
+    <rect x="33" y="18" width="11" height="2" fill="#59a14f"/>
+    <rect x="33" y="20" width="9" height="1" fill="#59a14f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://mcamner.github.io/macos-scripts/mac-terminal-guide.html" target="_blank" rel="noopener noreferrer">/open mac-terminal-guide</a><span>-- view live tool</span></li>
+    <li><a href="https://github.com/MCamner/macos-scripts" target="_blank" rel="noopener noreferrer">/open macos-scripts</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="macos-enterprise-dashboard.html">/note 010</a><span>-- macos enterprise dashboard</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

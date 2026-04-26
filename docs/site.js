@@ -63,7 +63,9 @@ const routes = {
   "/note 009": "/mcamner-journal/posts/mqmirror.html",
   "/mqmirror": "/mcamner-journal/posts/mqmirror.html",
   "/note 010": "/mcamner-journal/posts/macos-enterprise-dashboard.html",
-  "/macos-enterprise-dashboard": "/mcamner-journal/posts/macos-enterprise-dashboard.html"
+  "/macos-enterprise-dashboard": "/mcamner-journal/posts/macos-enterprise-dashboard.html",
+  "/note 011": "/mcamner-journal/posts/mac-terminal-guide.html",
+  "/mac-terminal-guide": "/mcamner-journal/posts/mac-terminal-guide.html"
 };
 
 
