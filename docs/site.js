@@ -125,15 +125,17 @@ const commandBar = document.getElementById("commandBar");
 const commandInput = document.getElementById("commandInput");
 
 if (commandBar && commandInput) {
-  commandBar.addEventListener("submit", function (event) {
-    event.preventDefault();
+  function resetPrompt(placeholder) {
+    commandInput.value = "";
+    commandInput.placeholder = placeholder;
+  }
 
-    const command = commandInput.value.trim().toLowerCase();
-
+  function runCommand(rawCommand) {
+    const command = rawCommand.trim().toLowerCase();
+    if (!command) return;
 
     if (command === "?" || command === "/help") {
-      commandInput.value = "";
-      commandInput.placeholder = "Commands: /home /journal /films /archive /objects /about /back";
+      resetPrompt("Commands: /home /journal /films /archive /objects /about /back");
       return;
     }
 
@@ -145,11 +147,10 @@ if (commandBar && commandInput) {
     if (command.startsWith("/filter ")) {
       const tag = command.replace("/filter ", "").trim();
       document.querySelectorAll("[data-tags]").forEach(function (item) {
-        const tags = item.dataset.tags || "";
+        const tags = (item.dataset.tags || "").split(/\s+/);
         item.classList.toggle("is-hidden", !tags.includes(tag));
       });
-      commandInput.value = "";
-      commandInput.placeholder = "Filtered: " + tag + " · try /clear";
+      resetPrompt("Filtered: " + tag + " · try /clear");
       return;
     }
 
@@ -157,35 +158,19 @@ if (commandBar && commandInput) {
       document.querySelectorAll("[data-tags]").forEach(function (item) {
         item.classList.remove("is-hidden");
       });
-      commandInput.value = "";
-      commandInput.placeholder = "/home";
+      resetPrompt("/filter film");
       return;
     }
 
-
     if (command.startsWith("/select ")) {
       const id = command.replace("/select ", "").trim();
-      document.querySelectorAll("[id^='film-']").forEach(function (item) {
-        item.classList.toggle("is-active", item.id === "film-" + id);
-      });
-      commandInput.value = "";
-      commandInput.placeholder = "Selected film " + id + " · try /film " + id;
-      return;
-    }
-
-
-    if (command.startsWith("/select ")) {
-      const id = command.replace("/select ", "").trim();
-
       document.querySelectorAll("[id^='note-'], [id^='film-']").forEach(function (item) {
         item.classList.toggle(
           "is-active",
           item.id === "note-" + id || item.id === "film-" + id
         );
       });
-
-      commandInput.value = "";
-      commandInput.placeholder = "Selected " + id + " · try /note " + id + " or /film " + id;
+      resetPrompt("Selected " + id + " · try /note " + id + " or /film " + id);
       return;
     }
 
@@ -207,9 +192,19 @@ if (commandBar && commandInput) {
     }
 
     const msg = pool[Math.floor(Math.random() * pool.length)];
-    commandInput.placeholder = msg;
+    resetPrompt(msg);
+  }
 
-    commandInput.value = "";
+  commandBar.addEventListener("submit", function (event) {
+    event.preventDefault();
+    runCommand(commandInput.value);
+  });
+
+  document.querySelectorAll("[data-command]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      runCommand(button.dataset.command || "");
+      commandInput.focus();
+    });
   });
 }
 

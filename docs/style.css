@@ -176,6 +176,33 @@ body {
   margin-top: -10px;
 }
 
+.tips button {
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin: 0 0 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: clamp(13px, 1.4vw, 21px);
+  line-height: 1.35;
+  text-align: left;
+}
+
+.tips button::before {
+  content: "> ";
+  color: var(--green);
+}
+
+.tips button:hover,
+.tips button:focus-visible {
+  color: var(--green);
+  outline: none;
+}
+
 .tips hr {
   border: 0;
   border-top: 3px solid var(--line);
@@ -588,6 +615,10 @@ a:hover {
 .films-list article.is-active h2::before {
   content: "> ";
   color: var(--green);
+}
+
+[data-tags].is-hidden {
+  display: none !important;
 }
 
 /* ── Journal list ── */
