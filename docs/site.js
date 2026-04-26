@@ -30,6 +30,8 @@ const routes = {
   "/film 003": "/mcamner-journal/posts/the-vanishing.html",
   "/film 004": "/mcamner-journal/posts/paris-texas.html",
   "/film 005": "/mcamner-journal/posts/the-conversation.html",
+  "/film 006": "/mcamner-journal/posts/stalker.html",
+  "/stalker": "/mcamner-journal/posts/stalker.html",
   "/paris-texas": "/mcamner-journal/posts/paris-texas.html",
   "/the-conversation": "/mcamner-journal/posts/the-conversation.html",
   "/series 001": "/mcamner-journal/posts/slow-horses.html",
