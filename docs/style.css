@@ -210,42 +210,50 @@ body {
 }
 
 .index-pulse {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  display: block;
 }
 
 .index-pulse a {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
   min-width: 0;
-  padding: 12px 12px 10px;
-  border: 1px solid rgba(247, 243, 237, 0.24);
-  background: rgba(0, 0, 0, 0.13);
+  margin: 0 0 10px;
   color: var(--white);
   text-decoration: none;
 }
 
+.index-pulse a::before {
+  content: "> ";
+  color: var(--green);
+}
+
 .index-pulse a:hover,
 .index-pulse a:focus-visible {
-  border-color: var(--green);
-  background: rgba(89, 161, 79, 0.12);
+  color: var(--green);
   outline: none;
 }
 
 .index-pulse strong {
-  display: block;
+  display: inline;
   color: var(--green);
-  font-size: clamp(21px, 2.2vw, 32px);
+  font-size: clamp(13px, 1.4vw, 21px);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .index-pulse span {
-  display: block;
-  margin-top: 6px;
+  display: inline;
+  min-width: 0;
+  margin-top: 0;
   color: var(--muted);
-  font-size: clamp(11px, 1vw, 15px);
-  line-height: 1.15;
+  font-size: clamp(13px, 1.4vw, 21px);
+  line-height: 1.2;
+}
+
+.index-pulse a:hover span,
+.index-pulse a:focus-visible span {
+  color: var(--green);
 }
 
 /* ── Command prompt ── */
