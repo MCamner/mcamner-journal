@@ -1,6 +1,6 @@
-# MCamner Journal
+# McAmner Journal
 
-> A command-line inspired journal on systems, technology, and thinking.
+> A command-line inspired journal for systems, culture, objects, and visual references.
 
 ---
 
@@ -44,10 +44,20 @@ It reflects how ideas actually form — not how they are polished.
 
 ## Structure
 
+```text
 docs/
-index.html
-about.html
-style.css
+  index.html       home dashboard
+  journal.html     notes and entries
+  catalogue.html   films, series, books, and music
+  films.html       film index
+  archive.html     visual references
+  objects.html     object index
+  about.html       biography and context
+  posts/           individual entries
+  assets/          images and site assets
+  site.js          command routing and small interactions
+  style.css        visual system
+```
 
 
 Served via GitHub Pages from `/docs`.
@@ -56,8 +66,10 @@ Served via GitHub Pages from `/docs`.
 
 ## Design
 
-- Typography-first
-- Soft paper palette
+- Terminal-inspired
+- Fast scanning
+- Blue, orange, green signal palette
+- Randomized archive, index, status, and recent signals
 - Static, fast, durable
 - No dependencies
 
