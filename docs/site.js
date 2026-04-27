@@ -149,6 +149,39 @@ if (indexPulse) {
   });
 }
 
+const systemStatus = document.querySelector('[data-random-status]');
+if (systemStatus) {
+  const statusPools = [
+    [
+      "boot: mcamner-journal",
+      "boot: quiet systems",
+      "boot: signal console",
+      "boot: archive node"
+    ],
+    [
+      "mode: observing",
+      "mode: indexing",
+      "mode: collecting fragments",
+      "mode: returning to things"
+    ],
+    [
+      "last updated: /catalogue",
+      "open thread: /journal",
+      "visual feed: /archive",
+      "object cache: /objects"
+    ]
+  ];
+
+  Array.from(systemStatus.querySelectorAll('p')).forEach(function(line, i) {
+    const pool = statusPools[i] || [];
+    const text = pool[Math.floor(Math.random() * pool.length)];
+
+    if (text) {
+      line.textContent = "> " + text;
+    }
+  });
+}
+
 const signalList = document.querySelector('[data-random-signals]');
 if (signalList) {
   const limit = Number(signalList.dataset.limit) || 5;
