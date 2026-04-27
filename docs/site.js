@@ -101,14 +101,18 @@ const errorMessages = [
   "You are improvising. System is not."
 ];
 
+function shuffleItems(items) {
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+
+  return items;
+}
+
 const archiveGrid = document.querySelector('.archive-grid');
 if (archiveGrid) {
-  const articles = Array.from(archiveGrid.querySelectorAll('article'));
-
-  for (let i = articles.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [articles[i], articles[j]] = [articles[j], articles[i]];
-  }
+  const articles = shuffleItems(Array.from(archiveGrid.querySelectorAll('article')));
 
   articles.forEach(function(article, i) {
     if (i >= 15) {
@@ -125,6 +129,34 @@ if (archiveGrid) {
         }
       }
     }
+  });
+}
+
+const indexPulse = document.querySelector('[data-random-index]');
+if (indexPulse) {
+  const cards = shuffleItems(Array.from(indexPulse.querySelectorAll('a')));
+
+  cards.forEach(function(card) {
+    const labels = (card.dataset.labels || "").split("|").filter(Boolean);
+    const label = labels[Math.floor(Math.random() * labels.length)];
+    const labelTarget = card.querySelector('span');
+
+    if (label && labelTarget) {
+      labelTarget.textContent = label;
+    }
+
+    indexPulse.appendChild(card);
+  });
+}
+
+const signalList = document.querySelector('[data-random-signals]');
+if (signalList) {
+  const limit = Number(signalList.dataset.limit) || 5;
+  const signals = shuffleItems(Array.from(signalList.querySelectorAll('.signal-row')));
+
+  signals.forEach(function(signal, i) {
+    signal.hidden = i >= limit;
+    signalList.appendChild(signal);
   });
 }
 
