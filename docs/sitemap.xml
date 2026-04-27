@@ -1,148 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/journal.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/catalogue.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/films.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/archive.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/objects.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/about.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/mqlaunch.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/design-prototype.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/atlas-one.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/atlas-prompt-library.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/black-iris-allseeing.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/the-secret-agent.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/two-lane-blacktop.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/the-vanishing.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/slow-horses.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/fallout.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/white-lotus.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/dope-thief.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/ways-of-seeing.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/pattern-language.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/remains-of-the-day.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/pilgrim-and-locust.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/city-on-fire.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/crime-von-schirach.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/design-prototype.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/dope-thief.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/fallout.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/kill-em-all.html</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/mac-terminal-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/macos-enterprise-dashboard.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/macos-scripts.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/mqlaunch.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/mqmirror.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/paris-texas.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/pattern-language.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/pilgrim-and-locust.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/remains-of-the-day.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/slow-horses.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/stalker.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/structure.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/the-conversation.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/the-secret-agent.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/the-vanishing.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/two-lane-blacktop.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/unknown-pleasures.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/ways-of-seeing.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/white-lotus.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/zephyr-workbench.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
