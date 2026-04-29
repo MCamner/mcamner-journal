@@ -88,14 +88,14 @@ body {
 }
 
 .welcome h1,
-.bot,
-.post-figure {
+.bot span,
+.post-figure svg {
   cursor: crosshair;
 }
 
 .welcome h1:focus-visible,
-.bot:focus-visible,
-.post-figure:focus-visible {
+.bot span:focus-visible,
+.post-figure svg:focus-visible {
   outline: 2px solid var(--green);
   outline-offset: 6px;
 }

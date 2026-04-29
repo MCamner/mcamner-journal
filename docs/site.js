@@ -199,7 +199,7 @@ if (signalList) {
   });
 }
 
-const voiceTriggers = document.querySelectorAll(".welcome h1, .bot, .post-figure");
+const voiceTriggers = document.querySelectorAll(".welcome h1, .bot span, .post-figure svg");
 if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window) {
   let lastSpokenAt = 0;
 
