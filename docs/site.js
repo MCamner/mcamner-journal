@@ -49,6 +49,8 @@ const routes = {
   "/book 004": "/mcamner-journal/posts/pilgrim-and-locust.html",
   "/book 005": "/mcamner-journal/posts/city-on-fire.html",
   "/book 006": "/mcamner-journal/posts/crime-von-schirach.html",
+  "/book 007": "/mcamner-journal/posts/brave-new-world.html",
+  "/brave-new-world": "/mcamner-journal/posts/brave-new-world.html",
   "/note 005": "/mcamner-journal/posts/black-iris-allseeing.html",
   "/the-secret-agent": "/mcamner-journal/posts/the-secret-agent.html",
   "/two-lane-blacktop": "/mcamner-journal/posts/two-lane-blacktop.html",
