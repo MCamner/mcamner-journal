@@ -17,10 +17,10 @@ const routes = {
   "/object 009": "/mcamner-journal/objects.html",
   "/object 010": "/mcamner-journal/objects.html",
   "/contact": "mailto:mattias.camner@gmail.com",
-  "/instagram": "https://www.instagram.com/blackiris_sthlm/",
+  "/instagram": "https://www.instagram.com/mattias.camner/",
   "/linkedin": "https://www.linkedin.com/in/mattias-camner-75958022",
   "/open linkedin": "https://www.linkedin.com/in/mattias-camner-75958022",
-  "/open instagram": "https://www.instagram.com/blackiris_sthlm/",
+  "/open instagram": "https://www.instagram.com/mattias.camner/",
 
   "/structure": "/mcamner-journal/posts/structure.html",
   "/note 001": "/mcamner-journal/posts/mqlaunch.html",
