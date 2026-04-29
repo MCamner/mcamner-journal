@@ -201,7 +201,13 @@ if (signalList) {
 
 const voiceTriggers = document.querySelectorAll(".welcome h1, .bot, .post-figure");
 if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window) {
+  let lastSpokenAt = 0;
+
   function speakSiteOwner() {
+    const now = Date.now();
+    if (now - lastSpokenAt < 1200) return;
+
+    lastSpokenAt = now;
     window.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance("Mattias Camner. Master of this site.");
@@ -218,6 +224,7 @@ if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtter
     trigger.setAttribute("aria-label", "Say Mattias Camner, Master of this site");
     trigger.setAttribute("title", "Mattias Camner · Master of this site");
 
+    trigger.addEventListener("mouseenter", speakSiteOwner);
     trigger.addEventListener("click", speakSiteOwner);
     trigger.addEventListener("keydown", function(event) {
       if (event.key === "Enter" || event.key === " ") {
