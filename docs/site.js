@@ -74,7 +74,10 @@ const routes = {
   "/note 010": "/mcamner-journal/posts/macos-enterprise-dashboard.html",
   "/macos-enterprise-dashboard": "/mcamner-journal/posts/macos-enterprise-dashboard.html",
   "/note 011": "/mcamner-journal/posts/mac-terminal-guide.html",
-  "/mac-terminal-guide": "/mcamner-journal/posts/mac-terminal-guide.html"
+  "/mac-terminal-guide": "/mcamner-journal/posts/mac-terminal-guide.html",
+  "/note 012": "/mcamner-journal/posts/coolthing.html",
+  "/coolthing": "/mcamner-journal/posts/coolthing.html",
+  "/coolThing": "/mcamner-journal/posts/coolthing.html"
 };
 
 

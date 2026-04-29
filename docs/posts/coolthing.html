@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>coolThing | McAmner Journal</title>
+  <meta name="description" content="coolThing is a note on a repository for retro web experiments, local tools, Mega Movie, Mega Guitar, Mega Now, and browser interfaces with backend weight.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/coolthing.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/coolthing.html">
+  <meta property="og:title" content="coolThing | McAmner Journal">
+  <meta property="og:description" content="A repository for retro web experiments, local tools, and browser interfaces with backend weight.">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>coolThing</h1>
+  <p>Tools, scripts, and retro web experiments.</p>
+  <p>A repo as a cabinet of working prototypes.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 012</p>
+  <p>> repo scanned</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; coolthing</h2>
+
+  <p>
+    coolThing is named like a throwaway folder.
+    It is not one.
+    It is a repository for experiments that have crossed the first threshold:
+    not just ideas, not yet products, but working surfaces with enough structure
+    to keep growing.
+  </p>
+
+  <p>
+    The shape is deliberately simple.
+    <code>docs/</code> is the public front: GitHub Pages, browser UI, static files.
+    <code>backend/</code> is the local engine: FastAPI, yt-dlp, Basic Pitch, Spotify OAuth.
+    <code>tools/</code> is the operator layer: scripts that start services,
+    serve the frontend, and connect local folders to remote repositories.
+    Three folders. Three responsibilities.
+  </p>
+
+  <p>
+    Mega Movie Tube is the purest visual experiment:
+    a Nintendo-inspired streaming launcher, cartridge cards,
+    CRT channel-change animation, and a Konami-code wink.
+    It treats streaming services as objects you select,
+    not as apps you disappear into.
+  </p>
+
+  <p>
+    Mega Guitar Tabs is more ambitious.
+    Paste a YouTube link, download audio locally,
+    run transcription, then map detected notes onto guitar strings and frets.
+    The current backend already carries the serious machinery:
+    <code>yt-dlp</code> for extraction, <code>basic-pitch</code> for note events,
+    and a tab renderer that groups nearby notes into playable columns.
+    It is a toy with a real engine under the shell.
+  </p>
+
+  <p>
+    Mega Now closes the loop.
+    It reads what Spotify is playing, shows the track, cover, progress,
+    BPM, key, energy, and danceability,
+    then sends the current song toward Mega Guitar through a YouTube search.
+    Listening becomes input.
+    The song playing now becomes material for the next tool.
+  </p>
+
+  <p>
+    The important constraint is locality.
+    GitHub Pages can host the interface, but it cannot run Python,
+    FFmpeg, OAuth secrets, audio transcription, or model inference.
+    coolThing accepts that boundary instead of hiding it.
+    The browser is the control surface.
+    The Mac is the machine room.
+  </p>
+
+  <p>
+    That split gives the repo its character.
+    It is playful at the edge and practical underneath.
+    Retro skins, arcade language, and glowing cards on top;
+    scripts, ports, CORS, tokens, temp files, and process cleanup below.
+    The aesthetic is not decoration.
+    It makes local tooling feel like something you want to open.
+  </p>
+
+  <p>
+    Most prototype repos die because they are either too loose to operate
+    or too formal to enjoy.
+    coolThing sits in the useful middle:
+    enough ceremony to run, enough weirdness to keep returning to.
+  </p>
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" width="70">
+    <rect x="2" y="4" width="12" height="16" fill="#e57b4f"/>
+    <rect x="4" y="7" width="8" height="2" fill="#0d438f"/>
+    <rect x="4" y="12" width="8" height="2" fill="#59a14f"/>
+    <rect x="20" y="2" width="16" height="20" fill="#59a14f"/>
+    <rect x="23" y="5" width="10" height="5" fill="#0d438f"/>
+    <rect x="24" y="13" width="2" height="6" fill="#e57b4f"/>
+    <rect x="29" y="13" width="2" height="6" fill="#e57b4f"/>
+    <rect x="42" y="6" width="12" height="14" fill="#0d438f"/>
+    <rect x="44" y="9" width="3" height="3" fill="#e57b4f"/>
+    <rect x="49" y="14" width="3" height="3" fill="#59a14f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://mcamner.github.io/coolThing/" target="_blank" rel="noopener noreferrer">/open coolthing</a><span>-- launch archive</span></li>
+    <li><a href="https://mcamner.github.io/coolThing/mega-movie/" target="_blank" rel="noopener noreferrer">/open mega-movie</a><span>-- streaming launcher</span></li>
+    <li><a href="https://mcamner.github.io/coolThing/mega-guitar/" target="_blank" rel="noopener noreferrer">/open mega-guitar</a><span>-- tab generator frontend</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="mac-terminal-guide.html">/note 011</a><span>-- Mac Terminal Guide</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
