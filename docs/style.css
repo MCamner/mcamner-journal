@@ -87,6 +87,19 @@ body {
   letter-spacing: -0.045em;
 }
 
+.welcome h1,
+.bot,
+.post-figure {
+  cursor: crosshair;
+}
+
+.welcome h1:focus-visible,
+.bot:focus-visible,
+.post-figure:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 6px;
+}
+
 .welcome p {
   margin: 8px 0;
   color: var(--muted);
@@ -744,6 +757,12 @@ a:hover {
   text-align: center;
   padding: 1.5rem 0 0.5rem;
   opacity: 0.6;
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.post-figure:hover {
+  opacity: 0.9;
+  filter: brightness(1.18);
 }
 
 /* ── Films list ── */

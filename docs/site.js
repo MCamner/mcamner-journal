@@ -199,6 +199,35 @@ if (signalList) {
   });
 }
 
+const voiceTriggers = document.querySelectorAll(".welcome h1, .bot, .post-figure");
+if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window) {
+  function speakSiteOwner() {
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance("Mattias Camner. Master of this site.");
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 0.85;
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  voiceTriggers.forEach(function(trigger) {
+    trigger.setAttribute("tabindex", "0");
+    trigger.setAttribute("role", "button");
+    trigger.setAttribute("aria-label", "Say Mattias Camner, Master of this site");
+    trigger.setAttribute("title", "Mattias Camner · Master of this site");
+
+    trigger.addEventListener("click", speakSiteOwner);
+    trigger.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        speakSiteOwner();
+      }
+    });
+  });
+}
+
 const commandBar = document.getElementById("commandBar");
 const commandInput = document.getElementById("commandInput");
 
