@@ -1,12 +1,10 @@
 # McAmner Journal
 
-> A command-line inspired journal for systems, culture, objects, and visual references.
+A command-line inspired journal for systems, culture, objects, and visual references.
 
----
+Live:
 
-## Live
-
-https://mcamner.github.io/mcamner-journal/
+    https://mcamner.github.io/mcamner-journal/
 
 ---
 
@@ -14,9 +12,10 @@ https://mcamner.github.io/mcamner-journal/
 
 This is not a traditional blog.
 
-It is a **journal designed for thinking**.
+It is a journal designed for thinking.
 
-Most platforms optimize for publishing.  
+Most platforms optimize for publishing.
+
 This optimizes for:
 
 - clarity
@@ -24,13 +23,13 @@ This optimizes for:
 - iteration
 - unfinished ideas
 
-> Less publishing. More thinking.
+Less publishing. More thinking.
 
 ---
 
 ## Interface
 
-The journal is built like a **command surface**:
+The journal is built like a command surface:
 
 - minimal UI
 - fast scanning
@@ -38,29 +37,104 @@ The journal is built like a **command surface**:
 - no frameworks
 - no noise
 
-It reflects how ideas actually form — not how they are polished.
+It reflects how ideas actually form — not only how they are polished.
+
+---
+
+## Quick Start
+
+Open the site directly:
+
+    open docs/index.html
+
+Or run a local server:
+
+    cd docs
+    python3 -m http.server 3000
+
+Then open:
+
+    http://localhost:3000
+
+---
+
+## Route Map
+
+Public pages:
+
+    /                Home
+    /journal.html    Notes and entries
+    /catalogue.html  Films, series, books, and music
+    /films.html      Film index
+    /archive.html    Visual references
+    /objects.html    Object index
+    /about.html      Biography and context
+
+Post pages live under:
+
+    /posts/
 
 ---
 
 ## Structure
 
-```text
-docs/
-  index.html       home dashboard
-  journal.html     notes and entries
-  catalogue.html   films, series, books, and music
-  films.html       film index
-  archive.html     visual references
-  objects.html     object index
-  about.html       biography and context
-  posts/           individual entries
-  assets/          images and site assets
-  site.js          command routing and small interactions
-  style.css        visual system
-```
+    docs/
+      index.html       home dashboard
+      journal.html     notes and entries
+      catalogue.html   films, series, books, and music
+      films.html       film index
+      archive.html     visual references
+      objects.html     object index
+      about.html       biography and context
+      posts/           individual entries
+      assets/          images and site assets
+      site.js          command routing and small interactions
+      style.css        visual system
+      robots.txt       crawler instructions
+      sitemap.xml      search index map
 
+The site is served via GitHub Pages from:
 
-Served via GitHub Pages from `/docs`.
+    main /docs
+
+---
+
+## Adding a New Post
+
+Recommended flow:
+
+1. Add a new HTML file under:
+
+       docs/posts/
+
+2. Link the post from:
+
+       docs/journal.html
+
+3. Add it to recent/signals/navigation if relevant:
+
+       docs/site.js
+
+4. Test locally:
+
+       cd docs
+       python3 -m http.server 3000
+
+5. Open:
+
+       http://localhost:3000
+
+---
+
+## Deployment
+
+GitHub Pages should be configured as:
+
+    Settings → Pages → Deploy from branch → main /docs
+
+Live site:
+
+    https://mcamner.github.io/mcamner-journal/
 
 ---
 
@@ -79,12 +153,19 @@ Served via GitHub Pages from `/docs`.
 
 Part of a broader direction:
 
-- **mqlaunch** → command surface for workflows  
-- **journal** → command surface for thinking  
+    mqlaunch → command surface for workflows
+    journal  → command surface for thinking
 
 ---
 
 ## Author
 
-Mattias Camner  
+Mattias Camner
+
 Infrastructure / Platform Architect
+
+---
+
+## License
+
+MIT
