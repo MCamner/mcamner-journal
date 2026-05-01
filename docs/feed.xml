@@ -24,6 +24,14 @@
       <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>the machine room</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/machine-room.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/machine-room.html</guid>
+      <description>A note on local computation, owned infrastructure, and the philosophy of keeping real work on your own hardware.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Brave New World</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/brave-new-world.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/brave-new-world.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/the-conversation.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-conversation.html</guid>
       <description>The Conversation is a note on Francis Ford Coppola&#x27;s 1974 film, paranoia, surveillance, isolation, and listening too carefully.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Paris, Texas</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/paris-texas.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/paris-texas.html</guid>
-      <description>Paris, Texas is a note on Wim Wenders&#x27; 1984 film, road, silence, identity, absence, and a man walking out of the desert.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
     </item>
