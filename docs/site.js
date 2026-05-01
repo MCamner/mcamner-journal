@@ -2,6 +2,7 @@ const routes = {
   "/home": "/mcamner-journal/index.html",
   "/journal": "/mcamner-journal/journal.html",
   "/films": "/mcamner-journal/films.html",
+  "/books": "/mcamner-journal/books.html",
   "/catalogue": "/mcamner-journal/catalogue.html",
   "/archive": "/mcamner-journal/archive.html",
   "/objects": "/mcamner-journal/objects.html",
