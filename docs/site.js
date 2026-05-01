@@ -328,6 +328,30 @@ if (commandBar && commandInput) {
       commandInput.focus();
     });
   });
+
+  document.querySelectorAll(".film-tags span, .catalogue-tags span, .object-tags span").forEach(function (tag) {
+    const value = (tag.textContent || "").trim().toLowerCase();
+    if (!value) return;
+
+    tag.setAttribute("role", "button");
+    tag.setAttribute("tabindex", "0");
+    tag.setAttribute("title", "Filter " + value);
+    tag.setAttribute("aria-label", "Filter by " + value);
+
+    function filterTag(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      runCommand("/filter " + value);
+      commandInput.focus();
+    }
+
+    tag.addEventListener("click", filterTag);
+    tag.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        filterTag(event);
+      }
+    });
+  });
 }
 
 /* Global focus panel */

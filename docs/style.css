@@ -1227,3 +1227,20 @@ a[href^="https://mcamner.github.io/mcamner-journal"]::after {
   padding: 2px 8px;
   font-size: 13px;
 }
+
+.film-tags span[role="button"],
+.catalogue-tags span[role="button"],
+.object-tags span[role="button"] {
+  cursor: pointer;
+}
+
+.film-tags span[role="button"]:hover,
+.film-tags span[role="button"]:focus-visible,
+.catalogue-tags span[role="button"]:hover,
+.catalogue-tags span[role="button"]:focus-visible,
+.object-tags span[role="button"]:hover,
+.object-tags span[role="button"]:focus-visible {
+  color: var(--white);
+  background: rgba(89,161,79,0.18);
+  outline: none;
+}
