@@ -18,6 +18,7 @@ The site is static, framework-free, and designed as a command-line inspired jour
     journal.html     Notes and entries
     catalogue.html   Films, series, books, and music
     films.html       Film index
+    books.html       Book index
     archive.html     Visual references
     objects.html     Object index
     about.html       Biography and context
@@ -37,6 +38,7 @@ The site is static, framework-free, and designed as a command-line inspired jour
     style.css        Visual system
     robots.txt       Crawler instructions
     sitemap.xml      Search index map
+    feed.xml         RSS feed
 
 ---
 
@@ -75,7 +77,18 @@ Or from repo root:
        cd docs
        python3 -m http.server 3000
 
-5. Commit and push.
+5. Regenerate site metadata from repo root:
+
+       python3 tools/generate_site_metadata.py
+
+   This updates:
+
+       docs/sitemap.xml
+       docs/feed.xml
+       homepage latest entries
+       catalogue counts
+
+6. Commit and push.
 
 ---
 
@@ -97,4 +110,3 @@ The interface is built around:
 GitHub Pages should use:
 
     main /docs
-

@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/books.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/archive.html</loc>
     <lastmod>2026-04-27</lastmod>
     <priority>0.8</priority>
@@ -36,18 +41,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/books.html</loc>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/arkangel.html</loc>
     <lastmod>2026-05-01</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/atlas-one.html</loc>
     <lastmod>2026-04-27</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/arkangel.html</loc>
-    <lastmod>2026-05-01</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -71,13 +71,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/crime-von-schirach.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/coolthing.html</loc>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/coolthing.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/crime-von-schirach.html</loc>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -101,13 +101,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/kill-em-all.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/good-time.html</loc>
+    <lastmod>2026-04-29</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/good-time.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/kill-em-all.html</loc>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
