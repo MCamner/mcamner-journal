@@ -653,6 +653,132 @@ a:hover {
   transition: transform 140ms ease, border-color 140ms ease;
   position: relative;
   overflow: hidden;
+  cursor: zoom-in;
+}
+
+.archive-grid article::after {
+  content: "[ + ]";
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 140ms ease;
+  pointer-events: none;
+}
+
+.archive-grid article:hover::after {
+  opacity: 1;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 10, 20, 0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox__img {
+  max-width: min(88vw, 1100px);
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+.lightbox__counter {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.lightbox__meta {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.lightbox__title {
+  margin: 0 0 6px;
+  color: var(--orange);
+  font-size: clamp(15px, 1.6vw, 24px);
+  letter-spacing: -0.04em;
+}
+
+.lightbox__caption {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(12px, 1.1vw, 17px);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 30px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  transition: color 120ms;
+}
+
+.lightbox__close:hover { color: var(--orange); }
+
+.lightbox__prev,
+.lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 2px solid rgba(229,123,79,0.35);
+  color: var(--orange);
+  font: inherit;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 10px 18px;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.lightbox__prev { left: 20px; }
+.lightbox__next { right: 20px; }
+
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .lightbox__prev { left: 6px; padding: 8px 12px; }
+  .lightbox__next { right: 6px; padding: 8px 12px; }
+  .lightbox__meta { bottom: 16px; }
 }
 
 .archive-grid article:hover {

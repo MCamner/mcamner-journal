@@ -261,7 +261,7 @@ if (commandBar && commandInput) {
     if (!command) return;
 
     if (command === "?" || command === "/help") {
-      resetPrompt("Commands: /home /journal /films /archive /objects /about /random /back");
+      resetPrompt("Commands: /home /journal /films /archive /objects /about /random /show all /back");
       return;
     }
 
@@ -291,6 +291,23 @@ if (commandBar && commandInput) {
         item.classList.remove("is-hidden");
       });
       resetPrompt("/filter film");
+      return;
+    }
+
+    if (command === "/show all") {
+      var hidden = document.querySelectorAll(".archive-grid article");
+      var count = 0;
+      hidden.forEach(function (article) {
+        if (article.style.display === "none") {
+          article.style.display = "";
+          var img = article.querySelector("img");
+          if (img && img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+          count++;
+        }
+      });
+      resetPrompt("all " + document.querySelectorAll(".archive-grid article").length + " items visible · /archive");
       return;
     }
 
@@ -456,5 +473,102 @@ if (commandBar && commandInput) {
 
     item.addEventListener("mouseenter", updatePanel);
     item.addEventListener("focus", updatePanel);
+  });
+})();
+
+/* Archive lightbox */
+(function () {
+  var grid = document.querySelector(".archive-grid");
+  if (!grid) return;
+
+  var lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.setAttribute("role", "dialog");
+  lb.setAttribute("aria-modal", "true");
+  lb.innerHTML =
+    '<button class="lightbox__close" aria-label="Close">&times;</button>' +
+    '<span class="lightbox__counter"></span>' +
+    '<button class="lightbox__prev" aria-label="Previous">&#8592;</button>' +
+    '<img class="lightbox__img" src="" alt="">' +
+    '<button class="lightbox__next" aria-label="Next">&#8594;</button>' +
+    '<div class="lightbox__meta">' +
+    '<h2 class="lightbox__title"></h2>' +
+    '<p class="lightbox__caption"></p>' +
+    "</div>";
+  document.body.appendChild(lb);
+
+  var lbImg     = lb.querySelector(".lightbox__img");
+  var lbTitle   = lb.querySelector(".lightbox__title");
+  var lbCaption = lb.querySelector(".lightbox__caption");
+  var lbCounter = lb.querySelector(".lightbox__counter");
+  var btnClose  = lb.querySelector(".lightbox__close");
+  var btnPrev   = lb.querySelector(".lightbox__prev");
+  var btnNext   = lb.querySelector(".lightbox__next");
+
+  var items   = [];
+  var current = 0;
+
+  function getItems() {
+    return Array.from(grid.querySelectorAll("article"));
+  }
+
+  function update() {
+    var item   = items[current];
+    var src    = item.querySelector("img").src;
+    var title  = item.querySelector("h2").textContent;
+    var cap    = item.querySelector("p") ? item.querySelector("p").textContent : "";
+    var num    = item.querySelector("span") ? item.querySelector("span").textContent : "";
+    lbImg.src          = src;
+    lbImg.alt          = title;
+    lbTitle.textContent   = title;
+    lbCaption.textContent = cap;
+    lbCounter.textContent = num + "  ·  " + (current + 1) + " / " + items.length;
+  }
+
+  function open(index) {
+    items   = getItems();
+    current = index;
+    update();
+    lb.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    btnClose.focus();
+  }
+
+  function close() {
+    lb.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  function prev() {
+    current = (current - 1 + items.length) % items.length;
+    update();
+  }
+
+  function next() {
+    current = (current + 1) % items.length;
+    update();
+  }
+
+  grid.addEventListener("click", function (e) {
+    var article = e.target.closest("article");
+    if (!article) return;
+    var all   = getItems();
+    var index = all.indexOf(article);
+    if (index !== -1) open(index);
+  });
+
+  btnClose.addEventListener("click", close);
+  btnPrev.addEventListener("click", prev);
+  btnNext.addEventListener("click", next);
+
+  lb.addEventListener("click", function (e) {
+    if (e.target === lb) close();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("is-open")) return;
+    if (e.key === "Escape")      close();
+    if (e.key === "ArrowLeft")   prev();
+    if (e.key === "ArrowRight")  next();
   });
 })();
