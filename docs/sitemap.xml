@@ -66,6 +66,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/camaro-1967.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/city-on-fire.html</loc>
     <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
@@ -91,8 +96,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/drakes-donkey-chore.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/fallout.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/fender-stratocaster.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -106,8 +121,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/jlc-reverso.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/kill-em-all.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/lamy-2000.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -118,6 +143,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/mac-terminal-guide.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/macbook-air-m4.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -171,8 +201,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/sony-tcd5m.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/stalker.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/stiletto.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -206,6 +246,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/victorinox-farmer.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/ways-of-seeing.html</loc>
     <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
@@ -218,6 +263,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/zephyr-workbench.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/zippo.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
