@@ -907,6 +907,10 @@ a:hover {
 }
 
 /* ASCII portrait */
+.ascii-portrait {
+  overflow-x: auto;
+}
+
 .ascii-portrait pre {
   display: inline-block;
   font-size: 0.6rem;
@@ -915,6 +919,11 @@ a:hover {
   letter-spacing: 0;
   margin: 0;
   white-space: pre;
+  text-align: left;
+}
+
+.tips .ascii-portrait {
+  padding-top: 1.2rem;
   text-align: left;
 }
 
