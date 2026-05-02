@@ -890,6 +890,33 @@ a:hover {
   color: var(--muted);
 }
 
+.post-box--bi {
+  border-color: rgba(89, 161, 79, 0.65);
+}
+
+.post-box--bi p {
+  color: var(--white);
+}
+
+.post-box--bi a {
+  color: #59a14f;
+  text-decoration: none;
+}
+
+.post-box--bi a:hover {
+  color: var(--orange) !important;
+  text-shadow: none;
+  letter-spacing: normal;
+}
+
+.bi-figures {
+  padding: 1rem 0 0.5rem;
+}
+
+.bi-figures svg {
+  filter: drop-shadow(0 2px 8px rgba(89,161,79,0.25));
+}
+
 .film-intro { color: var(--muted); margin-bottom: 20px; }
 .film-closing { margin-top: 24px; font-style: italic; color: var(--white); }
 .film-rating { margin-top: 18px; color: var(--orange); font-weight: 800; }
