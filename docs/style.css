@@ -906,26 +906,14 @@ a:hover {
   filter: brightness(1.18);
 }
 
-/* ASCII portrait */
-.ascii-portrait {
-  overflow-x: auto;
+.tips-figure {
+  padding-top: 1.4rem;
+  opacity: 0.85;
+  transition: opacity 180ms ease;
 }
 
-.ascii-portrait pre {
-  display: inline-block;
-  font-size: 0.55rem;
-  line-height: 1.15;
-  color: var(--orange);
-  opacity: 0.75;
-  letter-spacing: 0;
-  margin: 0;
-  white-space: pre;
-  text-align: left;
-}
-
-.tips .ascii-portrait {
-  padding-top: 1.2rem;
-  text-align: left;
+.tips-figure:hover {
+  opacity: 1;
 }
 
 /* ── Films list ── */
