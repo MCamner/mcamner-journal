@@ -913,9 +913,10 @@ a:hover {
 
 .ascii-portrait pre {
   display: inline-block;
-  font-size: 0.6rem;
-  line-height: 1.2;
-  color: var(--muted);
+  font-size: 0.55rem;
+  line-height: 1.15;
+  color: var(--orange);
+  opacity: 0.75;
   letter-spacing: 0;
   margin: 0;
   white-space: pre;
