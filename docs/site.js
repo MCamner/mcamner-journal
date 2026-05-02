@@ -68,6 +68,8 @@ const routes = {
   "/kill-em-all": "/mcamner-journal/posts/kill-em-all.html",
   "/music 002": "/mcamner-journal/posts/unknown-pleasures.html",
   "/unknown-pleasures": "/mcamner-journal/posts/unknown-pleasures.html",
+  "/music 003": "/mcamner-journal/posts/back-in-black.html",
+  "/back-in-black": "/mcamner-journal/posts/back-in-black.html",
   "/note 006": "/mcamner-journal/posts/zephyr-workbench.html",
   "/zephyr-workbench": "/mcamner-journal/posts/zephyr-workbench.html",
   "/note 007": "/mcamner-journal/posts/macos-scripts.html",
