@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 01 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Le Samouraï</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</guid>
+      <description>Le Samouraï is a note on Jean-Pierre Melville&#x27;s 1967 film — solitude, ritual, the professional who has made silence into a system.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Arkangel</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/arkangel.html</link>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/stalker.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/stalker.html</guid>
       <description>Stalker is a note on Andrei Tarkovsky&#x27;s 1979 film, the Zone, belief, patience, and three men crossing a threshold.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The Conversation</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/the-conversation.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-conversation.html</guid>
-      <description>The Conversation is a note on Francis Ford Coppola&#x27;s 1974 film, paranoia, surveillance, isolation, and listening too carefully.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
     </item>
