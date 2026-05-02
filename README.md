@@ -66,6 +66,7 @@ Public pages:
     /journal.html    Notes and entries
     /catalogue.html  Films, series, books, and music
     /films.html      Film index
+    /books.html      Book index
     /archive.html    Visual references
     /objects.html    Object index
     /about.html      Biography and context
@@ -107,20 +108,24 @@ Recommended flow:
 
        docs/posts/
 
-2. Link the post from:
+2. Link the post from the relevant index:
 
-       docs/journal.html
+       docs/journal.html     for notes (/note NNN)
+       docs/catalogue.html   for music, films, books, series
+       docs/archive.html     for visual entries
 
-3. Add it to recent/signals/navigation if relevant:
+3. Register the route in:
 
        docs/site.js
 
-4. Test locally:
+4. Update navigation links in related posts if applicable.
+
+5. Test locally:
 
        cd docs
        python3 -m http.server 3000
 
-5. Open:
+6. Open:
 
        http://localhost:3000
 
