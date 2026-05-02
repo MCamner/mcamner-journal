@@ -892,6 +892,13 @@ a:hover {
 
 .post-box--bi {
   border-color: rgba(89, 161, 79, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bi-text {
+  flex: 1;
 }
 
 .post-box--bi p {
@@ -910,7 +917,8 @@ a:hover {
 }
 
 .bi-figures {
-  padding: 1rem 0 0.5rem;
+  flex-shrink: 0;
+  padding: 0;
 }
 
 .bi-figures svg {
