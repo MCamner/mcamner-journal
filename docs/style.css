@@ -910,11 +910,6 @@ a:hover {
   text-decoration: none;
 }
 
-.post-box--bi a:hover {
-  color: var(--orange) !important;
-  text-shadow: none;
-  letter-spacing: normal;
-}
 
 .bi-figures {
   flex-shrink: 0;
