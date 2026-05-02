@@ -476,6 +476,54 @@ if (commandBar && commandInput) {
   });
 })();
 
+/* About page: name scramble + uptime */
+(function () {
+  var scrambleEl = document.querySelector("[data-scramble]");
+  if (scrambleEl) {
+    var target = scrambleEl.dataset.scramble;
+    var chars  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz░▒▓█▄▀#@%&";
+    var resolved = 0;
+    var total    = target.length;
+    var speed    = 38;
+
+    var interval = setInterval(function () {
+      var out = "";
+      for (var i = 0; i < total; i++) {
+        if (target[i] === " ") {
+          out += " ";
+        } else if (i < resolved) {
+          out += target[i];
+        } else {
+          out += chars[Math.floor(Math.random() * chars.length)];
+        }
+      }
+      scrambleEl.textContent = out;
+      resolved++;
+      if (resolved > total) {
+        scrambleEl.textContent = target;
+        clearInterval(interval);
+      }
+    }, speed);
+  }
+
+  var uptimeEl = document.querySelector("[data-uptime]");
+  if (uptimeEl) {
+    var start = new Date("2022-06-01T00:00:00Z");
+
+    function tick() {
+      var diff    = Date.now() - start.getTime();
+      var days    = Math.floor(diff / 86400000);
+      var hours   = Math.floor((diff % 86400000) / 3600000);
+      var minutes = Math.floor((diff % 3600000) / 60000);
+      var seconds = Math.floor((diff % 60000) / 1000);
+      uptimeEl.textContent = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
+
 /* Archive lightbox */
 (function () {
   var grid = document.querySelector(".archive-grid");
