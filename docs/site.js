@@ -82,7 +82,9 @@ const routes = {
   "/mac-terminal-guide": "/mcamner-journal/posts/mac-terminal-guide.html",
   "/note 012": "/mcamner-journal/posts/coolthing.html",
   "/coolthing": "/mcamner-journal/posts/coolthing.html",
-  "/coolThing": "/mcamner-journal/posts/coolthing.html"
+  "/coolThing": "/mcamner-journal/posts/coolthing.html",
+  "/note 013": "/mcamner-journal/posts/machine-room.html",
+  "/machine-room": "/mcamner-journal/posts/machine-room.html"
 };
 
 
@@ -257,12 +259,18 @@ if (commandBar && commandInput) {
     if (!command) return;
 
     if (command === "?" || command === "/help") {
-      resetPrompt("Commands: /home /journal /films /archive /objects /about /back");
+      resetPrompt("Commands: /home /journal /films /archive /objects /about /random /back");
       return;
     }
 
     if (command === "/back") {
       window.history.back();
+      return;
+    }
+
+    if (command === "/random") {
+      const posts = [...new Set(Object.values(routes).filter(url => url.includes("/posts/")))];
+      window.location.href = posts[Math.floor(Math.random() * posts.length)];
       return;
     }
 

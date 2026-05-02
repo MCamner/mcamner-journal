@@ -14,6 +14,21 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; min-height: 100%; }
 
+/* ── CRT scanlines ── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 3px,
+    rgba(0, 0, 0, 0.032) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
 /* ── Base ── */
 body {
   background:
