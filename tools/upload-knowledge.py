@@ -39,7 +39,8 @@ def api(method, path, data=None, ignore_404=False):
     )
     try:
         with urllib.request.urlopen(req) as resp:
-            return json.loads(resp.read())
+            body = resp.read()
+            return json.loads(body) if body else {}
     except urllib.error.HTTPError as e:
         if ignore_404 and e.code == 404:
             return {}

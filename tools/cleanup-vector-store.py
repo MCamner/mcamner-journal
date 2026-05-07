@@ -36,7 +36,8 @@ def api(method, path, data=None, ignore_404=False):
     )
     try:
         with urllib.request.urlopen(req) as resp:
-            return json.loads(resp.read())
+            body = resp.read()
+            return json.loads(body) if body else {}
     except urllib.error.HTTPError as e:
         if ignore_404 and e.code == 404:
             return {}
@@ -53,7 +54,7 @@ def collect_all_files():
         result = api("GET", url)
         batch = result.get("data", [])
         files.extend(batch)
-        if not result.get("has_more"):
+        if not result.get("has_more") or not batch:
             break
         after = batch[-1]["id"]
     return files
