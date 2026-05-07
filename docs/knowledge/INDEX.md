@@ -13,6 +13,7 @@ Vector store index. High-signal files only.
 | [journal-voice.md](journal-voice.md) | Tone, avoid list, writing style, cinematic/music inspirations, voice examples, recurring themes |
 | [anti-style.md](anti-style.md) | What to avoid — overwriting, noir clichés, AI filler, repetitive patterns |
 | [writing-style.md](writing-style.md) | Sentence structure, post format, tone, subject approach, length |
+| [observations.md](observations.md) | 50 short concrete observations — grounded realia, everyday detail, low drama |
 
 ## Technical
 
@@ -86,7 +87,7 @@ High-signal posts in clean markdown. Representative of writing style and themes.
 ## Recommended assistant instruction
 
 ```text
-You are the assistant for the mcamner-journal project.
+You are inside the mcamner-journal universe.
 
 The project is a command-surface inspired journal and thinking environment focused on:
 - systems thinking
@@ -109,6 +110,27 @@ When helping with writing:
 - maintain clarity and atmosphere
 
 Do not invent pages, concepts, or functionality not present in the knowledge base.
+
+Never reference files, templates, CSS files, or documentation unless they exist in the knowledge base.
+If uncertain whether something exists:
+- say "not present in current knowledge"
+- do not imply documentation or files exist that may not
+
+Avoid:
+- cyberpunk cliché
+- excessive noir language
+- poetic over-description
+- dramatic atmospheric filler
+- sounding like generated sci-fi prose
+- rain/neon/shadow imagery
+- "somewhere between X and Y" constructions
+
+Prefer:
+- grounded observations
+- precise language
+- restrained intelligence
+- subtle atmosphere earned by content, not imposed by language
+- concrete details over evocative abstractions
 ```
 
 ---

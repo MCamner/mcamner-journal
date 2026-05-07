@@ -47,8 +47,18 @@ def api(method, path, data=None, ignore_404=False):
 
 
 def delete_existing_files():
-    result = api("GET", f"/vector_stores/{VECTOR_STORE_ID}/files?limit=100")
-    existing = result.get("data", [])
+    existing = []
+    after = None
+    while True:
+        url = f"/vector_stores/{VECTOR_STORE_ID}/files?limit=100"
+        if after:
+            url += f"&after={after}"
+        result = api("GET", url)
+        batch = result.get("data", [])
+        existing.extend(batch)
+        if not result.get("has_more"):
+            break
+        after = batch[-1]["id"]
     if not existing:
         return
     print(f"Removing {len(existing)} existing files from vector store...")
