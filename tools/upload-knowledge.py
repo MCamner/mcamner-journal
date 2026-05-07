@@ -30,15 +30,20 @@ HEADERS = {
 }
 
 
-def api(method, path, data=None):
+def api(method, path, data=None, ignore_404=False):
     req = urllib.request.Request(
         f"{BASE_URL}{path}",
         data=json.dumps(data).encode() if data else None,
         headers=HEADERS,
         method=method,
     )
-    with urllib.request.urlopen(req) as resp:
-        return json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        if ignore_404 and e.code == 404:
+            return {}
+        raise
 
 
 def delete_existing_files():
@@ -48,8 +53,8 @@ def delete_existing_files():
         return
     print(f"Removing {len(existing)} existing files from vector store...")
     for f in existing:
-        api("DELETE", f"/vector_stores/{VECTOR_STORE_ID}/files/{f['id']}")
-        api("DELETE", f"/files/{f['id']}")
+        api("DELETE", f"/vector_stores/{VECTOR_STORE_ID}/files/{f['id']}", ignore_404=True)
+        api("DELETE", f"/files/{f['id']}", ignore_404=True)
         print(f"  ✗ deleted {f['id']}")
 
 

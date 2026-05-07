@@ -18,7 +18,7 @@
 - hedged opinions ("I think that...", "In my opinion...")
 - marketing language
 - superlatives without evidence
-- AI-bloggig phrasing
+- AI-bloggy phrasing
 
 ## Writing style
 
@@ -83,7 +83,7 @@ Builds large-scale infrastructure by day. Curates exhibitions and writes by para
 **On music:**
 > "What Kill 'Em All understood before most of its contemporaries was that energy is a structural choice, not a decoration. The songs are fast because the ideas require speed. The aggression is not performed — it is load-bearing."
 
-> "Back in Black understood that discipline is the point. This is not a band showing off — it is a band stripping away everything that isn't the riff."
+> "What makes Back in Black work is discipline. This is not a band showing off — it is a band stripping away everything that isn't the riff. Nothing is wasted. Nothing is decorative."
 
 **On film:**
 > "Le Samouraï is a film about economy. Every scene contains exactly what it needs and nothing else."
@@ -105,17 +105,6 @@ Builds large-scale infrastructure by day. Curates exhibitions and writes by para
 - **Iteration** — ideas that return, are tested, stay unfinished
 - **Command surfaces** — reducing friction between intent and execution
 - **Local ownership** — owning the layer you are actually in
-
----
-
-## What the voice avoids
-
-- Hype or enthusiasm for its own sake
-- Summary without perspective
-- Feature lists
-- Hedged opinions
-- Trend language
-- First-person that announces itself unnecessarily
 
 ---
 

@@ -7,15 +7,17 @@ Vector store index. High-signal files only.
 ## Identity & Philosophy
 
 | File | Contents |
-|------|----------|
+| ---- | -------- |
+| [README.md](README.md) | Project overview, philosophy, structure, route map, deployment |
 | [philosophy.md](philosophy.md) | Core concept, terminal metaphor, signal vs noise, key terminology |
-| [journal-voice.md](journal-voice.md) | Who is writing, voice examples, recurring themes, post index by theme |
+| [journal-voice.md](journal-voice.md) | Tone, avoid list, writing style, cinematic/music inspirations, voice examples, recurring themes |
+| [anti-style.md](anti-style.md) | What to avoid — overwriting, noir clichés, AI filler, repetitive patterns |
 | [writing-style.md](writing-style.md) | Sentence structure, post format, tone, subject approach, length |
 
 ## Technical
 
 | File | Contents |
-|------|----------|
+| ---- | -------- |
 | [ui-principles.md](ui-principles.md) | Page layout pattern, command bar, archive grid, focus panel, static setup |
 | [design-language.md](design-language.md) | Color palette, typography, layout patterns, interaction patterns, SVG figures |
 | [navigation.md](navigation.md) | Site structure, command routing, content numbering, adding new routes |
@@ -25,7 +27,7 @@ Vector store index. High-signal files only.
 High-signal posts in clean markdown. Representative of writing style and themes.
 
 | File | Type | Theme |
-|------|------|-------|
+| ---- | ---- | ----- |
 | [posts/structure.md](posts/structure.md) | Note 003 | Core philosophy — restraint, structure |
 | [posts/mqlaunch.md](posts/mqlaunch.md) | Note 001 | Command surface thinking |
 | [posts/machine-room.md](posts/machine-room.md) | Note 013 | Local infrastructure, agents |
@@ -41,56 +43,72 @@ High-signal posts in clean markdown. Representative of writing style and themes.
 ## Topics
 
 ### Systems Thinking
+
 - [posts/machine-room.md](posts/machine-room.md)
 - [posts/macos-scripts.md](posts/macos-scripts.md)
 - [posts/mqlaunch.md](posts/mqlaunch.md)
 - [philosophy.md](philosophy.md)
 
 ### Command Surface / Interface
+
 - [ui-principles.md](ui-principles.md)
 - [navigation.md](navigation.md)
 - [posts/mqlaunch.md](posts/mqlaunch.md)
 - [posts/structure.md](posts/structure.md)
 
 ### Cinema
+
 - [posts/le-samourai.md](posts/le-samourai.md)
 - [posts/stalker.md](posts/stalker.md)
 
 ### Music
+
 - [posts/back-in-black.md](posts/back-in-black.md)
 
 ### Visual Identity & Design
+
 - [design-language.md](design-language.md)
 - [ui-principles.md](ui-principles.md)
 
 ### Writing & Voice
+
 - [writing-style.md](writing-style.md)
 - [journal-voice.md](journal-voice.md)
 - [posts/structure.md](posts/structure.md)
 
 ### Culture & Curating
+
 - [posts/ways-of-seeing.md](posts/ways-of-seeing.md)
 - [posts/pattern-language.md](posts/pattern-language.md)
-- [journal-voice.md](journal-voice.md)
 
 ---
 
 ## Recommended assistant instruction
 
-```
-You answer questions about the mcamner-journal project.
+```text
+You are the assistant for the mcamner-journal project.
 
-Focus on:
-- philosophy
-- writing style
-- command-surface UX
+The project is a command-surface inspired journal and thinking environment focused on:
 - systems thinking
-- navigation and structure
-- visual identity
+- signal over noise
+- terminal-inspired UX
+- philosophy, culture, technology, architecture
+- unfinished ideas and structured reflection
 
-Prefer concise, high-signal answers.
-Reference exact files when possible.
-Do not invent pages, scripts, or behavior.
+Use the vector store knowledge as the primary source.
+
+Prefer:
+- concise high-signal answers
+- structured reasoning
+- calm intelligent tone
+- references to exact concepts and files when relevant
+
+When helping with writing:
+- preserve the journal voice
+- avoid generic corporate language
+- maintain clarity and atmosphere
+
+Do not invent pages, concepts, or functionality not present in the knowledge base.
 ```
 
 ---
