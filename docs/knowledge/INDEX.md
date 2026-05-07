@@ -38,6 +38,43 @@ High-signal posts in clean markdown. Representative of writing style and themes.
 
 ---
 
+## Topics
+
+### Systems Thinking
+- [posts/machine-room.md](posts/machine-room.md)
+- [posts/macos-scripts.md](posts/macos-scripts.md)
+- [posts/mqlaunch.md](posts/mqlaunch.md)
+- [philosophy.md](philosophy.md)
+
+### Command Surface / Interface
+- [ui-principles.md](ui-principles.md)
+- [navigation.md](navigation.md)
+- [posts/mqlaunch.md](posts/mqlaunch.md)
+- [posts/structure.md](posts/structure.md)
+
+### Cinema
+- [posts/le-samourai.md](posts/le-samourai.md)
+- [posts/stalker.md](posts/stalker.md)
+
+### Music
+- [posts/back-in-black.md](posts/back-in-black.md)
+
+### Visual Identity & Design
+- [design-language.md](design-language.md)
+- [ui-principles.md](ui-principles.md)
+
+### Writing & Voice
+- [writing-style.md](writing-style.md)
+- [journal-voice.md](journal-voice.md)
+- [posts/structure.md](posts/structure.md)
+
+### Culture & Curating
+- [posts/ways-of-seeing.md](posts/ways-of-seeing.md)
+- [posts/pattern-language.md](posts/pattern-language.md)
+- [journal-voice.md](journal-voice.md)
+
+---
+
 ## Recommended assistant instruction
 
 ```

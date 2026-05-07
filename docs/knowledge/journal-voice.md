@@ -1,5 +1,63 @@
 # Journal Voice — McAmner Journal
 
+## Tone
+
+- reflective
+- intelligent
+- cinematic
+- restrained
+- observant
+- systems-oriented
+
+## Avoid
+
+- hype
+- startup language
+- productivity clichés
+- excessive optimism
+- hedged opinions ("I think that...", "In my opinion...")
+- marketing language
+- superlatives without evidence
+- AI-bloggig phrasing
+
+## Writing style
+
+- concise paragraphs, one idea each
+- strong visual metaphors
+- systems-oriented observations
+- unfinished thoughts are acceptable
+- ambiguity can be intentional
+- fragment sentences when they carry weight
+- no bullet points in post body text
+
+## Inspirations
+
+### Cinema
+- Le Samouraï (Melville) — economy, ritual, code
+- Stalker (Tarkovsky) — faith, landscape, the unexplained
+- Heat (Mann) — discipline, professionalism, restraint
+- Blade Runner — atmosphere, decay, future as memory
+- Two-Lane Blacktop — movement, silence, no destination
+- Paris, Texas — distance, estrangement, the long shot
+- Ghost in the Shell — identity, infrastructure, the boundary of self
+
+### Literature & Theory
+- Ways of Seeing (Berger) — who controls the image
+- A Pattern Language (Alexander) — discovered structure, felt experience
+- Remains of the Day (Ishiguro) — restraint as character
+
+### Music
+- Joy Division — tension without release
+- AC/DC — discipline as power
+- Metallica (early) — energy as structure, not decoration
+
+### Interfaces & Architecture
+- Terminal interfaces — honesty through constraint
+- Architecture journals — precise language, material thinking
+- Unix philosophy — do one thing, do it well
+
+---
+
 ## Who is writing
 
 Mattias Camner. Infrastructure architect and curator. Stockholm.
