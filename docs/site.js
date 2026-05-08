@@ -89,6 +89,8 @@ const routes = {
   "/machine-room": "/mcamner-journal/posts/machine-room.html",
   "/note 014": "/mcamner-journal/posts/guitar-pro-8.html",
   "/guitar-pro-8": "/mcamner-journal/posts/guitar-pro-8.html",
+  "/note 015": "/mcamner-journal/posts/editorial-engine.html",
+  "/editorial-engine": "/mcamner-journal/posts/editorial-engine.html",
   "/film 008": "/mcamner-journal/posts/le-samourai.html",
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html"
 };

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the editorial engine | McAmner Journal</title>
+  <meta name="description" content="On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html">
+  <meta property="og:title" content="the editorial engine | McAmner Journal">
+  <meta property="og:description" content="On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="the editorial engine | McAmner Journal">
+  <meta name="twitter:description" content="On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html"
+  },
+  "headline": "the editorial engine",
+  "description": "On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-05-08",
+  "datePublished": "2026-05-08"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>the editorial engine</h1>
+  <p>A knowledge base for the journal assistant.</p>
+  <p>Teaching the machine what the writing already knows.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 015</p>
+  <p>> vector store active</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; the editorial engine</h2>
+
+  <p>
+    The assistant knows the journal now. Not because it was told what to write,
+    but because it has read what has already been written.
+  </p>
+
+  <p>
+    The core is a vector store: nineteen markdown files, each high-signal.
+    Identity documents, design language, tone, selected posts, an anti-style guide,
+    fifty short concrete observations. The model retrieves from these on each query.
+    The quality of the retrieval determines the quality of the response.
+  </p>
+
+  <p>
+    A vector store is not a database. It stores meaning, not records.
+    The same query asked two different ways returns the same material
+    because the system matches by semantic proximity, not exact string.
+    This matters for something as inherently imprecise as
+    "write in the voice of this journal."
+  </p>
+
+  <p>
+    The hard part was not the technical setup.
+    It was deciding what belonged in the store and what did not.
+    Code patterns and file structure were excluded — they can be derived by reading the repo.
+    Git history was excluded — that belongs in commit messages.
+    What remained were the things that would not survive in any other form:
+    the philosophy, the tone, the recurring preoccupations,
+    the lines already written that define what a new line should feel like.
+  </p>
+
+  <p>
+    An observations file was added last: fifty short concrete notes from experience.
+    Not abstractions. Not principles. Observations.
+    The model needed friction against actuality — something to pull it away from
+    manifesto language toward the grounded specific.
+    More realia improved the output faster than any additional instruction.
+  </p>
+
+  <p>
+    The result behaves more like an editorial engine than an assistant.
+    It does not generate text from scratch.
+    It operates inside a defined aesthetic and checks each response against it.
+    When it works, the output is indistinguishable from something written in this register.
+    When it fails, it sounds like an AI.
+  </p>
+
+  <p>
+    The failure modes are instructive. The model hallucinates files that do not exist,
+    reaches for noir atmosphere when restraint is called for,
+    abstracts when a concrete observation would do more.
+    These are not model failures. They are knowledge base failures.
+    Better content improves the system faster than a larger model.
+  </p>
+
+  <p>
+    The store is not finished. It is a working document.
+    What gets added to the journal goes into the knowledge base.
+    The assistant gets incrementally more accurate as the writing accumulates.
+    That is the right direction.
+  </p>
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 28" width="88">
+    <rect x="2" y="4" width="10" height="12" rx="1" fill="#0d438f"/>
+    <rect x="3" y="5" width="8" height="1.5" fill="#59a14f"/>
+    <rect x="3" y="8" width="8" height="1.5" fill="#59a14f"/>
+    <rect x="3" y="11" width="5" height="1.5" fill="#e57b4f"/>
+    <rect x="16" y="4" width="10" height="12" rx="1" fill="#0d438f"/>
+    <rect x="17" y="5" width="8" height="1.5" fill="#59a14f"/>
+    <rect x="17" y="8" width="6" height="1.5" fill="#59a14f"/>
+    <rect x="17" y="11" width="8" height="1.5" fill="#59a14f"/>
+    <rect x="30" y="4" width="10" height="12" rx="1" fill="#0d438f"/>
+    <rect x="31" y="5" width="5" height="1.5" fill="#e57b4f"/>
+    <rect x="31" y="8" width="8" height="1.5" fill="#59a14f"/>
+    <rect x="31" y="11" width="6" height="1.5" fill="#59a14f"/>
+    <line x1="12" y1="10" x2="16" y2="10" stroke="#59a14f" stroke-width="0.8"/>
+    <line x1="26" y1="10" x2="30" y2="10" stroke="#59a14f" stroke-width="0.8"/>
+    <rect x="44" y="8" width="22" height="8" rx="1.5" fill="#1a1a2e"/>
+    <rect x="46" y="10" width="5" height="1" fill="#59a14f"/>
+    <rect x="46" y="12" width="8" height="1" fill="#59a14f"/>
+    <rect x="46" y="14" width="4" height="1" fill="#e57b4f"/>
+    <rect x="53" y="10" width="5" height="1" fill="#0d438f" opacity="0.6"/>
+    <rect x="53" y="12" width="3" height="1" fill="#0d438f" opacity="0.6"/>
+    <line x1="40" y1="10" x2="44" y2="12" stroke="#e57b4f" stroke-width="0.6" stroke-dasharray="1.5,1"/>
+    <line x1="40" y1="10" x2="44" y2="12" stroke="#e57b4f" stroke-width="0.6" stroke-dasharray="1.5,1"/>
+    <circle cx="40" cy="10" r="1.2" fill="#e57b4f"/>
+    <rect x="2" y="21" width="10" height="5" rx="0.8" fill="#1a1a2e"/>
+    <rect x="3" y="22" width="8" height="0.8" fill="#59a14f"/>
+    <rect x="3" y="23.5" width="5" height="0.8" fill="#59a14f"/>
+    <rect x="16" y="21" width="10" height="5" rx="0.8" fill="#1a1a2e"/>
+    <rect x="17" y="22" width="6" height="0.8" fill="#59a14f"/>
+    <rect x="17" y="23.5" width="8" height="0.8" fill="#e57b4f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="guitar-pro-8.html">/note 014</a><span>-- Guitar Pro 8</span></li>
+    <li><a href="machine-room.html">/note 013</a><span>-- the machine room</span></li>
+    <li><a href="macos-scripts.html">/note 007</a><span>-- macos-scripts</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
