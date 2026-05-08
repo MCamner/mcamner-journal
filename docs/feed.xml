@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>the editorial engine</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html</guid>
+      <description>On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Le Samouraï</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</link>
