@@ -38,7 +38,8 @@ What it does:
   9. Creates a release commit
  10. Creates annotated tag v<version>
  11. Pushes main and the new tag to origin
- 12. Optionally creates a GitHub Release via gh CLI
+ 12. Regenerates and pushes wiki Posts-Reference (warn-only)
+ 13. Optionally creates a GitHub Release via gh CLI
 
 Special mode:
   --init-changelog
@@ -186,6 +187,53 @@ GitHub  : $( [[ "${GITHUB_RELEASE}" == true ]] && echo enabled || echo disabled 
 EOF_SUMMARY
 }
 
+# Regenerates Posts-Reference.md and pushes to the GitHub Wiki.
+update_wiki_posts_ref() {
+  local version="$1"
+  local generator="${BASH_SOURCE[0]%/*}/tools/generate-wiki-posts-ref.sh"
+  local wiki_tmp
+  wiki_tmp="$(mktemp -d)"
+
+  if [[ ! -x "$generator" ]]; then
+    printf '[wiki] generator not found, skipping wiki update\n'
+    return 0
+  fi
+
+  log_step "Updating wiki Posts-Reference"
+
+  if ! "$generator" >/dev/null 2>&1; then
+    printf '[wiki] generator failed, skipping wiki push\n'
+    rm -rf "$wiki_tmp"
+    return 0
+  fi
+
+  local generated="$HOME/mcamner-journal.wiki/Posts-Reference.md"
+  if [[ ! -f "$generated" ]]; then
+    printf '[wiki] Posts-Reference.md not found after generation, skipping wiki push\n'
+    rm -rf "$wiki_tmp"
+    return 0
+  fi
+
+  if ! git clone --quiet git@github.com:MCamner/mcamner-journal.wiki.git "$wiki_tmp" 2>/dev/null; then
+    printf '[wiki] could not clone wiki repo, skipping wiki push\n'
+    rm -rf "$wiki_tmp"
+    return 0
+  fi
+
+  cp "$generated" "$wiki_tmp/Posts-Reference.md"
+  cd "$wiki_tmp"
+  git add Posts-Reference.md
+  if git diff --cached --quiet; then
+    printf '[wiki] Posts-Reference unchanged, no push needed\n'
+  else
+    git commit -m "Update Posts-Reference for v${version}"
+    git push --quiet
+    printf '[wiki] Posts-Reference pushed\n'
+  fi
+  cd - >/dev/null
+  rm -rf "$wiki_tmp"
+}
+
 # Handles create release commit and tag.
 create_release_commit_and_tag() {
   local version="$1"
@@ -312,6 +360,8 @@ create_release_commit_and_tag "${VERSION}"
 
 log_step "Pushing main and tag"
 push_release "${VERSION}"
+
+update_wiki_posts_ref "${VERSION}"
 
 if [[ "${GITHUB_RELEASE}" == true ]]; then
   log_step "Creating GitHub release"
