@@ -9,6 +9,7 @@ Run this before upload-knowledge.py if you see stale or nameless files in the st
 import os
 import sys
 import json
+import time
 import urllib.request
 
 # Fallback to the current hardcoded ID if the environment variable is not set
@@ -42,6 +43,12 @@ def api(method, path, data=None, ignore_404=False):
     except urllib.error.HTTPError as e:
         if ignore_404 and e.code == 404:
             return {}
+        try:
+            error_body = e.read().decode()
+            error_json = json.loads(error_body)
+            print(f"\nAPI Error ({e.code}): {json.dumps(error_json, indent=2)}")
+        except Exception:
+            print(f"\nAPI Error ({e.code}): {e.reason}")
         raise
 
 
@@ -52,7 +59,12 @@ def collect_all_files():
         url = f"/vector_stores/{VECTOR_STORE_ID}/files?limit=100"
         if after:
             url += f"&after={after}"
-        result = api("GET", url)
+        try:
+            result = api("GET", url)
+        except Exception as e:
+            print(f"Error listing files: {e}")
+            break
+            
         batch = result.get("data", [])
         files.extend(batch)
         if not result.get("has_more") or not batch:
@@ -72,9 +84,15 @@ print(f"Found {len(files)} files in vector store. Removing...\n")
 for f in files:
     fid = f["id"]
     fname = f.get("filename") or f.get("id") or "(no name)"
-    api("DELETE", f"/vector_stores/{VECTOR_STORE_ID}/files/{fid}", ignore_404=True)
-    api("DELETE", f"/files/{fid}", ignore_404=True)
-    print(f"  ✗ {fname} ({fid})")
+    try:
+        # 1. Remove from vector store
+        api("DELETE", f"/vector_stores/{VECTOR_STORE_ID}/files/{fid}", ignore_404=True)
+        # 2. Delete the underlying file object
+        api("DELETE", f"/files/{fid}", ignore_404=True)
+        print(f"  ✗ {fname} ({fid})")
+        time.sleep(0.1)  # Small delay to avoid rate limits
+    except Exception as e:
+        print(f"  ! failed to remove {fid}: {e}")
 
 print(f"\nDone. Removed {len(files)} files.")
 print("Run upload-knowledge.py to re-populate the store.")
