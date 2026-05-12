@@ -11,7 +11,8 @@ import sys
 import json
 import urllib.request
 
-VECTOR_STORE_ID = "vs_69fd0b6ba2508191a0282f9c38416f41"
+# Fallback to the current hardcoded ID if the environment variable is not set
+VECTOR_STORE_ID = os.environ.get("OPENAI_VECTOR_STORE_ID", "vs_69fd0b6ba2508191a0282f9c38416f41")
 BASE_URL = "https://api.openai.com/v1"
 
 api_key = os.environ.get("OPENAI_API_KEY")

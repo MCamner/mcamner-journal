@@ -13,7 +13,8 @@ import json
 import urllib.request
 from pathlib import Path
 
-VECTOR_STORE_ID = "vs_69fd0b6ba2508191a0282f9c38416f41"
+# Fallback to the current hardcoded ID if the environment variable is not set
+VECTOR_STORE_ID = os.environ.get("OPENAI_VECTOR_STORE_ID", "vs_69fd0b6ba2508191a0282f9c38416f41")
 KNOWLEDGE_DIR = Path(__file__).parent.parent / "docs" / "knowledge"
 BASE_URL = "https://api.openai.com/v1"
 
