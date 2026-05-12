@@ -171,6 +171,20 @@ Infrastructure / Platform Architect
 
 ---
 
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for planned features.
+
+---
+
+## Security
+
+McAmner Journal runs locally. No data leaves your machine.
+
+Do not commit personal notes or credentials to a public repo. Use `.gitignore` to exclude sensitive files.
+
+---
+
 ## License
 
 MIT
