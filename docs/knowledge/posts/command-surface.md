@@ -15,3 +15,7 @@ The modern terminal trend is defined by a specific aesthetic of competence. It i
 Tools like `ripgrep`, `bat`, and `eza` have modernized the Unix experience, making it faster and more visually coherent. They represent a new layer of sophistication on top of a 50-year-old foundation.
 
 To work in the terminal is to embrace the logic of the system. It is about understanding that the most powerful way to interact with a machine is still the simplest: text.
+
+---
+
+*See also: [Design Prototype — Handoff](https://mcamner.github.io/Design-Prototype/handoff.html)*
