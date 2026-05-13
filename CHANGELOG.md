@@ -1,3 +1,15 @@
+## [0.1.3] - 2026-05-13
+
+### Changed
+
+- Improve README Security section to reflect static site deployment on GitHub Pages
+- Remove nested backup scripts from repository
+- Expand .gitignore with backups/ directory
+
+### Fixed
+
+- VERSION file was ahead of git tags; release process now aligned
+
 # Changelog
 
 <!-- markdownlint-disable MD024 -->
