@@ -1,5 +1,7 @@
 # McAmner Journal
 
+[![Deploy](https://github.com/mcamner/mcamner-journal/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mcamner/mcamner-journal/actions/workflows/pages/pages-build-deployment)
+
 A command-line inspired journal for systems, culture, objects, and visual references.
 
 Live:
