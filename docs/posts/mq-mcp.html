@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mq-mcp | McAmner Journal</title>
+  <meta name="description" content="mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html">
+  <meta property="og:title" content="mq-mcp | McAmner Journal">
+  <meta property="og:description" content="A local MCP server experiment — a bridge between OpenAI and macOS.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="mq-mcp | McAmner Journal">
+  <meta name="twitter:description" content="mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html"
+  },
+  "headline": "mq-mcp",
+  "description": "mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>mq-mcp</h1>
+  <p>A local bridge between AI and the machine.</p>
+  <p>On building a personal MCP server on macOS.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 017</p>
+  <p>> post loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; mq-mcp</h2>
+
+  <p>
+    MCP stands for Model Context Protocol. It is a standard for connecting AI models
+    to local tools — a way of giving a language model a set of capabilities that live
+    on your own machine, not in some cloud API you cannot inspect.
+  </p>
+
+  <p>
+    mq-mcp started as a question: what does a personal AI infrastructure look like
+    when everything runs locally? Not as a self-hosted LLM experiment,
+    but as a proper bridge — a small, documented, validated server that exposes
+    your machine to an AI model in a way you can read, reason about, and control.
+  </p>
+
+  <p>
+    The server exposes 18 tools. They cover the basics you actually need:
+    reading and searching files within the repository, checking git status and diffs,
+    analyzing CSV files, running a local validation script.
+    But also things that are more specific — opening registered repositories
+    in a new terminal window, running repo-signal health checks across multiple codebases,
+    inspecting Guitar Pro files.
+    Every tool is classified by scope and access type in a safety document
+    that the server can expose as a read-only tool call.
+  </p>
+
+  <p>
+    The bridge layer connects the MCP server to OpenAI.
+    You write a prompt in the terminal. The bridge forwards it,
+    the model selects the appropriate tool, the tool runs locally,
+    the result comes back, and the model synthesises a response.
+    The whole loop is visible — you can see every tool call in the output.
+  </p>
+
+  <p>
+    Bridget is the name for this local presence.
+    She has a face, a voice, and a consistent system prompt.
+    The face is an image rendered in the terminal via <code>chafa</code>.
+    The voice uses macOS <code>say</code> — Swedish, Alva, off by default.
+    When you ask her who she is, she answers in character.
+    When you tell her to navigate to a repo, she does it in the current shell.
+  </p>
+
+  <p>
+    The goto system is a small piece of engineering that solved a real friction point.
+    A child process cannot change the parent shell's working directory.
+    The solution: the bridge outputs a <code>CD:</code> signal,
+    a shell function intercepts it, and runs <code>cd</code> in the current process.
+    No new terminal windows. No clipboard. No delay.
+    Type <code>bridget gå till macos-scripts</code> and the shell moves.
+  </p>
+
+  <p>
+    The validation gate is what makes the project maintainable.
+    A script reads the server source with Python's AST parser,
+    detects every <code>@mcp.tool()</code> function dynamically,
+    and checks that each one is documented in the safety map and the README.
+    Add a tool and forget to document it — the gate breaks.
+    The discipline is enforced, not remembered.
+  </p>
+
+  <p>
+    Local first. No telemetry. Nothing leaves the machine without a visible API call.
+    That is the constraint that makes the project coherent.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 28" width="88">
+    <!-- terminal / prompt -->
+    <rect x="2" y="6" width="16" height="16" rx="2" fill="#2f69c7"/>
+    <rect x="5" y="10" width="4" height="2" fill="#f7f3ed"/>
+    <rect x="5" y="14" width="7" height="2" fill="#59a14f"/>
+    <!-- arrow left -->
+    <rect x="20" y="12" width="8" height="2" fill="#e57b4f"/>
+    <polygon points="20,11 20,15 17,13" fill="#e57b4f"/>
+    <!-- MCP bridge box -->
+    <rect x="28" y="4" width="14" height="20" rx="2" fill="#e57b4f"/>
+    <rect x="31" y="8" width="8" height="2" fill="#0d438f"/>
+    <rect x="31" y="12" width="8" height="2" fill="#f7f3ed"/>
+    <rect x="31" y="16" width="8" height="2" fill="#0d438f"/>
+    <!-- arrow right -->
+    <rect x="44" y="12" width="8" height="2" fill="#e57b4f"/>
+    <polygon points="52,11 52,15 55,13" fill="#e57b4f"/>
+    <!-- tools box -->
+    <rect x="55" y="6" width="13" height="16" rx="2" fill="#59a14f"/>
+    <rect x="58" y="10" width="7" height="2" fill="#f7f3ed"/>
+    <rect x="58" y="14" width="5" height="2" fill="#f7f3ed"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mq-mcp" target="_blank" rel="noopener noreferrer">/open mq-mcp</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="command-surface.html">/note 016</a><span>-- command surface</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
