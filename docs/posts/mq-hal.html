@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mq-hal | McAmner Journal</title>
+  <meta name="description" content="mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/mq-hal.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/mq-hal.html">
+  <meta property="og:title" content="mq-hal | McAmner Journal">
+  <meta property="og:description" content="A local HAL-style command router — natural language mapped to safe terminal actions via Ollama.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="mq-hal | McAmner Journal">
+  <meta name="twitter:description" content="mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/mq-hal.html"
+  },
+  "headline": "mq-hal",
+  "description": "mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-05-20",
+  "datePublished": "2026-05-20"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>mq-hal</h1>
+  <p>Natural language. Local model. Safe actions.</p>
+  <p>On building a command router that never trusts the model.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 018</p>
+  <p>> post loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; mq-hal</h2>
+
+  <p>
+    The problem with giving an AI model access to a terminal is trust.
+    A model that can run arbitrary shell commands is a model
+    that can delete files, overwrite history, and exhaust resources —
+    not through malice, but through misunderstanding.
+    mq-hal is built on the premise that the model should never touch the shell directly.
+  </p>
+
+  <p>
+    The architecture is a strict pipeline.
+    You type a prompt in natural language.
+    Ollama runs a local Qwen model and returns a JSON intent.
+    A Python router reads that intent, checks it against an explicit allowlist,
+    and either executes the matched action or refuses.
+    The model does not run commands. It makes proposals.
+    The router decides what is allowed.
+  </p>
+
+  <p>
+    Everything runs locally. No API key. No cloud call.
+    Ollama manages the model on your machine,
+    and the router enforces the boundary between suggestion and execution.
+    The session memory is a local <code>.jsonl</code> file.
+    Nothing leaves the machine.
+  </p>
+
+  <p>
+    The command surface covers the things you actually ask about during a working session:
+    git status across registered repositories, release readiness, CI state,
+    a structured brief of what changed and what is pending.
+    <code>mq-hal brief</code> reads your repos and tells you where things stand.
+    <code>mq-hal release-brief</code> summarises what is ready to ship.
+    <code>mq-hal audit</code> checks for common problems.
+  </p>
+
+  <p>
+    The fix planner is the most deliberate design decision.
+    When HAL identifies a problem, it does not fix it.
+    It prints the commands you would need to run, clearly labelled, for manual review.
+    The model surfaces the repair. You decide whether to apply it.
+    That distinction — between knowing what to do and being authorised to do it — is the whole point.
+  </p>
+
+  <p>
+    Session memory gives the router continuity.
+    <code>mq-hal remember "release looked good"</code> writes a timestamped note.
+    <code>mq-hal timeline</code> shows the history of actions, briefs, and notes
+    in chronological order, filterable by type and repo.
+    It is a lightweight log of intent — not a chat history,
+    but a record of what was decided and observed.
+  </p>
+
+  <p>
+    The integration contract is explicit.
+    mq-hal owns the feature logic. mqlaunch owns the command surface.
+    New commands require tests and documentation before they ship.
+    The boundary between tools is written down, not assumed.
+  </p>
+
+  <p>
+    The model returns JSON. The router enforces the allowlist.
+    That separation is what makes the system trustworthy —
+    not because the model is good, but because its reach is bounded.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 28" width="90">
+    <!-- prompt input -->
+    <rect x="2" y="8" width="14" height="12" rx="2" fill="#2f69c7"/>
+    <rect x="5" y="12" width="3" height="2" fill="#f7f3ed"/>
+    <rect x="9" y="12" width="4" height="2" fill="#59a14f"/>
+    <!-- arrow -->
+    <rect x="18" y="13" width="6" height="2" fill="#9f9789"/>
+    <polygon points="24,12 24,16 27,14" fill="#9f9789"/>
+    <!-- ollama / model box -->
+    <rect x="27" y="5" width="14" height="18" rx="2" fill="#0d438f"/>
+    <rect x="30" y="9" width="8" height="2" fill="#f7f3ed"/>
+    <rect x="30" y="13" width="5" height="2" fill="#e57b4f"/>
+    <rect x="30" y="17" width="8" height="2" fill="#f7f3ed"/>
+    <!-- arrow -->
+    <rect x="43" y="13" width="6" height="2" fill="#9f9789"/>
+    <polygon points="49,12 49,16 52,14" fill="#9f9789"/>
+    <!-- router / allowlist -->
+    <rect x="52" y="8" width="16" height="12" rx="2" fill="#59a14f"/>
+    <rect x="55" y="11" width="10" height="2" fill="#f7f3ed"/>
+    <rect x="55" y="15" width="7" height="2" fill="#0d438f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mq-hal" target="_blank" rel="noopener noreferrer">/open mq-hal</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="mq-mcp.html">/note 017</a><span>-- mq-mcp</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
