@@ -43,6 +43,14 @@ It reflects how ideas actually form — not only how they are polished.
 
 ---
 
+## Screenshots
+
+![McAmner Journal](docs/screenshots/preview.png)
+
+Live demo: [mcamner.github.io/mcamner-journal](https://mcamner.github.io/mcamner-journal/)
+
+---
+
 ## Quick Start
 
 Open the site directly:
