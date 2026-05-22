@@ -91,6 +91,14 @@ const routes = {
   "/guitar-pro-8": "/mcamner-journal/posts/guitar-pro-8.html",
   "/note 015": "/mcamner-journal/posts/editorial-engine.html",
   "/editorial-engine": "/mcamner-journal/posts/editorial-engine.html",
+  "/note 016": "/mcamner-journal/posts/command-surface.html",
+  "/command-surface": "/mcamner-journal/posts/command-surface.html",
+  "/note 017": "/mcamner-journal/posts/mq-mcp.html",
+  "/mq-mcp": "/mcamner-journal/posts/mq-mcp.html",
+  "/note 018": "/mcamner-journal/posts/mq-hal.html",
+  "/mq-hal": "/mcamner-journal/posts/mq-hal.html",
+  "/note 019": "/mcamner-journal/posts/repo-signal-positioning.html",
+  "/repo-signal-positioning": "/mcamner-journal/posts/repo-signal-positioning.html",
   "/film 008": "/mcamner-journal/posts/le-samourai.html",
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html"
 };
