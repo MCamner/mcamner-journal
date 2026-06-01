@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spider-Man: Noir</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</guid>
+      <description>Spider-Man: Noir is a note on the Netflix series, Nicolas Cage, 1930s New York, and what a superhero looks like when the city is already broken.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Is This It</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/is-this-it.html</link>
