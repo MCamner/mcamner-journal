@@ -12,6 +12,7 @@ POSTS_DIR="$BASE_DIR/docs/posts"
 
 mkdir -p "$WIKI_DIR"
 
+# Handles extract title.
 extract_title() {
   local file="$1"
   local title
@@ -33,6 +34,7 @@ extract_title() {
   basename "$file" .html | tr '-' ' '
 }
 
+# Handles extract type.
 extract_type() {
   local file="$1"
   # Look for eyebrow/type class or meta line
