@@ -10,11 +10,29 @@ Use this skill to create new posts that fit the existing journal structure.
 ## Post Types
 
 - Notes/projects: `docs/posts/<slug>.html`, indexed in `docs/journal.html`
-- Films/series/books/music: `docs/posts/<slug>.html`, indexed through
-  catalogue-specific pages
+- Films/series: `docs/posts/<slug>.html`, indexed in **both** `docs/films.html` and `docs/catalogue.html`
+- Books/music: `docs/posts/<slug>.html`, indexed in `docs/catalogue.html`
 - Objects: `docs/posts/<slug>.html`, indexed in `docs/objects.html`
 - Visual references: archive item plus asset under `docs/assets/archive/`
 - Knowledge notes: markdown under `docs/knowledge/posts/`
+
+> `generate_site_metadata.py` does **not** update `films.html` — that must be edited manually.
+
+## Required Flow For A New Series Post
+
+1. Choose the next series number from `docs/films.html` (look for the last `id="series-NNN"`).
+2. Create `docs/posts/<slug>.html` from a nearby series post template (e.g. `white-lotus.html`).
+3. Add the series row to **`docs/films.html`** (after the last `<article id="series-NNN">`).
+4. Add the command link to the series commands list in `docs/films.html`.
+5. Add the series row to **`docs/catalogue.html`** (after the last `<article id="series-NNN">`).
+6. Add routes in `docs/site.js`:
+   - `/series NNN`
+   - `/<slug>`
+7. Add a forward link in the **previous series post's** `journal-box`:
+   - Add `<li><a href="<slug>.html">/series NNN</a><span>-- <title></span></li>` before the `/home` line.
+8. Run `python3 tools/generate_site_metadata.py` to update `feed.xml` and `sitemap.xml`.
+
+---
 
 ## Required Flow For A New Note
 
