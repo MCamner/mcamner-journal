@@ -56,6 +56,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/back-in-black.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/black-iris-allseeing.html</loc>
     <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
@@ -73,6 +78,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/city-on-fire.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/command-surface.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -126,13 +136,18 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/jlc-reverso.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/is-this-it.html</loc>
     <lastmod>2026-05-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/jlc-reverso.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -173,6 +188,21 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/macos-scripts.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -218,6 +248,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/sony-tcd5m.html</loc>
     <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>

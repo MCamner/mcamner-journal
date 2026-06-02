@@ -5,15 +5,63 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back in Black</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/back-in-black.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/back-in-black.html</guid>
+      <description>Back in Black is a note on AC/DC&#x27;s 1980 album — discipline, volume, and the riff as total statement.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Spider-Man: Noir</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</guid>
       <description>Spider-Man: Noir is a note on the Netflix series, Nicolas Cage, 1930s New York, and what a superhero looks like when the city is already broken.</description>
       <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>mq-mcp</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</guid>
+      <description>mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>mq-hal</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</guid>
+      <description>mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>McAmner Journal Linking</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</guid>
+      <description>McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Guitar Pro 8</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</guid>
+      <description>Guitar Pro 8 is a note on notation, composition, and the value of software that gets out of the way.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>command-surface</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/command-surface.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/command-surface.html</guid>
+      <description>The shift back to the command line is not an exercise in nostalgia. It is a reaction to the noise.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Is This It</title>
@@ -118,86 +166,6 @@
       <description>Drake&#x27;s Donkey Chore is a note on the British workwear jacket that looks worse new and better old — material that accumulates rather than degrades.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Chevrolet Camaro 1967</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/camaro-1967.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/camaro-1967.html</guid>
-      <description>Chevrolet Camaro 1967 is a note on the first-generation pony car — long hood, short deck, steel drawn before it was decorated.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Arkangel</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/arkangel.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/arkangel.html</guid>
-      <description>Arkangel is a note on James Rollins, Sigma Force, myth, archives, Arctic pressure, and the machinery of the global thriller.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>First Blood</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/first-blood.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/first-blood.html</guid>
-      <description>First Blood is a note on David Morrell&#x27;s 1972 novel, survival, trauma, authority, pursuit, and violence after war.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>the machine room</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/machine-room.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/machine-room.html</guid>
-      <description>A note on local computation, owned infrastructure, and the philosophy of keeping real work on your own hardware.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Brave New World</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/brave-new-world.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/brave-new-world.html</guid>
-      <description>Brave New World is a note on Aldous Huxley&#x27;s 1932 novel, comfort, conditioning, pleasure, stability, and the quiet violence of a frictionless world.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Good Time</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/good-time.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/good-time.html</guid>
-      <description>Good Time is a note on the Safdie brothers&#x27; 2017 film, panic, brotherhood, neon, bad decisions, and momentum without escape.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>coolThing</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/coolthing.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/coolthing.html</guid>
-      <description>coolThing is a note on a repository for retro web experiments, local tools, Mega Movie, Mega Guitar, Mega Now, and browser interfaces with backend weight.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Unknown Pleasures</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/unknown-pleasures.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/unknown-pleasures.html</guid>
-      <description>Unknown Pleasures is a note on Joy Division&#x27;s 1979 album, post-punk, isolation, minimalism, and a room that will not let you leave.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kill &#x27;Em All</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/kill-em-all.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/kill-em-all.html</guid>
-      <description>Kill &#x27;Em All is a note on Metallica&#x27;s 1983 debut, speed, energy, thrash, and the moment before polish.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Crime</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/crime-von-schirach.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/crime-von-schirach.html</guid>
-      <description>Crime is a note on Ferdinand von Schirach&#x27;s short cases, law, justice, morality, and complete worlds in miniature.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -101,6 +101,8 @@ const routes = {
   "/mq-hal": "/mcamner-journal/posts/mq-hal.html",
   "/note 019": "/mcamner-journal/posts/repo-signal-positioning.html",
   "/repo-signal-positioning": "/mcamner-journal/posts/repo-signal-positioning.html",
+  "/note 020": "/mcamner-journal/posts/mcamner-journal-linking.html",
+  "/mcamner-journal-linking": "/mcamner-journal/posts/mcamner-journal-linking.html",
   "/film 008": "/mcamner-journal/posts/le-samourai.html",
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html"
 };

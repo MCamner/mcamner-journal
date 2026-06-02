@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>McAmner Journal Linking | McAmner Journal</title>
+  <meta name="description" content="McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html">
+  <meta property="og:title" content="McAmner Journal Linking | McAmner Journal">
+  <meta property="og:description" content="Building a static blog with manual routes and no build step.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="McAmner Journal Linking | McAmner Journal">
+  <meta name="twitter:description" content="McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html"
+  },
+  "headline": "McAmner Journal Linking",
+  "description": "McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-06-02",
+  "datePublished": "2026-06-02"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>McAmner Journal Linking</h1>
+  <p>Building a static blog with manual routes.</p>
+  <p>On why every link is a decision.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 020</p>
+  <p>> linking system loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; mcamner journal linking</h2>
+
+  <p>
+    The journal has no database. No CMS. No build step.
+    Every post is a plain HTML file and every route is a line in <code>site.js</code>.
+    The constraint is not accidental — it is the design.
+  </p>
+
+  <p>
+    The linking system has two parts. The first is navigation: a command bar
+    at the top of every page where you type routes like <code>/note 019</code>
+    or <code>/journal</code>. The second is cross-linking: each post ends with
+    a <code>journal-box</code> that connects it to the previous note,
+    the repository, and the index.
+  </p>
+
+  <p>
+    Creating a new post means three things: write the HTML, add the note entry
+    to <code>journal.html</code>, add two routes to <code>site.js</code>.
+    That is the whole system.
+    There is no automation unless you choose to build it.
+    The skill file for the journal describes every step explicitly —
+    not because the steps are complex, but because they must be done in order
+    every time.
+  </p>
+
+  <p>
+    The cross-links between posts form a chain.
+    Each note points to the note before it.
+    The journal index lists all notes.
+    There is no recommendation engine, no tag cloud.
+    If you want to find something, you scroll.
+    That friction is intentional. Slow discovery over algorithmic sorting.
+  </p>
+
+  <p>
+    The SVG figure convention came from needing a visual signature without images.
+    Each post gets a small geometric shape in the journal's color palette.
+    The constraint forced a specific kind of drawing: pixel-art geometry
+    that fits in 50×20 viewBox units.
+    It scales without loss.
+  </p>
+
+  <p>
+    This is what makes the system legible over time.
+    Everything that connects to everything else is visible in the source.
+    A link is not a metadata field — it is an <code>&lt;a&gt;</code> tag
+    someone typed.
+    When a link exists, someone chose to put it there.
+    That is a different relationship to structure than a generated graph.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 20" width="64">
+    <rect x="1" y="7" width="6" height="6" fill="#e57b4f"/>
+    <rect x="7" y="9" width="10" height="2" fill="#59a14f"/>
+    <rect x="17" y="4" width="6" height="6" fill="#59a14f"/>
+    <rect x="17" y="10" width="6" height="6" fill="#59a14f"/>
+    <rect x="23" y="6" width="4" height="2" fill="#e57b4f"/>
+    <rect x="23" y="12" width="4" height="2" fill="#e57b4f"/>
+    <rect x="27" y="4" width="10" height="2" fill="#e57b4f"/>
+    <rect x="27" y="14" width="10" height="2" fill="#e57b4f"/>
+    <rect x="37" y="4" width="2" height="12" fill="#59a14f"/>
+    <rect x="39" y="8" width="8" height="4" fill="#e57b4f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mcamner-journal" target="_blank" rel="noopener noreferrer">/open mcamner-journal</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="repo-signal-positioning.html">/note 019</a><span>-- repo-signal positioning</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
