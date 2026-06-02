@@ -51,7 +51,7 @@ Named aliases also work:
 
 ### Notes (journal)
 - Format: `/note NNN` (001, 002, 003...)
-- Current range: 001–014
+- Current range: 001–020
 - File naming: kebab-case slug
 
 ### Films
@@ -86,11 +86,22 @@ Named aliases also work:
 1. Create HTML file in `docs/posts/`
 2. Add to `site.js` routes object:
    ```js
-   "/note 014": "/mcamner-journal/posts/filename.html",
+   "/note 021": "/mcamner-journal/posts/filename.html",
    "/filename": "/mcamner-journal/posts/filename.html",
    ```
-3. Link from relevant index page (journal.html, catalogue.html, etc.)
-4. Add navigation links in related post pages
+3. Link from relevant index page (`journal.html`, `catalogue.html`, etc.)
+4. Add navigation links in the new post's `journal-box` (prev note, /journal, /home)
+5. Add a **forward link** in the previous post's `journal-box`:
+   ```html
+   <li><a href="filename.html">/note 021</a><span>-- post title</span></li>
+   ```
+6. Run `python3 tools/generate_site_metadata.py` to sync `feed.xml` and `sitemap.xml`
+
+### Cross-link chain pattern
+
+Each note post links backward (to the previous note) and the previous note
+links forward (to the new note). The journal index lists all notes.
+No automation required — every link is an explicit `<a>` tag.
 
 ---
 

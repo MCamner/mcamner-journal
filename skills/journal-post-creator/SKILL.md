@@ -18,17 +18,24 @@ Use this skill to create new posts that fit the existing journal structure.
 
 ## Required Flow For A New Note
 
-1. Choose the next note number from `docs/journal.html`.
+1. Choose the next note number from `docs/journal.html` (look for the last `id="note-NNN"`).
 2. Create `docs/posts/<slug>.html` from a nearby post template.
-3. Add the note row to `docs/journal.html`.
-4. Add the command link to the journal commands list.
+3. Add the note row to `docs/journal.html` (after the last `<article id="note-NNN">`).
+4. Add the command link to the journal commands list in `docs/journal.html`.
 5. Add routes in `docs/site.js`:
    - `/note NNN`
    - `/<slug>`
-6. Add related post links in the post's `journal-box`.
-7. Update `docs/feed.xml` and `docs/sitemap.xml` manually or with
-   `tools/generate_site_metadata.py` if appropriate.
-8. Update `CHANGELOG.md` when the post is part of a release.
+6. Add navigation links in the new post's `journal-box`:
+   - `/open <repo>` — GitHub repository (if applicable)
+   - `/journal` — return to entries
+   - `/note NNN-1` — previous note
+   - `/home` — return to dashboard
+7. Add a forward link in the **previous note's** `journal-box`:
+   - Open `docs/posts/<previous-slug>.html`
+   - Add `<li><a href="<slug>.html">/note NNN</a><span>-- <title></span></li>`
+     before the `/home` line.
+8. Run `python3 tools/generate_site_metadata.py` to update `feed.xml` and `sitemap.xml`.
+9. Update `CHANGELOG.md` when the post is part of a release.
 
 ## Post Template Contract
 
