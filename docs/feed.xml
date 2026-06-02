@@ -48,6 +48,14 @@
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>mq-agent</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/mq-agent.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-agent.html</guid>
+      <description>mq-agent is a note on building a local AI agent orchestrator — tool routing, MCP integration, and keeping the model out of the way until it is needed.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>McAmner Journal Linking</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/jlc-reverso.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/jlc-reverso.html</guid>
       <description>Jaeger-LeCoultre Reverso is a note on the 1931 watch designed around a constraint — the case that flips to protect itself.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Custom Fender Stratocaster</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/fender-stratocaster.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/fender-stratocaster.html</guid>
-      <description>Custom Fender Stratocaster is a note on a working instrument built around feel — the most copied design in electric guitar history, built right the first time.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
     </item>
