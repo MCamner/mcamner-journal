@@ -103,6 +103,8 @@ const routes = {
   "/repo-signal-positioning": "/mcamner-journal/posts/repo-signal-positioning.html",
   "/note 020": "/mcamner-journal/posts/mcamner-journal-linking.html",
   "/mcamner-journal-linking": "/mcamner-journal/posts/mcamner-journal-linking.html",
+  "/series 006": "/mcamner-journal/posts/beef-s2.html",
+  "/beef-s2": "/mcamner-journal/posts/beef-s2.html",
   "/film 008": "/mcamner-journal/posts/le-samourai.html",
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html"
 };
