@@ -1,0 +1,67 @@
+name: static-site-checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/static-site-checks.yml"
+  pull_request:
+    paths:
+      - "docs/**"
+      - ".github/workflows/static-site-checks.yml"
+
+jobs:
+  static-site-checks:
+    name: static-site-checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Required pages exist
+        run: |
+          missing=0
+          for f in index.html journal.html catalogue.html about.html site.js style.css; do
+            if [ ! -f "docs/$f" ]; then
+              echo "MISSING required file: docs/$f"
+              missing=1
+            fi
+          done
+          [ "$missing" -eq 0 ] || exit 1
+
+      - name: No external scripts (dependency-free)
+        run: |
+          hits=$(grep -rlE '<script[^>]+src="https?://' docs/*.html docs/posts/*.html 2>/dev/null || true)
+          if [ -n "$hits" ]; then
+            echo "External <script src=\"http...\"> found — site must stay dependency-free:"
+            echo "$hits"
+            exit 1
+          fi
+          echo "OK: no external scripts"
+
+      - name: Internal post links resolve
+        run: |
+          broken=0
+          for f in docs/*.html; do
+            for rel in $(grep -oE 'href="posts/[^"]+\.html"' "$f" 2>/dev/null | sed -E 's/href="(.*)"/\1/'); do
+              if [ ! -f "docs/$rel" ]; then
+                echo "BROKEN link: $f -> $rel"
+                broken=1
+              fi
+            done
+          done
+          [ "$broken" -eq 0 ] || exit 1
+          echo "OK: internal post links resolve"
+
+      - name: site.js route targets resolve
+        run: |
+          broken=0
+          for p in $(grep -oE '/mcamner-journal/posts/[a-z0-9-]+\.html' docs/site.js | sort -u); do
+            target="docs/${p#/mcamner-journal/}"
+            if [ ! -f "$target" ]; then
+              echo "MISSING route target: $p -> $target"
+              broken=1
+            fi
+          done
+          [ "$broken" -eq 0 ] || exit 1
+          echo "OK: site.js route targets resolve"
