@@ -12,7 +12,8 @@ on:
       - ".github/workflows/static-site-checks.yml"
 
 jobs:
-  checks:
+  static-site-checks:
+    name: static-site-checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
