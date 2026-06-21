@@ -6,10 +6,9 @@ on:
     paths:
       - "docs/**"
       - ".github/workflows/static-site-checks.yml"
-  pull_request:
-    paths:
-      - "docs/**"
-      - ".github/workflows/static-site-checks.yml"
+  # Runs on every PR: this is a required check, so it must report on all PRs
+  # (a paths filter would leave non-docs PRs permanently "expected" / blocked).
+  pull_request: {}
 
 jobs:
   static-site-checks:
