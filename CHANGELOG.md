@@ -1,3 +1,9 @@
+# Changelog
+
+<!-- markdownlint-disable MD024 -->
+
+All notable changes to this project will be documented in this file.
+
 ## [0.1.4] - 2026-06-21
 
 ### Added
@@ -22,22 +28,16 @@
 
 - VERSION file was ahead of git tags; release process now aligned
 
-# Changelog
-
-<!-- markdownlint-disable MD024 -->
-
-All notable changes to this project will be documented in this file.
-
 ## [0.1.1] - 2026-05-08
 
 ### Changed
 
-* update project files
-* update project files
-* update documentation
-* update documentation
-* update documentation
-* Add knowledge base and vector store upload tool
+- update project files
+- update project files
+- update documentation
+- update documentation
+- update documentation
+- Add knowledge base and vector store upload tool
 
 ---
 
@@ -45,4 +45,4 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-* Initial release setup
+- Initial release setup
