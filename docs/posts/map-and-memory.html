@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the map and the memory | McAmner Journal</title>
+  <meta name="description" content="Two memory layers for working with code and AI — CodeGraph indexes a repository into a queryable graph, and mqobsidian keeps decisions and learning records in a linked vault.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html">
+  <meta property="og:title" content="the map and the memory | McAmner Journal">
+  <meta property="og:description" content="Two memory layers — CodeGraph for code structure, mqobsidian for decisions and knowledge.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="the map and the memory | McAmner Journal">
+  <meta name="twitter:description" content="Two memory layers for working with code and AI — CodeGraph indexes a repository into a queryable graph, and mqobsidian keeps decisions and learning records in a linked vault.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html"
+  },
+  "headline": "the map and the memory",
+  "description": "Two memory layers for working with code and AI — CodeGraph indexes a repository into a queryable graph, and mqobsidian keeps decisions and learning records in a linked vault.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-06-25",
+  "datePublished": "2026-06-25"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>the map and the memory</h1>
+  <p>Two kinds of recall for working with code.</p>
+  <p>On CodeGraph and mqobsidian.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 022</p>
+  <p>> post loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; the map and the memory</h2>
+
+  <p>
+    Working on a codebase with an AI assistant exposes a gap that has nothing to do
+    with the model. The assistant is fluent, but it starts every session blind.
+    It has to rediscover how the code is wired, and it has no recollection of why
+    anything was decided the way it was. Two different problems, two different
+    memory layers. CodeGraph answers the first. mqobsidian answers the second.
+  </p>
+
+  <p>
+    CodeGraph is an index. It reads a repository and builds a graph of its symbols —
+    functions, types, the call paths between them — so that a question about the code
+    can be answered by query rather than by grep. Instead of scanning files and
+    guessing at names, you ask for a symbol and get its source back along with its
+    callers and the paths that reach it. The map already exists; you read it instead
+    of redrawing it every time.
+  </p>
+
+  <p>
+    The point is not speed for its own sake. It is that a graph holds the shape of the
+    code as a structure you can traverse. "Where is this called from" and "what does
+    this touch" become single lookups. The index is read-only and local — building it
+    is a deliberate act, not something that runs behind your back. If a repository has
+    not been indexed, nothing happens; the tool simply is not there.
+  </p>
+
+  <p>
+    mqobsidian is the other half. Where CodeGraph remembers structure, mqobsidian
+    remembers narrative — the decisions, the reviews, the small learning records that
+    explain why a thing is the way it is. It is an architecture memory layer built on
+    an Obsidian vault: plain Markdown notes, linked to one another, that persist across
+    sessions and survive the end of any single conversation.
+  </p>
+
+  <p>
+    A graph cannot tell you why a boundary was drawn where it was, or which approach was
+    tried and abandoned, or what a review concluded six weeks ago. That knowledge is
+    narrative, and it belongs in prose. Keeping it as linked notes means it can be
+    recalled the same way it was written — by following references — rather than
+    reconstructed from commit messages and memory.
+  </p>
+
+  <p>
+    Together they form a pair. The map answers <em>where</em> and <em>how</em>: how the
+    code is connected, where a change will land. The memory answers <em>why</em>: why
+    the decision was made, what was learned, what to avoid repeating. Structure on one
+    side, intent on the other. An assistant with both does not start blind.
+  </p>
+
+  <p>
+    Both are read-first, local, and inspectable. The index never leaves the machine
+    without an explicit call; the vault is just files you can open and read. That is the
+    constraint that keeps the pair honest — memory you can audit, not memory you have to
+    trust.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 28" width="88">
+    <!-- code graph: nodes + edges -->
+    <line x1="9" y1="7" x2="18" y2="13" stroke="#0d438f" stroke-width="1"/>
+    <line x1="9" y1="7" x2="7" y2="19" stroke="#0d438f" stroke-width="1"/>
+    <line x1="18" y1="13" x2="7" y2="19" stroke="#0d438f" stroke-width="1"/>
+    <line x1="18" y1="13" x2="20" y2="22" stroke="#0d438f" stroke-width="1"/>
+    <circle cx="9" cy="7" r="3" fill="#2f69c7"/>
+    <circle cx="18" cy="13" r="3" fill="#2f69c7"/>
+    <circle cx="7" cy="19" r="3" fill="#59a14f"/>
+    <circle cx="20" cy="22" r="2.5" fill="#59a14f"/>
+    <!-- divider -->
+    <rect x="33" y="5" width="1.5" height="18" fill="#e57b4f"/>
+    <!-- vault: stacked linked notes -->
+    <rect x="42" y="5" width="12" height="6" rx="1" fill="#e57b4f"/>
+    <rect x="45" y="7" width="6" height="1.2" fill="#f7f3ed"/>
+    <rect x="50" y="13" width="12" height="6" rx="1" fill="#2f69c7"/>
+    <rect x="53" y="15" width="6" height="1.2" fill="#f7f3ed"/>
+    <rect x="42" y="20" width="12" height="6" rx="1" fill="#59a14f"/>
+    <rect x="45" y="22" width="6" height="1.2" fill="#f7f3ed"/>
+    <!-- links between notes -->
+    <line x1="48" y1="11" x2="56" y2="13" stroke="#0d438f" stroke-width="1"/>
+    <line x1="56" y1="19" x2="48" y2="20" stroke="#0d438f" stroke-width="1"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mqobsidian" target="_blank" rel="noopener noreferrer">/open mqobsidian</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="editorial-engine.html">/note 015</a><span>-- the editorial engine</span></li>
+    <li><a href="mq-agent.html">/note 021</a><span>-- mq-agent</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
