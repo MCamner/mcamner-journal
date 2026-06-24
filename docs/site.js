@@ -111,6 +111,8 @@ const routes = {
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",
+  "/series 007": "/mcamner-journal/posts/cape-fear.html",
+  "/cape-fear": "/mcamner-journal/posts/cape-fear.html",
   "/film 008": "/mcamner-journal/posts/le-samourai.html",
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html"
 };

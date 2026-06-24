@@ -8,6 +8,14 @@
     <lastBuildDate>Thu, 25 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Cape Fear</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/cape-fear.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/cape-fear.html</guid>
+      <description>Cape Fear is a note on the Apple TV+ series — Nick Antosca&#x27;s reimagining of John D. MacDonald&#x27;s story, with Javier Bardem as Max Cady and the menace stretched to the length of television.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>the map and the memory</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/macbook-air-m4.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/macbook-air-m4.html</guid>
       <description>MacBook Air M4 is a note on the machine that stopped being a compromise — silent, thin, and capable enough to stay.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Lamy 2000</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/lamy-2000.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/lamy-2000.html</guid>
-      <description>Lamy 2000 is a note on the pen designed in 1966 that decided what a pen should be for the next fifty years.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
     </item>
