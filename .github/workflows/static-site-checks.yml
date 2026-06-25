@@ -64,3 +64,6 @@ jobs:
           done
           [ "$broken" -eq 0 ] || exit 1
           echo "OK: site.js route targets resolve"
+
+      - name: Indexed entries have command routes
+        run: python3 tools/check_routes.py
