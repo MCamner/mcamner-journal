@@ -48,6 +48,8 @@ const routes = {
   "/series 002": "/mcamner-journal/posts/fallout.html",
   "/series 003": "/mcamner-journal/posts/white-lotus.html",
   "/series 004": "/mcamner-journal/posts/dope-thief.html",
+  "/series 005": "/mcamner-journal/posts/spider-noir.html",
+  "/spider-noir": "/mcamner-journal/posts/spider-noir.html",
   "/book 001": "/mcamner-journal/posts/ways-of-seeing.html",
   "/book 002": "/mcamner-journal/posts/pattern-language.html",
   "/book 003": "/mcamner-journal/posts/remains-of-the-day.html",
@@ -120,6 +122,21 @@ const routes = {
   "/film 008": "/mcamner-journal/posts/le-samourai.html",
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html"
 };
+
+// Routes are authored against the GitHub Pages base path (/mcamner-journal/).
+// Locally the site is served with docs/ as the web root (e.g.
+// `cd docs && python3 -m http.server 3000`), so the base path is absent.
+// Detect which we're on and rewrite absolute route targets accordingly.
+const BASE_PATH = location.pathname.startsWith("/mcamner-journal/")
+  ? "/mcamner-journal"
+  : "";
+
+function resolveRoute(url) {
+  if (url.startsWith("/mcamner-journal/")) {
+    return BASE_PATH + url.slice("/mcamner-journal".length);
+  }
+  return url;
+}
 
 
 let errorCount = 0;
@@ -304,7 +321,7 @@ if (commandBar && commandInput) {
 
     if (command === "/random") {
       const posts = [...new Set(Object.values(routes).filter(url => url.includes("/posts/")))];
-      window.location.href = posts[Math.floor(Math.random() * posts.length)];
+      window.location.href = resolveRoute(posts[Math.floor(Math.random() * posts.length)]);
       return;
     }
 
@@ -345,18 +362,42 @@ if (commandBar && commandInput) {
 
     if (command.startsWith("/select ")) {
       const id = command.replace("/select ", "").trim();
-      document.querySelectorAll("[id^='note-'], [id^='film-']").forEach(function (item) {
-        item.classList.toggle(
-          "is-active",
-          item.id === "note-" + id || item.id === "film-" + id
-        );
-      });
-      resetPrompt("Selected " + id + " · try /note " + id + " or /film " + id);
+      const targets = ["note", "film", "series", "book", "music", "object", "item"]
+        .map(function (prefix) { return prefix + "-" + id; });
+      document
+        .querySelectorAll("[id^='note-'], [id^='film-'], [id^='series-'], [id^='book-'], [id^='music-'], [id^='object-'], [id^='item-']")
+        .forEach(function (item) {
+          item.classList.toggle("is-active", targets.includes(item.id));
+        });
+      resetPrompt("Selected " + id);
       return;
     }
 
+    if (command.startsWith("/open ")) {
+      const arg = command.replace("/open ", "").trim();
+      const padded = /^\d+$/.test(arg) ? arg.padStart(3, "0") : arg;
+      const el =
+        document.getElementById("item-" + padded) ||
+        document.getElementById(arg) ||
+        document.getElementById(padded);
+
+      if (el) {
+        const link = el.querySelector("a[href]");
+        if (link) {
+          window.location.href = link.href;
+          return;
+        }
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.classList.add("is-active");
+        resetPrompt("opened " + arg);
+        return;
+      }
+      // No matching element: fall through so named routes like
+      // "/open linkedin" still resolve via the routes table below.
+    }
+
     if (routes[command]) {
-      window.location.href = routes[command];
+      window.location.href = resolveRoute(routes[command]);
       return;
     }
 
@@ -449,6 +490,9 @@ if (commandBar && commandInput) {
 
   function getType(item) {
     if (item.id.startsWith("film-")) return "film";
+    if (item.id.startsWith("series-")) return "series";
+    if (item.id.startsWith("book-")) return "book";
+    if (item.id.startsWith("music-")) return "music";
     if (item.id.startsWith("note-")) return "note";
     if (item.id.startsWith("object-")) return "object";
     if (item.id.startsWith("item-")) return "archive";
@@ -474,11 +518,17 @@ if (commandBar && commandInput) {
   }
 
   function getCommand(type, id, title) {
-    if (type === "film") return "/film " + id;
-    if (type === "note") return "/note " + id;
-    if (type === "object") return "/object " + id;
-    if (type === "archive") return "/open " + id;
-    if (type === "catalogue") return "/open " + id;
+    // Catalogue spans read "S005" / "B001" / "F001"; the routes use the bare
+    // number, so normalise to digits before building the command.
+    const num = id.replace(/\D/g, "") || id;
+    if (type === "film") return "/film " + num;
+    if (type === "series") return "/series " + num;
+    if (type === "book") return "/book " + num;
+    if (type === "music") return "/music " + num;
+    if (type === "note") return "/note " + num;
+    if (type === "object") return "/object " + num;
+    if (type === "archive") return "/open " + num;
+    if (type === "catalogue") return "/open " + num;
     return "/open " + title.toLowerCase().replace(/\s+/g, "-");
   }
 
