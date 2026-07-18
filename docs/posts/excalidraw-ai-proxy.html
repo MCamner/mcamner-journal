@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excalidraw AI Proxy | McAmner Journal</title>
+  <meta name="description" content="A note on building an Excalidraw AI proxy: turning a local diagram tool into a structured interface for prompts, models, and commands.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html">
+  <meta property="og:title" content="Excalidraw AI Proxy | McAmner Journal">
+  <meta property="og:description" content="A local proxy layer for Excalidraw that turns drawings into prompts, actions, and structured state.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="Excalidraw AI Proxy | McAmner Journal">
+  <meta name="twitter:description" content="A note on building an Excalidraw AI proxy: turning a local diagram tool into a structured interface for prompts, models, and commands.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html"
+  },
+  "headline": "Excalidraw AI Proxy",
+  "description": "A note on building an Excalidraw AI proxy: turning a local diagram tool into a structured interface for prompts, models, and commands.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-07-18",
+  "datePublished": "2026-07-18"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>Excalidraw AI Proxy</h1>
+  <p>A local layer between drawing and action.</p>
+  <p>Turn diagrams into promptable structure.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 024</p>
+  <p>> proxy layer loaded</p>
+  <p>> prompt bridge ready</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; Excalidraw AI Proxy</h2>
+
+  <p>
+    Excalidraw is already good at one thing: turning a sketch into a structured visual language.
+    The interesting part begins when that sketch is no longer just an image, but an interface.
+    A diagram can become a prompt surface, a workflow map, or a command graph.
+  </p>
+
+  <p>
+    An AI proxy for Excalidraw would sit between the drawing and the model.
+    It would interpret the diagram, classify the nodes, infer the intended action,
+    and translate that structure into a tool call or a narrow instruction.
+    The drawing remains the front-end. The proxy becomes the translation layer.
+  </p>
+
+  <p>
+    That feels useful because diagrams often carry intent that text does not.
+    A box labeled <em>review</em>, a line pointing to <em>gate</em>, and a second line to <em>approve</em>
+    are not just shapes. They are an executable workflow. The same goes for architecture sketches,
+    agent plans, release flows, and command surfaces.
+  </p>
+
+  <p>
+    The strength of this idea is that it keeps the model out of the center.
+    The diagram provides structure. The proxy provides meaning. The model provides interpretation.
+    That is a much better fit for local tools than letting the model invent an entire workflow from thin air.
+  </p>
+
+  <p>
+    The real design challenge is not whether the model can read the canvas.
+    It is whether the system can turn the canvas into something deterministic enough to trust.
+    If the proxy can emit a clear schema — nodes, edges, intent, action, and confidence —
+    then the rest of the stack becomes much easier to automate.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 20" width="64">
+    <rect x="1" y="6" width="8" height="8" fill="#e57b4f"/>
+    <rect x="2" y="8" width="2" height="2" fill="#0d438f"/>
+    <rect x="5" y="8" width="2" height="2" fill="#0d438f"/>
+    <rect x="9" y="9" width="6" height="2" fill="#59a14f"/>
+    <rect x="18" y="5" width="14" height="10" fill="#59a14f"/>
+    <rect x="20" y="8" width="3" height="2" fill="#0d438f"/>
+    <rect x="25" y="8" width="3" height="2" fill="#0d438f"/>
+    <rect x="32" y="9" width="6" height="2" fill="#59a14f"/>
+    <rect x="38" y="7" width="5" height="2" fill="#e57b4f"/>
+    <rect x="38" y="11" width="5" height="2" fill="#e57b4f"/>
+    <rect x="43" y="7" width="2" height="6" fill="#e57b4f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mq-agent" target="_blank" rel="noopener noreferrer">/open mq-agent</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="codegraph.html">/note 023</a><span>-- CodeGraph</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
