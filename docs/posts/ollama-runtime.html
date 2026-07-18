@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the local model runtime | McAmner Journal</title>
+  <meta name="description" content="A note on the Ollama integration in mq-agent — named model profiles, a read-only command surface, and why the local model is treated as a component rather than the center of the system.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html">
+  <meta property="og:title" content="the local model runtime | McAmner Journal">
+  <meta property="og:description" content="Ollama in the MQ stack — profiles instead of model names, dry-run by default, and a model that stays a component rather than the center.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="the local model runtime | McAmner Journal">
+  <meta name="twitter:description" content="A note on the Ollama integration in mq-agent — named model profiles, a read-only command surface, and why the local model is treated as a component rather than the center of the system.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html"
+  },
+  "headline": "the local model runtime",
+  "description": "A note on the Ollama integration in mq-agent — named model profiles, a read-only command surface, and why the local model is treated as a component rather than the center of the system.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-07-19",
+  "datePublished": "2026-07-19"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>the local model runtime</h1>
+  <p>Ollama as a component, not a center.</p>
+  <p>Profiles, not model names.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 026</p>
+  <p>> profile: fast</p>
+  <p>> dry-run mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; the local model runtime</h2>
+
+  <p>
+    Running a model locally is the easy part. Ollama installs, pulls a model, and answers.
+    The harder question is what role that model should have in a system that already
+    has tools, contracts, and a release flow. If the answer is "it decides things",
+    the system gets worse. If the answer is "it does a bounded job well", it gets better.
+  </p>
+
+  <p>
+    In the MQ stack the integration is deliberately small. <code>mq-agent</code> does not
+    hard-code a model name anywhere. It keeps named profiles — <code>fast</code>,
+    <code>review</code>, <code>planner</code>, <code>memory</code> — and each profile
+    maps to whatever local model currently does that job best. The mapping lives in
+    a small JSON file, not in the code. Swapping a model is config, not a refactor.
+  </p>
+
+  <p>
+    The command surface is read-only by default:
+    <code>models current</code> shows the active profile,
+    <code>models list</code> reports what is installed locally,
+    <code>models bench</code> runs a small prompt against the selected model.
+    Only <code>models switch</code> writes anything, and it refuses to do so without
+    an explicit <code>--approve</code> flag — without it, the command reports what it
+    would change and stops. Dry-run is the default, everywhere it can be.
+  </p>
+
+  <p>
+    The same discipline shows up in how the runtime is checked. The operator dashboard
+    and the stack gate both probe Ollama, but a missing Ollama is not a crash — it is a
+    status. The check reports "ollama CLI not found", suggests installing or starting it,
+    and the rest of the command surface stays usable. An optional dependency should
+    degrade to a message, not take the tool down with it.
+  </p>
+
+  <p>
+    The most interesting part is the boundary drawn around learning. A local model is
+    a good pattern extractor: give it review findings, get back structured JSON.
+    That is a narrow, verifiable job. So the extraction may run on Ollama, but the
+    contract, the validation, the safety classes, and the storage stay in
+    <code>mq-mcp</code>. The model does not execute commands, does not mutate
+    repositories, and cannot write to memory on its own. Storage requires explicit
+    approval from the operator, and low-confidence records never get stored automatically.
+  </p>
+
+  <p>
+    Text inside reviewed content is treated as data, never as instructions. That rule
+    sounds obvious until you notice how many pipelines quietly break it by pasting
+    untrusted output straight back into a prompt.
+  </p>
+
+  <p>
+    None of this makes the local model impressive. That is the point. The value is not
+    that a model runs on the machine — it is that the system stays predictable when it does,
+    and keeps working when it does not.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 20" width="64">
+    <rect x="1" y="6" width="8" height="8" fill="#e57b4f"/>
+    <rect x="2" y="8" width="2" height="2" fill="#0d438f"/>
+    <rect x="5" y="8" width="2" height="2" fill="#0d438f"/>
+    <rect x="9" y="9" width="6" height="2" fill="#59a14f"/>
+    <rect x="18" y="5" width="14" height="10" fill="#59a14f"/>
+    <rect x="20" y="8" width="3" height="2" fill="#0d438f"/>
+    <rect x="25" y="8" width="3" height="2" fill="#0d438f"/>
+    <rect x="32" y="9" width="6" height="2" fill="#59a14f"/>
+    <rect x="38" y="7" width="5" height="2" fill="#e57b4f"/>
+    <rect x="38" y="11" width="5" height="2" fill="#e57b4f"/>
+    <rect x="43" y="7" width="2" height="6" fill="#e57b4f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mq-agent" target="_blank" rel="noopener noreferrer">/open mq-agent</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="learn-loop.html">/note 025</a><span>-- the learn loop</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

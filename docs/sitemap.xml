@@ -91,6 +91,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/codegraph.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/command-surface.html</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.7</priority>
@@ -123,6 +128,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html</loc>
     <lastmod>2026-05-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html</loc>
+    <lastmod>2026-07-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -173,6 +183,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/lamy-2000.html</loc>
     <lastmod>2026-05-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</loc>
+    <lastmod>2026-07-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -238,6 +253,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/mqmirror.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html</loc>
+    <lastmod>2026-07-19</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
