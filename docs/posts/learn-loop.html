@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the learn loop | McAmner Journal</title>
+  <meta name="description" content="A note on making learning in local AI workflows deliberate, inspectable, and durable instead of accidental memory.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/learn-loop.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/learn-loop.html">
+  <meta property="og:title" content="the learn loop | McAmner Journal">
+  <meta property="og:description" content="Making learning in local AI workflows deliberate, inspectable, and durable.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="the learn loop | McAmner Journal">
+  <meta name="twitter:description" content="A note on making learning in local AI workflows deliberate, inspectable, and durable instead of accidental memory.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/learn-loop.html"
+  },
+  "headline": "the learn loop",
+  "description": "A note on making learning in local AI workflows deliberate, inspectable, and durable instead of accidental memory.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-07-19",
+  "datePublished": "2026-07-19"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>the learn loop</h1>
+  <p>Local memory should be deliberate, not accidental.</p>
+  <p>On reviews, patterns, and durable recall.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 025</p>
+  <p>> memory loop loaded</p>
+  <p>> reading mode</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; the learn loop</h2>
+
+  <p>
+    One of the recurring problems in agent work is that useful insight is easy to lose.
+    A review surfaces a pattern, a previous implementation suggests a better boundary,
+    and then the context disappears when the session ends.
+    That is not memory. That is evaporation.
+  </p>
+
+  <p>
+    The learn loop tries to solve that by making the process explicit.
+    First you observe a review or an intervention.
+    Then you extract the pattern into a compact, structured record.
+    Finally you store or promote it into durable memory so it can be reused later.
+    The point is not to make the system more magical. The point is to make it more accountable.
+  </p>
+
+  <p>
+    This matters because a local workflow benefits from being inspectable.
+    A learned pattern should be readable, reviewable, and easy to challenge.
+    If it survives only as an opaque model behavior, it is not really a memory system.
+    It is just hidden bias.
+  </p>
+
+  <p>
+    In practice, that means keeping the loop local and bounded.
+    The evidence comes from a real review, the extraction is a small artifact, and the promotion step is a deliberate act.
+    You can see what was learned, where it came from, and whether it should become durable memory or remain a temporary note.
+  </p>
+
+  <p>
+    The strongest version of this approach is not “teach the model everything.”
+    It is “capture the useful pattern and keep it legible.”
+    That is how memory becomes infrastructure instead of noise.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 24" width="88">
+    <rect x="4" y="8" width="10" height="8" rx="1" fill="#2f69c7"/>
+    <rect x="19" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="34" y="8" width="10" height="8" rx="1" fill="#e57b4f"/>
+    <rect x="49" y="8" width="8" height="8" rx="1" fill="#0d438f"/>
+    <line x1="14" y1="12" x2="19" y2="12" stroke="#0d438f" stroke-width="1"/>
+    <line x1="29" y1="12" x2="34" y2="12" stroke="#0d438f" stroke-width="1"/>
+    <line x1="44" y1="12" x2="49" y2="12" stroke="#0d438f" stroke-width="1"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mq-agent" target="_blank" rel="noopener noreferrer">/open mq-agent</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="map-and-memory.html">/note 022</a><span>-- the map and the memory</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
