@@ -17,6 +17,12 @@ Minimal flow for adding a new journal entry. The site is static, lives under
 - [ ] **Register the route** in `docs/site.js` only if the post needs a command
       alias (e.g. `"/note 042": "/mcamner-journal/posts/<slug>.html"`). The
       route target must point at a file that exists.
+- [ ] **Add the post to `docs/sitemap.xml`** — one `<url>` entry per post, kept
+      in alphabetical order by `<loc>`. CI fails if a post is missing.
+- [ ] **Add an `<item>` to `docs/feed.xml`** at the top, and bump
+      `<lastBuildDate>`. The feed is a recent-posts window, not the full
+      archive, but it must have no gaps: CI fails if a post is newer than the
+      feed's oldest item and has no item of its own.
 - [ ] **Update navigation** links in related posts if applicable.
 - [ ] **Test locally:**
 

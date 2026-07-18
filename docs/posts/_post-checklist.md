@@ -23,6 +23,8 @@ is a maintainer note, not a published page.
 - [ ] Linked from the relevant index page (journal / catalogue / archive / objects)
 - [ ] Route added to `docs/site.js` if a command alias is wanted
 - [ ] Route target file exists
+- [ ] `<url>` entry added to `docs/sitemap.xml`
+- [ ] `<item>` added to `docs/feed.xml` and `<lastBuildDate>` bumped
 
 ## Verify
 
