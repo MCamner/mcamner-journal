@@ -67,3 +67,6 @@ jobs:
 
       - name: Indexed entries have command routes
         run: python3 tools/check_routes.py
+
+      - name: Feed and sitemap cover published posts
+        run: python3 tools/check_feed_sitemap.py

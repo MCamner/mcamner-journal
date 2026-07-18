@@ -5,8 +5,40 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>the local model runtime</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html</guid>
+      <description>A note on the Ollama integration in mq-agent — named model profiles, a read-only command surface, and why the local model is treated as a component rather than the center of the system.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>the learn loop</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</guid>
+      <description>Durable memory for an agent stack — how review patterns become inspectable learning records instead of invisible model state.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Excalidraw AI Proxy</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html</guid>
+      <description>Using a diagram as an interface — a proxy that turns canvas structure into prompts and structured actions, keeping the model out of the center.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>CodeGraph</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/codegraph.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/codegraph.html</guid>
+      <description>Local source intelligence for the MQ stack — useful when the task is about structure, and most useful when it stays a bounded hint rather than a replacement for verification.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Cape Fear</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/cape-fear.html</link>
