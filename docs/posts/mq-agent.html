@@ -81,6 +81,14 @@
   <h2>&gt;&gt; mq-agent</h2>
 
   <p>
+    mq-agent is a local-first control plane for AI agent work:
+    planning, execution, verification, memory, safety, and tool routing.
+    It is built around one principle.
+    The model should not rule the system.
+    The system should rule the model.
+  </p>
+
+  <p>
     Most AI tooling puts the model at the center.
     You describe a task, the model decides how to fulfill it,
     and you watch what happens.
@@ -90,18 +98,40 @@
 
   <p>
     The agent connects to mq-mcp — a local MCP server that exposes tools
-    for repository analysis, architecture decisions, code review, and diagnostics.
-    When you run <code>mq-agent review diff</code>, the agent calls the right tool,
-    passes the result back, and renders it.
-    The model routes and formats. The tools do the work.
+    for repository analysis, architecture decisions, code review,
+    diagnostics, and controlled execution.
+    When you run a command such as <code>review</code>, <code>audit</code>,
+    <code>score</code>, <code>doctor</code> or <code>release-check</code>,
+    the agent does not improvise freely.
+    It routes the request through a defined command surface,
+    calls the right tool, receives structured output,
+    and renders the result back to the operator.
+  </p>
+
+  <p>
+    The model routes, explains, and formats.
+    The tools do the work.
+    The contracts define the boundary.
+    The human keeps authority.
   </p>
 
   <p>
     The command surface was a deliberate constraint.
-    <code>score</code>, <code>audit</code>, <code>review</code>, <code>doctor</code>:
-    each command maps to a specific tool call.
+    Each command maps to a specific kind of work.
     There is no open-ended prompt interface because there does not need to be.
-    A well-defined task needs a well-defined command, not a general-purpose chat window.
+    A well-defined task needs a well-defined command,
+    not a general-purpose chat window pretending to be an operating system.
+  </p>
+
+  <p>
+    That constraint is the architecture.
+  </p>
+
+  <p>
+    A command is easier to test than a conversation.
+    A contract is easier to verify than an intention.
+    A release gate is safer than trust.
+    A small surface is stronger than a large one.
   </p>
 
   <p>
@@ -109,23 +139,46 @@
     The menu delegates to the agent, the agent calls mq-mcp,
     and the result surfaces in the terminal.
     Nothing leaves the machine unless explicitly asked.
-    Local infrastructure, local model, local context.
+    Local infrastructure. Local model when possible.
+    Local context. Local judgment.
+  </p>
+
+  <p>
+    This is not about making an agent more autonomous.
+    It is about making automation more accountable.
+    The useful question is not how much the model can do.
+    The useful question is what the model should be allowed to do,
+    under which conditions, with which proof,
+    and with which rollback path.
   </p>
 
   <p>
     Architecture memory is stored through mq-mcp as a list of decisions —
-    not a diagram, not a document, but a queryable set of records.
-    When you run a review, the agent pulls the relevant decisions
-    and displays them alongside the findings.
+    not only as diagrams, not only as documents, but as queryable records.
+    When a review runs, the agent can pull the relevant decisions
+    and display them alongside the findings.
     Context that was previously implicit becomes part of the output.
+  </p>
+
+  <p>
+    That changes the shape of the work.
+    A codebase is no longer only files.
+    It becomes decisions, contracts, signals, gates, history, and memory.
   </p>
 
   <p>
     The interesting thing about building an agent is discovering
     how little the model actually needs to do.
-    The hard work is the tool design, the routing, and the contracts.
+    The hard work is not the prompt.
+    It is the tool design, the routing, the contracts, the safety boundary,
+    the verification loop, the memory surface, and the release discipline.
     Get those right and the model becomes almost invisible.
     That is the point.
+  </p>
+
+  <p>
+    Built for control, not chaos.
+    Local-first. Contract-driven. Release-gated.
   </p>
 
 </article>
