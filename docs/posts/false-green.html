@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>false green | McAmner Journal</title>
+  <meta name="description" content="A note on checks that pass while the thing they were meant to protect is broken — and why a green light that measures the wrong thing is worse than no light at all.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/false-green.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/false-green.html">
+  <meta property="og:title" content="false green | McAmner Journal">
+  <meta property="og:description" content="Checks that pass while the thing they protect is broken, and why that is worse than no check.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="false green | McAmner Journal">
+  <meta name="twitter:description" content="A note on checks that pass while the thing they were meant to protect is broken.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/false-green.html"
+  },
+  "headline": "false green",
+  "description": "A note on checks that pass while the thing they were meant to protect is broken — and why a green light that measures the wrong thing is worse than no light at all.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-08-10",
+  "datePublished": "2026-08-10"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>false green</h1>
+  <p>A passing check is a claim, not a fact.</p>
+  <p>On measuring the wrong thing, confidently.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>> opened /note 027</p>
+  <p>> all checks passed</p>
+  <p>> nothing worked</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; false green</h2>
+
+  <p>
+    A while ago I ran an inventory tool across a set of projects and it told me
+    everything was in order. Dozens of components, every one reported valid and
+    registered. It had been saying that for months.
+    None of them worked. Not one could be loaded by the thing that was supposed
+    to load them.
+  </p>
+
+  <p>
+    The tool was not lying. It was answering a different question than the one I
+    thought I had asked. It checked that each component followed our filing
+    convention and appeared in our index. What it never checked was whether the
+    runtime could find them, because the runtime looks somewhere else entirely.
+    Two facts, both true, never compared. Being listed proves a person can find
+    the file. It says nothing about whether a machine can run it.
+  </p>
+
+  <p>
+    What makes this worse than a plain bug is what the green light does to your
+    attention. A broken thing with no check is an open question, and open
+    questions get looked at. A broken thing with a passing check is a closed one.
+    The check does not merely fail to help. It actively buys silence, and it buys
+    it for as long as nobody has a reason to doubt it.
+  </p>
+
+  <p>
+    Mine survived because there was visible evidence it worked. One component did
+    load, so the mechanism looked proven. It turned out to be reaching the runtime
+    by a completely different route that someone had wired by hand, long ago, for
+    unrelated reasons. The one success was not a sample of the whole. It was the
+    exception that made the rule invisible.
+  </p>
+
+  <p>
+    Nearby, the same week, a second version of the shape. Two services shared an
+    identical unbounded dependency. One broke when the upstream library changed;
+    the other kept passing. The difference was not care or design. One happened to
+    have a lockfile pinning an old version, and the other did not. The healthy
+    service was not safer. It was luckier, and its green build said nothing about
+    which.
+  </p>
+
+  <p>
+    I do not think the lesson is more checks. It is asking what each check would
+    have to observe to be worth trusting, and noticing when the answer is
+    something other than what it observes. A test that reads a manifest is testing
+    the manifest. A test that loads the component is testing the component. Those
+    look equally green from a distance and they are not remotely the same claim.
+  </p>
+
+  <p>
+    The habit I want is smaller than a process: when something passes, ask what it
+    would look like if it were wrong. If the honest answer is “exactly like this,”
+    the check is decoration. Verify against the thing that consumes the work, not
+    against the convention you used to file it.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 24" width="88">
+    <rect x="4" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="19" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="34" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="49" y="8" width="8" height="8" rx="1" fill="#c74f4f"/>
+    <line x1="14" y1="12" x2="19" y2="12" stroke="#0d438f" stroke-width="1"/>
+    <line x1="29" y1="12" x2="34" y2="12" stroke="#0d438f" stroke-width="1"/>
+    <line x1="44" y1="12" x2="49" y2="12" stroke="#0d438f" stroke-width="1" stroke-dasharray="1 1"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="learn-loop.html">/note 025</a><span>-- the learn loop</span></li>
+    <li><a href="command-surface.html">/note 016</a><span>-- command-surface</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>false green</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/false-green.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/false-green.html</guid>
+      <description>Checks that pass while the thing they were meant to protect is broken — and why a green light that measures the wrong thing is worse than no light at all.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>the local model runtime</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/ollama-runtime.html</link>
