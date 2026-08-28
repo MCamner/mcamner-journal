@@ -125,6 +125,8 @@ const routes = {
   "/ollama": "/mcamner-journal/posts/ollama-runtime.html",
   "/note 027": "/mcamner-journal/posts/false-green.html",
   "/false-green": "/mcamner-journal/posts/false-green.html",
+  "/note 028": "/mcamner-journal/posts/the-whole-path.html",
+  "/the-whole-path": "/mcamner-journal/posts/the-whole-path.html",
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",

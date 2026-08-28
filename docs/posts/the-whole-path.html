@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the whole path | McAmner Journal</title>
+  <meta name="description" content="A note on mq-ums, governed command paths, and why a working API function is not yet a working operational system.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html">
+  <meta property="og:title" content="the whole path | McAmner Journal">
+  <meta property="og:description" content="A working function is only one lit room. The system is the path between intent, execution, evidence, and return.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="the whole path | McAmner Journal">
+  <meta name="twitter:description" content="A note on mq-ums and the difference between a working function and a governed operational system.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html"
+  },
+  "headline": "the whole path",
+  "description": "A note on mq-ums, governed command paths, and why a working API function is not yet a working operational system.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-08-28",
+  "datePublished": "2026-08-28"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>the whole path</h1>
+  <p>A working function is only one lit room.</p>
+  <p>The system is the corridor between them.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>&gt; opened /note 028</p>
+  <p>&gt; request correlated</p>
+  <p>&gt; live evidence pending</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; the whole path</h2>
+
+  <p>
+    mq-ums already had a working API. It could accept a known command, pass it
+    to PowerShell, and return a result from IGEL UMS. The difficult part was not
+    making that call work. It was making the rest of the repository mean the
+    same thing.
+  </p>
+
+  <p>
+    A command catalogue, a browser, an audit log, a cache, and a validation
+    script can all be individually correct and still describe different
+    systems. One filters arguments. Another records a name. A third bypasses
+    the server and calls the runner directly. Every part works. The path does
+    not exist.
+  </p>
+
+  <p>
+    The repair was to give the path one shape. The allowlist decides what may
+    run. One service owns execution. The response and audit record share a
+    request identity. Cached reads pass through the same history. The browser
+    displays what the server returns instead of inventing a parallel model.
+    Documentation is checked against the catalogue rather than trusted beside it.
+  </p>
+
+  <p>
+    This is less a feature than a change in topology. Before, the repository
+    contained several useful rooms. After, there is a corridor through them:
+    intent, policy, execution, result, evidence. Each transition is visible.
+    Each failure has somewhere honest to stop.
+  </p>
+
+  <p>
+    The last stop matters most. Local tests can prove the contracts, the API,
+    the redaction rules, and the audit chain. They cannot prove PSIGEL, a DPAPI
+    credential, or a live UMS server that is not there. When the validation ran
+    on the wrong machine, the local layers passed and the live commands failed.
+    That was not a broken test. It was the boundary becoming visible.
+  </p>
+
+  <p>
+    Operational software is complete only when the whole path can be followed
+    in the environment that consumes it. Until then, green means the structure
+    holds. It does not mean the distant machine answered.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 24" width="96">
+    <rect x="3" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="21" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="39" y="8" width="10" height="8" rx="1" fill="#59a14f"/>
+    <rect x="57" y="8" width="10" height="8" rx="1" fill="#e57b4f"/>
+    <line x1="13" y1="12" x2="21" y2="12" stroke="#0d438f" stroke-width="1"/>
+    <line x1="31" y1="12" x2="39" y2="12" stroke="#0d438f" stroke-width="1"/>
+    <line x1="49" y1="12" x2="57" y2="12" stroke="#0d438f" stroke-width="1" stroke-dasharray="2 2"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://github.com/MCamner/mq-ums" target="_blank" rel="noopener noreferrer">/open mq-ums</a><span>-- view repository</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="false-green.html">/note 027</a><span>-- false green</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

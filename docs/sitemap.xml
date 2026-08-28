@@ -136,13 +136,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/false-green.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/fallout.html</loc>
+    <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/fallout.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/false-green.html</loc>
+    <lastmod>2026-08-10</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -191,13 +191,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</loc>
+    <lastmod>2026-07-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -338,6 +338,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/the-vanishing.html</loc>
     <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html</loc>
+    <lastmod>2026-08-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>

@@ -5,13 +5,21 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>the whole path</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html</guid>
+      <description>A note on mq-ums, governed command paths, and why a working API function is not yet a working operational system.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>false green</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/false-green.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/false-green.html</guid>
-      <description>Checks that pass while the thing they were meant to protect is broken — and why a green light that measures the wrong thing is worse than no light at all.</description>
+      <description>A note on checks that pass while the thing they were meant to protect is broken — and why a green light that measures the wrong thing is worse than no light at all.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
     </item>
@@ -27,7 +35,7 @@
       <title>the learn loop</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</guid>
-      <description>Durable memory for an agent stack — how review patterns become inspectable learning records instead of invisible model state.</description>
+      <description>A note on making learning in local AI workflows deliberate, inspectable, and durable instead of accidental memory.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -35,7 +43,7 @@
       <title>Excalidraw AI Proxy</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/excalidraw-ai-proxy.html</guid>
-      <description>Using a diagram as an interface — a proxy that turns canvas structure into prompts and structured actions, keeping the model out of the center.</description>
+      <description>A note on building an Excalidraw AI proxy: turning a local diagram tool into a structured interface for prompts, models, and commands.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -43,7 +51,7 @@
       <title>CodeGraph</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/codegraph.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/codegraph.html</guid>
-      <description>Local source intelligence for the MQ stack — useful when the task is about structure, and most useful when it stays a bounded hint rather than a replacement for verification.</description>
+      <description>A note on CodeGraph, local source intelligence, and why it works best as a bounded hint inside the MQ stack rather than as a replacement for verification.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -158,54 +166,6 @@
       <description>Is This It is a note on The Strokes&#x27; 2001 album — the best record of the 2000s, because it made collapse sound effortless, precise, and new.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>repo-signal positioning</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/repo-signal-positioning.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/repo-signal-positioning.html</guid>
-      <description>repo-signal positioning turns a repository into a clearer product story: audience, problem, strongest README angle, unclear parts, and one-sentence positioning.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>the editorial engine</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/editorial-engine.html</guid>
-      <description>On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Le Samouraï</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/le-samourai.html</guid>
-      <description>Le Samouraï is a note on Jean-Pierre Melville&#x27;s 1967 film — solitude, ritual, the professional who has made silence into a system.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Zippo Lighter</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/zippo.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/zippo.html</guid>
-      <description>Zippo Lighter is a note on the mechanism from Bradford, Pennsylvania — unchanged since 1932, still repairable, still windproof by design.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Victorinox Farmer</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/victorinox-farmer.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/victorinox-farmer.html</guid>
-      <description>Victorinox Farmer is a note on the Swiss Army knife built around actual work — saw, blade, reamer, nothing decorative.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Stiletto Knife</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/stiletto.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/stiletto.html</guid>
-      <description>Stiletto Knife is a note on Italian geometry, spring-loaded — the blade as the complete argument, nothing else needed.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
