@@ -4,6 +4,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Command surface: `/ls`, `/find`, `/latest`, `/next`, `/prev`,
+  `/random <type>`, `/whoami`, `/uptime`, `/history`, `/mute`, `/unmute`,
+  `/sudo`
+- Command bar: Tab completion over commands and routes, arrow-up/down history
+  (kept in `localStorage`), and a `.prompt-out` line for multi-line answers
+
 ## [0.1.4] - 2026-06-21
 
 ### Added
