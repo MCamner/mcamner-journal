@@ -322,6 +322,25 @@ body {
   color: rgba(247, 243, 237, 0.55);
 }
 
+/* Command output: answers that do not fit in the placeholder */
+.prompt-out {
+  margin: -18px 0 18px;
+  padding: 11px 16px;
+  border: 2px solid var(--soft-line);
+  border-top: 0;
+  color: var(--muted);
+  font: inherit;
+  font-size: clamp(12px, 1.25vw, 17px);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  max-height: 42vh;
+  overflow: auto;
+}
+
+.prompt-out[hidden] {
+  display: none;
+}
+
 /* ── Journal box content ── */
 .journal-box h2 {
   margin: 0 0 28px;
@@ -1099,6 +1118,11 @@ a:hover {
   .prompt span { font-size: 20px; }
   .prompt i { width: 13px; height: 26px; }
   .prompt input { font-size: clamp(14px, 3.8vw, 19px); }
+  .prompt-out {
+    margin: -12px 0 12px;
+    padding: 9px 13px;
+    font-size: 12px;
+  }
 
   .signal-panel {
     padding: 16px;

@@ -151,6 +151,47 @@ function resolveRoute(url) {
   return url;
 }
 
+// Small localStorage wrapper: storage can throw (private mode, blocked
+// site data), and the command surface must keep working without it.
+const STORE = {
+  get: function (key, fallback) {
+    try {
+      var value = localStorage.getItem(key);
+      return value === null ? fallback : value;
+    } catch (e) {
+      return fallback;
+    }
+  },
+  set: function (key, value) {
+    try { localStorage.setItem(key, value); } catch (e) {}
+  }
+};
+
+// One truth for site uptime: /uptime and the about panel read the same start.
+const UPTIME_START = new Date("2022-06-01T00:00:00Z");
+
+function formatUptime(from) {
+  var diff    = Date.now() - from.getTime();
+  var days    = Math.floor(diff / 86400000);
+  var hours   = Math.floor((diff % 86400000) / 3600000);
+  var minutes = Math.floor((diff % 3600000) / 60000);
+  var seconds = Math.floor((diff % 60000) / 1000);
+  return days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+}
+
+// Indexed entry types that carry `/type NNN` routes (see tools/check_routes.py).
+const ENTRY_TYPES = ["note", "film", "series", "book", "music", "object"];
+
+function entriesOfType(type) {
+  return Object.keys(routes)
+    .filter(function (key) { return key.indexOf("/" + type + " ") === 0; })
+    .sort();
+}
+
+function slugOf(target) {
+  return target.split("/").pop().replace(/\.html$/, "");
+}
+
 
 let errorCount = 0;
 
@@ -248,7 +289,9 @@ if (systemStatus) {
       "last updated: /catalogue",
       "open thread: /journal",
       "visual feed: /archive",
-      "object cache: /objects"
+      "object cache: /objects",
+      "command list: /help",
+      "newest entry: /latest"
     ]
   ];
 
@@ -278,6 +321,8 @@ if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtter
   let lastSpokenAt = 0;
 
   function speakSiteOwner() {
+    if (STORE.get("mcj:mute", "0") === "1") return;
+
     const now = Date.now();
     if (now - lastSpokenAt < 1200) return;
 
@@ -313,9 +358,70 @@ const commandBar = document.getElementById("commandBar");
 const commandInput = document.getElementById("commandInput");
 
 if (commandBar && commandInput) {
+  // The prompt itself only has a placeholder to answer with. Commands that
+  // return several lines (/help, /ls, /find) print into a terse output line
+  // rendered directly under the prompt.
+  let outputLine = null;
+
+  function printOut(text) {
+    if (!outputLine) {
+      outputLine = document.createElement("pre");
+      outputLine.className = "prompt-out";
+      outputLine.setAttribute("aria-live", "polite");
+      commandBar.insertAdjacentElement("afterend", outputLine);
+    }
+    outputLine.textContent = Array.isArray(text) ? text.join("\n") : text;
+    outputLine.hidden = false;
+  }
+
+  function clearOut() {
+    if (outputLine) {
+      outputLine.hidden = true;
+      outputLine.textContent = "";
+    }
+  }
+
+  function respond(text) {
+    commandInput.value = "";
+    printOut(text);
+  }
+
   function resetPrompt(placeholder) {
+    clearOut();
     commandInput.value = "";
     commandInput.placeholder = placeholder;
+  }
+
+  function typeCounts() {
+    return ENTRY_TYPES.map(function (type) {
+      return type + " " + entriesOfType(type).length;
+    }).join(" · ");
+  }
+
+  const PAGES = "/home /journal /films /books /catalogue /archive /objects /about";
+
+  // The `/type NNN` route matching the post currently open, if any.
+  function currentEntry() {
+    for (const type of ENTRY_TYPES) {
+      const keys = entriesOfType(type);
+      for (const key of keys) {
+        if (resolveRoute(routes[key]) === location.pathname) {
+          return { type: type, key: key, keys: keys };
+        }
+      }
+    }
+    return null;
+  }
+
+  function stepEntry(delta) {
+    const entry = currentEntry();
+    if (!entry) {
+      respond("no sequence here — /next and /prev work inside an indexed post.");
+      return;
+    }
+    const i = entry.keys.indexOf(entry.key);
+    const target = entry.keys[(i + delta + entry.keys.length) % entry.keys.length];
+    window.location.href = resolveRoute(routes[target]);
   }
 
   function runCommand(rawCommand) {
@@ -323,7 +429,14 @@ if (commandBar && commandInput) {
     if (!command) return;
 
     if (command === "?" || command === "/help") {
-      resetPrompt("Commands: /home /journal /films /archive /objects /about /random /show all /back");
+      respond([
+        "pages    " + PAGES,
+        "entries  /note NNN /film NNN /series NNN /book NNN /music NNN /object NNN",
+        "move     /random [type] /latest /next /prev /back /find <text>",
+        "list     /ls [type] /show all /filter <tag> /clear /select NNN /open <id>",
+        "system   /whoami /uptime /history /mute /unmute /help",
+        "keys     Tab completes · arrow up and down recall history"
+      ]);
       return;
     }
 
@@ -332,8 +445,24 @@ if (commandBar && commandInput) {
       return;
     }
 
-    if (command === "/random") {
-      const posts = [...new Set(Object.values(routes).filter(url => url.includes("/posts/")))];
+    if (command === "/random" || command.startsWith("/random ")) {
+      const kind = command.replace("/random", "").trim().replace(/s$/, "");
+      let posts;
+
+      if (kind) {
+        if (ENTRY_TYPES.indexOf(kind) === -1) {
+          respond("unknown type: " + kind + " — try " + ENTRY_TYPES.join(" / "));
+          return;
+        }
+        posts = entriesOfType(kind).map(function (key) { return routes[key]; });
+      } else {
+        posts = [...new Set(Object.values(routes).filter(url => url.includes("/posts/")))];
+      }
+
+      if (!posts.length) {
+        respond("nothing indexed under " + kind + " yet.");
+        return;
+      }
       window.location.href = resolveRoute(posts[Math.floor(Math.random() * posts.length)]);
       return;
     }
@@ -409,6 +538,134 @@ if (commandBar && commandInput) {
       // "/open linkedin" still resolve via the routes table below.
     }
 
+    if (command === "/ls" || command.startsWith("/ls ")) {
+      const kind = command.replace("/ls", "").trim().replace(/s$/, "");
+
+      if (!kind) {
+        respond([
+          "pages    " + PAGES,
+          "indexed  " + typeCounts(),
+          "detail   /ls film · /ls note · /ls object"
+        ]);
+        return;
+      }
+
+      if (ENTRY_TYPES.indexOf(kind) === -1) {
+        respond("unknown type: " + kind + " — try " + ENTRY_TYPES.join(" / "));
+        return;
+      }
+
+      respond(entriesOfType(kind).map(function (key) {
+        return key + "  " + slugOf(routes[key]);
+      }));
+      return;
+    }
+
+    if (command.startsWith("/find ")) {
+      const query = command.replace("/find ", "").trim();
+      if (!query) {
+        resetPrompt("/find stalker");
+        return;
+      }
+
+      const seen = new Set();
+      const hits = [];
+
+      Object.keys(routes).forEach(function (key) {
+        const target = routes[key];
+        if (target.indexOf("/posts/") === -1) return;
+        if (key.indexOf(query) === -1 && slugOf(target).indexOf(query) === -1) return;
+        if (seen.has(target)) return;
+        seen.add(target);
+        hits.push({ key: key, target: target });
+      });
+
+      if (!hits.length) {
+        respond("no match for " + query + " — try /ls or /catalogue");
+        return;
+      }
+
+      if (hits.length === 1) {
+        window.location.href = resolveRoute(hits[0].target);
+        return;
+      }
+
+      respond([hits.length + " matches for " + query].concat(
+        hits.slice(0, 12).map(function (hit) {
+          return "  " + hit.key + "  " + slugOf(hit.target);
+        })
+      ));
+      return;
+    }
+
+    if (command === "/latest") {
+      if (typeof fetch !== "function") {
+        respond("feed unreachable. try /journal");
+        return;
+      }
+      respond("reading /feed.xml …");
+      fetch(BASE_PATH + "/feed.xml")
+        .then(function (response) { return response.text(); })
+        .then(function (xml) {
+          const link = new DOMParser()
+            .parseFromString(xml, "application/xml")
+            .querySelector("item > link");
+          if (!link) throw new Error("empty feed");
+          window.location.href = resolveRoute(new URL(link.textContent.trim()).pathname);
+        })
+        .catch(function () {
+          respond("feed unreachable. try /journal");
+        });
+      return;
+    }
+
+    if (command === "/next") { stepEntry(1); return; }
+    if (command === "/prev") { stepEntry(-1); return; }
+
+    if (command === "/uptime") {
+      respond("uptime " + formatUptime(UPTIME_START) + " · since 2022-06-01");
+      return;
+    }
+
+    if (command === "/whoami") {
+      respond([
+        "mattias camner",
+        "role      infrastructure architect · curator",
+        "location  Stockholm",
+        "active    Black Iris · mcamner-journal",
+        "more      /about"
+      ]);
+      return;
+    }
+
+    if (command === "/history") {
+      if (!history.length) {
+        respond("no history yet.");
+        return;
+      }
+      respond(history.slice(-10).reverse().map(function (item, i) {
+        return String(i + 1).padStart(2, "0") + "  " + item;
+      }));
+      return;
+    }
+
+    if (command === "/mute") {
+      STORE.set("mcj:mute", "1");
+      respond("voice off. /unmute restores it.");
+      return;
+    }
+
+    if (command === "/unmute") {
+      STORE.set("mcj:mute", "0");
+      respond("voice on.");
+      return;
+    }
+
+    if (command === "/sudo" || command.startsWith("/sudo ")) {
+      respond("denied. there is one account on this system and you are already in it.");
+      return;
+    }
+
     if (routes[command]) {
       window.location.href = resolveRoute(routes[command]);
       return;
@@ -430,9 +687,85 @@ if (commandBar && commandInput) {
     resetPrompt(msg);
   }
 
+  let history = [];
+  try {
+    const stored = JSON.parse(STORE.get("mcj:history", "[]"));
+    if (Array.isArray(stored)) history = stored.filter(function (item) {
+      return typeof item === "string";
+    });
+  } catch (e) {
+    history = [];
+  }
+
+  let historyIndex = history.length;
+
+  function remember(command) {
+    if (!command || history[history.length - 1] === command) return;
+    history.push(command);
+    history = history.slice(-30);
+    historyIndex = history.length;
+    STORE.set("mcj:history", JSON.stringify(history));
+  }
+
+  // Tab cycles through everything the surface actually accepts.
+  const VERBS = [
+    "/help", "/ls", "/find ", "/random", "/latest", "/next", "/prev", "/back",
+    "/show all", "/filter ", "/clear", "/select ", "/open ",
+    "/whoami", "/uptime", "/history", "/mute", "/unmute"
+  ];
+
+  function completionPool() {
+    return [...new Set(VERBS.concat(Object.keys(routes)))].sort();
+  }
+
+  let tabMatches = [];
+  let tabIndex = -1;
+
+  commandInput.addEventListener("keydown", function (event) {
+    if (event.key === "Tab") {
+      const value = commandInput.value.trim().toLowerCase();
+      if (!value.startsWith("/")) return;
+      event.preventDefault();
+
+      if (!tabMatches.length || tabMatches[tabIndex] !== value) {
+        tabMatches = completionPool().filter(function (candidate) {
+          return candidate.indexOf(value) === 0;
+        });
+        tabIndex = -1;
+      }
+
+      if (!tabMatches.length) {
+        printOut("no completion for " + value);
+        return;
+      }
+
+      tabIndex = (tabIndex + 1) % tabMatches.length;
+      commandInput.value = tabMatches[tabIndex];
+      printOut(tabMatches.length === 1
+        ? "1 match"
+        : tabMatches.length + " matches · Tab cycles · " + tabMatches.slice(0, 8).join(" "));
+      return;
+    }
+
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+      if (!history.length) return;
+      event.preventDefault();
+
+      historyIndex += event.key === "ArrowUp" ? -1 : 1;
+      historyIndex = Math.max(0, Math.min(history.length, historyIndex));
+      commandInput.value = historyIndex === history.length ? "" : history[historyIndex];
+      return;
+    }
+
+    tabMatches = [];
+    tabIndex = -1;
+  });
+
   commandBar.addEventListener("submit", function (event) {
     event.preventDefault();
+    const entered = commandInput.value.trim().toLowerCase();
     runCommand(commandInput.value);
+    remember(entered);
   });
 
   document.querySelectorAll("[data-command]").forEach(function (button) {
@@ -603,15 +936,8 @@ if (commandBar && commandInput) {
 
   var uptimeEl = document.querySelector("[data-uptime]");
   if (uptimeEl) {
-    var start = new Date("2022-06-01T00:00:00Z");
-
     function tick() {
-      var diff    = Date.now() - start.getTime();
-      var days    = Math.floor(diff / 86400000);
-      var hours   = Math.floor((diff % 86400000) / 3600000);
-      var minutes = Math.floor((diff % 3600000) / 60000);
-      var seconds = Math.floor((diff % 60000) / 1000);
-      uptimeEl.textContent = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      uptimeEl.textContent = formatUptime(UPTIME_START);
     }
 
     tick();
