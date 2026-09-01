@@ -659,16 +659,23 @@ a:hover {
 /* ── Archive ── */
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
   margin: 28px 0;
+  padding: 10px;
+  border: 2px solid rgba(229,123,79,0.5);
+  background:
+    linear-gradient(rgba(229,123,79,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229,123,79,0.08) 1px, transparent 1px),
+    rgba(0,0,0,0.12);
+  background-size: 24px 24px;
 }
 
 .archive-grid article {
-  border: 2px solid rgba(229,123,79,0.72);
-  border-radius: 10px;
-  padding: 12px;
-  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(229,123,79,0.72);
+  border-radius: 0;
+  padding: 8px 8px 10px;
+  background: rgba(5,20,47,0.92);
   transition: transform 140ms ease, border-color 140ms ease;
   position: relative;
   overflow: hidden;
@@ -676,17 +683,19 @@ a:hover {
 }
 
 .archive-grid article::after {
-  content: "[ + ]";
+  content: "[ OPEN ]";
   position: absolute;
-  top: 18px;
-  right: 16px;
-  color: var(--orange);
-  font-size: 11px;
+  top: 14px;
+  right: 12px;
+  color: var(--green);
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   opacity: 0;
   transition: opacity 140ms ease;
   pointer-events: none;
+  background: rgba(5,20,47,0.88);
+  padding: 3px 5px;
 }
 
 .archive-grid article:hover::after {
@@ -801,8 +810,10 @@ a:hover {
 }
 
 .archive-grid article:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: var(--green);
+  z-index: 2;
+  box-shadow: 0 0 0 1px var(--green), 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .archive-grid img {
@@ -810,14 +821,14 @@ a:hover {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  border-radius: 6px;
-  filter: grayscale(1) contrast(1.08);
+  border-radius: 0;
+  filter: grayscale(1) sepia(0.12) contrast(1.12) brightness(0.8);
   opacity: 0;
-  transition: filter 200ms ease, opacity 600ms ease;
+  transition: filter 220ms ease, opacity 600ms ease, transform 220ms ease;
 }
 
 .archive-grid article.loaded img {
-  opacity: 0.82;
+  opacity: 0.74;
 }
 
 .archive-grid article:not(.loaded)::before {
@@ -854,6 +865,7 @@ a:hover {
 .archive-grid article:hover img {
   filter: grayscale(0) contrast(1.04);
   opacity: 1 !important;
+  transform: scale(1.015);
 }
 
 .archive-grid article.is-portrait img {
@@ -862,23 +874,51 @@ a:hover {
 }
 
 .archive-grid span {
-  display: block;
-  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-grid span::before {
+  content: "ARC-";
+  color: var(--orange);
+}
+
+.archive-grid span::after {
+  content: " / VISUAL REF";
+  margin-left: auto;
   color: var(--muted);
-  font-size: clamp(13px, 1.1vw, 17px);
+  font-weight: 400;
 }
 
 .archive-grid h2 {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--orange);
-  font-size: clamp(18px, 1.6vw, 26px);
+  font-size: clamp(15px, 1.25vw, 20px);
   letter-spacing: -0.04em;
 }
 
 .archive-grid p {
   margin: 4px 0 0;
   color: var(--muted);
-  font-size: clamp(12px, 1vw, 15px);
+  font-size: clamp(11px, 0.9vw, 13px);
+  line-height: 1.35;
+}
+
+@media (min-width: 901px) {
+  .archive-grid article:nth-child(7n + 1) {
+    grid-column: span 2;
+  }
+
+  .archive-grid article:nth-child(7n + 1) img {
+    aspect-ratio: 2 / 1;
+  }
 }
 
 /* ── Post page ── */
@@ -1159,7 +1199,7 @@ a:hover {
     padding-bottom: 28px;
   }
 
-  .archive-grid { grid-template-columns: 1fr 1fr; }
+  .archive-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
 }
 
 /* ── 480px ── */
@@ -1202,7 +1242,7 @@ a:hover {
 
   .status { font-size: 12px; }
 
-  .archive-grid { grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
+  .archive-grid { grid-template-columns: 1fr; gap: 8px; margin: 16px 0; padding: 8px; }
 
   .post-box { padding: 18px 14px; }
   .post-box p { font-size: 14px; }
