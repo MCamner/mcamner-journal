@@ -129,6 +129,57 @@
       <input id="commandInput" type="text" placeholder="/help" autocomplete="off" aria-label="Command input">
     </form>
 
+    <section class="signal-map" aria-labelledby="signal-map-title">
+      <div class="signal-map__header">
+        <h2 id="signal-map-title">&gt;&gt; signal map</h2>
+        <span>06 nodes / all linked</span>
+      </div>
+
+      <div class="signal-map__canvas">
+        <svg class="signal-map__lines" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M500 160 L170 58 M500 160 L170 262 M500 160 L390 48 M500 160 L610 272 M500 160 L830 58 M500 160 L830 262"></path>
+          <circle cx="500" cy="160" r="76"></circle>
+          <circle cx="500" cy="160" r="5"></circle>
+        </svg>
+
+        <div class="signal-map__core" aria-hidden="true">
+          <strong>JOURNAL</strong>
+          <span>CORE</span>
+        </div>
+
+        <a class="signal-node signal-node--journal" href="journal.html">
+          <span>NODE 01</span>
+          <strong>/journal</strong>
+          <em>notes + systems</em>
+        </a>
+        <a class="signal-node signal-node--catalogue" href="catalogue.html">
+          <span>NODE 02</span>
+          <strong>/catalogue</strong>
+          <em>culture index</em>
+        </a>
+        <a class="signal-node signal-node--films" href="films.html">
+          <span>NODE 03</span>
+          <strong>/films</strong>
+          <em>cinema signals</em>
+        </a>
+        <a class="signal-node signal-node--books" href="books.html">
+          <span>NODE 04</span>
+          <strong>/books</strong>
+          <em>reading index</em>
+        </a>
+        <a class="signal-node signal-node--objects" href="objects.html">
+          <span>NODE 05</span>
+          <strong>/objects</strong>
+          <em>material notes</em>
+        </a>
+        <a class="signal-node signal-node--archive" href="archive.html">
+          <span>NODE 06</span>
+          <strong>/archive</strong>
+          <em>visual memory</em>
+        </a>
+      </div>
+    </section>
+
     <section class="signal-panel" aria-label="Latest entries">
       <div class="signal-panel__header">
         <h2>&gt;&gt; latest entries</h2>

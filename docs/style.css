@@ -438,6 +438,176 @@ a:hover {
   animation: scrambleBlink 0.45s steps(2) infinite;
 }
 
+/* ── Home signal map ── */
+.signal-map {
+  margin: 0 0 18px;
+  padding: 20px 24px 24px;
+  border: 2px solid rgba(229,123,79,0.72);
+  background:
+    linear-gradient(rgba(89,161,79,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(89,161,79,0.055) 1px, transparent 1px),
+    rgba(0,0,0,0.14);
+  background-size: 28px 28px;
+  overflow: hidden;
+}
+
+.signal-map__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(229,123,79,0.55);
+}
+
+.signal-map__header h2 {
+  margin: 0;
+  color: var(--orange);
+  font-size: clamp(16px, 1.6vw, 23px);
+  letter-spacing: -0.04em;
+}
+
+.signal-map__header span {
+  color: var(--green);
+  font-size: clamp(11px, 1vw, 14px);
+}
+
+.signal-map__canvas {
+  position: relative;
+  height: 320px;
+  margin-top: 14px;
+}
+
+.signal-map__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.signal-map__lines path,
+.signal-map__lines circle {
+  fill: none;
+  stroke: rgba(229,123,79,0.62);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.signal-map__lines path {
+  stroke-dasharray: 8 7;
+  animation: mapSignal 12s linear infinite;
+}
+
+.signal-map__lines circle:last-child {
+  fill: var(--green);
+  stroke: var(--green);
+  animation: bootPulse 1.8s infinite;
+}
+
+.signal-map__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 136px;
+  height: 136px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  background: rgba(13,67,143,0.94);
+  box-shadow: 0 0 0 8px rgba(229,123,79,0.08);
+}
+
+.signal-map__core strong {
+  color: var(--white);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.signal-map__core span {
+  margin-top: 5px;
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.signal-node {
+  position: absolute;
+  width: min(18vw, 190px);
+  min-width: 142px;
+  padding: 9px 11px;
+  border: 1px solid rgba(89,161,79,0.72);
+  background: rgba(5,20,47,0.9);
+  color: var(--white);
+  text-decoration: none;
+  transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
+}
+
+.signal-node::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%);
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(89,161,79,0.18);
+}
+
+.signal-node span,
+.signal-node strong,
+.signal-node em {
+  display: block;
+}
+
+.signal-node span {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.signal-node strong {
+  margin-top: 3px;
+  color: var(--orange);
+  font-size: clamp(13px, 1.2vw, 18px);
+}
+
+.signal-node em {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.signal-node:hover,
+.signal-node:focus-visible {
+  color: var(--white) !important;
+  border-color: var(--orange);
+  background: rgba(89,161,79,0.14);
+  letter-spacing: normal;
+  text-shadow: none;
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  transform: translateY(-2px);
+}
+
+.signal-node--journal { left: 7%; top: 8%; }
+.signal-node--catalogue { left: 7%; bottom: 8%; }
+.signal-node--films { left: 30%; top: 4%; }
+.signal-node--books { right: 30%; bottom: 4%; }
+.signal-node--objects { right: 7%; top: 8%; }
+.signal-node--archive { right: 7%; bottom: 8%; }
+
+@keyframes mapSignal {
+  to { stroke-dashoffset: -90; }
+}
+
 /* ── Home recent signals ── */
 .signal-panel {
   position: relative;
@@ -1169,6 +1339,40 @@ a:hover {
     margin-bottom: 12px;
   }
 
+  .signal-map {
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .signal-map__canvas {
+    height: auto;
+    padding: 18px 0 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .signal-map__canvas::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 16px;
+    bottom: 2px;
+    border-left: 2px dashed rgba(229,123,79,0.62);
+  }
+
+  .signal-map__lines,
+  .signal-map__core {
+    display: none;
+  }
+
+  .signal-node {
+    position: relative;
+    inset: auto;
+    width: auto;
+    min-width: 0;
+  }
+
   .signal-panel__header {
     display: block;
   }
@@ -1230,6 +1434,23 @@ a:hover {
     padding: 12px 10px;
   }
 
+  .signal-map {
+    padding: 12px 10px;
+  }
+
+  .signal-map__header {
+    display: block;
+  }
+
+  .signal-map__header span {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .signal-map__canvas {
+    grid-template-columns: 1fr;
+  }
+
   .signal-row {
     grid-template-columns: 1fr;
     gap: 3px;
@@ -1254,6 +1475,13 @@ a:hover {
   .objects-list article { padding: 11px 13px; gap: 9px; grid-template-columns: 44px 1fr; }
   .objects-list h2 { font-size: 16px; }
   .objects-list p { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-map__lines path,
+  .signal-map__lines circle:last-child {
+    animation: none;
+  }
 }
 
 /* Journal system v2 */
