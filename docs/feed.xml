@@ -8,6 +8,14 @@
     <lastBuildDate>Wed, 02 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Shards</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/the-shards.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-shards.html</guid>
+      <description>The Shards is a note on FX&#x27;s adaptation of Bret Easton Ellis&#x27;s novel — memory, privilege and paranoia in Los Angeles, 1981.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Spider-Man: Brand New Day</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/spider-man-brand-new-day.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/spider-man-brand-new-day.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</guid>
       <description>Guitar Pro 8 is a note on notation, composition, and the value of software that gets out of the way.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>command-surface</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/command-surface.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/command-surface.html</guid>
-      <description>The shift back to the command line is not an exercise in nostalgia. It is a reaction to the noise.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
