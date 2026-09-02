@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spider-Man: Brand New Day</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/spider-man-brand-new-day.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/spider-man-brand-new-day.html</guid>
+      <description>Spider-Man: Brand New Day is a note on Peter Parker after the world forgets him — full-time responsibility, adult isolation, and a hero forced back to street level.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>the whole path</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/the-whole-path.html</link>
@@ -158,14 +166,6 @@
       <description>The shift back to the command line is not an exercise in nostalgia. It is a reaction to the noise.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Is This It</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/is-this-it.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/is-this-it.html</guid>
-      <description>Is This It is a note on The Strokes&#x27; 2001 album — the best record of the 2000s, because it made collapse sound effortless, precise, and new.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
