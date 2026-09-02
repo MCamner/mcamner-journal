@@ -136,7 +136,9 @@ const routes = {
   "/le-samourai": "/mcamner-journal/posts/le-samourai.html",
   "/film 009": "/mcamner-journal/posts/spider-man-brand-new-day.html",
   "/spider-man-brand-new-day": "/mcamner-journal/posts/spider-man-brand-new-day.html",
-  "/brand-new-day": "/mcamner-journal/posts/spider-man-brand-new-day.html"
+  "/brand-new-day": "/mcamner-journal/posts/spider-man-brand-new-day.html",
+  "/series 008": "/mcamner-journal/posts/the-shards.html",
+  "/the-shards": "/mcamner-journal/posts/the-shards.html"
 };
 
 // Routes are authored against the GitHub Pages base path (/mcamner-journal/).
