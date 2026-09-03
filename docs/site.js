@@ -21,6 +21,8 @@ const routes = {
   "/red-wing-moc-toe": "/mcamner-journal/posts/red-wing-moc-toe.html",
   "/object 012": "/mcamner-journal/posts/gibson-les-paul-custom.html",
   "/gibson-les-paul-custom": "/mcamner-journal/posts/gibson-les-paul-custom.html",
+  "/object 013": "/mcamner-journal/posts/seymour-duncan-slash-3.html",
+  "/seymour-duncan-slash-3": "/mcamner-journal/posts/seymour-duncan-slash-3.html",
   "/contact": "mailto:mattias.camner@gmail.com",
   "/instagram": "https://www.instagram.com/mattias.camner/",
   "/linkedin": "https://www.linkedin.com/in/mattias-camner-75958022",

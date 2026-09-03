@@ -16,6 +16,14 @@
       <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Seymour Duncan Slash 3.0</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/seymour-duncan-slash-3.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/seymour-duncan-slash-3.html</guid>
+      <description>Seymour Duncan Slash 3.0 zebra humbuckers with four-conductor wiring — added punch, retained clarity, and one of the best pickup sets I have owned.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>prompts are not loops</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</guid>
       <description>mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>mq-agent</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/mq-agent.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-agent.html</guid>
-      <description>mq-agent is a note on building a local AI agent orchestrator — tool routing, MCP integration, and keeping the model out of the way until it is needed.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
