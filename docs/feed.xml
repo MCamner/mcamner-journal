@@ -8,6 +8,14 @@
     <lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>The Shards — the novel</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/the-shards-book.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-shards-book.html</guid>
+      <description>The Shards is Bret Easton Ellis turning memory, privilege, desire, and paranoia into a confession that cannot be trusted.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>the repository is the conversation</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/the-repository-is-the-conversation.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-repository-is-the-conversation.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</guid>
       <description>mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>mq-hal</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-hal.html</guid>
-      <description>mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
