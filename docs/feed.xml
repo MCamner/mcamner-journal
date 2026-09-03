@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>prompts are not loops</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html</guid>
+      <description>A note on the difference between asking an AI for an answer and building a loop that can inspect, verify, correct, and stop.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The Shards</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/the-shards.html</link>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</guid>
       <description>McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Guitar Pro 8</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/guitar-pro-8.html</guid>
-      <description>Guitar Pro 8 is a note on notation, composition, and the value of software that gets out of the way.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
