@@ -212,23 +212,36 @@ def catalogue_items() -> list[CatalogueItem]:
     return items
 
 
+def journal_items() -> list[CatalogueItem]:
+    html = read(DOCS / "journal.html")
+    items: list[CatalogueItem] = []
+    for order, article in enumerate(re.findall(r"(<article\b.*?</article>)", html, re.S), start=1):
+        href = match(r'<h2><a href="([^"]+)">', article)
+        title = clean_title(match(r'<h2><a href="[^"]+">(.*?)</a></h2>', article))
+        number = match(r"<span>(\d{3})</span>", article)
+        if href and number:
+            items.append(CatalogueItem(href=href, title=title, code=f"N{number}", order=order))
+    return items
+
+
 def update_index_latest_and_count(count: int, pages: list[Page]) -> None:
     path = DOCS / "index.html"
     html = read(path)
     page_by_rel = {page.rel: page for page in pages}
     latest_items = sorted(
-        [item for item in catalogue_items() if item.href in page_by_rel],
+        [item for item in catalogue_items() + journal_items() if item.href in page_by_rel],
         key=lambda item: (page_by_rel[item.href].lastmod, item.order),
         reverse=True,
     )[:3]
 
     rows = []
     for item in latest_items:
-        kind = "BOOK" if item.code.startswith("B") else "FILM" if item.code.startswith("F") else "MUSIC" if item.code.startswith("M") else "SERIES"
+        kind = "BOOK" if item.code.startswith("B") else "FILM" if item.code.startswith("F") else "MUSIC" if item.code.startswith("M") else "NOTE" if item.code.startswith("N") else "SERIES"
         command_type = {
             "B": "book",
             "F": "film",
             "M": "music",
+            "N": "note",
             "S": "series",
         }.get(item.code[:1], "open")
         command = f"/{command_type} {item.code[1:]}"
