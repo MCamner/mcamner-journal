@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prompts are not loops | McAmner Journal</title>
+  <meta name="description" content="A note on the difference between asking an AI for an answer and building a loop that can inspect, verify, correct, and stop.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html">
+  <meta property="og:title" content="prompts are not loops | McAmner Journal">
+  <meta property="og:description" content="A prompt describes one attempt. A loop gives the attempt somewhere to go when reality disagrees.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="prompts are not loops | McAmner Journal">
+  <meta name="twitter:description" content="A prompt describes one attempt. A loop gives the attempt somewhere to go when reality disagrees.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html"
+  },
+  "headline": "prompts are not loops",
+  "description": "A note on the difference between asking an AI for an answer and building a loop that can inspect, verify, correct, and stop.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-09-03",
+  "datePublished": "2026-09-03"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>prompts are not loops</h1>
+  <p>A prompt describes one attempt.</p>
+  <p>A loop decides what happens after reality answers.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>&gt; opened /note 029</p>
+  <p>&gt; result inspected</p>
+  <p>&gt; stop condition pending</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; prompts are not loops</h2>
+
+  <p>
+    The prompt has become the visible unit of AI work. We polish the wording,
+    add roles, list constraints, and search for the sentence that will make the
+    model behave. This can improve one response. It does not make a system.
+  </p>
+
+  <p>
+    A prompt describes an attempt. A loop gives that attempt somewhere to go
+    when reality disagrees. It gathers context, acts, reads the result, checks
+    the result against a condition, and either stops or tries again with new
+    evidence. The intelligence is not only in the request. It is in the return path.
+  </p>
+
+  <p>
+    This changes what good instructions look like. The model does not need one
+    enormous prompt containing every possible decision. It needs a clear next
+    action, access to the relevant state, and a way to discover whether the
+    action worked. A compiler error is better than another paragraph of encouragement.
+    A failing test is context with teeth.
+  </p>
+
+  <p>
+    The loop also needs restraint. Without a budget, a stop condition, and a
+    definition of success, iteration becomes motion without progress. The model
+    can keep rewriting the same answer because nothing outside the conversation
+    is allowed to settle the question.
+  </p>
+
+  <p>
+    Prompts still matter. They set intent, boundaries, and tone. But reliability
+    comes from the surrounding machinery: inspect before acting, make one bounded
+    change, run the check, preserve the evidence, and return the failure to the
+    next attempt. The prompt starts the work. The loop makes it accountable.
+  </p>
+
+  <p>
+    The useful question is therefore not “what is the perfect prompt?” It is
+    “what will the system learn after the first answer is wrong?”
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 28" width="104" aria-label="A prompt entering a verification loop">
+    <rect x="3" y="10" width="14" height="8" rx="1" fill="#2f69c7"/>
+    <path d="M17 14h12" stroke="#9f9789" stroke-width="1.5"/>
+    <polygon points="29,11 34,14 29,17" fill="#9f9789"/>
+    <rect x="35" y="7" width="16" height="14" rx="2" fill="#59a14f"/>
+    <path d="M51 14h10c7 0 7-10 0-10H43v3" fill="none" stroke="#e57b4f" stroke-width="1.5"/>
+    <polygon points="40,7 43,11 46,7" fill="#e57b4f"/>
+    <path d="M51 17h12" stroke="#0d438f" stroke-width="1.5"/>
+    <polygon points="63,14 69,17 63,20" fill="#0d438f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="the-whole-path.html">/note 028</a><span>-- the whole path</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
