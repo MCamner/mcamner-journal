@@ -129,6 +129,8 @@ const routes = {
   "/the-whole-path": "/mcamner-journal/posts/the-whole-path.html",
   "/note 029": "/mcamner-journal/posts/prompts-are-not-loops.html",
   "/prompts-are-not-loops": "/mcamner-journal/posts/prompts-are-not-loops.html",
+  "/note 030": "/mcamner-journal/posts/the-repository-is-the-conversation.html",
+  "/the-repository-is-the-conversation": "/mcamner-journal/posts/the-repository-is-the-conversation.html",
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",

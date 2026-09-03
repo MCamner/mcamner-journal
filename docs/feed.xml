@@ -8,6 +8,14 @@
     <lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>the repository is the conversation</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/the-repository-is-the-conversation.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-repository-is-the-conversation.html</guid>
+      <description>A note on GitHub as a record of decisions, review, and change rather than a remote folder for code.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>prompts are not loops</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/prompts-are-not-loops.html</guid>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/mq-agent.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-agent.html</guid>
       <description>mq-agent is a note on building a local AI agent orchestrator — tool routing, MCP integration, and keeping the model out of the way until it is needed.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>McAmner Journal Linking</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mcamner-journal-linking.html</guid>
-      <description>McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
