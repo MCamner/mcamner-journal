@@ -46,6 +46,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/atlas-loop.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/atlas-one.html</loc>
     <lastmod>2026-04-27</lastmod>
     <priority>0.7</priority>
@@ -198,6 +203,11 @@
   <url>
     <loc>https://mcamner.github.io/mcamner-journal/posts/learn-loop.html</loc>
     <lastmod>2026-07-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html</loc>
+    <lastmod>2026-09-09</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
