@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>local is a boundary | McAmner Journal</title>
+  <meta name="description" content="A note on Ollama, local inference, and why running a model on your own machine is a boundary rather than a complete system.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html">
+  <meta property="og:title" content="local is a boundary | McAmner Journal">
+  <meta property="og:description" content="Ollama makes the model local. The rest of the system still has to earn trust.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="local is a boundary | McAmner Journal">
+  <meta name="twitter:description" content="Ollama makes the model local. The rest of the system still has to earn trust.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html"
+  },
+  "headline": "local is a boundary",
+  "description": "A note on Ollama, local inference, and why running a model on your own machine is a boundary rather than a complete system.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-09-09",
+  "datePublished": "2026-09-09"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>local is a boundary</h1>
+  <p>Ollama brings the model onto the machine.</p>
+  <p>It does not remove the need for a system around it.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>&gt; opened /note 031</p>
+  <p>&gt; endpoint: localhost</p>
+  <p>&gt; boundary inspected</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; local is a boundary</h2>
+
+  <p>
+    Ollama changes the physical location of inference. The request leaves the
+    application, reaches a model running on the same machine, and returns without
+    crossing a cloud API. That is a meaningful boundary. It is not a complete
+    definition of privacy, reliability, or control.
+  </p>
+
+  <p>
+    Local is often used as if it were a quality in itself. It is really a placement
+    decision. The weights are local. The latency is local. The hardware limit is
+    local. So are the logs, prompts, cached responses, and mistakes. Moving the
+    model closer makes ownership visible. It does not make ownership effortless.
+  </p>
+
+  <p>
+    This is what makes Ollama useful. It turns a model into ordinary infrastructure:
+    a process with an address, a lifecycle, a set of installed artifacts, and a
+    failure mode. It can be started, stopped, inspected, replaced, or absent. The
+    model becomes less mysterious precisely because it can fail like everything else.
+  </p>
+
+  <p>
+    The surrounding application still decides what the model is allowed to see and
+    what happens to its answer. A local model with unrestricted file access is not a
+    safety design. A response accepted without validation is not more correct because
+    it was generated on localhost. Proximity changes custody, not judgment.
+  </p>
+
+  <p>
+    The strongest local systems keep the model's role narrow. Retrieval chooses the
+    evidence. A contract shapes the output. Code checks the result. The operator owns
+    the action. Ollama provides inference inside that structure, but it does not become
+    the structure.
+  </p>
+
+  <p>
+    This is the useful promise of local AI. Not independence from every dependency,
+    and not automatic trust. A boundary you can point to, inspect, and move when the
+    system changes. Control begins where the diagram stops being vague.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 30" width="106" aria-label="A local model contained within a system boundary">
+    <rect x="14" y="4" width="50" height="22" rx="2" fill="none" stroke="#2f69c7" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <rect x="30" y="8" width="18" height="14" rx="2" fill="#59a14f"/>
+    <circle cx="35" cy="14" r="1.5" fill="#0d438f"/>
+    <circle cx="43" cy="14" r="1.5" fill="#0d438f"/>
+    <path d="M35 18h8" stroke="#0d438f" stroke-width="1.5"/>
+    <path d="M3 15h11M64 15h11" stroke="#9f9789" stroke-width="1.5"/>
+    <polygon points="10,12 14,15 10,18" fill="#e57b4f"/>
+    <polygon points="71,12 75,15 71,18" fill="#e57b4f"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">/open ollama</a><span>-- visit Ollama</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="the-repository-is-the-conversation.html">/note 030</a><span>-- the repository is the conversation</span></li>
+    <li><a href="atlas-loop.html">/note 032</a><span>-- atlas-loop</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

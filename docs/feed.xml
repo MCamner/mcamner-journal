@@ -5,8 +5,24 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>local is a boundary</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html</guid>
+      <description>A note on Ollama, local inference, and why running a model on your own machine is a boundary rather than a complete system.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>atlas-loop</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/atlas-loop.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/atlas-loop.html</guid>
+      <description>A note on Atlas Loop, an Instagram content system that treats every post as an experiment with a hypothesis, a signal, and a next test.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The Shards — the novel</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/the-shards-book.html</link>
@@ -148,22 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/beef-s2.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/beef-s2.html</guid>
       <description>Beef S2 is a note on Lee Sung Jin&#x27;s Netflix series — slower, more interior, closer in spirit to Apple TV+ prestige drama than anything else on the platform.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Spider-Man: Noir</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/spider-noir.html</guid>
-      <description>Spider-Man: Noir is a note on the Netflix series, Nicolas Cage, 1930s New York, and what a superhero looks like when the city is already broken.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>mq-mcp</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-mcp.html</guid>
-      <description>mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
