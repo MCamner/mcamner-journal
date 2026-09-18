@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>powershell on macOS | McAmner Journal</title>
+  <meta name="description" content="A note on PowerShell on macOS, where a cross-platform object shell meets an operating system with its own native tools and conventions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/powershell-on-macos.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/powershell-on-macos.html">
+  <meta property="og:title" content="powershell on macOS | McAmner Journal">
+  <meta property="og:description" content="PowerShell can cross the platform boundary. It should not pretend the boundary is gone.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="powershell on macOS | McAmner Journal">
+  <meta name="twitter:description" content="PowerShell can cross the platform boundary. It should not pretend the boundary is gone.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/powershell-on-macos.html"
+  },
+  "headline": "powershell on macOS",
+  "description": "A note on PowerShell on macOS, where a cross-platform object shell meets an operating system with its own native tools and conventions.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-09-18",
+  "datePublished": "2026-09-18"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>powershell on macOS</h1>
+  <p>An object shell arrives on a Unix desktop.</p>
+  <p>The useful part is what survives the crossing.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>&gt; opened /note 033</p>
+  <p>&gt; host: macOS</p>
+  <p>&gt; objects in pipeline</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; powershell on macOS</h2>
+
+  <p>
+    PowerShell on macOS looks like a contradiction only if the shell is mistaken
+    for the operating system. It is neither a Windows desktop in disguise nor a
+    replacement for the Unix tools already present. It is a language, a runtime,
+    and an object pipeline arriving on a machine with its own established grammar.
+  </p>
+
+  <p>
+    The difference becomes visible at the pipe. Traditional command-line tools
+    pass text and trust the next process to interpret it correctly. PowerShell
+    passes objects between commands. Names, types, and properties survive the
+    transition. For administration work, that structure can remove an entire
+    layer of parsing and the quiet errors that parsing creates.
+  </p>
+
+  <p>
+    Cross-platform does not mean identical. The language travels well. The
+    environment does not. Windows-specific modules, registry assumptions, drive
+    letters, and management interfaces remain on the other side of the boundary.
+    A script can run on both systems while still containing decisions that belong
+    to only one of them.
+  </p>
+
+  <p>
+    That is where PowerShell becomes useful on a Mac: as a shared control surface
+    above different native layers. The common logic can validate input, shape
+    data, call APIs, and produce consistent output. The platform-specific edge can
+    still use <code>launchctl</code>, <code>defaults</code>, <code>plutil</code>,
+    or the tools that actually understand macOS.
+  </p>
+
+  <p>
+    The strongest scripts make this distinction explicit. They detect the host,
+    isolate platform branches, fail clearly when a dependency is absent, and
+    avoid pretending that every command has the same meaning everywhere. Portability
+    is not achieved by hiding differences. It is achieved by giving them a place.
+  </p>
+
+  <p>
+    PowerShell on macOS is therefore less interesting as an alternative shell than
+    as a bridge. It lets one operational language span several systems without
+    flattening them into one. The bridge holds because the shores remain visible.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 30" width="118" aria-label="Two command environments connected by an object pipeline">
+    <rect x="4" y="7" width="24" height="16" rx="2" fill="#2f69c7"/>
+    <path d="M10 12l4 3-4 3M16 18h6" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M28 15h31" stroke="#9f9789" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <circle cx="36" cy="15" r="3" fill="#59a14f"/>
+    <circle cx="45" cy="15" r="3" fill="#e57b4f"/>
+    <circle cx="54" cy="15" r="3" fill="#59a14f"/>
+    <polygon points="56,11 62,15 56,19" fill="#e57b4f"/>
+    <rect x="62" y="7" width="22" height="16" rx="2" fill="#0d438f"/>
+    <path d="M68 12l4 3-4 3M74 18h5" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="https://learn.microsoft.com/powershell/" target="_blank" rel="noopener noreferrer">/open powershell</a><span>-- read the documentation</span></li>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="atlas-loop.html">/note 032</a><span>-- atlas-loop</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

@@ -137,6 +137,8 @@ const routes = {
   "/local-is-a-boundary": "/mcamner-journal/posts/local-is-a-boundary.html",
   "/note 032": "/mcamner-journal/posts/atlas-loop.html",
   "/atlas-loop": "/mcamner-journal/posts/atlas-loop.html",
+  "/note 033": "/mcamner-journal/posts/powershell-on-macos.html",
+  "/powershell-on-macos": "/mcamner-journal/posts/powershell-on-macos.html",
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",
