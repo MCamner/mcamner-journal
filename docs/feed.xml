@@ -5,8 +5,24 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>skills belong in the repository</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/skills-belong-in-the-repository.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/skills-belong-in-the-repository.html</guid>
+      <description>A note on repository-owned skills for coding agents, and how shared instructions turn GitHub and the editor into one continuous working surface.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>powershell on macOS</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/powershell-on-macos.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/powershell-on-macos.html</guid>
+      <description>A note on PowerShell on macOS, where a cross-platform object shell meets an operating system with its own native tools and conventions.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>local is a boundary</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/local-is-a-boundary.html</link>
@@ -150,22 +166,6 @@
       <description>Gibson Les Paul Custom is a note on the Black Beauty — a heavy, ornamented instrument where the gold, binding, and mahogany serve the sound as much as the look.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Back in Black</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/back-in-black.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/back-in-black.html</guid>
-      <description>Back in Black is a note on AC/DC&#x27;s 1980 album — discipline, volume, and the riff as total statement.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Beef S2</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/beef-s2.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/beef-s2.html</guid>
-      <description>Beef S2 is a note on Lee Sung Jin&#x27;s Netflix series — slower, more interior, closer in spirit to Apple TV+ prestige drama than anything else on the platform.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
