@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate RSS, sitemap, and small homepage metadata for McAmner Journal."""
+"""Generate RSS, sitemap, entries.json, and homepage metadata for McAmner Journal."""
 
 from __future__ import annotations
 
@@ -402,6 +402,141 @@ def update_signal_map(pages: list[Page]) -> None:
     write_if_changed(path, html)
 
 
+# ── entries.json ───────────────────────────────────────────────────────────
+#
+# One generated fact table for the command surface. `/tonight`, `/quiz`,
+# `/refs`, `/fortune`, `/since` and `/ascii` all need the same things — a
+# post's type, tags, date, description and outgoing links — and none of them
+# can get those from `routes` alone. Deriving them in the browser would mean
+# fetching 78 post pages; deriving them here costs one build.
+#
+# Tags live only in the index pages (`<div class="film-tags">` plus the
+# `data-tags` attribute, which not every page carries), never in the post
+# itself, so the index is the only source for them.
+
+INDEX_PAGES = ("catalogue.html", "films.html", "books.html", "objects.html", "journal.html")
+
+ARTICLE_BLOCK = re.compile(r'<article\s+id="([a-z]+)-(\d+)"([^>]*)>(.*?)</article>', re.S)
+TAG_SPAN = re.compile(r'<div class="film-tags">(.*?)</div>', re.S)
+
+
+def index_tags() -> dict[str, list[str]]:
+    """Map a post's relative path to its tags, gathered from the index pages.
+
+    A post can appear on two pages (catalogue and films both list the films),
+    so tags union rather than overwrite, keeping first-seen order.
+    """
+    tags: dict[str, list[str]] = {}
+    for name in INDEX_PAGES:
+        page = DOCS / name
+        if not page.exists():
+            continue
+        for _kind, _num, attrs, body in ARTICLE_BLOCK.findall(read(page)):
+            href = match(r'<h2><a href="([^"]+)">', body)
+            if not href:
+                continue
+            found: list[str] = []
+            found.extend(match(r'data-tags="([^"]*)"', attrs).split())
+            span = TAG_SPAN.search(body)
+            if span:
+                found.extend(re.findall(r"<span>([^<]+)</span>", span.group(1)))
+            bucket = tags.setdefault(href, [])
+            for tag in found:
+                tag = tag.strip().lower()
+                if tag and tag not in bucket:
+                    bucket.append(tag)
+    return tags
+
+
+def site_routes() -> dict[str, str]:
+    """The `const routes = {…}` table from site.js, as key -> docs-relative path."""
+    text = read(DOCS / "site.js")
+    body = re.search(r"const routes\s*=\s*\{(.*?)\n\};", text, re.S)
+    if not body:
+        raise SystemExit("ERROR: could not locate `const routes = { … };` in site.js")
+    prefix = "/mcamner-journal/"
+    out = {}
+    for key, target in re.findall(r'"([^"]+)"\s*:\s*"([^"]+)"', body.group(1)):
+        out[key] = target[len(prefix):] if target.startswith(prefix) else target
+    return out
+
+
+def typed_route_for(rel: str, routes: dict[str, str]) -> tuple[str, str]:
+    """Return (route key, type) for a post, preferring the `/type NNN` alias."""
+    keys = [key for key, target in routes.items() if target == rel]
+    for key in sorted(keys):
+        found = re.fullmatch(r"/([a-z]+) (\d{3})", key)
+        if found:
+            return key, found.group(1)
+    return (keys[0] if keys else ""), "post"
+
+
+POST_LINK = re.compile(r'href="([a-z0-9-]+\.html)"')
+
+
+def post_links(rel: str, html: str, known: set[str]) -> list[str]:
+    """Sibling posts this post links to, as slugs.
+
+    Only the bare `name.html` form is a sibling link. `../name.html` goes back
+    to an index page and the absolute mcamner.github.io URL is the post's own
+    canonical, so neither is an edge.
+    """
+    self_slug = rel.split("/")[-1]
+    out: list[str] = []
+    for href in POST_LINK.findall(html):
+        if href == self_slug or f"posts/{href}" not in known:
+            continue
+        slug = href[: -len(".html")]
+        if slug not in out:
+            out.append(slug)
+    return out
+
+
+def generate_entries(pages: list[Page]) -> None:
+    routes = site_routes()
+    tags = index_tags()
+    posts = [page for page in pages if page.rel.startswith("posts/")]
+    known = {page.rel for page in posts}
+
+    entries = []
+    for page in sorted(posts, key=lambda p: p.rel):
+        rel = page.rel
+        key, kind = typed_route_for(rel, routes)
+        entries.append(
+            {
+                "slug": rel[len("posts/") : -len(".html")],
+                "path": "/" + rel,
+                "title": clean_title(page.title),
+                "route": key,
+                "type": kind,
+                "date": page.lastmod,
+                "desc": page.description,
+                "tags": tags.get(rel, []),
+                "links": post_links(rel, read(DOCS / rel), known),
+            }
+        )
+
+    archive = []
+    archive_html = DOCS / "archive.html"
+    if archive_html.exists():
+        for num, src, title in re.findall(
+            r'<article id="item-(\d+)">\s*<img src="([^"]+)"[^>]*>\s*<span>[^<]*</span>\s*<h2>([^<]*)</h2>',
+            read(archive_html),
+            re.S,
+        ):
+            archive.append({"id": num, "src": src, "title": unescape(title).strip()})
+
+    payload = {
+        "count": len(entries),
+        "archive_count": len(archive),
+        "entries": entries,
+        "archive": archive,
+    }
+    write_if_changed(
+        DOCS / "entries.json", json.dumps(payload, ensure_ascii=False, indent=1) + "\n"
+    )
+
+
 def update_catalogue_count(count: int) -> None:
     path = DOCS / "catalogue.html"
     html = read(path)
@@ -435,6 +570,7 @@ def main() -> None:
     update_signal_map(pages)
     generate_sitemap(pages)
     generate_feed(pages)
+    generate_entries(pages)
 
 
 if __name__ == "__main__":

@@ -13,6 +13,18 @@ All notable changes to this project will be documented in this file.
   `/sudo`
 - Command bar: Tab completion over commands and routes, arrow-up/down history
   (kept in `localStorage`), and a `.prompt-out` line for multi-line answers
+- Play layer: `/ascii <nr>` samples an archive image into characters,
+  `/tonight` picks a film, a book and an object that share tags, `/quiz` asks
+  you to name a film from its tags and keeps score, `/refs <post>` lists
+  inbound and outbound links, `/since` lists what is new since the previous
+  visit (with a count in the status bar), `/fortune` prints one description,
+  `/sound [on|off]` adds keyboard clicks and a 60 Hz hum, and `/lock` rests the
+  screen — which also happens by itself after two minutes idle
+- `docs/entries.json`: generated per-post type, tags, date, description and the
+  post-to-post link graph, which the play layer reads instead of fetching every
+  post
+- `tools/check_entries.py`: CI gate asserting `entries.json` still matches the
+  pages it is generated from — coverage, tags, link graph and archive items
 
 ## [0.1.4] - 2026-06-21
 
