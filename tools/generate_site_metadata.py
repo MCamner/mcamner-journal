@@ -288,6 +288,102 @@ def update_index_latest_and_count(count: int, pages: list[Page]) -> None:
     write_if_changed(path, html)
 
 
+SIGNAL_NODES = [
+    ("journal", "notes + systems"),
+    ("catalogue", "culture index"),
+    ("films", "cinema signals"),
+    ("books", "reading index"),
+    ("objects", "material notes"),
+    ("archive", "visual memory"),
+]
+
+# Sections that are unique content; catalogue overlaps films/books.
+SIGNAL_TOTAL = ("journal", "catalogue", "objects", "archive")
+
+
+def section_stats(name: str, page_by_rel: dict[str, Page]) -> dict[str, str | int]:
+    html = read(DOCS / f"{name}.html")
+    articles = re.findall(r"(<article\b.*?</article>)", html, re.S)
+    page_lastmod = page_by_rel[f"{name}.html"].lastmod if f"{name}.html" in page_by_rel else TODAY
+    best: tuple[str, int, str] = (page_lastmod, -1, "")
+    for article in articles:
+        href = match(r'<h2><a href="([^"]+)">', article)
+        title = clean_title(match(r"<h2>(?:<a [^>]+>)?(.*?)(?:</a>)?</h2>", article))
+        number = match(r"<span>(\d{3})</span>", article)
+        lastmod = page_by_rel[href].lastmod if href in page_by_rel else page_lastmod
+        candidate = (lastmod, int(number or 0), re.sub(r"<[^>]+>", "", title))
+        if candidate[:2] > best[:2]:
+            best = candidate
+    return {"count": len(articles), "last": best[0], "latest": best[2]}
+
+
+def update_signal_map(pages: list[Page]) -> None:
+    path = DOCS / "index.html"
+    html = read(path)
+    page_by_rel = {page.rel: page for page in pages}
+    stats = {name: section_stats(name, page_by_rel) for name, _ in SIGNAL_NODES}
+    total = sum(int(stats[name]["count"]) for name in SIGNAL_TOTAL)
+    last_name = max(stats, key=lambda name: (stats[name]["last"], -[n for n, _ in SIGNAL_NODES].index(name)))
+
+    # Core sits at (500,110); left chips end at x=265, right chips start at x=735.
+    anchors = [(265, 40), (265, 110), (265, 180), (735, 40), (735, 110), (735, 180)]
+    lines = [
+        f'          <path data-line="{name}" d="M500 110 L{x} {y}"></path>'
+        for (name, _), (x, y) in zip(SIGNAL_NODES, anchors)
+    ]
+
+    nodes = []
+    for index, (name, label) in enumerate(SIGNAL_NODES, start=1):
+        s = stats[name]
+        nodes.append(
+            "\n".join(
+                [
+                    f'        <a class="signal-node signal-node--{name}" href="{name}.html" data-node="{index}" '
+                    f'data-count="{int(s["count"]):03d}" data-last="{s["last"]}" data-latest="{escape(str(s["latest"]))}">',
+                    f"          <span>{index:02d}</span>",
+                    f"          <strong>/{name}</strong>",
+                    f"          <b>{int(s['count']):03d}</b>",
+                    f"          <em>{label}</em>",
+                    f'          <time datetime="{s["last"]}">{s["last"]}</time>',
+                    "        </a>",
+                ]
+            )
+        )
+
+    section = "\n".join(
+        [
+            '    <section class="signal-map" aria-labelledby="signal-map-title">',
+            '      <div class="signal-map__header">',
+            '        <h2 id="signal-map-title">&gt;&gt; signal map</h2>',
+            '        <span data-signal-status>06 nodes / keys 1-6</span>',
+            "      </div>",
+            "",
+            '      <div class="signal-map__canvas">',
+            '        <svg class="signal-map__lines" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">',
+            "\n".join(lines),
+            "        </svg>",
+            "",
+            '        <div class="signal-map__core" data-signal-core aria-hidden="true">',
+            f"          <strong>{total:03d}</strong>",
+            "          <span>signals</span>",
+            f'          <em>last /{last_name}</em>',
+            "        </div>",
+            "",
+            "\n".join(nodes),
+            "      </div>",
+            "    </section>",
+        ]
+    )
+    html = re.sub(
+        r'    <section class="signal-map".*?    </section>',
+        lambda _: section,
+        html,
+        count=1,
+        flags=re.S,
+    )
+    write_if_changed(path, html)
+
+
 def update_catalogue_count(count: int) -> None:
     path = DOCS / "catalogue.html"
     html = read(path)
@@ -318,6 +414,7 @@ def main() -> None:
     ensure_feed_links()
     pages = collect_pages()
     update_index_latest_and_count(count, pages)
+    update_signal_map(pages)
     generate_sitemap(pages)
     generate_feed(pages)
 

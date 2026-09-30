@@ -456,7 +456,7 @@ if (commandBar && commandInput) {
         "move     /random [type] /latest /next /prev /back /find <text>",
         "list     /ls [type] /show all /filter <tag> /clear /select NNN /open <id>",
         "system   /whoami /uptime /history /mute /unmute /help",
-        "keys     Tab completes · arrow up and down recall history"
+        "keys     Tab completes · arrow up and down recall history · 1-6 signal map"
       ]);
       return;
     }
@@ -1061,4 +1061,96 @@ if (commandBar && commandInput) {
     if (e.key === "ArrowLeft")   prev();
     if (e.key === "ArrowRight")  next();
   });
+})();
+
+// Signal map: freshness per node, core readout, keys 1-6.
+(function () {
+  const map = document.querySelector(".signal-map");
+  if (!map) return;
+
+  const core = map.querySelector("[data-signal-core]");
+  const status = map.querySelector("[data-signal-status]");
+  const nodes = Array.from(map.querySelectorAll(".signal-node[data-node]"));
+  if (!core || !nodes.length) return;
+
+  const DAY = 864e5;
+  const HOT = 14;
+  const WARM = 45;
+
+  function ageDays(date) {
+    const then = new Date(date + "T00:00:00");
+    return Math.max(0, Math.floor((Date.now() - then.getTime()) / DAY));
+  }
+
+  function formatAge(days) {
+    if (days < 1) return "today";
+    if (days < 14) return days + "d";
+    if (days < 60) return Math.floor(days / 7) + "w";
+    if (days < 365) return Math.floor(days / 30) + "mo";
+    return Math.floor(days / 365) + "y";
+  }
+
+  function setCore(big, label, detail) {
+    core.innerHTML = "";
+    [["strong", big], ["span", label], ["em", detail]].forEach(function (part) {
+      const el = document.createElement(part[0]);
+      el.textContent = part[1];
+      core.appendChild(el);
+    });
+  }
+
+  const data = nodes.map(function (node) {
+    const name = node.querySelector("strong").textContent;
+    const days = ageDays(node.dataset.last);
+    const tier = days <= HOT ? "is-hot" : days <= WARM ? "is-warm" : "is-cold";
+    const line = map.querySelector('[data-line="' + name.slice(1) + '"]');
+    const time = node.querySelector("time");
+
+    node.classList.add(tier);
+    if (line) line.classList.add(tier);
+    if (time) time.textContent = formatAge(days);
+    node.title = name + " · " + node.dataset.count + " · latest: " + node.dataset.latest;
+
+    return { node: node, name: name, days: days, tier: tier, line: line };
+  });
+
+  const total = core.querySelector("strong").textContent;
+  const freshest = data.slice().sort(function (a, b) { return a.days - b.days; })[0];
+  const active = data.filter(function (d) { return d.tier !== "is-cold"; }).length;
+
+  function idle() {
+    data.forEach(function (d) { if (d.line) d.line.classList.remove("is-active"); });
+    setCore(total, "signals", "last " + freshest.name + " · " + formatAge(freshest.days));
+  }
+
+  function show(d) {
+    data.forEach(function (x) { if (x.line) x.line.classList.toggle("is-active", x === d); });
+    setCore(d.node.dataset.count, d.name + " · " + formatAge(d.days), d.node.dataset.latest);
+  }
+
+  if (status) {
+    status.textContent = String(active).padStart(2, "0") + " active / " +
+      String(data.length - active).padStart(2, "0") + " idle · keys 1-6";
+  }
+
+  data.forEach(function (d) {
+    d.node.addEventListener("mouseenter", function () { show(d); });
+    d.node.addEventListener("focus", function () { show(d); });
+    d.node.addEventListener("mouseleave", function () {
+      if (document.activeElement !== d.node) idle();
+    });
+    d.node.addEventListener("blur", idle);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    const target = event.target;
+    if (target && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+    const d = data[Number(event.key) - 1];
+    if (!d || !/^[1-9]$/.test(event.key)) return;
+    event.preventDefault();
+    d.node.focus();
+  });
+
+  idle();
 })();
