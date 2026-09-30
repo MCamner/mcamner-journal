@@ -1,3 +1,11 @@
+// Theme: apply the stored phosphor before anything renders.
+(function () {
+  try {
+    var theme = localStorage.getItem("mcj:theme");
+    if (theme && theme !== "default") document.documentElement.dataset.theme = theme;
+  } catch (e) {}
+})();
+
 const routes = {
   "/home": "/mcamner-journal/index.html",
   "/journal": "/mcamner-journal/journal.html",
@@ -456,6 +464,7 @@ if (commandBar && commandInput) {
         "move     /random [type] /latest /next /prev /back /find <text>",
         "list     /ls [type] /show all /filter <tag> /clear /select NNN /open <id>",
         "system   /whoami /uptime /history /mute /unmute /help",
+        "fun      /theme [amber|green|mono|default] /operator /wave /sleep /wake",
         "keys     Tab completes · arrow up and down recall history · 1-6 signal map"
       ]);
       return;
@@ -687,12 +696,19 @@ if (commandBar && commandInput) {
       return;
     }
 
+    const fun = funCommand(command);
+    if (fun !== null) {
+      respond(fun);
+      return;
+    }
+
     if (routes[command]) {
       window.location.href = resolveRoute(routes[command]);
       return;
     }
 
     errorCount++;
+    funOnUnknown();
 
     let pool;
 
@@ -704,7 +720,9 @@ if (commandBar && commandInput) {
       pool = errorLevels.edge;
     }
 
-    const msg = pool[Math.floor(Math.random() * pool.length)];
+    const msg = errorCount === 4
+      ? "hint: some doors are unlisted."
+      : pool[Math.floor(Math.random() * pool.length)];
     resetPrompt(msg);
   }
 
@@ -732,7 +750,9 @@ if (commandBar && commandInput) {
   const VERBS = [
     "/help", "/ls", "/find ", "/random", "/latest", "/next", "/prev", "/back",
     "/show all", "/filter ", "/clear", "/select ", "/open ",
-    "/whoami", "/uptime", "/history", "/mute", "/unmute"
+    "/whoami", "/uptime", "/history", "/mute", "/unmute",
+    "/theme ", "/theme amber", "/theme green", "/theme mono", "/theme default",
+    "/operator", "/wave", "/sleep", "/wake"
   ];
 
   function completionPool() {
@@ -1153,4 +1173,225 @@ if (commandBar && commandInput) {
   });
 
   idle();
+})();
+
+/* ── Fun layer: /theme, /operator, unlisted doors ── */
+var THEMES = ["default", "amber", "green", "mono"];
+var REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var operatorEl = null;
+var bubbleTimer = null;
+
+function setTheme(name) {
+  if (name === "default") delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = name;
+  STORE.set("mcj:theme", name);
+}
+
+// 16x15 pixel map. O orange, W white, G green, M muted, . empty.
+var OPERATOR_BODY = [
+  "....OOOO....",
+  "...OOOOOO...",
+  "...WWWWWW...",
+  "...W.WW.W...",
+  "...WWWWWW...",
+  "....WMMW....",
+  ".....WW.....",
+  "..OOOOOOOO..",
+  ".OOOOOOOOO..",
+  ".O.OOOOOO...",
+  ".W.OOOOOO..."
+];
+var OPERATOR_LEGS_A = ["...MMMMMM...", "...MM..MM...", "...MM..MM...", "..WWW..WWW.."];
+var OPERATOR_LEGS_B = ["...MMMMMM...", "..MM....MM..", ".MM......MM.", ".WWW....WWW."];
+var OPERATOR_COLORS = { O: "var(--orange)", W: "var(--white)", G: "var(--green)", M: "var(--muted)" };
+
+function pixelRects(rows, offsetY) {
+  var out = "";
+  rows.forEach(function (row, y) {
+    var x = 0;
+    while (x < row.length) {
+      var c = row[x];
+      if (c === ".") { x++; continue; }
+      var start = x;
+      while (x < row.length && row[x] === c) x++;
+      out += '<rect x="' + start + '" y="' + (y + (offsetY || 0)) + '" width="' + (x - start) +
+        '" height="1" fill="' + OPERATOR_COLORS[c] + '"/>';
+    }
+  });
+  return out;
+}
+
+function px(x, y, c) {
+  return '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + OPERATOR_COLORS[c] + '"/>';
+}
+
+function operatorSvg() {
+  return '<svg viewBox="0 0 16 15" shape-rendering="crispEdges" aria-hidden="true">' +
+    "<g>" + pixelRects(OPERATOR_BODY) + "</g>" +
+    '<g class="op__legs op__legs--a">' + pixelRects(OPERATOR_LEGS_A, 11) + "</g>" +
+    '<g class="op__legs op__legs--b">' + pixelRects(OPERATOR_LEGS_B, 11) + "</g>" +
+    '<g class="op__eyes">' + px(4, 3, "G") + px(7, 3, "G") + "</g>" +
+    '<g class="op__lids">' + px(4, 3, "W") + px(7, 3, "W") + "</g>" +
+    '<g class="op__arm op__arm--down">' + px(10, 7, "O") + px(10, 8, "O") + px(10, 9, "O") + px(10, 10, "W") + "</g>" +
+    '<g class="op__arm op__arm--up">' + px(10, 7, "O") + px(10, 6, "O") + px(10, 5, "O") + px(10, 4, "W") + "</g>" +
+    '<g class="op__zzz">' + px(12, 2, "G") + px(13, 1, "G") + px(14, 0, "G") + "</g>" +
+    "</svg>";
+}
+
+function operatorSay(text, ms) {
+  if (!operatorEl) return;
+  var bubble = operatorEl.querySelector(".op__bubble");
+  bubble.textContent = text;
+  bubble.hidden = false;
+  clearTimeout(bubbleTimer);
+  bubbleTimer = setTimeout(function () { bubble.hidden = true; }, ms || 3200);
+}
+
+function operatorPlay(state, ms) {
+  if (!operatorEl) return;
+  operatorEl.classList.remove(state);
+  void operatorEl.offsetWidth; // restart the animation
+  operatorEl.classList.add(state);
+  setTimeout(function () { if (operatorEl) operatorEl.classList.remove(state); }, ms);
+}
+
+var OPERATOR_LINES = [
+  "> hello, operator",
+  "> try /theme amber",
+  "> /random film?",
+  "> i keep the index warm.",
+  "> /operator sends me home.",
+  "> ? lists everything."
+];
+
+function summonOperator(walk) {
+  if (operatorEl) return;
+  operatorEl = document.createElement("div");
+  operatorEl.className = "op";
+  operatorEl.innerHTML =
+    '<p class="op__bubble" role="status" hidden></p>' +
+    '<button class="op__body" type="button" aria-label="Operator. Click to talk.">' + operatorSvg() + "</button>";
+  document.body.appendChild(operatorEl);
+
+  operatorEl.querySelector(".op__body").addEventListener("click", function () {
+    if (operatorEl.classList.contains("is-sleeping")) {
+      operatorEl.classList.remove("is-sleeping");
+      operatorSay("> huh. awake.");
+      return;
+    }
+    operatorPlay("is-waving", 1400);
+    operatorSay(OPERATOR_LINES[Math.floor(Math.random() * OPERATOR_LINES.length)]);
+  });
+
+  STORE.set("mcj:operator", "1");
+  if (walk && !REDUCED_MOTION) {
+    operatorPlay("is-entering", 1600);
+    setTimeout(function () { operatorPlay("is-waving", 1400); operatorSay("> operator on duty."); }, 1600);
+  }
+}
+
+function dismissOperator() {
+  if (!operatorEl) return;
+  var el = operatorEl;
+  operatorEl = null;
+  STORE.set("mcj:operator", "0");
+  if (REDUCED_MOTION) { el.remove(); return; }
+  el.classList.add("is-leaving");
+  setTimeout(function () { el.remove(); }, 1400);
+}
+
+function operatorFlip() {
+  if (!operatorEl) summonOperator(false);
+  operatorPlay("is-flipping", 900);
+  operatorSay("> cheat accepted.");
+}
+
+function funCommand(command) {
+  if (command === "/theme") {
+    var current = document.documentElement.dataset.theme || "default";
+    return "theme " + current + " · options " + THEMES.join(" ");
+  }
+
+  if (command.indexOf("/theme ") === 0) {
+    var name = command.slice(7).trim();
+    if (THEMES.indexOf(name) === -1) return "no such phosphor. options " + THEMES.join(" ");
+    setTheme(name);
+    if (operatorEl) operatorSay("> " + (name === "default" ? "back to blue." : name + " phosphor. nice."));
+    return name === "default" ? "theme reset." : "phosphor set to " + name + ". /theme default restores it.";
+  }
+
+  if (command === "/operator") {
+    if (operatorEl) { dismissOperator(); return "operator off duty."; }
+    summonOperator(true);
+    return "operator summoned. /wave /sleep /wake · /operator dismisses.";
+  }
+
+  if (command === "/wave" || command === "/sleep" || command === "/wake") {
+    if (!operatorEl) return "no operator on duty. /operator summons one.";
+    if (command === "/wave") { operatorEl.classList.remove("is-sleeping"); operatorPlay("is-waving", 1800); return "operator waves."; }
+    if (command === "/sleep") { operatorEl.classList.add("is-sleeping"); return "operator sleeping. /wake or click to wake."; }
+    operatorEl.classList.remove("is-sleeping");
+    operatorSay("> awake.");
+    return "operator awake.";
+  }
+
+  // Unlisted doors.
+  if (command === "exit" || command === "quit" || command === "/exit" || command === "/quit") {
+    return "there is no exit. only /home.";
+  }
+  if (command === ":q" || command === ":q!") {
+    return "this is not vim. but respect.";
+  }
+  if (command === ":wq" || command === ":x") {
+    return "nothing to write. nothing to quit.";
+  }
+  if (/^(sudo\s+)?rm\s+-rf?\s*\/?\*?$/.test(command) || command === "rm -rf /" || command === "rm -rf") {
+    if (operatorEl) { operatorPlay("is-shaking", 700); operatorSay("> please don't."); }
+    return "permission denied. the archive stays.";
+  }
+
+  return null;
+}
+
+function funOnUnknown() {
+  if (!operatorEl) return;
+  operatorPlay("is-shaking", 700);
+}
+
+(function () {
+  if (STORE.get("mcj:operator", "0") === "1") summonOperator(false);
+
+  // Konami code outside text fields: the operator does a flip.
+  var KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+  var konamiAt = 0;
+  document.addEventListener("keydown", function (event) {
+    var t = event.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    var key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+    konamiAt = key === KONAMI[konamiAt] ? konamiAt + 1 : (key === KONAMI[0] ? 1 : 0);
+    if (konamiAt === KONAMI.length) { konamiAt = 0; operatorFlip(); }
+  });
+
+  // Rotating placeholder hints while the prompt sits idle.
+  var input = document.getElementById("commandInput");
+  var bar = document.getElementById("commandBar");
+  if (input && bar) {
+    var hints = ["/help", "/theme amber", "/operator", "/random film", "/latest", "/random book"];
+    var hintAt = 0;
+    var quietUntil = 0;
+    bar.addEventListener("submit", function () { quietUntil = Date.now() + 9000; });
+    setInterval(function () {
+      if (document.activeElement === input || input.value || Date.now() < quietUntil) return;
+      hintAt = (hintAt + 1) % hints.length;
+      input.placeholder = hints[hintAt];
+    }, 4000);
+  }
+
+  // Home figure hints at its mobile twin.
+  var homeLink = document.querySelector(".pixel-operator-link span");
+  if (homeLink) {
+    var parent = homeLink.parentElement;
+    parent.addEventListener("mouseenter", function () { homeLink.textContent = "> try /operator"; });
+    parent.addEventListener("mouseleave", function () { homeLink.textContent = "> hello, operator"; });
+  }
 })();
