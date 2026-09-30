@@ -464,6 +464,7 @@ if (commandBar && commandInput) {
         "move     /random [type] /latest /next /prev /back /find <text>",
         "list     /ls [type] /show all /filter <tag> /clear /select NNN /open <id>",
         "system   /whoami /uptime /history /mute /unmute /help",
+        "read     /tail /cat <post> /map /boot",
         "fun      /theme [amber|green|mono|default] /operator /wave /sleep /wake",
         "keys     Tab completes · arrow up and down recall history · 1-6 signal map"
       ]);
@@ -752,7 +753,8 @@ if (commandBar && commandInput) {
     "/show all", "/filter ", "/clear", "/select ", "/open ",
     "/whoami", "/uptime", "/history", "/mute", "/unmute",
     "/theme ", "/theme amber", "/theme green", "/theme mono", "/theme default",
-    "/operator", "/wave", "/sleep", "/wake"
+    "/operator", "/wave", "/sleep", "/wake",
+    "/tail", "/cat ", "/map", "/boot"
   ];
 
   function completionPool() {
@@ -1307,6 +1309,9 @@ function operatorFlip() {
 }
 
 function funCommand(command) {
+  var read = readerCommand(command);
+  if (read !== null) return read;
+
   if (command === "/theme") {
     var current = document.documentElement.dataset.theme || "default";
     return "theme " + current + " · options " + THEMES.join(" ");
@@ -1376,7 +1381,7 @@ function funOnUnknown() {
   var input = document.getElementById("commandInput");
   var bar = document.getElementById("commandBar");
   if (input && bar) {
-    var hints = ["/help", "/theme amber", "/operator", "/random film", "/latest", "/random book"];
+    var hints = ["/help", "/tail", "/theme amber", "/cat stalker", "/operator", "/map", "/random film", "/boot"];
     var hintAt = 0;
     var quietUntil = 0;
     bar.addEventListener("submit", function () { quietUntil = Date.now() + 9000; });
@@ -1395,3 +1400,270 @@ function funOnUnknown() {
     parent.addEventListener("mouseleave", function () { homeLink.textContent = "> hello, operator"; });
   }
 })();
+
+/* ── Reader layer: /tail, /cat, /map, /boot ── */
+var readerCache = {};
+
+function fetchCached(key, path, parse) {
+  if (!readerCache[key]) {
+    readerCache[key] = fetch(BASE_PATH + path, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(path); return r.text(); })
+      .then(parse)
+      .catch(function (e) { delete readerCache[key]; throw e; });
+  }
+  return readerCache[key];
+}
+
+function isoDate(d) {
+  var t = new Date(d);
+  return isNaN(t) ? "" : t.toISOString().slice(0, 10);
+}
+
+function loadFeed() {
+  return fetchCached("feed", "/feed.xml", function (xml) {
+    var doc = new DOMParser().parseFromString(xml, "application/xml");
+    return Array.from(doc.querySelectorAll("item")).map(function (item) {
+      var link = (item.querySelector("link") || {}).textContent || "";
+      return {
+        title: ((item.querySelector("title") || {}).textContent || "").trim(),
+        path: resolveRoute(new URL(link.trim()).pathname),
+        date: isoDate((item.querySelector("pubDate") || {}).textContent),
+        desc: ((item.querySelector("description") || {}).textContent || "").trim()
+      };
+    });
+  });
+}
+
+function loadSitemap() {
+  return fetchCached("sitemap", "/sitemap.xml", function (xml) {
+    var doc = new DOMParser().parseFromString(xml, "application/xml");
+    var map = {};
+    doc.querySelectorAll("url").forEach(function (u) {
+      var loc = (u.querySelector("loc") || {}).textContent || "";
+      var mod = (u.querySelector("lastmod") || {}).textContent || "";
+      if (loc) map[resolveRoute(new URL(loc.trim()).pathname.replace(/\/$/, "/index.html"))] = mod.trim();
+    });
+    return map;
+  });
+}
+
+function loadSignal() {
+  return fetchCached("signal", "/signal.json", function (text) { return JSON.parse(text); });
+}
+
+// Route key ("/film 006") for a post path, when one exists.
+function routeKeyFor(path) {
+  var slug = path.split("/").pop();
+  var keys = Object.keys(routes).filter(function (k) {
+    return routes[k].indexOf("/posts/") !== -1 && routes[k].split("/").pop() === slug;
+  });
+  var typed = keys.filter(function (k) { return /^\/[a-z]+ \d{3}$/.test(k); });
+  return (typed[0] || keys[0] || "");
+}
+
+function kindOf(key) {
+  var m = /^\/([a-z]+) \d{3}$/.exec(key);
+  return m ? "[" + m[1].toUpperCase() + "]" : "[POST]";
+}
+
+function ageLabel(date) {
+  var days = Math.max(0, Math.floor((Date.now() - new Date(date + "T00:00:00").getTime()) / 864e5));
+  if (days < 1) return "today";
+  if (days < 14) return days + "d";
+  if (days < 60) return Math.floor(days / 7) + "w";
+  if (days < 365) return Math.floor(days / 30) + "mo";
+  return Math.floor(days / 365) + "y";
+}
+
+// A stream owns the output line until any other command overwrites it.
+function openStream() {
+  var out = document.querySelector(".prompt-out");
+  if (!out) return null;
+  out.textContent = "";
+  out.hidden = false;
+  var box = document.createElement("span");
+  box.className = "term-stream";
+  out.appendChild(box);
+  return box;
+}
+
+function streamLines(box, lines, done) {
+  var i = 0;
+  var fast = REDUCED_MOTION;
+
+  function next() {
+    if (!box.isConnected) return;
+    if (i >= lines.length) { if (done) done(); return; }
+    var line = lines[i++];
+    var el = document.createElement(line.href ? "a" : "span");
+    el.className = "term-line" + (line.cls ? " " + line.cls : "");
+    if (line.href) el.href = line.href;
+    box.appendChild(el);
+
+    if (fast) { el.textContent = line.text; next(); return; }
+
+    var c = 0;
+    (function type() {
+      if (!box.isConnected) return;
+      c = Math.min(line.text.length, c + 4);
+      el.textContent = line.text.slice(0, c);
+      if (c < line.text.length) setTimeout(type, 12);
+      else setTimeout(next, line.pause || 90);
+    })();
+  }
+  next();
+}
+
+function streamError(box, text) {
+  if (box && box.isConnected) streamLines(box, [{ text: text, cls: "is-dim" }]);
+}
+
+function pad(text, n) { return (text + "                    ").slice(0, n); }
+
+function runTail() {
+  var box = openStream();
+  loadFeed().then(function (items) {
+    var lines = [{ text: "==> feed.xml <== newest first", cls: "is-dim", pause: 200 }];
+    items.slice(0, 10).forEach(function (item) {
+      var key = routeKeyFor(item.path);
+      lines.push({
+        text: item.date + "  " + pad(kindOf(key), 9) + item.title + (key ? "  " + key : ""),
+        href: item.path
+      });
+    });
+    lines.push({ text: "-- tail: " + Math.min(10, items.length) + " lines · click a line to open", cls: "is-dim" });
+    streamLines(box, lines);
+  }).catch(function () { streamError(box, "feed unreachable. try /journal"); });
+}
+
+function resolvePost(arg) {
+  arg = arg.replace(/^\//, "").trim();
+  if (!arg) {
+    return location.pathname.indexOf("/posts/") !== -1
+      ? { path: location.pathname, key: routeKeyFor(location.pathname) }
+      : { error: "usage: /cat <post> · e.g. /cat stalker or /cat film 006" };
+  }
+  var direct = routes["/" + arg];
+  if (direct && direct.indexOf("/posts/") !== -1) {
+    var directPath = resolveRoute(direct);
+    return { path: directPath, key: /^[a-z]+ \d{3}$/.test(arg) ? "/" + arg : routeKeyFor(directPath) };
+  }
+  var seen = {};
+  var hits = [];
+  Object.keys(routes).forEach(function (k) {
+    var target = routes[k];
+    if (target.indexOf("/posts/") === -1 || seen[target]) return;
+    if (slugOf(target).indexOf(arg.replace(/\s+/g, "-")) === -1 && k.indexOf(arg) === -1) return;
+    seen[target] = true;
+    hits.push(target);
+  });
+  if (hits.length === 1) {
+    var path = resolveRoute(hits[0]);
+    return { path: path, key: routeKeyFor(path) };
+  }
+  if (!hits.length) return { error: "cat: " + arg + ": no such entry. try /find " + arg };
+  return {
+    error: [hits.length + " matches for " + arg + " — be more specific:"].concat(
+      hits.slice(0, 8).map(function (t) { return "  /cat " + slugOf(t); })
+    ).join("\n")
+  };
+}
+
+function runCat(arg) {
+  var target = resolvePost(arg);
+  if (target.error) return target.error;
+
+  var box = openStream();
+  Promise.all([
+    fetch(target.path).then(function (r) { if (!r.ok) throw new Error(); return r.text(); }),
+    loadSitemap().catch(function () { return {}; })
+  ]).then(function (res) {
+    var doc = new DOMParser().parseFromString(res[0], "text/html");
+    var title = (doc.querySelector("title") || {}).textContent || slugOf(target.path);
+    title = title.replace(/\s+\|\s+McAmner(?: Journal)?$/, "").trim();
+    var desc = (doc.querySelector('meta[name="description"]') || {}).content || "no description.";
+    var date = res[1][target.path] || "";
+    var lines = [
+      { text: "$ cat " + slugOf(target.path) + ".html", cls: "is-dim" },
+      { text: "title  " + title },
+      { text: "type   " + (target.key ? kindOf(target.key) + " " + target.key : "[POST]") }
+    ];
+    if (date) lines.push({ text: "date   " + date + " · " + ageLabel(date) + " ago" });
+    lines.push({ text: "about  " + desc });
+    lines.push({ text: "open → " + (target.key || slugOf(target.path)), href: target.path, cls: "is-open" });
+    streamLines(box, lines);
+  }).catch(function () { streamError(box, "cat: read error. try /find"); });
+  return "";
+}
+
+function mapLines(data) {
+  var max = Math.max.apply(null, data.nodes.map(function (n) { return n.count; }));
+  var lines = [{
+    text: "signal map · " + data.total + " signals · last /" + data.last,
+    cls: "is-dim", pause: 160
+  }];
+  data.nodes.forEach(function (n) {
+    var days = Math.floor((Date.now() - new Date(n.last + "T00:00:00").getTime()) / 864e5);
+    var dot = days <= 14 ? "●" : days <= 45 ? "◐" : "○";
+    var bars = Math.max(1, Math.round(n.count / max * 10));
+    lines.push({
+      text: String(n.id).padStart(2, "0") + " " + pad(n.path, 11) +
+        "▮".repeat(bars) + "▯".repeat(10 - bars) + " " +
+        String(n.count).padStart(3, "0") + "  " + dot + " " + ageLabel(n.last),
+      href: resolveRoute("/mcamner-journal" + n.path + ".html")
+    });
+  });
+  lines.push({ text: "● fresh  ◐ warm  ○ idle · click a node to open", cls: "is-dim" });
+  return lines;
+}
+
+function runMap() {
+  var box = openStream();
+  loadSignal().then(function (data) { streamLines(box, mapLines(data)); })
+    .catch(function () { streamError(box, "signal.json unreachable. try /home"); });
+}
+
+function runBoot() {
+  var box = openStream();
+  function dots(label) { return (label + " ..........................").slice(0, 24); }
+  loadSignal().catch(function () { return null; }).then(function (data) {
+    var theme = document.documentElement.dataset.theme || "default";
+    var lines = [
+      { text: "mcamner-journal bios · stockholm node", cls: "is-dim", pause: 260 },
+      { text: dots("memory check") + " ok", pause: 180 },
+      { text: dots("scanlines") + " ok" },
+      { text: dots("phosphor") + " " + theme }
+    ];
+    (data ? data.nodes : []).forEach(function (n) {
+      lines.push({ text: dots("mounting " + n.path) + " " + String(n.count).padStart(3, "0") + " ok" });
+    });
+    lines.push({ text: dots("operator") + " " + (operatorEl ? "on duty" : "standby") });
+    lines.push({ text: "boot complete. entering /home", cls: "is-open", pause: 700 });
+    streamLines(box, lines, function () {
+      if (box.isConnected) window.location.href = resolveRoute(routes["/home"]);
+    });
+  });
+}
+
+function readerCommand(command) {
+  if (command === "/tail" || command === "tail -f" || command === "/tail -f") {
+    setTimeout(runTail, 0);
+    return "tail -f feed.xml …";
+  }
+  if (command === "/cat" || command.indexOf("/cat ") === 0) {
+    var arg = command.slice(4);
+    var result = resolvePost(arg);
+    if (result.error) return result.error;
+    setTimeout(function () { runCat(arg); }, 0);
+    return "cat …";
+  }
+  if (command === "/map") {
+    setTimeout(runMap, 0);
+    return "reading signal map …";
+  }
+  if (command === "/boot" || command === "/reboot") {
+    setTimeout(runBoot, 0);
+    return "rebooting …";
+  }
+  return null;
+}

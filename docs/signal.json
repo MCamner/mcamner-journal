@@ -1,0 +1,54 @@
+{
+  "total": 120,
+  "last": "journal",
+  "nodes": [
+    {
+      "id": 1,
+      "path": "/journal",
+      "label": "notes + systems",
+      "count": 34,
+      "last": "2026-09-18",
+      "latest": "skills belong in the repository"
+    },
+    {
+      "id": 2,
+      "path": "/catalogue",
+      "label": "culture index",
+      "count": 31,
+      "last": "2026-09-03",
+      "latest": "The Shards"
+    },
+    {
+      "id": 3,
+      "path": "/films",
+      "label": "cinema signals",
+      "count": 17,
+      "last": "2026-09-02",
+      "latest": "Spider-Man: Brand New Day"
+    },
+    {
+      "id": 4,
+      "path": "/books",
+      "label": "reading index",
+      "count": 10,
+      "last": "2026-09-03",
+      "latest": "The Shards"
+    },
+    {
+      "id": 5,
+      "path": "/objects",
+      "label": "material notes",
+      "count": 13,
+      "last": "2026-09-03",
+      "latest": "Seymour Duncan Slash 3.0"
+    },
+    {
+      "id": 6,
+      "path": "/archive",
+      "label": "visual memory",
+      "count": 42,
+      "last": "2026-04-27",
+      "latest": "The Chair"
+    }
+  ]
+}

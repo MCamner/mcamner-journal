@@ -1950,3 +1950,12 @@ html[data-theme="mono"]  { filter: grayscale(1) contrast(1.12); }
   .op *,
   .op__body { animation: none !important; }
 }
+
+/* ── Reader layer output (/tail /cat /map /boot) ── */
+.term-line { display: block; min-height: 1.55em; color: var(--white); }
+.term-line.is-dim { color: var(--muted); }
+.term-line.is-open { color: var(--green); }
+a.term-line { text-decoration: none; }
+a.term-line:hover,
+a.term-line:focus-visible { color: var(--orange); background: rgba(89,161,79,0.14); outline: none; }
+a.term-line::after { display: none !important; }
