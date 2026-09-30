@@ -658,6 +658,84 @@ a:hover {
   to { stroke-dashoffset: -28; }
 }
 
+/* ── Home about + pixel operator ── */
+.journal-box--home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.journal-box--home ul { margin-bottom: 0; }
+
+.pixel-operator-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  color: var(--green) !important;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.pixel-operator-link::after { display: none !important; }
+
+.pixel-operator {
+  width: 96px;
+  height: 90px;
+  image-rendering: pixelated;
+}
+
+.pixel-operator__arm--up { visibility: hidden; }
+.pixel-operator-link:hover .pixel-operator__arm--down,
+.pixel-operator-link:focus-visible .pixel-operator__arm--down { visibility: hidden; animation: none; }
+.pixel-operator-link:hover .pixel-operator__arm--up,
+.pixel-operator-link:focus-visible .pixel-operator__arm--up { visibility: visible; animation: pixelWave 0.5s steps(1) infinite; }
+
+.pixel-operator__eyes { animation: pixelBlink 4.2s steps(1) infinite; }
+.pixel-operator__cursor { animation: pixelBlink 1.1s steps(1) infinite; }
+.pixel-operator__arm--down { animation: pixelWaveDown 6s steps(1) infinite; }
+.pixel-operator__arm--up { animation: pixelWaveUp 6s steps(1) infinite; }
+
+@keyframes pixelBlink {
+  0%, 92% { opacity: 1; }
+  93%, 100% { opacity: 0; }
+}
+
+/* Idle: waves twice every six seconds. */
+@keyframes pixelWaveUp {
+  0%, 79% { visibility: hidden; }
+  80%, 84% { visibility: visible; }
+  85%, 89% { visibility: hidden; }
+  90%, 94% { visibility: visible; }
+  95%, 100% { visibility: hidden; }
+}
+
+@keyframes pixelWaveDown {
+  0%, 79% { visibility: visible; }
+  80%, 84% { visibility: hidden; }
+  85%, 89% { visibility: visible; }
+  90%, 94% { visibility: hidden; }
+  95%, 100% { visibility: visible; }
+}
+
+@keyframes pixelWave {
+  0%, 49% { transform: translate(0, 0); }
+  50%, 100% { transform: translate(0, 1px); }
+}
+
+@media (max-width: 480px) {
+  .pixel-operator { width: 64px; height: 60px; }
+  .journal-box--home { gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-operator__eyes,
+  .pixel-operator__cursor,
+  .pixel-operator__arm { animation: none !important; }
+}
+
 /* ── Home recent signals ── */
 .signal-panel {
   position: relative;
