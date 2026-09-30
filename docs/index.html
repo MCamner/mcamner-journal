@@ -132,50 +132,66 @@
     <section class="signal-map" aria-labelledby="signal-map-title">
       <div class="signal-map__header">
         <h2 id="signal-map-title">&gt;&gt; signal map</h2>
-        <span>06 nodes / all linked</span>
+        <span data-signal-status>06 nodes / keys 1-6</span>
       </div>
 
       <div class="signal-map__canvas">
-        <svg class="signal-map__lines" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M500 160 L170 58 M500 160 L170 262 M500 160 L390 48 M500 160 L610 272 M500 160 L830 58 M500 160 L830 262"></path>
-          <circle cx="500" cy="160" r="76"></circle>
-          <circle cx="500" cy="160" r="5"></circle>
+        <svg class="signal-map__lines" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+          <path data-line="journal" d="M500 110 L265 40"></path>
+          <path data-line="catalogue" d="M500 110 L265 110"></path>
+          <path data-line="films" d="M500 110 L265 180"></path>
+          <path data-line="books" d="M500 110 L735 40"></path>
+          <path data-line="objects" d="M500 110 L735 110"></path>
+          <path data-line="archive" d="M500 110 L735 180"></path>
         </svg>
 
-        <div class="signal-map__core" aria-hidden="true">
-          <strong>JOURNAL</strong>
-          <span>CORE</span>
+        <div class="signal-map__core" data-signal-core aria-hidden="true">
+          <strong>120</strong>
+          <span>signals</span>
+          <em>last /journal</em>
         </div>
 
-        <a class="signal-node signal-node--journal" href="journal.html">
-          <span>NODE 01</span>
+        <a class="signal-node signal-node--journal" href="journal.html" data-node="1" data-count="034" data-last="2026-09-18" data-latest="skills belong in the repository">
+          <span>01</span>
           <strong>/journal</strong>
+          <b>034</b>
           <em>notes + systems</em>
+          <time datetime="2026-09-18">2026-09-18</time>
         </a>
-        <a class="signal-node signal-node--catalogue" href="catalogue.html">
-          <span>NODE 02</span>
+        <a class="signal-node signal-node--catalogue" href="catalogue.html" data-node="2" data-count="031" data-last="2026-09-03" data-latest="The Shards">
+          <span>02</span>
           <strong>/catalogue</strong>
+          <b>031</b>
           <em>culture index</em>
+          <time datetime="2026-09-03">2026-09-03</time>
         </a>
-        <a class="signal-node signal-node--films" href="films.html">
-          <span>NODE 03</span>
+        <a class="signal-node signal-node--films" href="films.html" data-node="3" data-count="017" data-last="2026-09-02" data-latest="Spider-Man: Brand New Day">
+          <span>03</span>
           <strong>/films</strong>
+          <b>017</b>
           <em>cinema signals</em>
+          <time datetime="2026-09-02">2026-09-02</time>
         </a>
-        <a class="signal-node signal-node--books" href="books.html">
-          <span>NODE 04</span>
+        <a class="signal-node signal-node--books" href="books.html" data-node="4" data-count="010" data-last="2026-09-03" data-latest="The Shards">
+          <span>04</span>
           <strong>/books</strong>
+          <b>010</b>
           <em>reading index</em>
+          <time datetime="2026-09-03">2026-09-03</time>
         </a>
-        <a class="signal-node signal-node--objects" href="objects.html">
-          <span>NODE 05</span>
+        <a class="signal-node signal-node--objects" href="objects.html" data-node="5" data-count="013" data-last="2026-09-03" data-latest="Seymour Duncan Slash 3.0">
+          <span>05</span>
           <strong>/objects</strong>
+          <b>013</b>
           <em>material notes</em>
+          <time datetime="2026-09-03">2026-09-03</time>
         </a>
-        <a class="signal-node signal-node--archive" href="archive.html">
-          <span>NODE 06</span>
+        <a class="signal-node signal-node--archive" href="archive.html" data-node="6" data-count="042" data-last="2026-04-27" data-latest="The Chair">
+          <span>06</span>
           <strong>/archive</strong>
+          <b>042</b>
           <em>visual memory</em>
+          <time datetime="2026-04-27">2026-04-27</time>
         </a>
       </div>
     </section>
