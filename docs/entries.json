@@ -1,5 +1,5 @@
 {
- "count": 78,
+ "count": 77,
  "archive_count": 42,
  "entries": [
   {
@@ -1016,30 +1016,6 @@
     "white-lotus",
     "dope-thief",
     "beef-s2"
-   ]
-  },
-  {
-   "slug": "stalker",
-   "path": "/posts/stalker.html",
-   "title": "Stalker",
-   "route": "/film 006",
-   "type": "film",
-   "date": "2026-04-27",
-   "desc": "Stalker is a note on Andrei Tarkovsky's 1979 film, the Zone, belief, patience, and three men crossing a threshold.",
-   "tags": [
-    "film",
-    "slow",
-    "zone",
-    "belief",
-    "patience"
-   ],
-   "links": [
-    "the-secret-agent",
-    "two-lane-blacktop",
-    "the-vanishing",
-    "paris-texas",
-    "the-conversation",
-    "good-time"
    ]
   },
   {
