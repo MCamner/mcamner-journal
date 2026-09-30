@@ -9,6 +9,7 @@ from email.utils import format_datetime
 from html import escape, unescape
 from pathlib import Path
 import re
+import json
 import xml.etree.ElementTree as ET
 
 
@@ -374,6 +375,23 @@ def update_signal_map(pages: list[Page]) -> None:
             "    </section>",
         ]
     )
+    signal = {
+        "total": total,
+        "last": last_name,
+        "nodes": [
+            {
+                "id": index,
+                "path": f"/{name}",
+                "label": label,
+                "count": int(stats[name]["count"]),
+                "last": stats[name]["last"],
+                "latest": stats[name]["latest"],
+            }
+            for index, (name, label) in enumerate(SIGNAL_NODES, start=1)
+        ],
+    }
+    write_if_changed(DOCS / "signal.json", json.dumps(signal, ensure_ascii=False, indent=2) + "\n")
+
     html = re.sub(
         r'    <section class="signal-map".*?    </section>',
         lambda _: section,
