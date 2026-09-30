@@ -1861,3 +1861,92 @@ a[href^="https://mcamner.github.io/mcamner-journal"]::after {
   background: rgba(89,161,79,0.18);
   outline: none;
 }
+
+/* ── Phosphor themes (/theme) ── */
+html[data-theme="amber"] { filter: grayscale(1) sepia(1) saturate(3.2) hue-rotate(-14deg) brightness(0.82) contrast(1.25); }
+html[data-theme="green"] { filter: grayscale(1) sepia(1) saturate(3.2) hue-rotate(70deg) brightness(0.8) contrast(1.25); }
+html[data-theme="mono"]  { filter: grayscale(1) contrast(1.12); }
+
+/* ── Operator mascot (/operator) ── */
+.op {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.op__body {
+  width: 64px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.op__body:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.op__body svg { display: block; width: 100%; height: 100%; }
+
+.op__bubble {
+  max-width: 220px;
+  margin: 0;
+  padding: 6px 9px;
+  border: 1px solid var(--green);
+  background: rgba(5,20,47,0.94);
+  color: var(--green);
+  font-size: 11px;
+  pointer-events: auto;
+}
+
+.op__legs--b,
+.op__lids,
+.op__arm--up,
+.op__zzz { visibility: hidden; }
+
+.op__eyes { animation: pixelBlink 4.2s steps(1) infinite; }
+
+.op.is-entering { animation: opEnter 1.6s steps(12) both; }
+.op.is-leaving { animation: opLeave 1.4s steps(10) both; }
+.op.is-entering .op__legs--a,
+.op.is-leaving .op__legs--a { animation: opStepA 0.3s steps(1) infinite; }
+.op.is-entering .op__legs--b,
+.op.is-leaving .op__legs--b { animation: opStepB 0.3s steps(1) infinite; }
+
+.op.is-waving .op__arm--down { visibility: hidden; }
+.op.is-waving .op__arm--up { visibility: visible; animation: pixelWave 0.4s steps(1) infinite; }
+
+.op.is-sleeping .op__eyes { visibility: hidden; animation: none; }
+.op.is-sleeping .op__lids { visibility: visible; }
+.op.is-sleeping .op__zzz { visibility: visible; animation: pixelBlink 1.6s steps(1) infinite; }
+.op.is-sleeping .op__body { transform: translateY(2px); }
+
+.op.is-shaking .op__body { animation: opShake 0.35s steps(2) 2; }
+.op.is-flipping .op__body { animation: opFlip 0.9s steps(8) both; }
+
+@keyframes opEnter { from { transform: translateX(140%); } to { transform: translateX(0); } }
+@keyframes opLeave { from { transform: translateX(0); } to { transform: translateX(140%); } }
+@keyframes opStepA { 0%, 49% { visibility: visible; } 50%, 100% { visibility: hidden; } }
+@keyframes opStepB { 0%, 49% { visibility: hidden; } 50%, 100% { visibility: visible; } }
+@keyframes opShake { 0% { transform: translateX(-3px); } 100% { transform: translateX(3px); } }
+@keyframes opFlip {
+  0% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-28px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .op { right: 10px; bottom: 10px; }
+  .op__body { width: 44px; height: 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .op,
+  .op *,
+  .op__body { animation: none !important; }
+}
