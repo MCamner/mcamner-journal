@@ -224,7 +224,7 @@ def journal_items() -> list[CatalogueItem]:
     return items
 
 
-def update_index_latest_and_count(count: int, pages: list[Page]) -> None:
+def update_index_latest(pages: list[Page]) -> None:
     path = DOCS / "index.html"
     html = read(path)
     page_by_rel = {page.rel: page for page in pages}
@@ -278,13 +278,6 @@ def update_index_latest_and_count(count: int, pages: list[Page]) -> None:
         count=1,
         flags=re.S,
     )
-    html = re.sub(
-        r'(<a href="catalogue\.html" data-labels="[^"]+">\s*<strong>)\d+(</strong>)',
-        rf"\g<1>{count:03d}\2",
-        html,
-        count=1,
-        flags=re.S,
-    )
     write_if_changed(path, html)
 
 
@@ -322,6 +315,13 @@ def update_signal_map(pages: list[Page]) -> None:
     html = read(path)
     page_by_rel = {page.rel: page for page in pages}
     stats = {name: section_stats(name, page_by_rel) for name, _ in SIGNAL_NODES}
+    for name in SIGNAL_TOTAL:
+        html = re.sub(
+            rf'(<a href="{name}\.html" data-labels="[^"]+">\s*<strong>)\d+(</strong>)',
+            lambda m: f'{m[1]}{int(stats[name]["count"]):03d}{m[2]}',
+            html,
+            count=1,
+        )
     total = sum(int(stats[name]["count"]) for name in SIGNAL_TOTAL)
     last_name = max(stats, key=lambda name: (stats[name]["last"], -[n for n, _ in SIGNAL_NODES].index(name)))
 
@@ -413,7 +413,7 @@ def main() -> None:
     update_catalogue_count(count)
     ensure_feed_links()
     pages = collect_pages()
-    update_index_latest_and_count(count, pages)
+    update_index_latest(pages)
     update_signal_map(pages)
     generate_sitemap(pages)
     generate_feed(pages)
