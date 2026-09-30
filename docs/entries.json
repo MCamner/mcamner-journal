@@ -1,0 +1,1541 @@
+{
+ "count": 78,
+ "archive_count": 42,
+ "entries": [
+  {
+   "slug": "arkangel",
+   "path": "/posts/arkangel.html",
+   "title": "Arkangel",
+   "route": "/book 009",
+   "type": "book",
+   "date": "2026-05-01",
+   "desc": "Arkangel is a note on James Rollins, Sigma Force, myth, archives, Arctic pressure, and the machinery of the global thriller.",
+   "tags": [
+    "book",
+    "thriller",
+    "myth",
+    "archive",
+    "arctic"
+   ],
+   "links": [
+    "pilgrim-and-locust",
+    "city-on-fire",
+    "brave-new-world",
+    "first-blood",
+    "the-shards-book"
+   ]
+  },
+  {
+   "slug": "atlas-loop",
+   "path": "/posts/atlas-loop.html",
+   "title": "atlas-loop",
+   "route": "/note 032",
+   "type": "note",
+   "date": "2026-09-09",
+   "desc": "A note on Atlas Loop, an Instagram content system that treats every post as an experiment with a hypothesis, a signal, and a next test.",
+   "tags": [],
+   "links": [
+    "local-is-a-boundary",
+    "powershell-on-macos"
+   ]
+  },
+  {
+   "slug": "atlas-one",
+   "path": "/posts/atlas-one.html",
+   "title": "Atlas One",
+   "route": "/note 004",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "Atlas One is a note on prompt systems, structured thinking, and routing intent before it becomes noise.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "atlas-prompt-library",
+   "path": "/posts/atlas-prompt-library.html",
+   "title": "Atlas Prompt Library",
+   "route": "/note 008",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "Atlas Prompt Library is a note on forty-four prompts, fifteen starting points, and building a reasoning operating system.",
+   "tags": [],
+   "links": [
+    "atlas-one"
+   ]
+  },
+  {
+   "slug": "back-in-black",
+   "path": "/posts/back-in-black.html",
+   "title": "Back in Black",
+   "route": "/music 003",
+   "type": "music",
+   "date": "2026-06-02",
+   "desc": "Back in Black is a note on AC/DC's 1980 album — discipline, volume, and the riff as total statement.",
+   "tags": [
+    "music",
+    "rock",
+    "hard-rock",
+    "essential"
+   ],
+   "links": [
+    "kill-em-all",
+    "unknown-pleasures",
+    "is-this-it"
+   ]
+  },
+  {
+   "slug": "beef-s2",
+   "path": "/posts/beef-s2.html",
+   "title": "Beef S2",
+   "route": "/series 006",
+   "type": "series",
+   "date": "2026-06-02",
+   "desc": "Beef S2 is a note on Lee Sung Jin's Netflix series — slower, more interior, closer in spirit to Apple TV+ prestige drama than anything else on the platform.",
+   "tags": [
+    "series",
+    "conflict",
+    "interiority",
+    "prestige",
+    "restraint"
+   ],
+   "links": [
+    "slow-horses",
+    "dope-thief",
+    "spider-noir",
+    "cape-fear"
+   ]
+  },
+  {
+   "slug": "black-iris-allseeing",
+   "path": "/posts/black-iris-allseeing.html",
+   "title": "Black Iris — All Seeing All Blind",
+   "route": "/note 005",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "All Seeing, All Blind is a note on the fourth Black Iris exhibition, thirteen artists, and the question of seeing.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "brave-new-world",
+   "path": "/posts/brave-new-world.html",
+   "title": "Brave New World",
+   "route": "/book 007",
+   "type": "book",
+   "date": "2026-04-29",
+   "desc": "Brave New World is a note on Aldous Huxley's 1932 novel, comfort, conditioning, pleasure, stability, and the quiet violence of a frictionless world.",
+   "tags": [
+    "book",
+    "dystopia",
+    "comfort",
+    "conditioning",
+    "stability"
+   ],
+   "links": [
+    "ways-of-seeing",
+    "pattern-language",
+    "remains-of-the-day",
+    "pilgrim-and-locust",
+    "city-on-fire",
+    "crime-von-schirach",
+    "first-blood"
+   ]
+  },
+  {
+   "slug": "camaro-1967",
+   "path": "/posts/camaro-1967.html",
+   "title": "Chevrolet Camaro 1967",
+   "route": "/object 010",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Chevrolet Camaro 1967 is a note on the first-generation pony car — long hood, short deck, steel drawn before it was decorated.",
+   "tags": [
+    "steel",
+    "v8",
+    "detroit"
+   ],
+   "links": [
+    "sony-tcd5m",
+    "macbook-air-m4"
+   ]
+  },
+  {
+   "slug": "cape-fear",
+   "path": "/posts/cape-fear.html",
+   "title": "Cape Fear",
+   "route": "/series 007",
+   "type": "series",
+   "date": "2026-06-25",
+   "desc": "Cape Fear is a note on the Apple TV series from Nick Antosca, with Javier Bardem, Amy Adams and Patrick Wilson turning a familiar revenge story into sustained pressure.",
+   "tags": [
+    "series",
+    "thriller",
+    "menace",
+    "adaptation",
+    "dread"
+   ],
+   "links": [
+    "slow-horses",
+    "dope-thief",
+    "beef-s2",
+    "the-shards"
+   ]
+  },
+  {
+   "slug": "city-on-fire",
+   "path": "/posts/city-on-fire.html",
+   "title": "City on Fire",
+   "route": "/book 005",
+   "type": "book",
+   "date": "2026-04-27",
+   "desc": "City on Fire is a note on Don Winslow's trilogy, crime, obligation, destruction, and reckoning.",
+   "tags": [
+    "book",
+    "crime",
+    "obligation",
+    "destruction"
+   ],
+   "links": [
+    "pilgrim-and-locust",
+    "crime-von-schirach"
+   ]
+  },
+  {
+   "slug": "codegraph",
+   "path": "/posts/codegraph.html",
+   "title": "CodeGraph",
+   "route": "/note 023",
+   "type": "note",
+   "date": "2026-07-18",
+   "desc": "A note on CodeGraph, local source intelligence, and why it works best as a bounded hint inside the MQ stack rather than as a replacement for verification.",
+   "tags": [],
+   "links": [
+    "map-and-memory"
+   ]
+  },
+  {
+   "slug": "command-surface",
+   "path": "/posts/command-surface.html",
+   "title": "command-surface",
+   "route": "/note 016",
+   "type": "note",
+   "date": "2026-06-02",
+   "desc": "The shift back to the command line is not an exercise in nostalgia. It is a reaction to the noise.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "coolthing",
+   "path": "/posts/coolthing.html",
+   "title": "coolThing",
+   "route": "/note 012",
+   "type": "note",
+   "date": "2026-04-29",
+   "desc": "coolThing is a note on a repository for retro web experiments, local tools, Mega Movie, Mega Guitar, Mega Now, and browser interfaces with backend weight.",
+   "tags": [],
+   "links": [
+    "mac-terminal-guide"
+   ]
+  },
+  {
+   "slug": "crime-von-schirach",
+   "path": "/posts/crime-von-schirach.html",
+   "title": "Crime",
+   "route": "/book 006",
+   "type": "book",
+   "date": "2026-04-27",
+   "desc": "Crime is a note on Ferdinand von Schirach's short cases, law, justice, morality, and complete worlds in miniature.",
+   "tags": [
+    "book",
+    "law",
+    "justice",
+    "moral"
+   ],
+   "links": [
+    "pilgrim-and-locust",
+    "city-on-fire",
+    "brave-new-world"
+   ]
+  },
+  {
+   "slug": "design-prototype",
+   "path": "/posts/design-prototype.html",
+   "title": "Design Prototype",
+   "route": "/note 002",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "Design Prototype is a note on testing structure before committing, and the difference between planning and making.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "dope-thief",
+   "path": "/posts/dope-thief.html",
+   "title": "Dope Thief",
+   "route": "/series 004",
+   "type": "series",
+   "date": "2026-04-27",
+   "desc": "Dope Thief is a note on the Apple TV+ series, friendship, crime, and an idea that should not have worked.",
+   "tags": [
+    "series",
+    "crime",
+    "friendship",
+    "moral"
+   ],
+   "links": [
+    "slow-horses",
+    "fallout",
+    "white-lotus",
+    "spider-noir"
+   ]
+  },
+  {
+   "slug": "drakes-donkey-chore",
+   "path": "/posts/drakes-donkey-chore.html",
+   "title": "Drake's Donkey Chore",
+   "route": "/object 006",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Drake's Donkey Chore is a note on the British workwear jacket that looks worse new and better old — material that accumulates rather than degrades.",
+   "tags": [
+    "cotton",
+    "workwear",
+    "patina"
+   ],
+   "links": [
+    "jlc-reverso",
+    "zippo"
+   ]
+  },
+  {
+   "slug": "editorial-engine",
+   "path": "/posts/editorial-engine.html",
+   "title": "the editorial engine",
+   "route": "/note 015",
+   "type": "note",
+   "date": "2026-05-08",
+   "desc": "On building a semantic knowledge base for the journal assistant — what belongs in a vector store, what does not, and why the failure modes are instructive.",
+   "tags": [],
+   "links": [
+    "guitar-pro-8",
+    "machine-room",
+    "macos-scripts"
+   ]
+  },
+  {
+   "slug": "excalidraw-ai-proxy",
+   "path": "/posts/excalidraw-ai-proxy.html",
+   "title": "Excalidraw AI Proxy",
+   "route": "/note 024",
+   "type": "note",
+   "date": "2026-07-18",
+   "desc": "A note on building an Excalidraw AI proxy: turning a local diagram tool into a structured interface for prompts, models, and commands.",
+   "tags": [],
+   "links": [
+    "codegraph"
+   ]
+  },
+  {
+   "slug": "fallout",
+   "path": "/posts/fallout.html",
+   "title": "Fallout",
+   "route": "/series 002",
+   "type": "series",
+   "date": "2026-04-27",
+   "desc": "Fallout is a note on the Amazon Prime series, apocalypse, systems, infrastructure, and the end of the world as design problem.",
+   "tags": [
+    "series",
+    "systems",
+    "infrastructure",
+    "apocalypse"
+   ],
+   "links": [
+    "slow-horses",
+    "white-lotus",
+    "dope-thief"
+   ]
+  },
+  {
+   "slug": "false-green",
+   "path": "/posts/false-green.html",
+   "title": "false green",
+   "route": "/note 027",
+   "type": "note",
+   "date": "2026-08-10",
+   "desc": "A note on checks that pass while the thing they were meant to protect is broken — and why a green light that measures the wrong thing is worse than no light at all.",
+   "tags": [],
+   "links": [
+    "learn-loop",
+    "command-surface",
+    "the-whole-path"
+   ]
+  },
+  {
+   "slug": "fender-stratocaster",
+   "path": "/posts/fender-stratocaster.html",
+   "title": "Custom Fender Stratocaster",
+   "route": "/object 004",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Custom Fender Stratocaster is a note on a working instrument built around feel — the most copied design in electric guitar history, built right the first time.",
+   "tags": [
+    "wood",
+    "electric",
+    "handmade"
+   ],
+   "links": [
+    "victorinox-farmer",
+    "jlc-reverso"
+   ]
+  },
+  {
+   "slug": "first-blood",
+   "path": "/posts/first-blood.html",
+   "title": "First Blood",
+   "route": "/book 008",
+   "type": "book",
+   "date": "2026-05-01",
+   "desc": "First Blood is a note on David Morrell's 1972 novel, survival, trauma, authority, pursuit, and violence after war.",
+   "tags": [
+    "book",
+    "survival",
+    "trauma",
+    "authority",
+    "pursuit"
+   ],
+   "links": [
+    "remains-of-the-day",
+    "pilgrim-and-locust",
+    "city-on-fire",
+    "crime-von-schirach",
+    "brave-new-world"
+   ]
+  },
+  {
+   "slug": "gibson-les-paul-custom",
+   "path": "/posts/gibson-les-paul-custom.html",
+   "title": "Gibson Les Paul Custom",
+   "route": "/object 012",
+   "type": "object",
+   "date": "2026-06-25",
+   "desc": "Gibson Les Paul Custom is a note on the Black Beauty — a heavy, ornamented instrument where the gold, binding, and mahogany serve the sound as much as the look.",
+   "tags": [
+    "mahogany",
+    "humbucker",
+    "black"
+   ],
+   "links": [
+    "fender-stratocaster",
+    "red-wing-moc-toe",
+    "seymour-duncan-slash-3"
+   ]
+  },
+  {
+   "slug": "good-time",
+   "path": "/posts/good-time.html",
+   "title": "Good Time",
+   "route": "/film 007",
+   "type": "film",
+   "date": "2026-04-29",
+   "desc": "Good Time is a note on the Safdie brothers' 2017 film, panic, brotherhood, neon, bad decisions, and momentum without escape.",
+   "tags": [
+    "film",
+    "crime",
+    "panic",
+    "neon",
+    "momentum"
+   ],
+   "links": [
+    "the-secret-agent",
+    "two-lane-blacktop",
+    "the-vanishing",
+    "paris-texas",
+    "the-conversation",
+    "stalker"
+   ]
+  },
+  {
+   "slug": "guitar-pro-8",
+   "path": "/posts/guitar-pro-8.html",
+   "title": "Guitar Pro 8",
+   "route": "/note 014",
+   "type": "note",
+   "date": "2026-06-02",
+   "desc": "Guitar Pro 8 is a note on notation, composition, and the value of software that gets out of the way.",
+   "tags": [],
+   "links": [
+    "machine-room"
+   ]
+  },
+  {
+   "slug": "is-this-it",
+   "path": "/posts/is-this-it.html",
+   "title": "Is This It",
+   "route": "/music 004",
+   "type": "music",
+   "date": "2026-05-22",
+   "desc": "Is This It is a note on The Strokes' 2001 album — the best record of the 2000s, because it made collapse sound effortless, precise, and new.",
+   "tags": [
+    "music",
+    "indie",
+    "rock",
+    "2000s",
+    "essential"
+   ],
+   "links": [
+    "kill-em-all",
+    "unknown-pleasures",
+    "back-in-black"
+   ]
+  },
+  {
+   "slug": "jlc-reverso",
+   "path": "/posts/jlc-reverso.html",
+   "title": "Jaeger-LeCoultre Reverso",
+   "route": "/object 005",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Jaeger-LeCoultre Reverso is a note on the 1931 watch designed around a constraint — the case that flips to protect itself.",
+   "tags": [
+    "mechanical",
+    "art-deco",
+    "precision"
+   ],
+   "links": [
+    "fender-stratocaster",
+    "drakes-donkey-chore"
+   ]
+  },
+  {
+   "slug": "kill-em-all",
+   "path": "/posts/kill-em-all.html",
+   "title": "Kill 'Em All",
+   "route": "/music 001",
+   "type": "music",
+   "date": "2026-04-27",
+   "desc": "Kill 'Em All is a note on Metallica's 1983 debut, speed, energy, thrash, and the moment before polish.",
+   "tags": [
+    "music",
+    "thrash",
+    "speed",
+    "energy"
+   ],
+   "links": [
+    "unknown-pleasures",
+    "back-in-black",
+    "is-this-it"
+   ]
+  },
+  {
+   "slug": "lamy-2000",
+   "path": "/posts/lamy-2000.html",
+   "title": "Lamy 2000",
+   "route": "/object 002",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Lamy 2000 is a note on the pen designed in 1966 that decided what a pen should be for the next fifty years.",
+   "tags": [
+    "steel",
+    "makrolon",
+    "analog"
+   ],
+   "links": [
+    "macbook-air-m4",
+    "victorinox-farmer"
+   ]
+  },
+  {
+   "slug": "le-samourai",
+   "path": "/posts/le-samourai.html",
+   "title": "Le Samouraï",
+   "route": "/film 008",
+   "type": "film",
+   "date": "2026-05-02",
+   "desc": "Le Samouraï is a note on Jean-Pierre Melville's 1967 film — solitude, ritual, the professional who has made silence into a system.",
+   "tags": [
+    "film",
+    "cold",
+    "solitude",
+    "ritual",
+    "professional"
+   ],
+   "links": [
+    "the-conversation",
+    "stalker",
+    "good-time",
+    "paris-texas",
+    "spider-man-brand-new-day"
+   ]
+  },
+  {
+   "slug": "learn-loop",
+   "path": "/posts/learn-loop.html",
+   "title": "the learn loop",
+   "route": "/note 025",
+   "type": "note",
+   "date": "2026-07-18",
+   "desc": "A note on making learning in local AI workflows deliberate, inspectable, and durable instead of accidental memory.",
+   "tags": [],
+   "links": [
+    "map-and-memory"
+   ]
+  },
+  {
+   "slug": "local-is-a-boundary",
+   "path": "/posts/local-is-a-boundary.html",
+   "title": "local is a boundary",
+   "route": "/note 031",
+   "type": "note",
+   "date": "2026-09-09",
+   "desc": "A note on Ollama, local inference, and why running a model on your own machine is a boundary rather than a complete system.",
+   "tags": [],
+   "links": [
+    "the-repository-is-the-conversation",
+    "atlas-loop"
+   ]
+  },
+  {
+   "slug": "mac-terminal-guide",
+   "path": "/posts/mac-terminal-guide.html",
+   "title": "Mac Terminal Guide",
+   "route": "/note 011",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "Mac Terminal Guide is a note on building an offline terminal reference with 220 commands, 27 categories, and Swedish descriptions.",
+   "tags": [],
+   "links": [
+    "macos-enterprise-dashboard"
+   ]
+  },
+  {
+   "slug": "macbook-air-m4",
+   "path": "/posts/macbook-air-m4.html",
+   "title": "MacBook Air M4",
+   "route": "/object 001",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "MacBook Air M4 is a note on the machine that stopped being a compromise — silent, thin, and capable enough to stay.",
+   "tags": [
+    "silicon",
+    "portable",
+    "silent"
+   ],
+   "links": [
+    "lamy-2000",
+    "camaro-1967"
+   ]
+  },
+  {
+   "slug": "machine-room",
+   "path": "/posts/machine-room.html",
+   "title": "the machine room",
+   "route": "/note 013",
+   "type": "note",
+   "date": "2026-05-01",
+   "desc": "A note on local computation, owned infrastructure, and the philosophy of keeping real work on your own hardware.",
+   "tags": [],
+   "links": [
+    "coolthing",
+    "mac-terminal-guide",
+    "macos-scripts"
+   ]
+  },
+  {
+   "slug": "macos-enterprise-dashboard",
+   "path": "/posts/macos-enterprise-dashboard.html",
+   "title": "macOS Enterprise Dashboard",
+   "route": "/note 010",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "macOS Enterprise Dashboard is a note on fourteen checks, CIS compliance, and making posture visible in one browser tab.",
+   "tags": [],
+   "links": [
+    "design-prototype"
+   ]
+  },
+  {
+   "slug": "macos-scripts",
+   "path": "/posts/macos-scripts.html",
+   "title": "macos-scripts",
+   "route": "/note 007",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "macos-scripts is a note on modular terminal automation, command surfaces, and scripts that describe themselves.",
+   "tags": [],
+   "links": [
+    "zephyr-workbench"
+   ]
+  },
+  {
+   "slug": "map-and-memory",
+   "path": "/posts/map-and-memory.html",
+   "title": "the map and the memory",
+   "route": "/note 022",
+   "type": "note",
+   "date": "2026-06-25",
+   "desc": "Two memory layers for working with code and AI — CodeGraph indexes a repository into a queryable graph, and mqobsidian keeps decisions and learning records in a linked vault.",
+   "tags": [],
+   "links": [
+    "editorial-engine",
+    "mq-agent"
+   ]
+  },
+  {
+   "slug": "mcamner-journal-linking",
+   "path": "/posts/mcamner-journal-linking.html",
+   "title": "McAmner Journal Linking",
+   "route": "/note 020",
+   "type": "note",
+   "date": "2026-06-02",
+   "desc": "McAmner Journal Linking is a note on building a static blog with manual routes, cross-links, and a single JS file as the navigation layer.",
+   "tags": [],
+   "links": [
+    "repo-signal-positioning",
+    "mq-agent"
+   ]
+  },
+  {
+   "slug": "mq-agent",
+   "path": "/posts/mq-agent.html",
+   "title": "mq-agent",
+   "route": "/note 021",
+   "type": "note",
+   "date": "2026-06-02",
+   "desc": "mq-agent is a note on building a local AI agent orchestrator — tool routing, MCP integration, and keeping the model out of the way until it is needed.",
+   "tags": [],
+   "links": [
+    "mcamner-journal-linking"
+   ]
+  },
+  {
+   "slug": "mq-hal",
+   "path": "/posts/mq-hal.html",
+   "title": "mq-hal",
+   "route": "/note 018",
+   "type": "note",
+   "date": "2026-06-02",
+   "desc": "mq-hal is a local HAL-style command router for macOS — natural language mapped to safe terminal actions via Ollama, with no cloud dependency.",
+   "tags": [],
+   "links": [
+    "mq-mcp",
+    "repo-signal-positioning"
+   ]
+  },
+  {
+   "slug": "mq-mcp",
+   "path": "/posts/mq-mcp.html",
+   "title": "mq-mcp",
+   "route": "/note 017",
+   "type": "note",
+   "date": "2026-06-02",
+   "desc": "mq-mcp is a local MCP server experiment — a bridge between OpenAI and macOS, with tools, voice, and a local AI presence called Bridget.",
+   "tags": [],
+   "links": [
+    "command-surface"
+   ]
+  },
+  {
+   "slug": "mqlaunch",
+   "path": "/posts/mqlaunch.html",
+   "title": "mqlaunch",
+   "route": "/note 001",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "mqlaunch is a note on command surfaces, structured execution, and building tools that disappear into the work.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "mqmirror",
+   "path": "/posts/mqmirror.html",
+   "title": "MQ Mirror",
+   "route": "/note 009",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "MQ Mirror is a note on seeing the command behind the interface and translating between GUI actions and terminal equivalents.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "ollama-runtime",
+   "path": "/posts/ollama-runtime.html",
+   "title": "the local model runtime",
+   "route": "/note 026",
+   "type": "note",
+   "date": "2026-07-19",
+   "desc": "A note on the Ollama integration in mq-agent — named model profiles, a read-only command surface, and why the local model is treated as a component rather than the center of the system.",
+   "tags": [],
+   "links": [
+    "learn-loop"
+   ]
+  },
+  {
+   "slug": "paris-texas",
+   "path": "/posts/paris-texas.html",
+   "title": "Paris, Texas",
+   "route": "/film 004",
+   "type": "film",
+   "date": "2026-04-27",
+   "desc": "Paris, Texas is a note on Wim Wenders' 1984 film, road, silence, identity, absence, and a man walking out of the desert.",
+   "tags": [
+    "film",
+    "road",
+    "silence",
+    "identity",
+    "absence"
+   ],
+   "links": [
+    "the-secret-agent",
+    "two-lane-blacktop",
+    "the-vanishing",
+    "the-conversation"
+   ]
+  },
+  {
+   "slug": "pattern-language",
+   "path": "/posts/pattern-language.html",
+   "title": "A Pattern Language",
+   "route": "/book 002",
+   "type": "book",
+   "date": "2026-04-27",
+   "desc": "A Pattern Language is a note on Christopher Alexander's 253 patterns, systems, architecture, and the scale from cities to rooms.",
+   "tags": [
+    "book",
+    "systems",
+    "architecture",
+    "pattern"
+   ],
+   "links": [
+    "ways-of-seeing",
+    "remains-of-the-day",
+    "pilgrim-and-locust"
+   ]
+  },
+  {
+   "slug": "pilgrim-and-locust",
+   "path": "/posts/pilgrim-and-locust.html",
+   "title": "Pilgrim & Locust",
+   "route": "/book 004",
+   "type": "book",
+   "date": "2026-04-27",
+   "desc": "Pilgrim & Locust is a note on Terry Hayes, thrillers, patience, identity, and stories that trust silence.",
+   "tags": [
+    "book",
+    "thriller",
+    "patience",
+    "identity"
+   ],
+   "links": [
+    "city-on-fire",
+    "crime-von-schirach"
+   ]
+  },
+  {
+   "slug": "powershell-on-macos",
+   "path": "/posts/powershell-on-macos.html",
+   "title": "powershell on macOS",
+   "route": "/note 033",
+   "type": "note",
+   "date": "2026-09-18",
+   "desc": "A note on PowerShell on macOS, where a cross-platform object shell meets an operating system with its own native tools and conventions.",
+   "tags": [],
+   "links": [
+    "atlas-loop",
+    "skills-belong-in-the-repository"
+   ]
+  },
+  {
+   "slug": "prompts-are-not-loops",
+   "path": "/posts/prompts-are-not-loops.html",
+   "title": "prompts are not loops",
+   "route": "/note 029",
+   "type": "note",
+   "date": "2026-09-03",
+   "desc": "A note on the difference between asking an AI for an answer and building a loop that can inspect, verify, correct, and stop.",
+   "tags": [],
+   "links": [
+    "the-whole-path",
+    "the-repository-is-the-conversation"
+   ]
+  },
+  {
+   "slug": "red-wing-moc-toe",
+   "path": "/posts/red-wing-moc-toe.html",
+   "title": "Red Wing Moc Toe",
+   "route": "/object 011",
+   "type": "object",
+   "date": "2026-06-25",
+   "desc": "Red Wing Moc Toe Boot in Briar Oil Slick leather — a reliable boot that gets better with age, where expensive branded shoes only get uglier with time.",
+   "tags": [
+    "leather",
+    "workwear",
+    "patina"
+   ],
+   "links": [
+    "drakes-donkey-chore",
+    "victorinox-farmer"
+   ]
+  },
+  {
+   "slug": "remains-of-the-day",
+   "path": "/posts/remains-of-the-day.html",
+   "title": "The Remains of the Day",
+   "route": "/book 003",
+   "type": "book",
+   "date": "2026-04-27",
+   "desc": "The Remains of the Day is a note on Kazuo Ishiguro, restraint, memory, loyalty, and dignity as avoidance.",
+   "tags": [
+    "book",
+    "restraint",
+    "memory",
+    "loyalty"
+   ],
+   "links": [
+    "ways-of-seeing",
+    "pattern-language",
+    "pilgrim-and-locust"
+   ]
+  },
+  {
+   "slug": "repo-signal-positioning",
+   "path": "/posts/repo-signal-positioning.html",
+   "title": "repo-signal positioning",
+   "route": "/note 019",
+   "type": "note",
+   "date": "2026-05-22",
+   "desc": "repo-signal positioning turns a repository into a clearer product story: audience, problem, strongest README angle, unclear parts, and one-sentence positioning.",
+   "tags": [],
+   "links": [
+    "mq-hal",
+    "mcamner-journal-linking"
+   ]
+  },
+  {
+   "slug": "seymour-duncan-slash-3",
+   "path": "/posts/seymour-duncan-slash-3.html",
+   "title": "Seymour Duncan Slash 3.0",
+   "route": "/object 013",
+   "type": "object",
+   "date": "2026-09-03",
+   "desc": "Seymour Duncan Slash 3.0 zebra humbuckers with four-conductor wiring — added punch, retained clarity, and one of the best pickup sets I have owned.",
+   "tags": [
+    "humbucker",
+    "alnico 5",
+    "zebra"
+   ],
+   "links": [
+    "gibson-les-paul-custom"
+   ]
+  },
+  {
+   "slug": "skills-belong-in-the-repository",
+   "path": "/posts/skills-belong-in-the-repository.html",
+   "title": "skills belong in the repository",
+   "route": "/note 034",
+   "type": "note",
+   "date": "2026-09-18",
+   "desc": "A note on repository-owned skills for coding agents, and how shared instructions turn GitHub and the editor into one continuous working surface.",
+   "tags": [],
+   "links": [
+    "powershell-on-macos"
+   ]
+  },
+  {
+   "slug": "slow-horses",
+   "path": "/posts/slow-horses.html",
+   "title": "Slow Horses",
+   "route": "/series 001",
+   "type": "series",
+   "date": "2026-04-27",
+   "desc": "Slow Horses is a note on Mick Herron's Slough House series, intelligence bureaucracy, failure, and careers draining slowly.",
+   "tags": [
+    "series",
+    "intelligence",
+    "bureaucracy",
+    "failure"
+   ],
+   "links": [
+    "the-secret-agent"
+   ]
+  },
+  {
+   "slug": "sony-tcd5m",
+   "path": "/posts/sony-tcd5m.html",
+   "title": "Sony TC-D5M",
+   "route": "/object 009",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Sony TC-D5M is a note on the professional portable cassette recorder — metal construction, VU meters, tape, and no abstraction between the operator and the sound.",
+   "tags": [
+    "analog",
+    "portable",
+    "magnetic"
+   ],
+   "links": [
+    "stiletto",
+    "camaro-1967"
+   ]
+  },
+  {
+   "slug": "spider-man-brand-new-day",
+   "path": "/posts/spider-man-brand-new-day.html",
+   "title": "Spider-Man: Brand New Day",
+   "route": "/film 009",
+   "type": "film",
+   "date": "2026-09-02",
+   "desc": "Spider-Man: Brand New Day is a note on Peter Parker after the world forgets him — full-time responsibility, adult isolation, and a hero forced back to street level.",
+   "tags": [
+    "film",
+    "superhero",
+    "identity",
+    "isolation",
+    "responsibility"
+   ],
+   "links": [
+    "le-samourai"
+   ]
+  },
+  {
+   "slug": "spider-noir",
+   "path": "/posts/spider-noir.html",
+   "title": "Spider-Man: Noir",
+   "route": "/series 005",
+   "type": "series",
+   "date": "2026-06-02",
+   "desc": "Spider-Man: Noir is a note on the Netflix series, Nicolas Cage, 1930s New York, and what a superhero looks like when the city is already broken.",
+   "tags": [
+    "series",
+    "noir",
+    "superhero",
+    "depression",
+    "identity"
+   ],
+   "links": [
+    "slow-horses",
+    "fallout",
+    "white-lotus",
+    "dope-thief",
+    "beef-s2"
+   ]
+  },
+  {
+   "slug": "stalker",
+   "path": "/posts/stalker.html",
+   "title": "Stalker",
+   "route": "/film 006",
+   "type": "film",
+   "date": "2026-04-27",
+   "desc": "Stalker is a note on Andrei Tarkovsky's 1979 film, the Zone, belief, patience, and three men crossing a threshold.",
+   "tags": [
+    "film",
+    "slow",
+    "zone",
+    "belief",
+    "patience"
+   ],
+   "links": [
+    "the-secret-agent",
+    "two-lane-blacktop",
+    "the-vanishing",
+    "paris-texas",
+    "the-conversation",
+    "good-time"
+   ]
+  },
+  {
+   "slug": "stiletto",
+   "path": "/posts/stiletto.html",
+   "title": "Stiletto Knife",
+   "route": "/object 008",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Stiletto Knife is a note on Italian geometry, spring-loaded — the blade as the complete argument, nothing else needed.",
+   "tags": [
+    "steel",
+    "italian",
+    "blade"
+   ],
+   "links": [
+    "zippo",
+    "sony-tcd5m"
+   ]
+  },
+  {
+   "slug": "structure",
+   "path": "/posts/structure.html",
+   "title": "Structure",
+   "route": "/note 003",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "Structure is a note on how systems hold tension through restraint rather than complexity.",
+   "tags": [],
+   "links": []
+  },
+  {
+   "slug": "the-conversation",
+   "path": "/posts/the-conversation.html",
+   "title": "The Conversation",
+   "route": "/film 005",
+   "type": "film",
+   "date": "2026-04-27",
+   "desc": "The Conversation is a note on Francis Ford Coppola's 1974 film, paranoia, surveillance, isolation, and listening too carefully.",
+   "tags": [
+    "film",
+    "paranoia",
+    "surveillance",
+    "isolation",
+    "listening"
+   ],
+   "links": [
+    "the-secret-agent",
+    "two-lane-blacktop",
+    "the-vanishing",
+    "paris-texas"
+   ]
+  },
+  {
+   "slug": "the-repository-is-the-conversation",
+   "path": "/posts/the-repository-is-the-conversation.html",
+   "title": "the repository is the conversation",
+   "route": "/note 030",
+   "type": "note",
+   "date": "2026-09-03",
+   "desc": "A note on GitHub as a record of decisions, review, and change rather than a remote folder for code.",
+   "tags": [],
+   "links": [
+    "prompts-are-not-loops",
+    "local-is-a-boundary"
+   ]
+  },
+  {
+   "slug": "the-secret-agent",
+   "path": "/posts/the-secret-agent.html",
+   "title": "The Secret Agent",
+   "route": "/film 001",
+   "type": "film",
+   "date": "2026-04-27",
+   "desc": "The Secret Agent is a note on Christopher Hampton's 1996 film, loyalty, paranoia, secrecy, and quiet collapse.",
+   "tags": [
+    "film",
+    "slow",
+    "paranoia",
+    "secrecy"
+   ],
+   "links": [
+    "two-lane-blacktop"
+   ]
+  },
+  {
+   "slug": "the-shards-book",
+   "path": "/posts/the-shards-book.html",
+   "title": "The Shards — the novel",
+   "route": "/book 010",
+   "type": "book",
+   "date": "2026-09-03",
+   "desc": "The Shards is Bret Easton Ellis turning memory, privilege, desire, and paranoia into a confession that cannot be trusted.",
+   "tags": [
+    "book",
+    "memory",
+    "paranoia",
+    "desire",
+    "los-angeles"
+   ],
+   "links": [
+    "arkangel",
+    "the-shards"
+   ]
+  },
+  {
+   "slug": "the-shards",
+   "path": "/posts/the-shards.html",
+   "title": "The Shards",
+   "route": "/series 008",
+   "type": "series",
+   "date": "2026-09-02",
+   "desc": "The Shards is a note on FX's adaptation of Bret Easton Ellis's novel — memory, privilege and paranoia in Los Angeles, 1981.",
+   "tags": [
+    "series",
+    "memory",
+    "obsession",
+    "privilege",
+    "mystery"
+   ],
+   "links": [
+    "cape-fear",
+    "the-shards-book"
+   ]
+  },
+  {
+   "slug": "the-vanishing",
+   "path": "/posts/the-vanishing.html",
+   "title": "The Vanishing",
+   "route": "/film 003",
+   "type": "film",
+   "date": "2026-04-27",
+   "desc": "The Vanishing is a note on George Sluizer's 1988 film Spoorloos, obsession, evil, psychology, and the original ending.",
+   "tags": [
+    "film",
+    "obsession",
+    "evil",
+    "psychology"
+   ],
+   "links": [
+    "the-secret-agent",
+    "two-lane-blacktop"
+   ]
+  },
+  {
+   "slug": "the-whole-path",
+   "path": "/posts/the-whole-path.html",
+   "title": "the whole path",
+   "route": "/note 028",
+   "type": "note",
+   "date": "2026-08-28",
+   "desc": "A note on mq-ums, governed command paths, and why a working API function is not yet a working operational system.",
+   "tags": [],
+   "links": [
+    "false-green",
+    "prompts-are-not-loops"
+   ]
+  },
+  {
+   "slug": "two-lane-blacktop",
+   "path": "/posts/two-lane-blacktop.html",
+   "title": "Two-Lane Blacktop",
+   "route": "/film 002",
+   "type": "film",
+   "date": "2026-04-27",
+   "desc": "Two-Lane Blacktop is a note on Monte Hellman's 1971 road film, distance, freedom, silence, and pure movement.",
+   "tags": [
+    "film",
+    "road",
+    "distance",
+    "freedom"
+   ],
+   "links": [
+    "the-secret-agent"
+   ]
+  },
+  {
+   "slug": "unknown-pleasures",
+   "path": "/posts/unknown-pleasures.html",
+   "title": "Unknown Pleasures",
+   "route": "/music 002",
+   "type": "music",
+   "date": "2026-04-27",
+   "desc": "Unknown Pleasures is a note on Joy Division's 1979 album, post-punk, isolation, minimalism, and a room that will not let you leave.",
+   "tags": [
+    "music",
+    "post-punk",
+    "isolation",
+    "minimal"
+   ],
+   "links": [
+    "kill-em-all",
+    "back-in-black",
+    "is-this-it"
+   ]
+  },
+  {
+   "slug": "victorinox-farmer",
+   "path": "/posts/victorinox-farmer.html",
+   "title": "Victorinox Farmer",
+   "route": "/object 003",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Victorinox Farmer is a note on the Swiss Army knife built around actual work — saw, blade, reamer, nothing decorative.",
+   "tags": [
+    "steel",
+    "tool",
+    "minimal"
+   ],
+   "links": [
+    "lamy-2000",
+    "fender-stratocaster"
+   ]
+  },
+  {
+   "slug": "ways-of-seeing",
+   "path": "/posts/ways-of-seeing.html",
+   "title": "Ways of Seeing",
+   "route": "/book 001",
+   "type": "book",
+   "date": "2026-04-27",
+   "desc": "Ways of Seeing is a note on John Berger's 1972 book and series, vision, culture, observation, and seeing before words.",
+   "tags": [
+    "book",
+    "vision",
+    "culture",
+    "observation"
+   ],
+   "links": [
+    "pattern-language",
+    "remains-of-the-day",
+    "pilgrim-and-locust"
+   ]
+  },
+  {
+   "slug": "white-lotus",
+   "path": "/posts/white-lotus.html",
+   "title": "White Lotus S3",
+   "route": "/series 003",
+   "type": "series",
+   "date": "2026-04-27",
+   "desc": "White Lotus S3 is a note on Mike White's HBO series in Thailand, privilege, wealth, observation, and unease.",
+   "tags": [
+    "series",
+    "privilege",
+    "wealth",
+    "observation"
+   ],
+   "links": [
+    "slow-horses",
+    "fallout",
+    "dope-thief"
+   ]
+  },
+  {
+   "slug": "zephyr-workbench",
+   "path": "/posts/zephyr-workbench.html",
+   "title": "Zephyr Workbench",
+   "route": "/note 006",
+   "type": "note",
+   "date": "2026-04-27",
+   "desc": "Zephyr Workbench is a note on architecture that validates itself, schemas, infrastructure as code, and making the model the specification.",
+   "tags": [],
+   "links": [
+    "macos-scripts"
+   ]
+  },
+  {
+   "slug": "zippo",
+   "path": "/posts/zippo.html",
+   "title": "Zippo Lighter",
+   "route": "/object 007",
+   "type": "object",
+   "date": "2026-05-02",
+   "desc": "Zippo Lighter is a note on the mechanism from Bradford, Pennsylvania — unchanged since 1932, still repairable, still windproof by design.",
+   "tags": [
+    "chrome",
+    "mechanical",
+    "1932"
+   ],
+   "links": [
+    "drakes-donkey-chore",
+    "stiletto"
+   ]
+  }
+ ],
+ "archive": [
+  {
+   "id": "001",
+   "src": "assets/archive/001.jpg",
+   "title": "Mattias Camner"
+  },
+  {
+   "id": "002",
+   "src": "assets/archive/002.jpg",
+   "title": "El Camino 383"
+  },
+  {
+   "id": "003",
+   "src": "assets/archive/003.jpg",
+   "title": "Black Iris"
+  },
+  {
+   "id": "004",
+   "src": "assets/archive/004.png",
+   "title": "Midsummer Light"
+  },
+  {
+   "id": "005",
+   "src": "assets/archive/005.png",
+   "title": "Threshold"
+  },
+  {
+   "id": "006",
+   "src": "assets/archive/006.png",
+   "title": "Recorded"
+  },
+  {
+   "id": "007",
+   "src": "assets/archive/007.png",
+   "title": "Commitment"
+  },
+  {
+   "id": "008",
+   "src": "assets/archive/008.jpg",
+   "title": "Interior"
+  },
+  {
+   "id": "009",
+   "src": "assets/archive/009.png",
+   "title": "Gathering"
+  },
+  {
+   "id": "010",
+   "src": "assets/archive/010.jpg",
+   "title": "Page Fourteen"
+  },
+  {
+   "id": "011",
+   "src": "assets/archive/011.jpg",
+   "title": "Page Zero"
+  },
+  {
+   "id": "012",
+   "src": "assets/archive/012.png",
+   "title": "Rotation"
+  },
+  {
+   "id": "013",
+   "src": "assets/archive/013.png",
+   "title": "Becoming"
+  },
+  {
+   "id": "014",
+   "src": "assets/archive/014.jpg",
+   "title": "Past Midnight"
+  },
+  {
+   "id": "015",
+   "src": "assets/archive/015.jpg",
+   "title": "Held Still"
+  },
+  {
+   "id": "016",
+   "src": "assets/archive/016.png",
+   "title": "Ground Game"
+  },
+  {
+   "id": "018",
+   "src": "assets/archive/018.jpg",
+   "title": "April"
+  },
+  {
+   "id": "019",
+   "src": "assets/archive/019.jpg",
+   "title": "Found"
+  },
+  {
+   "id": "020",
+   "src": "assets/archive/020.png",
+   "title": "After Hours"
+  },
+  {
+   "id": "021",
+   "src": "assets/archive/021.png",
+   "title": "Third Event"
+  },
+  {
+   "id": "024",
+   "src": "assets/archive/024.png",
+   "title": "Looking Up"
+  },
+  {
+   "id": "025",
+   "src": "assets/archive/025.png",
+   "title": "Falsterbo"
+  },
+  {
+   "id": "026",
+   "src": "assets/archive/026.jpg",
+   "title": "March 2014"
+  },
+  {
+   "id": "027",
+   "src": "assets/archive/027.jpg",
+   "title": "Third Page"
+  },
+  {
+   "id": "028",
+   "src": "assets/archive/028.jpg",
+   "title": "June 2017"
+  },
+  {
+   "id": "029",
+   "src": "assets/archive/029.jpg",
+   "title": "New Year"
+  },
+  {
+   "id": "030",
+   "src": "assets/archive/030.jpg",
+   "title": "Page Sixteen"
+  },
+  {
+   "id": "031",
+   "src": "assets/archive/031.png",
+   "title": "Mosebacke"
+  },
+  {
+   "id": "032",
+   "src": "assets/archive/032.jpg",
+   "title": "In Public"
+  },
+  {
+   "id": "033",
+   "src": "assets/archive/033.jpg",
+   "title": "Page Eleven"
+  },
+  {
+   "id": "034",
+   "src": "assets/archive/034.png",
+   "title": "Assembly"
+  },
+  {
+   "id": "037",
+   "src": "assets/archive/037.png",
+   "title": "Still"
+  },
+  {
+   "id": "038",
+   "src": "assets/archive/038.png",
+   "title": "Late May"
+  },
+  {
+   "id": "041",
+   "src": "assets/archive/041.jpg",
+   "title": "Rebalanced"
+  },
+  {
+   "id": "042",
+   "src": "assets/archive/042.jpg",
+   "title": "Frame"
+  },
+  {
+   "id": "044",
+   "src": "assets/archive/044.png",
+   "title": "Kickflip"
+  },
+  {
+   "id": "045",
+   "src": "assets/archive/045.jpg",
+   "title": "Black Iris"
+  },
+  {
+   "id": "046",
+   "src": "assets/archive/046.jpg",
+   "title": "Extended"
+  },
+  {
+   "id": "047",
+   "src": "assets/archive/047.jpg",
+   "title": "Second Page"
+  },
+  {
+   "id": "048",
+   "src": "assets/archive/048.jpg",
+   "title": "Neon Year"
+  },
+  {
+   "id": "049",
+   "src": "assets/archive/049.jpg",
+   "title": "Night Session"
+  },
+  {
+   "id": "050",
+   "src": "assets/archive/050.png",
+   "title": "The Chair"
+  }
+ ]
+}

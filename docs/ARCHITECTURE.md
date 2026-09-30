@@ -29,6 +29,8 @@ Deploys run as the `pages-build-deployment` workflow on push to `main`.
       robots.txt       crawler instructions
       sitemap.xml      search index map
       feed.xml         RSS feed
+      signal.json      per-section counts and freshness (/map, /boot)
+      entries.json     per-post type, tags, date, links (/refs, /tonight, …)
 
 ## Routing
 
