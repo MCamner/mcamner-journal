@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Secret of Secrets</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/the-secret-of-secrets.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/the-secret-of-secrets.html</guid>
+      <description>The Secret of Secrets is Dan Brown sending Robert Langdon to Prague, where the question is no longer a hidden symbol but consciousness itself.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>skills belong in the repository</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/skills-belong-in-the-repository.html</link>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html</guid>
       <description>Two memory layers for working with code and AI — CodeGraph indexes a repository into a queryable graph, and mqobsidian keeps decisions and learning records in a linked vault.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gibson Les Paul Custom</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/gibson-les-paul-custom.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/gibson-les-paul-custom.html</guid>
-      <description>Gibson Les Paul Custom is a note on the Black Beauty — a heavy, ornamented instrument where the gold, binding, and mahogany serve the sound as much as the look.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     </item>

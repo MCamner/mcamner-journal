@@ -162,7 +162,9 @@ const routes = {
   "/series 008": "/mcamner-journal/posts/the-shards.html",
   "/the-shards": "/mcamner-journal/posts/the-shards.html",
   "/book 010": "/mcamner-journal/posts/the-shards-book.html",
-  "/the-shards-book": "/mcamner-journal/posts/the-shards-book.html"
+  "/the-shards-book": "/mcamner-journal/posts/the-shards-book.html",
+  "/book 011": "/mcamner-journal/posts/the-secret-of-secrets.html",
+  "/the-secret-of-secrets": "/mcamner-journal/posts/the-secret-of-secrets.html"
 };
 
 // Routes are authored against the GitHub Pages base path (/mcamner-journal/).
