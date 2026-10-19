@@ -1,5 +1,5 @@
 {
- "count": 78,
+ "count": 79,
  "archive_count": 42,
  "entries": [
   {
@@ -1126,6 +1126,24 @@
    ]
   },
   {
+   "slug": "the-secret-of-secrets",
+   "path": "/posts/the-secret-of-secrets.html",
+   "title": "The Secret of Secrets",
+   "route": "/book 011",
+   "type": "book",
+   "date": "2026-10-19",
+   "desc": "The Secret of Secrets is Dan Brown sending Robert Langdon to Prague, where the question is no longer a hidden symbol but consciousness itself.",
+   "tags": [
+    "book",
+    "thriller",
+    "consciousness",
+    "prague"
+   ],
+   "links": [
+    "the-shards-book"
+   ]
+  },
+  {
    "slug": "the-shards-book",
    "path": "/posts/the-shards-book.html",
    "title": "The Shards — the novel",
@@ -1142,7 +1160,8 @@
    ],
    "links": [
     "arkangel",
-    "the-shards"
+    "the-shards",
+    "the-secret-of-secrets"
    ]
   },
   {

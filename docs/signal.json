@@ -1,6 +1,6 @@
 {
-  "total": 120,
-  "last": "journal",
+  "total": 121,
+  "last": "catalogue",
   "nodes": [
     {
       "id": 1,
@@ -14,9 +14,9 @@
       "id": 2,
       "path": "/catalogue",
       "label": "culture index",
-      "count": 31,
-      "last": "2026-09-03",
-      "latest": "The Shards"
+      "count": 32,
+      "last": "2026-10-19",
+      "latest": "The Secret of Secrets"
     },
     {
       "id": 3,
@@ -30,9 +30,9 @@
       "id": 4,
       "path": "/books",
       "label": "reading index",
-      "count": 10,
-      "last": "2026-09-03",
-      "latest": "The Shards"
+      "count": 11,
+      "last": "2026-10-19",
+      "latest": "The Secret of Secrets"
     },
     {
       "id": 5,
