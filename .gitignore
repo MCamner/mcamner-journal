@@ -22,3 +22,9 @@ build/
 
 # Local backups
 backups/
+
+# Local tool and agent context (machine-specific, not site content)
+.mcp.json
+.cursor/
+.mq/context/*
+!.mq/context/README.md
