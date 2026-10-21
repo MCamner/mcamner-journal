@@ -607,33 +607,8 @@ if (commandBar && commandInput) {
         return;
       }
 
-      const seen = new Set();
-      const hits = [];
-
-      Object.keys(routes).forEach(function (key) {
-        const target = routes[key];
-        if (target.indexOf("/posts/") === -1) return;
-        if (key.indexOf(query) === -1 && slugOf(target).indexOf(query) === -1) return;
-        if (seen.has(target)) return;
-        seen.add(target);
-        hits.push({ key: key, target: target });
-      });
-
-      if (!hits.length) {
-        respond("no match for " + query + " — try /ls or /catalogue");
-        return;
-      }
-
-      if (hits.length === 1) {
-        window.location.href = resolveRoute(hits[0].target);
-        return;
-      }
-
-      respond([hits.length + " matches for " + query].concat(
-        hits.slice(0, 12).map(function (hit) {
-          return "  " + hit.key + "  " + slugOf(hit.target);
-        })
-      ));
+      respond("searching entries.json …");
+      setTimeout(function () { runFind(query); }, 0);
       return;
     }
 
@@ -1934,6 +1909,62 @@ function runSince() {
     if (fresh.length > 12) lines.push({ text: "… and " + (fresh.length - 12) + " more · /tail", cls: "is-dim" });
     streamLines(box, lines);
   }).catch(function () { streamError(box, "entries.json unreachable. try /tail"); });
+}
+
+/* ── /find: titles, tags and descriptions, not just routes ── */
+
+// Folds case and accents, so "samourai" finds "Le Samouraï".
+function fold(text) {
+  return String(text || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+}
+
+// Title, slug or route beats a tag, which beats a word in the description.
+function findScore(entry, q) {
+  if ([entry.title, entry.slug, entry.route].some(function (s) { return fold(s).indexOf(q) !== -1; })) return 3;
+  if (entry.tags.some(function (t) { return fold(t).indexOf(q) !== -1; })) return 2;
+  if (fold(entry.desc).indexOf(q) !== -1) return 1;
+  return 0;
+}
+
+// Without entries.json (file://, offline) only route keys and slugs are known.
+function findInRoutes(q) {
+  var seen = {};
+  return Object.keys(routes).filter(function (key) {
+    var target = routes[key];
+    if (target.indexOf("/posts/") === -1 || seen[target]) return false;
+    if (key.indexOf(q) === -1 && slugOf(target).indexOf(q) === -1) return false;
+    seen[target] = true;
+    return true;
+  }).map(function (key) {
+    return { text: "  " + key + "  " + slugOf(routes[key]), href: resolveRoute(routes[key]) };
+  });
+}
+
+function showFindHits(box, query, lines) {
+  if (!lines.length) {
+    streamError(box, "no match for " + query + " — try /ls or /catalogue");
+    return;
+  }
+  if (lines.length === 1) {
+    window.location.href = lines[0].href;
+    return;
+  }
+  var out = [{ text: lines.length + " matches for " + query, cls: "is-dim", pause: 180 }];
+  out = out.concat(lines.slice(0, 12));
+  if (lines.length > 12) out.push({ text: "… and " + (lines.length - 12) + " more", cls: "is-dim" });
+  streamLines(box, out);
+}
+
+function runFind(query) {
+  var box = openStream();
+  var q = fold(query);
+  loadEntries().then(function (data) {
+    var hits = data.entries
+      .map(function (e) { return { entry: e, score: findScore(e, q) }; })
+      .filter(function (h) { return h.score > 0; })
+      .sort(function (a, b) { return b.score - a.score || (a.entry.date < b.entry.date ? 1 : -1); });
+    showFindHits(box, query, hits.map(function (h) { return entryLine(h.entry); }));
+  }).catch(function () { showFindHits(box, query, findInRoutes(q)); });
 }
 
 /* ── /refs: inbound and outbound links for a post ── */
