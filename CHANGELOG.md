@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- `/find` searches titles, tags and descriptions from `entries.json`, ignoring
+  case and accents; it falls back to route and slug matching when the index is
+  unreachable
+
 ### Added
 
 - Command surface: `/ls`, `/find`, `/latest`, `/next`, `/prev`,
