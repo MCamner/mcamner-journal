@@ -189,9 +189,11 @@ See [ROADMAP.md](ROADMAP.md) for planned features.
 
 ## Security
 
-McAmner Journal is a static site. It has no backend, login, analytics, or server-side data collection by default.
+McAmner Journal is a static site. It has no backend, login, analytics, or
+server-side data collection by default.
 
-Do not commit personal notes or credentials to a public repo. Use `.gitignore` to exclude sensitive files.
+Do not commit personal notes or credentials to a public repo. Use `.gitignore`
+to exclude sensitive files.
 
 ---
 
