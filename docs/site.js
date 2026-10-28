@@ -149,6 +149,8 @@ const routes = {
   "/powershell-on-macos": "/mcamner-journal/posts/powershell-on-macos.html",
   "/note 034": "/mcamner-journal/posts/skills-belong-in-the-repository.html",
   "/skills-belong-in-the-repository": "/mcamner-journal/posts/skills-belong-in-the-repository.html",
+  "/note 035": "/mcamner-journal/posts/ai-trend-lines.html",
+  "/ai-trend-lines": "/mcamner-journal/posts/ai-trend-lines.html",
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",
