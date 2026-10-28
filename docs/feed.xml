@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>trend lines</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/ai-trend-lines.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/ai-trend-lines.html</guid>
+      <description>A note on where AI is moving: from conversation to loops, from model size to context, and from generation to verification.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The Secret of Secrets</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/the-secret-of-secrets.html</link>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/red-wing-moc-toe.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/red-wing-moc-toe.html</guid>
       <description>Red Wing Moc Toe Boot in Briar Oil Slick leather — a reliable boot that gets better with age, where expensive branded shoes only get uglier with time.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>the map and the memory</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/map-and-memory.html</guid>
-      <description>Two memory layers for working with code and AI — CodeGraph indexes a repository into a queryable graph, and mqobsidian keeps decisions and learning records in a linked vault.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     </item>

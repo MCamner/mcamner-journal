@@ -1,7 +1,20 @@
 {
- "count": 79,
+ "count": 80,
  "archive_count": 42,
  "entries": [
+  {
+   "slug": "ai-trend-lines",
+   "path": "/posts/ai-trend-lines.html",
+   "title": "trend lines",
+   "route": "/note 035",
+   "type": "note",
+   "date": "2026-10-28",
+   "desc": "A note on where AI is moving: from conversation to loops, from model size to context, and from generation to verification.",
+   "tags": [],
+   "links": [
+    "skills-belong-in-the-repository"
+   ]
+  },
   {
    "slug": "arkangel",
    "path": "/posts/arkangel.html",
@@ -937,7 +950,8 @@
    "desc": "A note on repository-owned skills for coding agents, and how shared instructions turn GitHub and the editor into one continuous working surface.",
    "tags": [],
    "links": [
-    "powershell-on-macos"
+    "powershell-on-macos",
+    "ai-trend-lines"
    ]
   },
   {

@@ -1,14 +1,14 @@
 {
-  "total": 121,
-  "last": "catalogue",
+  "total": 122,
+  "last": "journal",
   "nodes": [
     {
       "id": 1,
       "path": "/journal",
       "label": "notes + systems",
-      "count": 34,
-      "last": "2026-09-18",
-      "latest": "skills belong in the repository"
+      "count": 35,
+      "last": "2026-10-28",
+      "latest": "trend lines"
     },
     {
       "id": 2,
