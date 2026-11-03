@@ -151,6 +151,8 @@ const routes = {
   "/skills-belong-in-the-repository": "/mcamner-journal/posts/skills-belong-in-the-repository.html",
   "/note 035": "/mcamner-journal/posts/ai-trend-lines.html",
   "/ai-trend-lines": "/mcamner-journal/posts/ai-trend-lines.html",
+  "/note 036": "/mcamner-journal/posts/mq-ascii.html",
+  "/mq-ascii": "/mcamner-journal/posts/mq-ascii.html",
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",

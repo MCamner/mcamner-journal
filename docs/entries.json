@@ -1,5 +1,5 @@
 {
- "count": 80,
+ "count": 81,
  "archive_count": 42,
  "entries": [
   {
@@ -12,7 +12,8 @@
    "desc": "A note on where AI is moving: from conversation to loops, from model size to context, and from generation to verification.",
    "tags": [],
    "links": [
-    "skills-belong-in-the-repository"
+    "skills-belong-in-the-repository",
+    "mq-ascii"
    ]
   },
   {
@@ -718,6 +719,20 @@
    "tags": [],
    "links": [
     "mcamner-journal-linking"
+   ]
+  },
+  {
+   "slug": "mq-ascii",
+   "path": "/posts/mq-ascii.html",
+   "title": "mq-ascii",
+   "route": "/note 036",
+   "type": "note",
+   "date": "2026-11-03",
+   "desc": "A note on MQ-ASCII, a browser tool that turns an image into characters and shows how every cell was computed.",
+   "tags": [],
+   "links": [
+    "coolthing",
+    "ai-trend-lines"
    ]
   },
   {
