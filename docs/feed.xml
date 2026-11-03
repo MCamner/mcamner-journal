@@ -5,8 +5,16 @@
     <link>https://mcamner.github.io/mcamner-journal/</link>
     <description>Films, books, music, objects, systems, and culture by Mattias Camner.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mcamner.github.io/mcamner-journal/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mq-ascii</title>
+      <link>https://mcamner.github.io/mcamner-journal/posts/mq-ascii.html</link>
+      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/mq-ascii.html</guid>
+      <description>A note on MQ-ASCII, a browser tool that turns an image into characters and shows how every cell was computed.</description>
+      <dc:creator>Mattias Camner</dc:creator>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>trend lines</title>
       <link>https://mcamner.github.io/mcamner-journal/posts/ai-trend-lines.html</link>
@@ -156,14 +164,6 @@
       <link>https://mcamner.github.io/mcamner-journal/posts/cape-fear.html</link>
       <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/cape-fear.html</guid>
       <description>Cape Fear is a note on the Apple TV series from Nick Antosca, with Javier Bardem, Amy Adams and Patrick Wilson turning a familiar revenge story into sustained pressure.</description>
-      <dc:creator>Mattias Camner</dc:creator>
-      <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Red Wing Moc Toe</title>
-      <link>https://mcamner.github.io/mcamner-journal/posts/red-wing-moc-toe.html</link>
-      <guid isPermaLink="true">https://mcamner.github.io/mcamner-journal/posts/red-wing-moc-toe.html</guid>
-      <description>Red Wing Moc Toe Boot in Briar Oil Slick leather — a reliable boot that gets better with age, where expensive branded shoes only get uglier with time.</description>
       <dc:creator>Mattias Camner</dc:creator>
       <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
     </item>

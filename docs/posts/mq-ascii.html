@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mq-ascii | McAmner Journal</title>
+  <meta name="description" content="A note on MQ-ASCII, a browser tool that turns an image into characters and shows how every cell was computed.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/mq-ascii.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/mq-ascii.html">
+  <meta property="og:title" content="mq-ascii | McAmner Journal">
+  <meta property="og:description" content="Every character on the screen is a pixel that was given a decision. The tool shows the decision.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="mq-ascii | McAmner Journal">
+  <meta name="twitter:description" content="Every character on the screen is a pixel that was given a decision. The tool shows the decision.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/mq-ascii.html"
+  },
+  "headline": "mq-ascii",
+  "description": "A note on MQ-ASCII, a browser tool that turns an image into characters and shows how every cell was computed.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-11-03",
+  "datePublished": "2026-11-03"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>mq-ascii</h1>
+  <p>A browser tool that turns pixels into characters.</p>
+  <p>The picture is the output. The arithmetic is the point.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>&gt; opened /note 036</p>
+  <p>&gt; pixels bucketed</p>
+  <p>&gt; characters assigned</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; mq-ascii</h2>
+
+  <p>
+    ASCII art looks like a trick. It is a short chain of ordinary decisions. Shrink
+    the image until each pixel is one cell. Reduce each cell to a single brightness
+    value. Divide that range into buckets. Give each bucket a character, from dense
+    to sparse. Most converters hide the chain and show only the result.
+    <a href="https://mcamner.github.io/coolThing/mq-ascii/">MQ-ASCII</a> shows the
+    chain.
+  </p>
+
+  <p>
+    Point at any cell on the screen and the pipeline below follows it: the source
+    pixel, the resized pixel, its luminance, the bucket it fell into, the character
+    it received. Nothing is summarised. Every number on the page is the number the
+    renderer actually used.
+  </p>
+
+  <p>
+    The details are where the honesty is. Characters are taller than they are wide,
+    so the height has to be divided by an aspect ratio or every image comes out
+    stretched. Dividing brightness by 25 gives eleven buckets, but the last one only
+    covers six values. Rec.601 and Rec.709 weight red, green and blue differently, and
+    the page counts how many cells change character when you switch. None of this is
+    visible in the finished picture. All of it shapes the picture.
+  </p>
+
+  <p>
+    A dark terminal inverts the problem. Bright pixels need dense characters, or the
+    image prints as its own negative. A single checkbox reverses the ramp, and the
+    bucket readout shows the subtraction it performs.
+  </p>
+
+  <p>
+    Color does not change the shape. The color branch picks exactly the same
+    character as the grayscale branch and wraps a 24-bit ANSI code around it. The
+    form carries the brightness. The escape sequence carries the hue. Seeing the two
+    branches side by side makes that separation obvious in a way the output alone
+    never does.
+  </p>
+
+  <p>
+    The page also writes the Python script that would produce the same result with
+    the current settings. That is the part that matters most. A tool that explains
+    itself should be reproducible outside itself. The browser is where you look. The
+    terminal is where you keep it.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 32" width="122" aria-label="A grid of pixels passing through a bucket step and becoming characters">
+    <rect x="3" y="7" width="6" height="6" fill="#0d438f"/>
+    <rect x="9" y="7" width="6" height="6" fill="#2f69c7"/>
+    <rect x="15" y="7" width="6" height="6" fill="#9f9789"/>
+    <rect x="3" y="13" width="6" height="6" fill="#2f69c7"/>
+    <rect x="9" y="13" width="6" height="6" fill="#9f9789"/>
+    <rect x="15" y="13" width="6" height="6" fill="#e57b4f"/>
+    <rect x="3" y="19" width="6" height="6" fill="#9f9789"/>
+    <rect x="9" y="19" width="6" height="6" fill="#e57b4f"/>
+    <rect x="15" y="19" width="6" height="6" fill="#59a14f"/>
+    <path d="M25 16h11" stroke="#9f9789" stroke-width="1.5"/>
+    <polygon points="33,12 39,16 33,20" fill="#e57b4f"/>
+    <rect x="42" y="8" width="4" height="16" fill="#59a14f"/>
+    <rect x="47" y="12" width="4" height="12" fill="#59a14f"/>
+    <rect x="52" y="17" width="4" height="7" fill="#59a14f"/>
+    <path d="M59 16h11" stroke="#9f9789" stroke-width="1.5"/>
+    <polygon points="67,12 73,16 67,20" fill="#e57b4f"/>
+    <text x="75" y="21" font-family="monospace" font-size="13" font-weight="700" fill="#0d438f">@:</text>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="https://mcamner.github.io/coolThing/mq-ascii/">/open mq-ascii</a><span>-- try the tool</span></li>
+    <li><a href="coolthing.html">/coolthing</a><span>-- the experiments it lives with</span></li>
+    <li><a href="ai-trend-lines.html">/note 035</a><span>-- trend lines</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>

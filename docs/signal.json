@@ -1,14 +1,14 @@
 {
-  "total": 122,
+  "total": 123,
   "last": "journal",
   "nodes": [
     {
       "id": 1,
       "path": "/journal",
       "label": "notes + systems",
-      "count": 35,
-      "last": "2026-10-28",
-      "latest": "trend lines"
+      "count": 36,
+      "last": "2026-11-03",
+      "latest": "mq-ascii"
     },
     {
       "id": 2,
