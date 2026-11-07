@@ -56,6 +56,8 @@ body {
 .boot-box {
   border-top-width: 3px;
   padding: 40px 40px 28px;
+  /* Darkens the gradient enough for intro text to reach WCAG AA (≥4.5:1). */
+  background: rgba(0,0,0,0.2);
 }
 
 .journal-box {
@@ -102,13 +104,23 @@ body {
   letter-spacing: -0.045em;
 }
 
-.welcome h1,
+.voice-trigger {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.welcome .voice-trigger,
 .bot span,
 .post-figure svg {
   cursor: crosshair;
 }
 
-.welcome h1:focus-visible,
+.welcome .voice-trigger:focus-visible,
 .bot span:focus-visible,
 .post-figure svg:focus-visible {
   outline: 2px solid var(--green);
@@ -117,7 +129,7 @@ body {
 
 .welcome p {
   margin: 8px 0;
-  color: var(--muted);
+  color: #e6e0d6;
   font-size: clamp(13px, 1.4vw, 21px);
   line-height: 1.2;
 }
@@ -1625,6 +1637,20 @@ a:hover {
   .signal-map__lines path,
   .signal-node::before {
     animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .system-status p::before,
+  .signal-node.is-hot::before,
+  .signal-panel__header span {
+    animation: none !important;
+  }
+
+  .signal-row {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
   }
 }
 

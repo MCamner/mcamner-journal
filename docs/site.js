@@ -351,7 +351,7 @@ if (signalList) {
   });
 }
 
-const voiceTriggers = document.querySelectorAll(".welcome h1, .bot span, .post-figure svg");
+const voiceTriggers = document.querySelectorAll(".welcome .voice-trigger, .bot span, .post-figure svg");
 if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window) {
   let lastSpokenAt = 0;
 
@@ -373,13 +373,18 @@ if (voiceTriggers.length && "speechSynthesis" in window && "SpeechSynthesisUtter
   }
 
   voiceTriggers.forEach(function(trigger) {
+    trigger.setAttribute("title", "Mattias Camner · Master of this site");
+    trigger.addEventListener("click", speakSiteOwner);
+
+    // Native buttons already handle Enter/Space. Keep the visible text in the
+    // name, since this button is also the page's h1.
+    if (trigger.tagName === "BUTTON") {
+      trigger.setAttribute("aria-label", trigger.textContent.trim() + " · say Mattias Camner, Master of this site");
+      return;
+    }
+    trigger.setAttribute("aria-label", "Say Mattias Camner, Master of this site");
     trigger.setAttribute("tabindex", "0");
     trigger.setAttribute("role", "button");
-    trigger.setAttribute("aria-label", "Say Mattias Camner, Master of this site");
-    trigger.setAttribute("title", "Mattias Camner · Master of this site");
-
-    trigger.addEventListener("mouseenter", speakSiteOwner);
-    trigger.addEventListener("click", speakSiteOwner);
     trigger.addEventListener("keydown", function(event) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -572,7 +577,8 @@ if (commandBar && commandInput) {
           window.location.href = link.href;
           return;
         }
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
         el.classList.add("is-active");
         resetPrompt("opened " + arg);
         return;
@@ -755,9 +761,11 @@ if (commandBar && commandInput) {
 
   commandInput.addEventListener("keydown", function (event) {
     if (event.key === "Tab") {
+      // Shift+Tab always leaves the field; plain Tab only completes when there
+      // is something to complete, otherwise focus moves on as normal.
+      if (event.shiftKey) return;
       const value = commandInput.value.trim().toLowerCase();
       if (!value.startsWith("/")) return;
-      event.preventDefault();
 
       if (!tabMatches.length || tabMatches[tabIndex] !== value) {
         tabMatches = completionPool().filter(function (candidate) {
@@ -770,6 +778,7 @@ if (commandBar && commandInput) {
         printOut("no completion for " + value);
         return;
       }
+      event.preventDefault();
 
       tabIndex = (tabIndex + 1) % tabMatches.length;
       commandInput.value = tabMatches[tabIndex];
@@ -1121,6 +1130,9 @@ if (commandBar && commandInput) {
     if (line) line.classList.add(tier);
     if (time) time.textContent = formatAge(days);
     node.title = name + " · " + node.dataset.count + " · latest: " + node.dataset.latest;
+    // The core readout is visual only (aria-hidden); give focus the same facts.
+    node.setAttribute("aria-label", name + ", " + node.dataset.count + " entries, updated " +
+      formatAge(days) + ", latest: " + node.dataset.latest);
 
     return { node: node, name: name, days: days, tier: tier, line: line };
   });
