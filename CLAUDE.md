@@ -32,3 +32,10 @@ That surface should stay thin, portable, and non-operational.
 ## Boundary
 
 This repository may describe MQ alignment, but it should not function as MQ runtime, memory, or orchestration infrastructure.
+
+## Contract with mcamner-linux
+
+[mcamner-linux](https://github.com/MCamner/mcamner-linux) fetches `docs/journal-text.json` and mounts each entry as a file at its `path`.
+
+- A link into Linux, `https://mcamner.github.io/mcamner-linux/#{path}`, opens an entry only when `{path}` equals that entry's `path` in `journal-text.json` exactly. Build it from the same `folder` and `name` that `journal_text()` in `tools/generate_site_metadata.py` uses. A link built any other way fails silently: Linux boots without opening the entry.
+- Keep paths to letters, digits and hyphens, as `{folder}/{number}-{slug}.txt`. A path containing a quote is never opened.
