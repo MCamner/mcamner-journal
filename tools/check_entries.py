@@ -16,6 +16,8 @@ structural only:
   3. The link graph matches the posts' own sibling links, and no edge points
      at an entry that does not exist.
   4. Archive items match archive.html and their image files are on disk.
+  5. journal-text.json (the post bodies /linux mounts as files) matches what
+     the generator would write from the entries and the posts today.
 
 Dates are **not** compared. A post's lastmod is stamped the day the generator
 first sees it, so a PR authored on one day and built on the next would differ
@@ -38,11 +40,13 @@ sys.path.insert(0, str(ROOT / "tools"))
 from generate_site_metadata import (  # noqa: E402
     DOCS,
     index_tags,
+    journal_text,
     post_links,
     read,
 )
 
 ENTRIES = DOCS / "entries.json"
+JOURNAL_TEXT = DOCS / "journal-text.json"
 
 
 def posts_on_disk() -> set[str]:
@@ -111,6 +115,18 @@ def main() -> int:
             errors.append(f"archive {shot['id']} is not in archive.html")
         if not (DOCS / shot["src"]).is_file():
             errors.append(f"archive {shot['id']}: missing image {shot['src']}")
+
+    # 5. Post bodies for /linux, against the posts themselves.
+    if not JOURNAL_TEXT.exists():
+        errors.append("docs/journal-text.json is missing")
+    else:
+        try:
+            on_file = json.loads(read(JOURNAL_TEXT))
+        except json.JSONDecodeError as exc:
+            on_file = None
+            errors.append(f"docs/journal-text.json is not valid JSON: {exc}")
+        if on_file is not None and on_file != journal_text(entries):
+            errors.append("docs/journal-text.json does not match the posts")
 
     if errors:
         print("entries.json check FAILED:")
