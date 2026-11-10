@@ -1386,7 +1386,7 @@ function funOnUnknown() {
   var bar = document.getElementById("commandBar");
   if (input && bar) {
     var hints = ["/help", "/tail", "/ascii 012", "/tonight", "/theme amber", "/cat stalker",
-      "/quiz", "/operator", "/map", "/refs stalker", "/random film", "/fortune", "/boot"];
+      "/quiz", "/operator", "/map", "/refs stalker", "/random film", "/fortune", "/boot", "/linux"];
     var hintAt = 0;
     var quietUntil = 0;
     bar.addEventListener("submit", function () { quietUntil = Date.now() + 9000; });
