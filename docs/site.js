@@ -479,7 +479,7 @@ if (commandBar && commandInput) {
         "entries  /note NNN /film NNN /series NNN /book NNN /music NNN /object NNN",
         "move     /random [type] /latest /next /prev /back /find <text>",
         "list     /ls [type] /show all /filter <tag> /clear /select NNN /open <id>",
-        "system   /whoami /uptime /history /mute /unmute /help",
+        "system   /whoami /uptime /history /mute /unmute /linux /help",
         "read     /tail /cat <post> /map /boot /refs <post> /since",
         "play     /ascii <nr> /tonight /quiz /fortune /lock /sound [on|off]",
         "fun      /theme [amber|green|mono|default] /operator /wave /sleep /wake",
@@ -744,7 +744,7 @@ if (commandBar && commandInput) {
   const VERBS = [
     "/help", "/ls", "/find ", "/random", "/latest", "/next", "/prev", "/back",
     "/show all", "/filter ", "/clear", "/select ", "/open ",
-    "/whoami", "/uptime", "/history", "/mute", "/unmute",
+    "/whoami", "/uptime", "/history", "/mute", "/unmute", "/linux",
     "/theme ", "/theme amber", "/theme green", "/theme mono", "/theme default",
     "/operator", "/wave", "/sleep", "/wake",
     "/tail", "/cat ", "/map", "/boot",
@@ -1666,6 +1666,13 @@ function readerCommand(command) {
   if (command === "/map") {
     setTimeout(runMap, 0);
     return "reading signal map …";
+  }
+  if (command === "/linux") {
+    // Opened synchronously inside the Enter handler, or browsers treat the
+    // new tab as a popup. Same origin, so the stored theme carries over.
+    var url = location.origin + "/mcamner-linux/";
+    var tab = window.open(url, "_blank");
+    return tab ? "linux: booting in a new tab." : "linux: the tab was blocked. open " + url;
   }
   if (command === "/boot" || command === "/reboot") {
     setTimeout(runBoot, 0);

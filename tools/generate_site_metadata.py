@@ -10,6 +10,7 @@ from html import escape, unescape
 from pathlib import Path
 import re
 import json
+import textwrap
 import xml.etree.ElementTree as ET
 
 
@@ -535,6 +536,66 @@ def generate_entries(pages: list[Page]) -> None:
     write_if_changed(
         DOCS / "entries.json", json.dumps(payload, ensure_ascii=False, indent=1) + "\n"
     )
+    write_if_changed(
+        DOCS / "journal-text.json",
+        json.dumps(journal_text(entries), ensure_ascii=False, indent=1) + "\n",
+    )
+
+
+# ── journal-text.json ──────────────────────────────────────────────────────
+#
+# The post bodies as plain text, for /linux: mcamner-linux fetches this one
+# file and writes each entry into the guest's 9p filesystem, so `ls`, `cat`
+# and `grep` run against the real journal. Date-free on purpose, so the check
+# can regenerate it byte for byte.
+
+POST_BOX = re.compile(r'<article class="post-box">(.*?)</article>', re.S)
+PRE_BLOCK = re.compile(r"<pre[^>]*>(.*?)</pre>", re.S)
+TEXT_DIRS = {"note": "notes", "film": "films", "series": "series", "book": "books",
+             "music": "music", "object": "objects"}
+
+
+def strip_tags(fragment: str) -> str:
+    return unescape(re.sub(r"<[^>]+>", "", fragment))
+
+
+def post_text(html: str) -> str:
+    """Plain text of a post body: wrapped paragraphs, verbatim <pre> blocks."""
+    found = POST_BOX.search(html)
+    if not found:
+        return ""
+    # The <h2> repeats the title, which the file header already carries.
+    body = re.sub(r"<h2[^>]*>.*?</h2>", "", found.group(1), count=1, flags=re.S)
+    blocks: list[str] = []
+    pos = 0
+    for pre in PRE_BLOCK.finditer(body):
+        blocks += prose_blocks(body[pos : pre.start()])
+        blocks.append(strip_tags(pre.group(1)).strip("\n"))
+        pos = pre.end()
+    blocks += prose_blocks(body[pos:])
+    return "\n\n".join(blocks) + "\n"
+
+
+def prose_blocks(fragment: str) -> list[str]:
+    parts = re.split(r"</(?:p|h[1-6]|li|blockquote|div)>", fragment)
+    out = []
+    for part in parts:
+        text = " ".join(strip_tags(part).split())
+        if text:
+            out.append(textwrap.fill(text, width=72))
+    return out
+
+
+def journal_text(entries: list[dict]) -> dict:
+    files = []
+    for entry in entries:
+        kind, _, number = entry["route"].partition(" ")
+        folder = TEXT_DIRS.get(kind.lstrip("/"), "posts")
+        name = f"{number}-{entry['slug']}.txt" if number else f"{entry['slug']}.txt"
+        header = f"{entry['title']}\n{entry['route']}\n\n"
+        files.append({"path": f"{folder}/{name}",
+                      "text": header + post_text(read(DOCS / entry["path"].lstrip("/")))})
+    return {"count": len(files), "files": files}
 
 
 def update_catalogue_count(count: int) -> None:
