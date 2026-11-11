@@ -546,8 +546,9 @@ def generate_entries(pages: list[Page]) -> None:
 #
 # The post bodies as plain text, for /linux: mcamner-linux fetches this one
 # file and writes each entry into the guest's 9p filesystem, so `ls`, `cat`
-# and `grep` run against the real journal. Date-free on purpose, so the check
-# can regenerate it byte for byte.
+# and `grep` run against the real journal. `url` is the post's page, which
+# the guest's `journal web` prints as a link. Date-free on purpose, so the
+# check can regenerate it byte for byte.
 
 POST_BOX = re.compile(r'<article class="post-box">(.*?)</article>', re.S)
 PRE_BLOCK = re.compile(r"<pre[^>]*>(.*?)</pre>", re.S)
@@ -594,6 +595,7 @@ def journal_text(entries: list[dict]) -> dict:
         name = f"{number}-{entry['slug']}.txt" if number else f"{entry['slug']}.txt"
         header = f"{entry['title']}\n{entry['route']}\n\n"
         files.append({"path": f"{folder}/{name}",
+                      "url": SITE_URL + entry["path"].lstrip("/"),
                       "text": header + post_text(read(DOCS / entry["path"].lstrip("/")))})
     return {"count": len(files), "files": files}
 
