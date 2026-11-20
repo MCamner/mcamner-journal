@@ -153,6 +153,8 @@ const routes = {
   "/ai-trend-lines": "/mcamner-journal/posts/ai-trend-lines.html",
   "/note 036": "/mcamner-journal/posts/mq-ascii.html",
   "/mq-ascii": "/mcamner-journal/posts/mq-ascii.html",
+  "/note 037": "/mcamner-journal/posts/mq-ai-memory.html",
+  "/mq-ai-memory": "/mcamner-journal/posts/mq-ai-memory.html",
   "/mqobsidian": "/mcamner-journal/posts/map-and-memory.html",
   "/series 006": "/mcamner-journal/posts/beef-s2.html",
   "/beef-s2": "/mcamner-journal/posts/beef-s2.html",

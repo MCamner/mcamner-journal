@@ -1,5 +1,5 @@
 {
- "count": 81,
+ "count": 82,
  "archive_count": 42,
  "entries": [
   {
@@ -722,6 +722,21 @@
    ]
   },
   {
+   "slug": "mq-ai-memory",
+   "path": "/posts/mq-ai-memory.html",
+   "title": "a memory you can measure",
+   "route": "/note 037",
+   "type": "note",
+   "date": "2026-11-20",
+   "desc": "A note on giving MQ-AI, a local assistant, a memory made of approved notes, a relevance gate, and a test that shows when retrieval gets worse.",
+   "tags": [],
+   "links": [
+    "learn-loop",
+    "local-is-a-boundary",
+    "mq-ascii"
+   ]
+  },
+  {
    "slug": "mq-ascii",
    "path": "/posts/mq-ascii.html",
    "title": "mq-ascii",
@@ -732,7 +747,8 @@
    "tags": [],
    "links": [
     "coolthing",
-    "ai-trend-lines"
+    "ai-trend-lines",
+    "mq-ai-memory"
    ]
   },
   {

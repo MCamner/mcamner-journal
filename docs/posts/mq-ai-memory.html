@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>a memory you can measure | McAmner Journal</title>
+  <meta name="description" content="A note on giving MQ-AI, a local assistant, a memory made of approved notes, a relevance gate, and a test that shows when retrieval gets worse.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mcamner.github.io/mcamner-journal/posts/mq-ai-memory.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mcamner.github.io/mcamner-journal/posts/mq-ai-memory.html">
+  <meta property="og:title" content="a memory you can measure | McAmner Journal">
+  <meta property="og:description" content="The model did not change. A folder of notes, a gate, and a test did.">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:site_name" content="McAmner Journal">
+  <meta property="og:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="McAmner Journal social preview">
+  <meta name="twitter:title" content="a memory you can measure | McAmner Journal">
+  <meta name="twitter:description" content="The model did not change. A folder of notes, a gate, and a test did.">
+  <meta name="twitter:image" content="https://mcamner.github.io/mcamner-journal/assets/social-preview.png">
+  <meta name="twitter:image:alt" content="McAmner Journal social preview">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mcamner.github.io/mcamner-journal/posts/mq-ai-memory.html"
+  },
+  "headline": "a memory you can measure",
+  "description": "A note on giving MQ-AI, a local assistant, a memory made of approved notes, a relevance gate, and a test that shows when retrieval gets worse.",
+  "image": "https://mcamner.github.io/mcamner-journal/assets/social-preview.png",
+  "author": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Mattias Camner",
+    "url": "https://mcamner.github.io/mcamner-journal/about.html"
+  },
+  "inLanguage": "en",
+  "dateModified": "2026-11-20",
+  "datePublished": "2026-11-20"
+}
+</script>
+<link rel="alternate" type="application/rss+xml" title="McAmner Journal RSS" href="https://mcamner.github.io/mcamner-journal/feed.xml">
+</head>
+<body>
+<main class="terminal post-terminal">
+
+<fieldset class="boot-box">
+<legend class="boot-title">McAmner Journal <span>note</span></legend>
+<div class="about-grid">
+<section>
+  <h1>a memory you can measure</h1>
+  <p>A local assistant that keeps what it is told.</p>
+  <p>The model stays the same. The notes, the gate and the test change.</p>
+</section>
+<aside class="tips">
+  <h2>Recent activity</h2>
+  <p>&gt; opened /note 037</p>
+  <p>&gt; note approved</p>
+  <p>&gt; eval rerun</p>
+</aside>
+</div>
+</fieldset>
+
+<form class="prompt" id="commandBar">
+  <span>&gt;</span>
+  <input id="commandInput" type="text" placeholder="/journal" autocomplete="off" aria-label="Command input">
+</form>
+
+<article class="post-box">
+  <h2>&gt;&gt; a memory you can measure</h2>
+
+  <p>
+    MQ-AI is a local assistant that runs from a USB drive: a model runtime, a chat
+    page, search over a shelf of PDFs, and an image pipeline. Until this week it
+    forgot everything when a chat closed. The goal was to make it learn. That word
+    needs care. The weights do not change. Nothing is fine-tuned. What can change is
+    what the model reads before it answers.
+  </p>
+
+  <p>
+    So the memory is notes. Short Markdown files in a git repository, one lesson
+    each, with a line saying how it was verified. A small profile is always
+    included in the prompt. Everything else is retrieved per question. A local model
+    may propose notes from a conversation, but proposals land in an inbox that is
+    never searched. A note becomes memory only when a person approves it, and every
+    approval is a commit. It is the <a href="learn-loop.html">learn loop</a> with a
+    smaller surface.
+  </p>
+
+  <p>
+    Storage turned out to be the easy part. The hard part is deciding when memory
+    should be used at all. Ranking always returns something. Ask for the capital of
+    Australia and the three closest notes are still three notes, and a model given
+    them will try to use them. Similarity scores from embedding models sit in a
+    narrow band, so a fixed threshold does not separate relevant from unrelated. The
+    gate instead compares the best score with a baseline: how similar the question
+    is, on average, to a dozen neutral sentences. Memory is used only when the best
+    note beats that baseline by a margin. Otherwise the model answers without it.
+  </p>
+
+  <p>
+    The margin came from measurement, and the measurement is the part I would keep
+    if everything else were thrown away. It is a file of questions, each paired with
+    the note that should answer it, plus questions that should get no note at all.
+    Every new note adds two questions, phrased in different words from its title.
+    One command reruns the set, sweeps the margin, and lists every miss.
+  </p>
+
+  <p>
+    It caught a decay I would not have noticed. With the first embedding model, the
+    right note reached the prompt for most questions while memory was small. As notes
+    were added, that share fell from 85 to 64 percent. Nothing broke. Answers just
+    got quietly worse. Moving memory to bge-m3 lifted it to 94 percent, and it has
+    held as the notes grew to thirty: 63 of 66 relevant questions get their note,
+    and 6 of 8 unrelated questions correctly get none. Switching models means
+    rebuilding the index, and search now refuses to compare vectors from two
+    different models instead of returning confident nonsense.
+  </p>
+
+  <p>
+    The smaller findings are about writing. A title in ordinary words is found more
+    often than one in technical terms. With bge-m3 the body counts too. A note about
+    a copied signature was not recalled for "why did the new image get a signature in
+    the corner?" A better title barely moved it. One sentence describing the symptom
+    the way you would ask about it did. Two notes about the same thing push each
+    other down the list. Merging them helps. Changing the expected answer in the test
+    only flatters the test.
+  </p>
+
+  <p>
+    The limits are plain. The questions are written by the same person who writes
+    the notes, so the numbers measure consistency, not truth. Most findings rest on
+    one example. Still, the model is the same as it was last week. What changed is a
+    folder of text, a gate, and a test that shows when either gets worse. That is
+    what learning means here: something written down, approved, and checked.
+  </p>
+
+</article>
+
+<div class="post-figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 32" width="122" aria-label="Notes passing through a gate before reaching the model">
+    <rect x="3" y="6" width="12" height="15" fill="#9f9789"/>
+    <rect x="6" y="9" width="12" height="15" fill="#2f69c7"/>
+    <path d="M9 14h6M9 18h6" stroke="#ffffff" stroke-width="1.2"/>
+    <path d="M22 16h10" stroke="#9f9789" stroke-width="1.5"/>
+    <polygon points="30,12 36,16 30,20" fill="#e57b4f"/>
+    <rect x="40" y="6" width="3" height="20" fill="#59a14f"/>
+    <rect x="49" y="6" width="3" height="20" fill="#59a14f"/>
+    <path d="M40 16h12" stroke="#59a14f" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <path d="M56 16h10" stroke="#9f9789" stroke-width="1.5"/>
+    <polygon points="64,12 70,16 64,20" fill="#e57b4f"/>
+    <text x="73" y="21" font-family="monospace" font-size="13" font-weight="700" fill="#0d438f">&gt;_</text>
+  </svg>
+</div>
+
+<section class="journal-box">
+  <h2>&gt;&gt; post commands</h2>
+  <ul>
+    <li><a href="../journal.html">/journal</a><span>-- return to entries</span></li>
+    <li><a href="learn-loop.html">/note 025</a><span>-- the learn loop</span></li>
+    <li><a href="local-is-a-boundary.html">/note 031</a><span>-- local is a boundary</span></li>
+    <li><a href="mq-ascii.html">/note 036</a><span>-- mq-ascii</span></li>
+    <li><a href="../index.html">/home</a><span>-- return to dashboard</span></li>
+  </ul>
+</section>
+
+<footer class="status">
+  <span>? for shortcuts</span>
+  <span>note loaded · <strong>reading mode</strong></span>
+</footer>
+
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
